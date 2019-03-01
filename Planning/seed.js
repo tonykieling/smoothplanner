@@ -116,6 +116,22 @@ itinerary_items = {
     address: faker.address.streetAddress(),
     trip_id: 't02',
   },
+  item9: {
+    id: 'i09',
+    dt_start:  new Date('July 10, 2019 14:30:00'),
+    type: 'E',
+    title: 'Go to Jungfrau',
+    trip_id: 't02',
+  },
+  item10: {
+    id: 'i10',
+    dt_start:  new Date('July 5, 2019 14:30:00'),
+    dt_end: new Date('July 15, 2019 10:30:00'),
+    type: 'T',
+    title: 'Avis car rental',
+    details: 'pick up at airport',
+    trip_id: 't02'
+  }
 }
 
 // viewing seed data
