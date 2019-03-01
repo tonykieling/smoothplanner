@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 0 10px;
+  background-color: sandybrown;
+  position: fixed;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.itinerary_card {
+  border: 1px solid black;
+  padding: 25px;
+  min-width: 500px;
+  min-height: 120px;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: whitesmoke;
+}
+
+.add_new_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 65px;
+  margin-bottom: 2px;
+}
+
+.btn {
+  background-color: whitesmoke;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid black;
+  height: 200px;
+  background-color: aliceblue;
+}
+
+body {
+  background-image: url("./images/pexels-photo-1320684.jpeg");
+  background-size: auto;
+}
