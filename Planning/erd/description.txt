@@ -1,0 +1,8 @@
+# Business Rules
+
+1- An "User" can have 0 or many "Itinerary".
+2- A "Itinerary" is related at least to 1 "User".
+3- As a "Itinerary" can have more than 1 "User" related to, it sets a M to M relationship by the "Has" table.
+4- A "Itinerary" can have 0 or many "Itinerary_items".
+5- An "Itinerary_item" can have 0 or many "Documents" (tickets, reservation, etc) related to.
+6- We decided that an "Itinerary_item" will be able to be: "Transportation", "Accommodation" or "Event" type.
