@@ -1,0 +1,54 @@
+main .new-tweet {
+  display: none;
+  margin-top: 10px;
+  width: calc(100% - 4em);
+  height: 180px;
+  margin-left: 2em;
+  border-radius: 10px;
+  border: 1px solid silver;
+}
+
+main h2{
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 2%;
+  border-bottom: 1px solid silver;
+}
+
+.new-tweet #position {
+  height: 100%;
+  width: 100%;
+}
+
+main .new-tweet textarea {
+  width: 90%;
+  margin-left: 15px;
+  height: 70px;
+  
+}
+
+.new-tweet input {   
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+
+.new-tweet .msg {
+  display: none;
+  margin-left: 30px;
+  animation:blinkingText 1s infinite;
+}
+@keyframes blinkingText{
+  0%{     color: red;    }
+  50%{   color: transparent;    }
+}
+
+.new-tweet #zero {
+  margin-left: 50px;
+}
+
+.new-tweet span {
+  float: right;
+  padding-right: 25px;
+  line-height: 45px;
+}
