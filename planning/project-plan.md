@@ -1,13 +1,13 @@
 # Travel App - Smooth Planner
 
 # Project Description
-There are lots of decisions to be made while planning a trip - where to live, which transportation option to use, what activities to do at the destination etc
+There are lots of decisions to be made while planning a trip - where to stay, which transportation option to use, what activities to do at the destination etc
 Our app aims to simplify travelling and alleviate some of the stress associated with it.
-- It simplifies planning by allowing users to save all details connected to trip to be saved at one location. 
+- It simplifies planning by allowing users to save all details connected to trip at one location. 
 - It simplifies travelling by allowing users to view the planned itinerary day-by-day during their travel
 
 # Target Audience
-The app will be useful to business or leisure travellers looking for a simple way to organise their itineraries.
+The app will be useful for business or leisure travellers looking for a simple way to organise their itineraries.
 
 # Team Members
 Clive [@silentscribe](https://github.com/silentscribe)
@@ -17,7 +17,7 @@ Tony [@tonykieling](https://github.com/tonykieling)
 
 # User Stories
 
- and record my itinerary in an app.
+
 
 #### 1. User should be able to create a new trip
 As a user
@@ -39,11 +39,12 @@ Beacause I want to view, modify or delete them later.
 
 Given that, I am adding itinerary items in my trip
 When I click "Transportation", "Accomodation" or "Event" button
-I should be able to fill up a form with details for that type of itinerary item.
+I should be able to fill up a form with details for that type of itinerary item including start and end date.
 
 ##### Additional Details
 - Fields for each itin item. (Details required)
 - ability to upload documents(like reservations) to a itinerary item 
+- it automatically fills the end date to be the same date as start date
 
 
 #### 3. User should be able to view itinerary items in a chronological order
@@ -69,7 +70,7 @@ I want to be able to view all my past trips and upcoming trips
 Because I want to view all trips at one place
 
 Given that
-I navigate to my dashboard
+I got a dropdown menu on the nav bar
 I should be able to view my past and upcoming trips
 
 #### 6. User should be given recommendations on things to do in the destination 
@@ -78,7 +79,7 @@ I want to be able to view different recommendations on activities/points of inte
 Because I want to get inspiration on what I can do on the trip
 
 Given that, I have created a trip
-I should see different recommendations on activities at my destination
+I should see different recommendations on activities at my destination in a carousel at the bottom of the app
 
 #### 7. User should be able to share trip plan with others
 As a user
