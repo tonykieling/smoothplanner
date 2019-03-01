@@ -1,0 +1,7 @@
+Started GET "/" for 10.0.2.2 at 2019-03-01 03:30:39 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vagrant/.rvm/gems/ruby-2.3.5/gems/railties-5.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.5/gems/railties-5.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (30.3ms)
+Completed 200 OK in 1653ms (Views: 64.8ms)
+
+
