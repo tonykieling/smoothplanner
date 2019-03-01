@@ -57,9 +57,9 @@ section {
   margin-bottom: 2px;
 }
 
-.btn {
+/* .btn {
   background-color: whitesmoke;
-}
+} */
 
 footer{
   display: flex;
@@ -72,8 +72,20 @@ footer{
   height: 200px;
   background-color: aliceblue;
 }
+.create-form-container {
+  margin: 10%;
+  padding: 5%;
+  background-color: white ;
+} 
 
 body {
   background-image: url("./images/pexels-photo-1320684.jpeg");
   background-size: auto;
 }
+
+.form-title  {
+  border-bottom: 2px solid black;
+  margin: 10px
+}
+
+
