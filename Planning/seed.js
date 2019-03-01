@@ -2,21 +2,21 @@ var faker = require('faker');
 
 // user seed data
 
-users = { 
-  user1: {
+users = [
+  {
     id: 1,
     name: "Bob Collins",
     email: "bob@user.com",
   },
-  user2: {
+  {
     id: 2,
     name: "Suzy Halpert",
     email: "suzy@user.com",
   }
-}
+]
 
-trips = {
-  trip1: {
+trips = [
+  {
     id: 't01',
     name: "Christmas trip",
     dt_start: new Date('December 24, 2019'),
@@ -24,7 +24,7 @@ trips = {
     destination: 'Cancun',
     user_id: 2
   },
-  trip2: {
+  {
     id: 't02',
     name: "Summer holidays in Europe",
     dt_start: new Date('July 1, 2019'),
@@ -32,7 +32,7 @@ trips = {
     destination: 'Switzerland',
     user_id: [1,2]
   },
-  trip3: {
+  {
     id: 't03',
     name: "Valentine day in Paris",
     destination: 'Paris',
@@ -40,10 +40,10 @@ trips = {
     dt_end: new Date('February 20, 2019'),
     user_id: [1]
   }
-}
+]
 
-itinerary_items = {
-  item1: {
+itinerary_items = [
+  {
     id: 'i01',
     dt_start:  new Date('December 24, 2019 08:20:00'),
     dt_end: new Date('January 3, 2020 10:30:00'),
@@ -53,7 +53,7 @@ itinerary_items = {
     confirmation: 'ABC4YQ',
     trip_id: 't01'
   },
-  item2: {
+  {
     id: 'i02',
     dt_start:  new Date('December 24, 2019 08:20:00'),
     dt_end: new Date('January 3, 2020 10:30:00'),
@@ -63,7 +63,7 @@ itinerary_items = {
     address: ' Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
     trip_id: 't01',
   },
-  item3: {
+  {
     id: 'i03',
     dt_start: new Date('December 27, 2019 08:20:00'),
     type: 'E',
@@ -132,8 +132,8 @@ itinerary_items = {
     details: 'pick up at airport',
     trip_id: 't02'
   }
-}
+]
 
 // viewing seed data
 
-console.log(users, trips, itinerary_items)
+// console.log(users, trips, itinerary_items)
