@@ -12,25 +12,34 @@ nav#nav-bar {
   z-index: 10;
 }
 
-#nav-bar #logo {
+nav .left-side {
   float: left;
-  height: 80px;
-  width: 80px;
 }
 
 #nav-bar #header {
   padding-left: 10px;
-  line-height: 80px;
+  padding-right: 20px;
   font-size: 2em;
 }
 
-#nav-bar #compose {
-  margin-top: 25px;
-
+nav .button-left {
+  padding-left: 10px
 }
 
-#nav-bar div{
-  display: inline;
-  margin-right: 50%;
+nav .button-left:hover {
+  font-weight: bold;
+  color: blue;
 }
 
+nav .right-side {
+  float: right;
+}
+
+nav .button-right {
+  padding-left: 10px
+}
+
+nav .button-right:hover {
+  font-weight: bold;
+  color: red;
+}
