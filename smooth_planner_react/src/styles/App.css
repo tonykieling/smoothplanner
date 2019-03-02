@@ -67,9 +67,9 @@ section {
   margin: 0 125px 2px 125px;
 }
 
-.btn {
+/* .btn {
   background-color: whitesmoke;
-}
+} */
 
 footer{
   display: flex;
@@ -82,6 +82,11 @@ footer{
   height: 100px;
   background-color: aliceblue;
 }
+.create-form-container {
+  margin: 10%;
+  padding: 5%;
+  background-color: white ;
+} 
 
 body {
   background-image: url("./images/pexels-photo-1320684.jpeg");
@@ -90,4 +95,9 @@ body {
   background-size: cover;
   background-position: 50%;
   /* min view width should be 550px */
+}
+
+.form-title  {
+  border-bottom: 2px solid black;
+  margin: 10px
 }
