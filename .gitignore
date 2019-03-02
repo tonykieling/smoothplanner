@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/smooth_planner_react/node_modules
 /.pnp
 .pnp.js
 
