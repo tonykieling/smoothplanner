@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
-import CreateItinerary from './component_form_createtrip';
+import CreateItinerary from './component_form_createtrip.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -26,12 +26,9 @@ class App extends Component {
     console.log(this.state.itineraries.forEach((item) => {
       return console.log(item.name)
     }))
-    
+
     return (
-      <div className="App">
-        <header className="App-header">
-        <p>Hello World!</p>
-        </header>
+      <div>
         <CreateItinerary />
       </div>
     );
