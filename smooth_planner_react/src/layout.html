@@ -25,18 +25,230 @@
         </div>
      </nav> 
      <div class="add_new_buttons">
-        <button type="button" class="btn btn-outline-success">Success</button>
-        <button type="button" class="btn btn-outline-success">Success</button>
-        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="btn btn-outline-success">Transportation</button>
+        <button type="button" class="btn btn-outline-success">Accommodation</button>
+        <button type="button" class="btn btn-outline-success">Event</button>
      </div>
     </header>
     <section>
-      <div class="itinerary_card">
-        <h5>Going to Place</h5>
-        <span class="from_time">Departure: Mar 2 -- 2pm</span>
-        <span class="to_time">Arrival: Mar 2 -- 2pm</span>
+
+      <!-- Transportation example -->
+      <div class="itinerary_card" ><h5><strong>Going to Zurich - Transportation</strong></h5>
+        <!-- <div className="transport-item" key={itinerary.id}> -->
+
+          <!-- <h2> Going FROM {itinerary.city_depart} TO {itinerary.city_arrival}</h2> -->
+          <!-- consider only the title -->
+          
+          <span> <strong>Departure:</strong> March, 10th, 2019 - 3:00 P.M. </span>
+          <!-- format a nice date and time showing the trip starting -->
+
+          <span> <strong>Arrival:</strong> 5:00 P.M. </span>
+          <!--  format a nice date and time showing the trip ending -->
+
+          <br>
+          <span> <strong>Leaving from: </strong> Heathrow Airport </span>
+          <!-- here we display the place where the transportation will depart -->
+
+          <br>
+          <span> <strong>Confirmation #: </strong> Fl1G7h958-789 </span>
+          <!-- ticket number -->
+
+          <span> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span>
+          <!-- figure out how to display the document (plura? all documents or only for that specific user?) -->
+
+          <br>
+          <span> <strong>Details:</strong> my friend John will pick us at 3:30 at the airport</span>
+          <!-- details typed by the user -->
+        <!-- </div> -->
       </div>
-      <div class="itinerary_card"><h5>Container 2</h5></div>
+
+      <!-- Accommodation example -->
+      <div class="itinerary_card" ><h5><strong>Dream Sleep Hotels - Accommodation</strong></h5>
+          
+          <span> <strong>First Day:</strong> March, 10th, 2019</span>
+          
+          <span> <strong>Last Day:</strong> March, 15th, 2019</span>
+          
+          <br>
+          <span> <strong>Venue: </strong> Dream Sleep Hotels</span>
+          
+          <br>
+          <span> <strong>Confirmation #: </strong> H073L958-789</span>
+          
+          <span> <strong>Files uploaded:</strong> reservation_hotel_Zurich.pdf</span>
+
+          <br>
+          <span> <strong>URL:</strong> www.sleepdream.com/sz</span>
+
+          <span> <strong>Phone:</strong>9878-8878</span>
+
+          <br>
+          <span> <strong>Address:</strong> Hotel Neighborhood, 321</span>
+
+          <br>
+          <span> <strong>Details:</strong>we didn't order breakfast</span>
+      </div>
+      
+      <!-- <Event example1 -->
+      <div class="itinerary_card" ><h5><strong>Japaneses Dinner - Event</strong></h5>          
+          <span> <strong>When:</strong> March, 10th, 2019 - 6:00 P.M. </span>
+
+          <br>
+          <span> <strong>Where: </strong>Arigato Restaurant</span>
+
+          <br>
+          <span> <strong>Confirmation #: </strong> - </span>
+
+          <span> <strong>Files uploaded:</strong> - </span>
+
+          <br>
+          <span> <strong>URL:</strong> www.arigato.ca </span>
+          <span> <strong>Phone:</strong>9878-8878</span>
+
+          <br>
+          <span> <strong>Address:</strong> Sashimi Street, 123 </span>
+
+          <br>
+          <span> <strong>Details:</strong>Talked with Janice and reserved for 4 people</span>
+      </div>
+
+      <!-- <Event example2 -->
+        <div class="itinerary_card" ><h5><strong>John's Birthday Party - Event</strong></h5>          
+          <span> <strong>When:</strong> March, 11th, 2019 - 11:00 A.M. </span>
+
+          <br>
+          <span> <strong>Where: </strong>Food's Palace</span>
+
+          <br>
+          <span> <strong>Confirmation #: </strong> - </span>
+
+          <span> <strong>Files uploaded:</strong> - </span>
+
+          <br>
+          <span> <strong>URL:</strong> - </span>
+          <span> <strong>Phone:</strong>9878-7777</span>
+
+          <br>
+          <span> <strong>Address:</strong> Palace Street, 789 </span>
+
+          <br>
+          <span> <strong>Details:</strong>Let's celebrate!</span>
+      </div>
+
+      <!-- <Event example3 -->
+      <div class="itinerary_card" ><h5><strong>Knowing Zurich</strong></h5>          
+          <span> <strong>When:</strong>March, 10th, 2019 - March, 14th, 2019</span>
+
+          <br>
+          <span> <strong>Where: </strong>Zurich city</span>
+
+          <br>
+          <span> <strong>Confirmation #: </strong> - </span>
+
+          <span> <strong>Files uploaded:</strong> - </span>
+
+          <br>
+          <span> <strong>URL:</strong> </span>
+          <span> <strong>Phone:</strong> </span>
+
+          <br>
+          <span> <strong>Address:</strong> </span>
+
+          <br>
+          <span> <strong>Details:</strong>John's gonna guide us around this amazing city</span>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="itinerary_card" ><h5><strong>Let's go Rome - Transportation</strong></h5>
+        <!-- <div className="transport-item" key={itinerary.id}> -->
+
+          <!-- <h2> Going FROM {itinerary.city_depart} TO {itinerary.city_arrival}</h2> -->
+          <!-- consider only the title -->
+          
+          <span> <strong>Departure:</strong> March, 15th, 2019 - 1:00 P.M. </span>
+          <!-- format a nice date and time showing the trip starting -->
+
+          <span> <strong>Arrival:</strong> 3:00 P.M. </span>
+          <!--  format a nice date and time showing the trip ending -->
+
+          <br>
+          <span> <strong>Leaving from: </strong>Fiumicino Airport</span>
+          <!-- here we display the place where the transportation will depart -->
+
+          <br>
+          <span> <strong>Confirmation #: </strong> Fl1G7h958-789 </span>
+          <!-- ticket number -->
+
+          <span> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span>
+          <!-- figure out how to display the document (plura? all documents or only for that specific user?) -->
+
+          <br>
+          <span> <strong>Details:</strong>go to Rome by train</span>
+          <!-- details typed by the user -->
+        <!-- </div> -->
+      </div>
+
+      <!-- Accommodation example -->
+      <div class="itinerary_card" ><h5><strong>COlisium  Hotels - Accommodation</strong></h5>
+          
+          <span> <strong>First Day:</strong> March, 10th, 2019</span>
+          
+          <span> <strong>Last Day:</strong> March, 15th, 2019</span>
+          
+          <br>
+          <span> <strong>Venue: </strong> Dream Sleep Hotels</span>
+          
+          <br>
+          <span> <strong>Confirmation #: </strong> H073L958-789</span>
+          
+          <span> <strong>Files uploaded:</strong> reservation_hotel_Zurich.pdf</span>
+
+          <br>
+          <span> <strong>URL:</strong> www.sleepdream.com/sz</span>
+
+          <span> <strong>Phone:</strong>9878-8878</span>
+
+          <br>
+          <span> <strong>Address:</strong> Hotel Neighborhood, 321</span>
+
+          <br>
+          <span> <strong>Details:</strong>we didn't order breakfast</span>
+      </div>
+      
+      <!-- <Event example1 -->
+      <div class="itinerary_card" ><h5><strong>Japaneses Dinner - Event</strong></h5>          
+          <span> <strong>When:</strong> March, 10th, 2019 - 6:00 P.M. </span>
+
+          <br>
+          <span> <strong>Where: </strong>Arigato Restaurant</span>
+
+          <br>
+          <span> <strong>Confirmation #: </strong> - </span>
+
+          <span> <strong>Files uploaded:</strong> - </span>
+
+          <br>
+          <span> <strong>URL:</strong> www.arigato.ca </span>
+          <span> <strong>Phone:</strong>9878-8878</span>
+
+          <br>
+          <span> <strong>Address:</strong> Sashimi Street, 123 </span>
+
+          <br>
+          <span> <strong>Details:</strong>Talked with Janice and reserved for 4 people</span>
+      </div>
+
+
       <div class="itinerary_card"><h2>Container 3</h2></div>
       <div class="itinerary_card"><h2>Container 4</h2></div>
       <div class="itinerary_card"><h2>Container 5</h2></div>
