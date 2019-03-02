@@ -6,17 +6,17 @@ class CreateItinerary extends Component {
       <div className="create-itinerary">
         <h3>Create New Itinerary</h3>
         <form >
-          <div class="form-group">
-            <label for="itinerary-name">Itinerary Title</label>
-            <input type="text" name="itinerary-name" class="form-control" placeholder="Enter a title for your Itinerary"/>
-            <small id="emailHelp" class="form-text text-muted">Example: Canada Day 2019, Trip to India etc</small>
+          <div className="form-group">
+            <label htmlFor="itinerary-name">Itinerary Title</label>
+            <input type="text" name="itinerary-name" className="form-control" placeholder="Enter a title for your Itinerary"/>
+            <small id="emailHelp" className="form-text text-muted">Example: Canada Day 2019, Trip to India etc</small>
           </div>
-          <label for="dt_start">Itinerary begins on: </label>
-          <input type ='date' name="dt_start" class="form-control"/>
+          <label htmlFor="dt_start">Itinerary begins on: </label>
+          <input type ='date' name="dt_start" className="form-control"/>
 
-          <label for="dt_end">Itinerary end on: </label>
-          <input type ='date' name="dt_end" class="form-control"/>
-            <button type="submit" class="btn btn-primary">Submit</button>
+          <label htmlFor="dt_end">Itinerary end on: </label>
+          <input type ='date' name="dt_end" className="form-control"/>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
     )
