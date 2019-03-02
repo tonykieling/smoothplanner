@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
-import CreateItinerary from './component_form_createtrip.jsx';
+import ItemsContainer from './component_items_container';
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +29,18 @@ class App extends Component {
 
     return (
       <div className="App">
-        <CreateItinerary />
+      <header>
+        <nav>
+          <div><h1>User </h1></div>
+          <div><h1>Other field</h1></div>
+        </nav> 
+        <div className="add_new_buttons">
+            <button type="button" className="btn btn-outline-success">Success</button>
+            <button type="button" className="btn btn-outline-success">Success</button>
+            <button type="button" className="btn btn-outline-success">Success</button>
+        </div>
+      </header>
+        <ItemsContainer />
       </div>
     );
   }
