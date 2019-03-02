@@ -5,16 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <style>
       @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css");
-
-      </style>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </style>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="./styles/App.css">
+
   </head>
   <body>
     <header>
@@ -25,26 +24,216 @@
         </div>
      </nav> 
      <div class="add_new_buttons">
-        <button type="button" class="btn btn-outline-success">Success</button>
-        <button type="button" class="btn btn-outline-success">Success</button>
-        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="btn btn-outline-success">Transportation</button>
+        <button type="button" class="btn btn-outline-success">Accommodation</button>
+        <button type="button" class="btn btn-outline-success">Event</button>
      </div>
     </header>
     <section>
-      <div class="itinerary_card">
-        <h5>Going to Place</h5>
-        <span class="from_time">Departure: Mar 2 -- 2pm</span>
-        <span class="to_time">Arrival: Mar 2 -- 2pm</span>
+
+      <!-- Transportation example -->
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card-main" ><h5><strong>Going to Zurich - Transportation</strong></h5>
+            <!-- <h2> Going FROM {itinerary.city_depart} TO {itinerary.city_arrival}</h2> -->
+            <!-- consider only the title -->
+            <span> <strong>Departure:</strong> March, 10th, 2019 - 3:00 P.M. </span>
+            <!-- format a nice date and time showing the trip starting -->
+            <span class="to_time"> <strong>Arrival:</strong> 5:00 P.M. </span>
+            <!--  format a nice date and time showing the trip ending --> <br>
+            <span> <strong>Leaving from: </strong> Heathrow Airport </span>
+            <!-- here we display the place where the transportation will depart -->
+        </div>
+        
+        <div class="itinerary_card-hiden">
+          <span> <strong>Confirmation #: </strong> Fl1G7h958-789 </span>
+          <!-- ticket number -->
+
+          <span class="to_time"> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span>
+          <!-- figure out how to display the document (plura? all documents or only for that specific user?) -->
+
+          <br>
+          <span> <strong>Details:</strong> my friend John will pick us at 3:30 at the airport</span>
+          <!-- details typed by the user -->
+        </div>
       </div>
-      <div class="itinerary_card"><h5>Container 2</h5></div>
+
+      <!-- Accommodation example -->
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card-main" ><h5><strong>Dream Sleep Hotels - Accommodation</strong></h5>
+          <span> <strong>First Day:</strong> March, 10th, 2019</span>
+          <span class="to_time"> <strong>Last Day:</strong> March, 15th, 2019</span>  <br>
+          <span> <strong>Venue: </strong> Dream Sleep Hotels</span>
+        </div>
+          
+        <div class="itinerary_card-hiden">
+          <span> <strong>Confirmation #: </strong> H073L958-789</span>
+          <span> <strong>Files uploaded:</strong> reservation_hotel_Zurich.pdf</span> <br>
+          <span> <strong>URL:</strong> www.sleepdream.com/sz</span>
+          <span> <strong>Phone:</strong>9878-8878</span>  <br>
+          <span> <strong>Address:</strong> Hotel Neighborhood, 321</span> <br>
+          <span> <strong>Details:</strong>we didn't order breakfast</span>
+        </div>
+      </div>
+      
+      <!-- <Event example1 -->
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card-main" ><h5><strong>Japaneses Dinner - Event</strong></h5>          
+          <span> <strong>When:</strong> March, 10th, 2019 - 6:00 P.M. </span> <br>
+          <span> <strong>Where: </strong>Arigato Restaurant</span>  <br>
+        </div>
+      
+        <div class="itinerary_card-hiden">
+          <span> <strong>Confirmation #: </strong> - </span>
+          <span class="to_time"> <strong>Files uploaded:</strong> - </span> <br>
+          <span> <strong>URL:</strong> www.arigato.ca </span>
+          <span class="to_time"> <strong>Phone:</strong>9878-8878</span>  <br>
+          <span> <strong>Address:</strong> Sashimi Street, 123 </span>  <br>
+          <span> <strong>Details:</strong>Talked with Janice and reserved for 4 people</span>
+        </div>
+      </div>
+
+      <!-- <Event example2 -->
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card-main" ><h5><strong>John's Birthday Party - Event</strong></h5>          
+          <span> <strong>When:</strong> March, 11th, 2019 - 11:00 A.M. </span>  <br>
+          <span> <strong>Where: </strong>Food's Palace</span> <br>
+        </div>
+
+        <div class="itinerary_card-hiden">
+          <span> <strong>Confirmation #: </strong> - </span>
+          <span> <strong>Files uploaded:</strong> - </span> <br>
+          <span> <strong>URL:</strong> - </span>
+          <span> <strong>Phone:</strong>9878-7777</span>  <br>
+          <span> <strong>Address:</strong> Palace Street, 789 </span> <br>
+          <span> <strong>Details:</strong>Let's celebrate!</span>
+        </div>
+      </div>
+
+      <!-- <Event example3 -->
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card-main"><h5><strong>Knowing Zurich - Event</strong></h5>          
+          <span> <strong>When:</strong>March, 10th, 2019 - March, 14th, 2019</span> <br>
+          <span> <strong>Where: </strong>Zurich city</span> <br>
+        </div>
+
+        <div class="itinerary_card-hiden">
+          <span> <strong>Confirmation #: </strong> - </span>
+          <span> <strong>Files uploaded:</strong> - </span> <br>
+          <span> <strong>URL:</strong> </span>
+          <span> <strong>Phone:</strong> </span>  <br>
+          <span> <strong>Address:</strong> </span>  <br>
+          <span> <strong>Details:</strong>John's gonna guide us around this amazing city</span>
+        </div>
+      </div>
+
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card-main" ><h5><strong>Let's go Rome - Transportation</strong></h5>
+          <!-- <div className="transport-item" key={itinerary.id}> -->
+          <!-- <h2> Going FROM {itinerary.city_depart} TO {itinerary.city_arrival}</h2> -->
+          <!-- consider only the title -->
+          <span> <strong>Departure:</strong> March, 15th, 2019 - 1:00 P.M. </span>
+          <!-- format a nice date and time showing the trip starting -->
+
+          <span> <strong>Arrival:</strong> 3:00 P.M. </span> <br>
+          <!--  format a nice date and time showing the trip ending -->
+
+          <span> <strong>Leaving from: </strong>Fiumicino Airport</span>  <br>
+          <!-- here we display the place where the transportation will depart -->
+        </div>
+
+        <div class="itinerary_card-hiden">
+          <span> <strong>Confirmation #: </strong> Fl1G7h958-789 </span>
+          <!-- ticket number -->
+          <span> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span> <br>
+          <!-- figure out how to display the document (plura? all documents or only for that specific user?) -->
+          <span> <strong>Details:</strong>go to Rome by train</span>
+          <!-- details typed by the user -->
+        </div>
+      </div>
+
+      <!-- Accommodation example -->
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card" ><h5><strong>Colisium Hotels - Accommodation</strong></h5>
+          <span> <strong>First Day:</strong> March, 10th, 2019</span>          
+          <span> <strong>Last Day:</strong> March, 15th, 2019</span>  <br>
+          <span> <strong>Venue: </strong> Dream Sleep Hotels</span> <br>
+        </div>
+          
+        <div class="itinerary_card-hiden">
+          <span> <strong>Confirmation #: </strong> H073L958-789</span>
+          <span> <strong>Files uploaded:</strong> reservation_hotel_Zurich.pdf</span> <br>
+          <span> <strong>URL:</strong> www.sleepdream.com/sz</span>
+          <span> <strong>Phone:</strong>9878-8878</span>  <br>
+          <span> <strong>Address:</strong> Hotel Neighborhood, 321</span> <br>
+          <span> <strong>Details:</strong>we didn't order breakfast</span>
+        </div>
+      </div>
+      
+      <!-- <Event example1 -->
+      <div class="itinerary_card" ><h5><strong>Japaneses Dinner - Event</strong></h5>          
+          <span> <strong>When:</strong> March, 10th, 2019 - 6:00 P.M. </span>
+
+          <br>
+          <span> <strong>Where: </strong>Arigato Restaurant</span>
+
+          <br>
+          <span> <strong>Confirmation #: </strong> - </span>
+
+          <span> <strong>Files uploaded:</strong> - </span>
+
+          <br>
+          <span> <strong>URL:</strong> www.arigato.ca </span>
+          <span> <strong>Phone:</strong>9878-8878</span>
+
+          <br>
+          <span> <strong>Address:</strong> Sashimi Street, 123 </span>
+
+          <br>
+          <span> <strong>Details:</strong>Talked with Janice and reserved for 4 people</span>
+      </div>
+
+
       <div class="itinerary_card"><h2>Container 3</h2></div>
-      <div class="itinerary_card"><h2>Container 4</h2></div>
-      <div class="itinerary_card"><h2>Container 5</h2></div>
-      <div class="itinerary_card"><h2>Container 6</h2></div>
+
     </section>
-    <footer>
-      <h1>Carousel will go here</h1>
-    </footer>
+
     <script src="" async defer></script>
+    <script>
+      let parent_cards = document.getElementsByClassName("itinerary_card-parent");
+      let i;
+      for (i = 0; i < parent_cards.length; i++) {
+        parent_cards[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          let main_card = this.getElementsByClassName("itinerary_card-main")[0];
+          let hiden_card = this.getElementsByClassName("itinerary_card-hiden")[0];
+
+          if (hiden_card.style.display === "block") {
+            // console.log("BLOCKKKKKKKKK");
+            main_card.style.border = "solid black 1px";
+            hiden_card.style.display = "none";
+            main_card.style.border = "solid black 1px";
+            main_card.style.borderRadius = "10px 10px 10px 10px";
+            
+          } else {
+            // console.log("NOTTTTTTTTTTTT BLOCK");
+            hiden_card.style.display = "block";
+            main_card.style.borderRadius = "10px 10px 0px 0px";
+            main_card.style.borderBottom = "0px";
+            main_card.style.padding = "5px 5px 0 5px";
+            main_card.style.margin = "5px 5px 0 5px";
+
+            hiden_card.style.minWidth = "600px";
+            hiden_card.style.border = "solid black 1px";
+            hiden_card.style.borderRadius = "0 0 10px 10px";
+            hiden_card.style.borderTop = "none";
+            hiden_card.style.padding = "0 5px 5px 5px";
+            hiden_card.style.margin = "0 5px 5px 5px";
+            hiden_card.style.backgroundColor = "whitesmoke";
+            hiden_card.style.cursor = "pointer";
+            hiden_card.style.outline = "none";
+          }
+        });
+      }
+    </script>
   </body>
 </html>
