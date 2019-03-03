@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
 import ItemsContainer from './component_items_container';
+import GoogleRecommendation from './component_recomendation';
+import CreateItinerary from './component_form_createtrip';
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +43,7 @@ class App extends Component {
         </div>
       </header>
         <ItemsContainer />
+        <CreateItinerary />
       </div>
     );
   }
