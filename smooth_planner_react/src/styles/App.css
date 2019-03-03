@@ -3,32 +3,10 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
-  padding: 0 10px;
   background-color: sandybrown;
   position: fixed;
   width: 100%;
@@ -41,30 +19,50 @@ section {
   padding-bottom: 100px;
 }
 
-.itinerary_card {
+.itinerary_card-parent {
+  width: 600px;
+}
+
+.itinerary_card-parent > .itinerary_card-main {
   border: 1px solid black;
   padding: 5px;
-  min-width: 500px;
-  min-height: 120px;
+  width: 600px;
   border-radius: 10px;
   margin: 5px;
   background-color: whitesmoke;
+  cursor: pointer;
+  outline: none;
 }
 
-.itinerary_card > h5 {
+.itinerary_card-main > h5 {
   border-bottom: 1px solid;
   margin-bottom: 0;
 }
 
-.itinerary_card .to_time {
+.to_time {
   float: right;
 }
+
+.active, .collapsible:hover {
+  /* background-color: #555; */
+}
+
+.itinerary_card-parent > .itinerary_card-hiden {
+  /* transition:height 1s ease-in-out; */
+  display: none;
+  overflow: hidden;
+  width: 600px;
+}
+
+
+
+
 
 .add_new_buttons {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 65px;
+  padding-top: 85px;
   margin: 0 125px 2px 125px;
 }
 
@@ -90,7 +88,7 @@ footer{
 } 
 
 body {
-  background-image: url("./images/pexels-photo-1320684.jpeg");
+  /* background-image: url("./images/pexels-photo-1320684.jpeg"); */
   background-size: auto;
   width: 100%;
   background-size: cover;
