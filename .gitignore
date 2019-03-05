@@ -23,6 +23,7 @@ package-lock.json
 .env
 Gemfile.lock
 smooth_planner_api/log/development.log
+secrets.yml
 
 
 

@@ -267,6 +267,7 @@ Processing by Api::V1::ItinerariesController#index as JSON
 Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 2.3ms)
 
 
+<<<<<<< HEAD
 Started GET "/api/v1/itineraries/kkk" for 10.0.2.2 at 2019-03-04 22:45:32 +0000
   [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by Api::V1::ItinerariesController#show as HTML
@@ -1568,6 +1569,11 @@ Completed 200 OK in 77ms (Views: 70.6ms | ActiveRecord: 0.0ms)
 Started GET "/api/v1/ideas" for 10.0.2.2 at 2019-03-05 15:52:46 +0000
   
 ActionController::RoutingError (No route matches [GET] "/api/v1/ideas"):
+=======
+Started GET "/api/v1/itinerary/1" for 10.0.2.2 at 2019-03-04 23:10:19 +0000
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/itinerary/1"):
   
 actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
@@ -1591,6 +1597,60 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/favicon.ico" for 10.0.2.2 at 2019-03-04 23:10:20 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/itinerariers/1" for 10.0.2.2 at 2019-03-04 23:10:50 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/itinerariers/1"):
+>>>>>>> feature/reccomendations
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/api/v1/itineraries/1" for 10.0.2.2 at 2019-03-05 15:52:53 +0000
 Processing by Api::V1::ItinerariesController#show as HTML
   Parameters: {"id"=>"1"}
@@ -2193,5 +2253,200 @@ Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.5ms)
   [1m[36mItinerary Load (1.2ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mItem Load (5.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."itinerary_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["itinerary_id", 1]]
 Completed 200 OK in 45ms (Views: 20.0ms | ActiveRecord: 7.1ms)
+=======
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:11:06 +0000
+  
+SyntaxError (/vagrant/sm-plnr/smooth_planner_api/app/controllers/api/v1/itineraries_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      render json: Itinerary.find_by params[:id]
+                                           ^
+/vagrant/sm-plnr/smooth_planner_api/app/controllers/api/v1/itineraries_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/itineraries_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/api/v1/itineraries_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:12:16 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/vagrant/sm-plnr/smooth_planner_api/app/controllers/api/v1/itineraries_controller.rb:16: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/itineraries_controller.rb:16: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:12:43 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (3.2ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 0.9ms | ActiveRecord: 11.3ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:13:33 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 5.3ms)
+
+
+  
+NoMethodError (undefined method `google_reccomendations' for #<Itinerary:0x0000000002003320>):
+  
+app/controllers/api/v1/itineraries_controller.rb:9:in `show'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:14:08 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 4.8ms)
+
+
+  
+NameError (undefined local variable or method `hello' for #<Api::V1::ItinerariesController:0x0000000002482608>):
+  
+app/controllers/api/v1/itineraries_controller.rb:15:in `google_reccomendations'
+app/controllers/api/v1/itineraries_controller.rb:9:in `show'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:14:34 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.6ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 1.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:19:49 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 4.8ms)
+
+
+  
+NoMethodError (undefined method `items' for #<Itinerary:0x0000000000fe6b90>):
+  
+app/controllers/api/v1/itineraries_controller.rb:15:in `google_reccomendations'
+app/controllers/api/v1/itineraries_controller.rb:9:in `show'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:20:16 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.4ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 5.0ms)
+
+
+  
+NoMethodError (undefined method `item' for #<Itinerary:0x0000000002e6e6d0>):
+  
+app/controllers/api/v1/itineraries_controller.rb:15:in `google_reccomendations'
+app/controllers/api/v1/itineraries_controller.rb:9:in `show'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:20:20 +0000
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (1.0ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 6.1ms)
+
+
+  
+NoMethodError (undefined method `item' for #<Itinerary:0x00000000052101d8>):
+  
+app/controllers/api/v1/itineraries_controller.rb:15:in `google_reccomendations'
+app/controllers/api/v1/itineraries_controller.rb:9:in `show'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:21:40 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.3ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 4.2ms)
+
+
+  
+NoMethodError (undefined method `item' for #<Itinerary:0x0000000002b7e650>
+Did you mean?  items):
+  
+app/controllers/api/v1/itineraries_controller.rb:15:in `google_reccomendations'
+app/controllers/api/v1/itineraries_controller.rb:9:in `show'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:22:15 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.4ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (4.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."itinerary_id" = $1[0m  [["itinerary_id", 1]]
+Completed 500 Internal Server Error in 246ms (Views: 67.3ms | ActiveRecord: 12.9ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/itineraries_controller.rb:10:in `show'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:22:49 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.7ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."itinerary_id" = $1[0m  [["itinerary_id", 1]]
+Completed 200 OK in 224ms (Views: 58.0ms | ActiveRecord: 9.9ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:38:13 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.8ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1224ms (Views: 18.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:42:36 +0000
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItinerary Load (0.6ms)[0m  [1m[34mSELECT  "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 856ms (Views: 12.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:43:13 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 130ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:57:40 +0000
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/vagrant/sm-plnr/smooth_planner_api/app/controllers/api/v1/itineraries_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+      render json: @recos
+            ^):
+  
+app/controllers/api/v1/itineraries_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:58:10 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1065ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:58:33 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 133ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-04 23:59:52 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 970ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-05 00:06:05 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1040ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//api/v1/itineraries/1" for 10.0.2.2 at 2019-03-05 00:07:45 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 792ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+>>>>>>> feature/reccomendations
 
 
