@@ -1,9 +1,9 @@
+//  form autocomplete component. THis component's state saves the address. 
+//  to completely integrate it, need to pass a helper function to save it in parent's state.
 import React, { Component } from 'react';
-import Script from 'react-load-script';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
   geocodeByAddress,
-  geocodeByPlaceId,
   getLatLng,
 } from 'react-places-autocomplete';
 
@@ -16,12 +16,16 @@ export default class LocationSearchInput extends React.Component {
  
   handleChange = address => {
     this.setState({ address });
+    console.log("state", this.state);
   };
  
   handleSelect = address => {
     geocodeByAddress(address)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
+      .then(results => {
+        this.props.handleAddress(results[0].formatted_address)
+        return getLatLng(results[0])
+      })
+      .then(latlng => console.log(latlng))
       .catch(error => console.error('Error', error));
   };
  
@@ -47,7 +51,7 @@ export default class LocationSearchInput extends React.Component {
                 const className = suggestion.active
                   ? 'suggestion-item--active'
                   : 'suggestion-item';
-                // inline style for demonstration purpose
+                // inline style for demonstration purpose - this needs to be changed in line with the overall styling of the app
                 const style = suggestion.active
                   ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                   : { backgroundColor: '#ffffff', cursor: 'pointer' };

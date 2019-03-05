@@ -19,7 +19,7 @@ module Api::V1
       # HTTP.get("http://example.com/resource", :params => {:foo => "bar"})
 
       @recos = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?", :params => {
-        :query => "restaurants",
+        :query => "restaurants in Madrid",
         :key => Rails.application.secrets.google_api_key,
         :radius => "10000",
         :location => "49.2803221,-123.112195", # hardcoded for now to VPL's lat and long
