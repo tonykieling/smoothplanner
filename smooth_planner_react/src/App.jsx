@@ -11,8 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      itineraries: [],
-      test: 'does this change'
+      itineraries: []
     }
   }
 
@@ -28,7 +27,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.test)
 
     return (
       <BrowserRouter>
