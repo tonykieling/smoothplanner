@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
 import ItemsContainer from './component_items_container';
-import Home from './component_home';
+// import Home from './component_home';
 import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
 import logo from './styles/images/plane_world.png'

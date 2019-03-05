@@ -9,14 +9,16 @@ export default class ItemsContainer extends Component {
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
-          <div className="itinerary_card-parent">
-            <div className="itinerary_card-main">
-              <h2><strong>{item.title} - Event</strong></h2>
+          <div className="card">
+            <div className="card-header">
+              <h4><strong>{item.title} - Event</strong></h4>
+            </div>
+            <div className="card-body">
               <span> <strong>When:</strong>{item.time_start}</span> <br />
               <span> <strong>Where: </strong>{item.time_end}</span>  <br />
             </div>
           
-            <div className="itinerary_card-hiden">
+            <div className="card-body">
               <span> <strong>Confirmation #: </strong>{item.confirmation}</span>
               <span className="to_time"> <strong>Files uploaded:</strong> - </span> <br />
               <span> <strong>URL:</strong> www.arigato.ca </span>
