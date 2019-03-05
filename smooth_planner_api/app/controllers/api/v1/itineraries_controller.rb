@@ -7,7 +7,7 @@ module Api::V1
 
     def show
       @itinerary = Itinerary.find(params[:id])
-      @items = @itinerary.items.order(time_start: :desc)
+      @items = @itinerary.items.order(:time_start)
       render json: @items
     end
   end

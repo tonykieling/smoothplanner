@@ -27,12 +27,12 @@ export default class ItemsContainer extends Component {
     axios.get(`http://localhost:3001/api/v1/itineraries/${this.state.tripID}.json`)
     .then(response => {
       this.setState({cards: response.data});
+      console.log(response.data)
     })
     .catch(error => {
       console.log(error)
     })
   }
-
 
   render() {
     const itineraries = this.state;
@@ -50,7 +50,7 @@ export default class ItemsContainer extends Component {
     });
 
     return (
-      <div >
+      <div className="items_container">
         {allCards}
       </div>
     )

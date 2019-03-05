@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://localhost:3001/api/v1/itineraries.json')
     .then(response => {
-      console.log(response.data)
+      // console.log(response.data)
       this.setState({itineraries: response.data})
     })
     .catch(error => {
