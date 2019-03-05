@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
 import ItemsContainer from './component_items_container';
+import Home from './component_home';
+import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
+import logo from './styles/images/plane_world.png'
 
 class App extends Component {
   constructor(props) {
@@ -33,32 +36,32 @@ class App extends Component {
       <div className="App">
       <header>
         <nav>
-          
           <div>
-            <Link to={'/h'}>Home</Link>
+            <Link to={'/'}>Home</Link>
             {/* <Link to={`/${:itinerary.id}`}></Link><h1>User </h1> */}
             </div>
-          <div><h1>Other field</h1></div>
+          <div>
+              <img src={logo} alt="Logo"/>
+            <h3>Smooth Planner</h3>
+          </div>
+          <TripsList trips={this.state.itineraries} />
         </nav> 
-        <div className="add_new_buttons">
-            <button type="button" className="btn btn-outline-success">Success</button>
-            <button type="button" className="btn btn-outline-success">Success</button>
-            <button type="button" className="btn btn-outline-success">Success</button>
-        </div>
       </header>
-        <Route path="/h/:id" component={TestWelcomePage}/>
+      <main>
+        <div className="add_new_buttons">
+            <button type="button" className="btn btn-outline-success">+ Transportation</button>
+            <button type="button" className="btn btn-outline-success">+ Accomodation</button>
+            <button type="button" className="btn btn-outline-success">+ Event</button>
+        </div>
+        <Route path="/itineraries/:id" exact component={ Home }/>
         <ItemsContainer />
+        </main>
       </div>
       </BrowserRouter>
     );
   }
 }
 
-const TestWelcomePage = ({ match }) => (
-  <div>
-    <h1>Welcome!!{match.params.id}</h1>
-  </div>
-)
 
 
 export default App;
