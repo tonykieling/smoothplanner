@@ -11,7 +11,7 @@ export default class ItemsContainer extends Component {
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
           <div className="card">
             <div className="card-header" >
-              <h4><strong>{item.title} - Accommodation</strong></h4>
+              <h4><strong>{item.title ? item.title : item.venue}</strong></h4>
             </div>
             <div className="card-body">
               <span> <strong>First Day:</strong> {item.time_start}</span>
@@ -25,7 +25,7 @@ export default class ItemsContainer extends Component {
               <span> <strong>URL:</strong> www.sleepdream.com/sz</span>
               <span> <strong>Phone:</strong>{item.phone}</span>  <br />
               <span> <strong>Address:</strong>{item.address}</span> <br />
-              <span> <strong>Details:</strong>{item.details}</span>
+              <span> {item.details ? `<strong>Details: </strong>${item.details}` : "" }</span>
             </div>
           </div>
     )

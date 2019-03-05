@@ -10,18 +10,19 @@ export default class ItemsContainer extends Component {
     return (
           <div className="card">
             <div className="card-header" >
-              <h4><strong>{item.title} - Transportation</strong></h4>
+              <h4><strong>Going to {item.city_arrival}</strong></h4>
             </div>
             <div className="card-body">
-              <span> <strong>Departure:</strong>{item.time_start}</span>
-              <span> <strong>Arrival:</strong>{item.time_end}</span> <br />
-              <span> <strong>Leaving from: </strong>{item.city_depart}</span>  <br />
+              <span> <strong>Departure: </strong>{item.time_start}</span>
+              <span> <strong>Arrival: </strong>{item.time_end}</span> <br />
+              <span> <strong>Leaving from: </strong>{item.city_depart} {item.venue ? ` - ${item.venue}` : ""}</span>  <br />
             </div>
 
             <div className="card-body">
               <span> <strong>Confirmation #: </strong>{item.confirmation}</span>
-              <span className="to_time"> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span> <br />
-              <span> <strong>Details:</strong>{item.details}</span>
+              <span className="to_time"> <strong>Files uploaded: </strong> ticket_to_Zurich.pdf</span> <br />
+              <span> {item.details ? `<strong>Details: </strong>${item.details}` : "" }</span>
+              {/* right now, if details is empty, it doesnt show up */}
             </div>
           </div>
     )
