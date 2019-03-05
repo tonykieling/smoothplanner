@@ -1365,3 +1365,4 @@ Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 4.8ms)
 Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 8.6ms)
 
 
+  [1m[36mItinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
