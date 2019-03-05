@@ -8,6 +8,8 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# CREATE USER
 user1 = User.create({
   name: "Bob Collins",
   email: "bob@user.com",
@@ -18,6 +20,19 @@ user2 = User.create({
   email: "suzy@user.com",
 })
 
+user3 = User.create({
+  name: "Darlan Princivale",
+  email: "darlan@user.com",
+})
+
+user4 = User.create({
+  name: "Neila Corad",
+  email: "neila@user.com",
+})
+
+
+
+# CREATE ITINERARIES
 Itinerary.create(
 {
   name: "Christmas trip",
@@ -30,29 +45,49 @@ Itinerary.create(
 {
   name: "Summer holidays in Europe",
   time_start:'July 1, 2019',
-  time_end:'July 15, 2020',
+  time_end:'July 15, 2019',
   user_id: 1
 })
 
 Itinerary.create(
 {
-  id: 't03',
   name: "Valentine day in Paris",
-  user_id: 1
+  user_id: 3
 })
 
+Itinerary.create(
+  {
+    name: "Going to Zurich",
+    time_start:'September 1, 2019',
+    time_end:'September 15, 2019',
+    user_id: 4
+  })
+
+Itinerary.create(
+  {
+    name: "Japan Trip 2020",
+    time_start:'July 1, 2020',
+    time_end:'July 15, 2020',
+    user_id: 1
+  })
+
+
+
+# CREATE TRIPS ITEMS
+# first items trip
 Item.create({
   time_start: 'December 24, 2019 08:20:00',
-  time_end: 'January 3, 2020 10:30:00',
+  time_end: 'December 25, 2020 06:30:00',
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Cancun',
+  venue: 'YVR Airport',
   confirmation: 'ABC4YQ',
   itinerary_id: 0
 })
 
 Item.create({
-  time_start: 'December 24, 2019 08:20:00',
+  time_start: 'December 25, 2019 08:20:00',
   time_end: 'January 3, 2020 10:30:00',
   item_type: 'A',
   venue: 'Mariott Cancun Resort',
@@ -87,12 +122,25 @@ Item.create({
 })
 
 Item.create({
+  time_start: 'January 2, 2020 06:00:00',
+  time_end: 'December 2, 2020 16:30:00',
+  item_type: 'T',
+  city_depart: 'Cancun',
+  city_arrival: 'Vancouver',
+  confirmation: 'TBC4YQ',
+  venue: 'Cancun International Airport',
+  itinerary_id: 0
+})
+
+
+# second items trip
+Item.create({
   time_start: 'July 1, 2019 06:20:00',
-  time_end: 'July 15, 2020 20:30:00',
+  time_end: 'July 1, 2020 11:30:00',
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Basel',
-  confirmation: 'ABC4YQ',
+  confirmation: 'A2C4YQ',
   itinerary_id: 1
 })
 
@@ -125,9 +173,40 @@ Item.create({
   time_start: 'July 5, 2019 14:30:00',
   time_end:'July 15, 2019 10:30:00',
   item_type: 'T',
-  city_depart: 'Geneva',
+  city_depart: 'Basel',
   city_arrival: 'Geneva',
   title: 'Avis car rental',
   details: 'pick up at airport',
   itinerary_id: 1
+})
+
+Item.create({
+  time_start: 'July 5, 2019 14:30:00',
+  time_end:'July 15, 2019 10:30:00',
+  item_type: 'E',
+  venue: 'any place with beach and sun'
+  title: 'Beach time!!!',
+  details: 'take some sun',
+  itinerary_id: 1
+})
+
+Item.create({
+  time_start: 'July 15, 2019 08:20:00',
+  time_end: 'July 15, 2020 17:30:00',
+  item_type: 'T',
+  city_depart: 'Geneva',
+  city_arrival: 'Vancouver',
+  confirmation: 'A3C4YQ',
+  itinerary_id: 1
+})
+
+# third items trip
+# the user has just started thinking the trip
+Item.create({
+  time_start: 'September 1, 2019 10:20:00',
+  time_end: 'September 2, 2020 07:30:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Zurich',
+  itinerary_id: 3
 })
