@@ -11,6 +11,7 @@ export default class ItemsContainer extends Component {
           <div className="card">
             <div className="card-header" >
               <h4><strong>{item.title} - Transportation</strong></h4>
+              <span className="delete_item">X</span>
             </div>
             <div className="card-body">
               <span> <strong>Departure:</strong>{item.time_start}</span>
