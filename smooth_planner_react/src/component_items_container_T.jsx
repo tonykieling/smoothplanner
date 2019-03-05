@@ -15,7 +15,7 @@ export default class ItemsContainer extends Component {
             <div className="card-body">
               <span> <strong>Departure:</strong>{item.time_start}</span>
               <span> <strong>Arrival:</strong>{item.time_end}</span> <br />
-              <span> <strong>Leaving from: </strong>{item.venue}</span>  <br />
+              <span> <strong>Leaving from: </strong>{item.city_depart}</span>  <br />
             </div>
 
             <div className="card-body">

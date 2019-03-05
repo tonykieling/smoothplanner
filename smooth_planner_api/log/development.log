@@ -1300,3 +1300,68 @@ Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.5ms)
 Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 4.0ms)
 
 
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 16:57:12 +0000
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 16:57:12 +0000
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#index as JSON
+Processing by Api::V1::ItemsController#index as JSON
+  [1m[36mItinerary Load (4.3ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+  [1m[36mItem Load (4.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 56ms (Views: 12.0ms | ActiveRecord: 6.7ms)
+
+
+Completed 200 OK in 71ms (Views: 31.4ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 17:00:06 +0000
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 17:00:06 +0000
+Processing by Api::V1::ItemsController#index as JSON
+Processing by Api::V1::ItinerariesController#index as JSON
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+  [1m[36mItem Load (2.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 22ms (Views: 13.5ms | ActiveRecord: 8.3ms)
+
+
+Completed 200 OK in 32ms (Views: 24.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 17:00:12 +0000
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 17:00:12 +0000
+Processing by Api::V1::ItinerariesController#index as JSON
+Processing by Api::V1::ItemsController#index as JSON
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mItinerary Load (4.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 4.6ms)
+
+
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 17:08:47 +0000
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 17:08:47 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItinerariesController#index as JSON
+Processing by Api::V1::ItemsController#index as JSON
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 54ms (Views: 11.9ms | ActiveRecord: 3.7ms)
+
+
+Completed 200 OK in 67ms (Views: 23.9ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 17:09:35 +0000
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 17:09:35 +0000
+Processing by Api::V1::ItinerariesController#index as JSON
+Processing by Api::V1::ItemsController#index as JSON
+  [1m[36mItinerary Load (0.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mItem Load (3.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 8.6ms)
+
+
