@@ -858,3 +858,87 @@ Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.5ms)
 Completed 200 OK in 44ms (Views: 26.4ms | ActiveRecord: 16.5ms)
 
 
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 03:00:56 +0000
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 03:00:56 +0000
+Processing by Api::V1::ItinerariesController#index as JSON
+Processing by Api::V1::ItemsController#index as JSON
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mItinerary Load (1.9ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.8ms)
+
+
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 03:04:08 +0000
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 03:04:08 +0000
+Processing by Api::V1::ItinerariesController#index as JSON
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Processing by Api::V1::ItemsController#index as JSON
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 03:04:49 +0000
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 03:04:49 +0000
+Processing by Api::V1::ItinerariesController#index as JSON
+Processing by Api::V1::ItemsController#index as JSON
+  [1m[36mItinerary Load (1.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mItem Load (7.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 53ms (Views: 45.8ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 03:04:54 +0000
+Processing by Api::V1::ItemsController#index as JSON
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 03:04:54 +0000
+  [1m[36mItem Load (26.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Processing by Api::V1::ItinerariesController#index as JSON
+Completed 200 OK in 68ms (Views: 40.4ms | ActiveRecord: 26.7ms)
+
+
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 03:07:55 +0000
+Processing by Api::V1::ItemsController#index as JSON
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 03:07:55 +0000
+  [1m[36mItem Load (22.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Processing by Api::V1::ItinerariesController#index as JSON
+Completed 200 OK in 66ms (Views: 42.9ms | ActiveRecord: 22.6ms)
+
+
+  [1m[36mItinerary Load (4.3ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Completed 200 OK in 14ms (Views: 8.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 03:08:32 +0000
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 03:08:32 +0000
+Processing by Api::V1::ItinerariesController#index as JSON
+Processing by Api::V1::ItemsController#index as JSON
+  [1m[36mItinerary Load (3.1ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 3.1ms)
+
+
+Completed 200 OK in 74ms (Views: 70.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/items.json" for 10.0.2.2 at 2019-03-05 03:09:09 +0000
+Started GET "/api/v1/itineraries.json" for 10.0.2.2 at 2019-03-05 03:09:09 +0000
+Processing by Api::V1::ItemsController#index as JSON
+Processing by Api::V1::ItinerariesController#index as JSON
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mItinerary Load (14.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries"[0m
+Completed 200 OK in 87ms (Views: 72.1ms | ActiveRecord: 14.4ms)
+
+
