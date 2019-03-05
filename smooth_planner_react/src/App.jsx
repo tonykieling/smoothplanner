@@ -27,9 +27,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.itineraries.forEach((item) => {
-    //   return console.log(item.name)
-    // }))
 
     return (
       <BrowserRouter>
