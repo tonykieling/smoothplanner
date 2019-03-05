@@ -4,8 +4,9 @@ import React, { Component } from 'react';
 // this is the specific container for TRANSPORTATION card type
 export default class ItemsContainer extends Component {
   render() {
-    const item = this.props.item;
     
+    const item = this.props.item;
+
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
           // in this here there are some comments and thoughts in order to help the developement

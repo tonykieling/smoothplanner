@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-
 // this is the specific container for ACCOMMODATION card type
 export default class ItemsContainer extends Component {
 
   render() {
+
     const item = this.props.item;
-    console.log("ITEM::: ", item);
+    
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
           <div className="itinerary_card-parent">
