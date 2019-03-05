@@ -9,14 +9,14 @@ export default function expand_collapse() {
       let hiden_card = this.getElementsByClassName("itinerary_card-hiden")[0];
 
       if (hiden_card.style.display === "block") {
-        // console.log("BLOCKKKKKKKKK");
+        console.log("BLOCKKKKKKKKK");
         main_card.style.border = "solid black 1px";
         hiden_card.style.display = "none";
         main_card.style.border = "solid black 1px";
         main_card.style.borderRadius = "10px 10px 10px 10px";
         
       } else {
-        // console.log("NOTTTTTTTTTTTT BLOCK");
+        console.log("NOTTTTTTTTTTTT BLOCK");
         hiden_card.style.display = "block";
         main_card.style.borderRadius = "10px 10px 0px 0px";
         main_card.style.borderBottom = "0px";

@@ -4,11 +4,30 @@
 
 nav {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   border: 1px solid black;
-  background-color: sandybrown;
-  position: fixed;
-  width: 100%;
+  background-color: #f5f6f7e8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+}
+
+.trip-list {
+  margin-top: 2em;
+}
+
+.trip-list > ul {
+  margin-right: 10px;
+  padding-left: 10px;
+}
+.trip-list > ul > a {
+  padding: 5px;
+}
+
+main {
+  margin-left: 200px;
+  padding: 5px;
 }
 
 section {
@@ -64,7 +83,7 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 85px;
+  padding-top: 5px;
   margin: 0 125px 2px 125px;
 }
 
@@ -91,13 +110,14 @@ footer{
 
 body {
   /* background-image: url("./images/pexels-photo-1320684.jpeg"); */
-  background-image: url("https://www.indietraveller.co/wp-content/uploads/2014/05/bigtrip__large.jpg");
+  /* background-image: url("https://www.indietraveller.co/wp-content/uploads/2014/05/bigtrip__large.jpg"); */
   background-attachment:fixed;
   background-size: auto;
   width: 100%;
   background-size: cover;
   background-position: 100%;
   /* min view width should be 550px */
+  font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
 }
 
 .form-title  {

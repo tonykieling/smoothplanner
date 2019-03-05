@@ -22,7 +22,6 @@ export default class ItemsContainer extends Component {
 
     axios.get('http://localhost:3001/api/v1/items.json')
     .then(response => {
-      console.log("22222222");
       this.setState({cards: response.data});
     });
 
@@ -43,7 +42,7 @@ export default class ItemsContainer extends Component {
       else if (item.item_type === "E") {
         return <ItemsContainerE key={item.id} item={item}/>
       }
-      else if (item.item_type === "T") {
+      else {
         return <ItemsContainerT key={item.id} item={item}/>
       }
     });
@@ -57,21 +56,4 @@ export default class ItemsContainer extends Component {
 }
 
 
-// changes:
-// - App.css
-// - component_items_container.jsx
-// - component_items_container-A.jsx
-// - component_items_container-E.jsx
-// - component_items_container-T.jsx
-// ps: React complains about the name style for the components. In this way, I followed the directions to be PascalCase.
-// TODO:
-//    make JS script run inside react's render
-//    cleanup coments from component_items_container-T.jsx and
-//    make it dynamic and talk with axios
 
-// https://www.fullstackreact.com/articles/Declaratively_loading_JS_libraries/index.html
-
-// DONT need
-// Need instal React Helmet in order to run the JS script
-// `npm install --save react-helmet`
-// - 'package.json' added react-helmet
