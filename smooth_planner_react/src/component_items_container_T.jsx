@@ -8,15 +8,17 @@ export default class ItemsContainer extends Component {
     const item = this.props.item;
 
     return (
-          <div className="itinerary_card-parent">
-            <div className="itinerary_card-main" >
-              <h2><strong>{item.title} - Transportation</strong></h2>
+          <div className="card">
+            <div className="card-header" >
+              <h4><strong>{item.title} - Transportation</strong></h4>
+            </div>
+            <div className="card-body">
               <span> <strong>Departure:</strong>{item.time_start}</span>
               <span> <strong>Arrival:</strong>{item.time_end}</span> <br />
               <span> <strong>Leaving from: </strong>{item.venue}</span>  <br />
             </div>
 
-            <div className="itinerary_card-hiden">
+            <div className="card-body">
               <span> <strong>Confirmation #: </strong>{item.confirmation}</span>
               <span className="to_time"> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span> <br />
               <span> <strong>Details:</strong>{item.details}</span>
