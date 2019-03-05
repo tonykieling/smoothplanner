@@ -52,24 +52,27 @@ section {
   outline: none;
 }
 
-.itinerary_card-main > h5 {
+.itinerary_card-main > h2 {
   border-bottom: 1px solid;
   margin-bottom: 0;
+  margin-top: 0;
+  color: brown;
 }
 
 .to_time {
   float: right;
 }
 
-.active, .collapsible:hover {
+/* .active, .collapsible:hover { */
   /* background-color: #555; */
-}
+/* } */
 
 .itinerary_card-parent > .itinerary_card-hiden {
   /* transition:height 1s ease-in-out; */
   display: none;
   overflow: hidden;
   width: 600px;
+  /* background-color: "whitesmoke"; */
 }
 
 
@@ -107,10 +110,12 @@ footer{
 
 body {
   /* background-image: url("./images/pexels-photo-1320684.jpeg"); */
+  /* background-image: url("https://www.indietraveller.co/wp-content/uploads/2014/05/bigtrip__large.jpg"); */
+  background-attachment:fixed;
   background-size: auto;
   width: 100%;
   background-size: cover;
-  background-position: 50%;
+  background-position: 100%;
   /* min view width should be 550px */
   font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
 }

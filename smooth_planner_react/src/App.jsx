@@ -24,12 +24,12 @@ class App extends Component {
     .catch(error => {
       console.log(error)
     })
-    
   }
+
   render() {
-    console.log(this.state.itineraries.forEach((item) => {
-      return console.log(item.name)
-    }))
+    // console.log(this.state.itineraries.forEach((item) => {
+    //   return console.log(item.name)
+    // }))
 
     return (
       <BrowserRouter>

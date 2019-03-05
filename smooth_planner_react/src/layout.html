@@ -47,11 +47,8 @@
         <div class="itinerary_card-hiden">
           <span> <strong>Confirmation #: </strong> Fl1G7h958-789 </span>
           <!-- ticket number -->
-
-          <span class="to_time"> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span>
+          <span class="to_time"> <strong>Files uploaded:</strong> ticket_to_Zurich.pdf</span> <br>
           <!-- figure out how to display the document (plura? all documents or only for that specific user?) -->
-
-          <br>
           <span> <strong>Details:</strong> my friend John will pick us at 3:30 at the airport</span>
           <!-- details typed by the user -->
         </div>
@@ -133,10 +130,8 @@
           <!-- consider only the title -->
           <span> <strong>Departure:</strong> March, 15th, 2019 - 1:00 P.M. </span>
           <!-- format a nice date and time showing the trip starting -->
-
           <span> <strong>Arrival:</strong> 3:00 P.M. </span> <br>
           <!--  format a nice date and time showing the trip ending -->
-
           <span> <strong>Leaving from: </strong>Fiumicino Airport</span>  <br>
           <!-- here we display the place where the transportation will depart -->
         </div>
@@ -153,51 +148,44 @@
 
       <!-- Accommodation example -->
       <div class="itinerary_card-parent">
-        <div class="itinerary_card" ><h5><strong>Colisium Hotels - Accommodation</strong></h5>
-          <span> <strong>First Day:</strong> March, 10th, 2019</span>          
-          <span> <strong>Last Day:</strong> March, 15th, 2019</span>  <br>
-          <span> <strong>Venue: </strong> Dream Sleep Hotels</span> <br>
+        <div class="itinerary_card-main" ><h5><strong>Colisium Hotels - Accommodation</strong></h5>
+          <span> <strong>First Day:</strong> March, 15th, 2019</span>          
+          <span> <strong>Last Day:</strong> March, 17th, 2019</span>  <br>
+          <span> <strong>Venue: </strong> Soft bed Hotels</span> <br>
         </div>
           
         <div class="itinerary_card-hiden">
           <span> <strong>Confirmation #: </strong> H073L958-789</span>
-          <span> <strong>Files uploaded:</strong> reservation_hotel_Zurich.pdf</span> <br>
-          <span> <strong>URL:</strong> www.sleepdream.com/sz</span>
+          <span> <strong>Files uploaded:</strong> reservation_hotel_Rome.pdf</span> <br>
+          <span> <strong>URL:</strong> www.softbed.com/it</span>
           <span> <strong>Phone:</strong>9878-8878</span>  <br>
-          <span> <strong>Address:</strong> Hotel Neighborhood, 321</span> <br>
-          <span> <strong>Details:</strong>we didn't order breakfast</span>
+          <span> <strong>Address:</strong>Red Wine, 321</span> <br>
+          <span> <strong>Details:</strong>with breakfast!!</span>
         </div>
       </div>
       
       <!-- <Event example1 -->
-      <div class="itinerary_card" ><h5><strong>Japaneses Dinner - Event</strong></h5>          
-          <span> <strong>When:</strong> March, 10th, 2019 - 6:00 P.M. </span>
-
-          <br>
-          <span> <strong>Where: </strong>Arigato Restaurant</span>
-
-          <br>
+      <div class="itinerary_card-parent">
+        <div class="itinerary_card-main" ><h5><strong>Pizza night - Event</strong></h5>          
+          <span> <strong>When:</strong> March, 16th, 2019 - 6:30 P.M. </span> <br>
+          <span> <strong>Where: </strong>Tutti buona gente Pizzaria</span>  <br>
+        </div>
+      
+        <div class="itinerary_card-hiden">
           <span> <strong>Confirmation #: </strong> - </span>
-
-          <span> <strong>Files uploaded:</strong> - </span>
-
-          <br>
-          <span> <strong>URL:</strong> www.arigato.ca </span>
-          <span> <strong>Phone:</strong>9878-8878</span>
-
-          <br>
-          <span> <strong>Address:</strong> Sashimi Street, 123 </span>
-
-          <br>
-          <span> <strong>Details:</strong>Talked with Janice and reserved for 4 people</span>
+          <span> <strong>Files uploaded:</strong> - </span> <br>
+          <span> <strong>URL:</strong> www.pizza.it </span>
+          <span> <strong>Phone:</strong>9878-8878</span><br>
+          <span> <strong>Address:</strong>Pizza a lenha Street, 123 </span>  <br>
+          <span> <strong>Details:</strong>Talked with Paola and reserved for 2 people</span>
+        </div>
       </div>
-
 
       <div class="itinerary_card"><h2>Container 3</h2></div>
 
     </section>
 
-    <script src="" async defer></script>
+    <!-- <script src="" async defer></script> -->
     <script>
       let parent_cards = document.getElementsByClassName("itinerary_card-parent");
       let i;
