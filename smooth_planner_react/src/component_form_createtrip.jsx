@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Script from 'react-load-script';
+import axios from 'axios';
 import LocationSearchInput from './component_form_autocomplete';
 
 class CreateTrip extends Component {
@@ -14,6 +14,7 @@ class CreateTrip extends Component {
       destination_latlng: ''
     };
     this.onChangeDestination = this.onChangeDestination.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   onChangeTitle = (event)=>{
     this.setState({title: event.target.value})
@@ -41,7 +42,13 @@ class CreateTrip extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state)
+    axios.post('http://localhost:3001/api/v1/itineraries', this.state)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   
   render() {

@@ -10,5 +10,9 @@ module Api::V1
       @items = @itinerary.items.order(:time_start)
       render json: @items
     end
+
+    def create
+      puts params
+    end
   end
 end
