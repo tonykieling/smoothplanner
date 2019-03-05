@@ -4,5 +4,11 @@ module Api::V1
       @itineraries = Itinerary.all
       render json: @itineraries
     end
+
+    def show
+      @itinerary = Itinerary.find(params[:id])
+      @items = @itinerary.items.order(time_start: :desc)
+      render json: @items
+    end
   end
 end

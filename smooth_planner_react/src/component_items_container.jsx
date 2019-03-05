@@ -17,18 +17,20 @@ export default class ItemsContainer extends Component {
 
     this.state = {
       currentUser: {name: "Bob"},
-      cards: [],
+      cards: [], 
       tripID: props.match.params.id
     }
-
-    axios.get('http://localhost:3001/api/v1/items.json')
-    .then(response => {
-      this.setState({cards: response.data});
-    });
   }
 
   componentDidMount() {
     exp_coll();
+    axios.get(`http://localhost:3001/api/v1/itineraries/${this.state.tripID}.json`)
+    .then(response => {
+      this.setState({cards: response.data});
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
 

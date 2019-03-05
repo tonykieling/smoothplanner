@@ -53,7 +53,7 @@ class App extends Component {
             <button type="button" className="btn btn-outline-success">+ Accomodation</button>
             <button type="button" className="btn btn-outline-success">+ Event</button>
         </div>
-        <Route path="/itineraries/:id" exact component={ ItemsContainer }/>
+        <Route path="/itineraries/:id" exact component={ ItemsContainer } />
         </main>
       </div>
       </BrowserRouter>
