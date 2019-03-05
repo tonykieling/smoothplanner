@@ -25,7 +25,9 @@ export default class LocationSearchInput extends React.Component {
         this.props.handleAddress(results[0].formatted_address)
         return getLatLng(results[0])
       })
-      .then(latlng => console.log(latlng))
+      .then(latlng => {
+        this.props.handleLatLng(latlng)
+      })
       .catch(error => console.error('Error', error));
   };
  
@@ -42,6 +44,7 @@ export default class LocationSearchInput extends React.Component {
               {...getInputProps({
                 placeholder: 'Enter the destination for your trip. E.g. Canada, Banff, Paris, Australia',
                 className: 'location-search-input form-control',
+                name: 'destination',
                 type: 'text'
               })}
             />

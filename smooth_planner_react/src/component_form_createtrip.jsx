@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Script from 'react-load-script';
 import LocationSearchInput from './component_form_autocomplete';
 
-class CreateItinerary extends Component {
+class CreateTrip extends Component {
   constructor(props) {
     super(props);
     // Declare State
@@ -33,48 +33,64 @@ class CreateItinerary extends Component {
     })
     console.log("state change!", this.state)    
   }
+  onChangeLatLng = (destination_latlng) => {
+    this.setState({
+      destination_latlng,
+    })
+    console.log("state change!", this.state)    
+  }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state)
+  }
   
   render() {
    
     return (
       <div className="create-form-container">
         <div className="form-title">
-        <h4 className="card-title">Create New Itinerary</h4>
+        <h4 className="card-title">Create New Trip</h4>
         </div>
-      <form>
-        <div className="form-group row">
+      <form onSubmit={this.handleSubmit}>
+        <div className="form-group form-row">
+          <label for="trip-name" className="col-sm-2 col-form-label">Trip Name:</label>
           <input 
             type="text" 
-            name="itinerary-name" 
-            className="form-control" 
-            placeholder="Enter a title for your Itinerary"
+            name="Trip-name" 
+            className="form-control col-sm-10" 
+            placeholder="Example: Trip to India, Weekend getaway in Victoria etc."
             onChange={this.onChangeTitle}
             value={this.state.title}
+            required
           />
         </div>
-        <div className="form-group row">
-            <label for="dt_start" className="col-sm-6 col-form-label">Trip begins: </label>
+        <div className="form-group form-row">
+            <label for="dt_start" className="col-sm-2 col-form-label">Trip begins: </label>
             <input 
               type ='date' 
               name="dt_start" 
-              className="form-control col-sm-6"
+              className="form-control col-sm-10"
               onChange={this.onChangeStartDate}
+              required
             />
-          </div>
-          <div className="form-group row">
-            <label for="dt_end" className="col-sm-6 col-form-label">Trip ends on: </label>
+        </div>
+        <div className="form-group form-row">
+            <label for="dt_end" className="col-sm-2 col-form-label">Trip ends on: </label>
             <input type ='date'
               name="dt_end" 
-              className="form-control col-sm-6"
+              className="form-control col-sm-10"
               onChange={this.onChangeEndDate}
+              required
             />
           </div>  
         <div className="form-group">
-        <LocationSearchInput handleAddress = {this.onChangeDestination}
+        <LocationSearchInput 
+          handleAddress = {this.onChangeDestination}
+          handleLatLng = {this.onChangeLatLng}
         />
         </div>
         <div className ="form-group">
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary form-control">Submit</button>
         </div>
       </form>
     </div>
@@ -82,4 +98,4 @@ class CreateItinerary extends Component {
   }
 }
 
-export default CreateItinerary;
+export default CreateTrip;
