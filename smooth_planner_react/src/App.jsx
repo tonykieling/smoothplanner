@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import axios from 'axios';
+// import axios from 'axios';
 import ItemsContainer from './component_items_container';
 
 class App extends Component {
@@ -12,20 +12,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/itineraries.json')
-    .then(response => {
-      console.log(response.data)
-      this.setState({itineraries: response.data})
-    })
-    .catch(error => {
-      console.log(error)
-    })
-    
+    // axios.get('http://localhost:3001/api/v1/itineraries.json')
+    // .then(response => {
+    //   console.log(response.data)
+    //   this.setState({itineraries: response.data})
+    // })
+    // .catch(error => {
+    //   console.log(error)
+    // })
   }
+
   render() {
-    console.log(this.state.itineraries.forEach((item) => {
-      return console.log(item.name)
-    }))
+    // console.log(this.state.itineraries.forEach((item) => {
+    //   return console.log(item.name)
+    // }))
 
     return (
       <div className="App">
