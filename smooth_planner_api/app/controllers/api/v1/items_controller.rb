@@ -2,7 +2,6 @@ module Api::V1
   class ItemsController < ApplicationController
     def index
       @items = Item.all
-      puts "HEREEEE"
       render json: @items
     end
 

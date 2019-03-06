@@ -17,14 +17,9 @@ export default class ItemsContainer extends Component {
     return (
           <div className="card">
             <div className="card-header" >
-<<<<<<< HEAD
-              <h4><strong>{item.title} - Transportation</strong></h4>
-              <span className="delete_item">X</span>
-=======
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
               <i className="far fa-edit"></i>
               <span><strong>Going to {item.city_arrival}</strong></span>
->>>>>>> feature/seed
             </div>
             
             <div className="card-body">

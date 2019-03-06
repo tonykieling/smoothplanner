@@ -16,7 +16,7 @@ export default class ItemsContainer extends Component {
     super(props);
 
     this.state = {
-      currentUser: {name: "Bob"},
+      currentUser: {name: ""},
       cards: [], 
       tripID: props.match.params.id
     }
