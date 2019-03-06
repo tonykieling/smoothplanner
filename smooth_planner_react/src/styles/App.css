@@ -4,12 +4,22 @@
 }
 
 nav {
+  position: fixed;
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  background-color: #bccbdae3;
+  z-index: 1;
+
+}
+
+.side-bar {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  background-color: #f5f6f7e8;
-  position: absolute;
-  top: 0;
+  /* border: 1px solid black; */
+  background-color: #bccbdae3;
+  position: fixed;
+  top: 56px;
   bottom: 0;
   width: 200px;
 }
@@ -45,62 +55,29 @@ section {
   
 }
 
-.itinerary_card-parent {
-  width: 600px;
-}
-
-.itinerary_card-parent > .itinerary_card-main {
-  border: 1px solid black;
-  padding: 5px;
-  width: 600px;
-  border-radius: 10px;
-  margin: 5px;
-  background-color: whitesmoke;
-  cursor: pointer;
-  outline: none;
-}
-
-.itinerary_card-main > h2 {
-  border-bottom: 1px solid;
-  margin-bottom: 0;
-  margin-top: 0;
-  color: brown;
-}
-
 .to_time {
   float: right;
 }
 
-/* .active, .collapsible:hover { */
-  /* background-color: #555; */
-/* } */
-
-.itinerary_card-parent > .itinerary_card-hiden {
-  /* transition:height 1s ease-in-out; */
-  display: none;
-  overflow: hidden;
-  width: 600px;
-  /* background-color: "whitesmoke"; */
-}
 
 .card {
   min-width: 70%;
   margin: 5px 0;
 }
 
-
+.logo {
+  display: flex;
+  height: 55px;
+}
 
 .add_new_buttons {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 5px;
-  margin: 0 125px 2px 125px;
+  margin: 53px 125px 2px 125px;
 }
 
-/* .btn {
-  background-color: whitesmoke;
-} */
 
 footer{
   display: flex;
@@ -115,7 +92,7 @@ footer{
 }
 .create-form-container {
   margin: 10%;
-  padding: 10%;
+  padding: 5%;
   background-color: palegoldenrod ;
 } 
 
@@ -134,4 +111,34 @@ body {
 .form-title  {
   border-bottom: 2px solid black;
   margin: 10px
+}
+
+
+
+.fa-trash-alt {
+  float: right;
+  font-size: 10px;
+  cursor: pointer;
+  color: red;
+  opacity: 0.5;
+}
+
+.fa-trash-alt:hover {
+  opacity: 1;
+  font-size: 14px;
+}
+
+
+.fa-edit {
+  float: right;
+  font-size: 10px;
+  cursor: pointer;
+  color: orange;
+  opacity: 0.5;
+  margin-right: 5px;
+}
+
+.fa-edit:hover {
+  opacity: 1;
+  font-size: 14px;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302172114) do
+ActiveRecord::Schema.define(version: 20190305234446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,20 +35,22 @@ ActiveRecord::Schema.define(version: 20190302172114) do
     t.string "venue"
     t.string "address"
     t.integer "phone"
-    t.bigint "itinerary_id"
+    t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["itinerary_id"], name: "index_items_on_itinerary_id"
+    t.string "url"
+    t.string "geo_location"
+    t.index ["trip_id"], name: "index_items_on_trip_id"
   end
 
-  create_table "itineraries", force: :cascade do |t|
+  create_table "trips", force: :cascade do |t|
     t.string "name"
     t.datetime "time_start"
     t.datetime "time_end"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_itineraries_on_user_id"
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,9 +58,11 @@ ActiveRecord::Schema.define(version: 20190302172114) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.boolean "suggestions"
   end
 
   add_foreign_key "documents", "items"
-  add_foreign_key "items", "itineraries"
-  add_foreign_key "itineraries", "users"
+  add_foreign_key "items", "trips", column: "trip_id"
+  add_foreign_key "trips", "users"
 end

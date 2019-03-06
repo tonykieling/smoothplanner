@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'items/index'
 
-  get 'itineraries/index'
+  get 'trips/index'
 
   get 'users/index'
 
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
       resources :items
-      resources :itineraries
+      resources :trips
     end
   end
 end

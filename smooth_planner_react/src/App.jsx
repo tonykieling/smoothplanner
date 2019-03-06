@@ -16,17 +16,16 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      itineraries: []
+      current_user: {name: "Bob", id: 1},
+      trips: []
     }
-    const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
-    const googleApiScript = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`
   }
+  //Simone and Neila
 
   componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/itineraries.json')
+    axios.get(`http://localhost:3001/api/v1/users/${this.state.current_user.id}.json`)
     .then(response => {
-      // console.log(response.data)
-      this.setState({itineraries: response.data})
+      this.setState({trips: response.data})
     })
     .catch(error => {
       console.log(error)
@@ -35,25 +34,19 @@ class App extends Component {
   
 
   render() {
-    // console.log(this.state.itineraries.forEach((item) => {
-    //   return console.log(item.name)
-    // }))
-
     return (
       <BrowserRouter>
       <div className="App">
       <header>
         <nav>
-          <div>
-            <Link to={'/'}>Home</Link>
-            {/* <Link to={`/${:itinerary.id}`}></Link><h1>User </h1> */}
-            </div>
-          <div>
-              <img src={logo} alt="Logo"/>
+          <div className="logo">
+            <Link to={'/'}><img src={logo} alt="Logo"/></Link>
             <h3>Smooth Planner</h3>
           </div>
-          <TripsList trips={this.state.itineraries} />
         </nav> 
+        <div className="side-bar">
+          <TripsList trips={this.state.trips} />
+        </div>
       </header>
       <main>
         <div className="add_new_buttons">
@@ -61,16 +54,13 @@ class App extends Component {
             <button type="button" className="btn btn-outline-success">+ Accomodation</button>
             <button type="button" className="btn btn-outline-success">+ Event</button>
         </div>
-        <CreateTrip />
-        <CreateTransport />
-        <Route path="/itineraries/:id" exact component={ ItemsContainer } />
+        <Route path="/trips/:id" exact component={ ItemsContainer } />
+        <Route path="/" exact render={()=> <h3>Hello Welcome!</h3>}/>
         </main>
       </div>
       </BrowserRouter>
     );
   }
 }
-
-
 
 export default App;

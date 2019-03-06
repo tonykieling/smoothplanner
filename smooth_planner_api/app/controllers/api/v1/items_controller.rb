@@ -4,6 +4,17 @@ module Api::V1
       @items = Item.all
       render json: @items
     end
+
+    def destroy
+      @item = Item.find(params[:id])
+      
+      if @item.destroy
+        head :no_content, status: :ok
+      else
+        render json: @item.errors, status: :unprocessable_entity
+      end
+    end
+
     def show
       google_reccomendations(params[:id])
     end
@@ -22,7 +33,7 @@ module Api::V1
         :radius => "10000",
         :location => "49.2803221,-123.112195", # hardcoded for now to VPL's lat and long
         :region => "CA",# hardcoded for Canada, multiple region coding better refines the results"
-        :type => "restaurant"/ points_of_interest / 
+        :type => "restaurant"
         }).body
       render json: @recos
     end
