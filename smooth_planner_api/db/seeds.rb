@@ -53,7 +53,7 @@ Trip.create(
 Trip.create(
 {
   name: "Valentine day in Paris",
-  user_id: 3
+  user_id: 4
 })
 
 Trip.create(
@@ -61,7 +61,7 @@ Trip.create(
     name: "Going to Zurich",
     time_start:'September 1, 2019',
     time_end:'September 15, 2019',
-    user_id: 4
+    user_id: 3
   })
 
 Trip.create(
@@ -115,7 +115,7 @@ Item.create({
 })
 
 Item.create({
-  time_start: 'January 2, 2020 11:30:00',
+  time_start: 'January 2, 2020 6:30:00',
   item_type: 'E',
   title: 'Brunch',
   details: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
@@ -123,7 +123,7 @@ Item.create({
 })
 
 Item.create({
-  time_start: 'January 2, 2020 06:00:00',
+  time_start: 'January 2, 2020 10:00:00',
   time_end: 'December 2, 2020 16:30:00',
   item_type: 'T',
   city_depart: 'Cancun',
