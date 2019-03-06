@@ -4,5 +4,25 @@ module Api::V1
       @items = Item.all
       render json: @items
     end
+
+    def destroy
+      @item = Item.find(params[:id])
+      
+      if @item.destroy
+        head :no_content, status: :ok
+      else
+        render json: @item.errors, status: :unprocessable_entity
+      end
+
+    end
+
+
+
+    # private
+
+    # def item_params
+    #   params.require(:item).permit(:id)
+    # end
+
   end
 end

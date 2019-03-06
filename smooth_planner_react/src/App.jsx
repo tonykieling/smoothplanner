@@ -15,6 +15,7 @@ class App extends Component {
       trips: []
     }
   }
+  //Simone and Neila
 
   componentDidMount() {
     axios.get(`http://localhost:3001/api/v1/users/${this.state.current_user.id}.json`)
@@ -49,7 +50,7 @@ class App extends Component {
             <button type="button" className="btn btn-outline-success">+ Event</button>
         </div>
         <Route path="/trips/:id" exact component={ ItemsContainer } />
-        <Route path="/" render={()=> <h3>Hello Welcome!</h3>}/>
+        <Route path="/" exact render={()=> <h3>Hello Welcome!</h3>}/>
         </main>
       </div>
       </BrowserRouter>
