@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import LocationSearchInput from './component_form_autocomplete';
+import Script from 'react-load-script'
 
 class CreateTrip extends Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class CreateTrip extends Component {
     this.onChangeDestination = this.onChangeDestination.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
+  // Change handlers to control form inputs
   onChangeTitle = (event)=>{
     this.setState({title: event.target.value})
     console.log("state change!", this.state)
@@ -40,6 +43,8 @@ class CreateTrip extends Component {
     })
     console.log("state change!", this.state)    
   }
+  //  Post request to API when itinerary is submited
+
   handleSubmit = (event) => {
     event.preventDefault();
     axios.post('http://localhost:3001/api/v1/itineraries', this.state)

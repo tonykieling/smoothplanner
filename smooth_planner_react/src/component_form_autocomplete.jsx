@@ -44,8 +44,6 @@ export default class LocationSearchInput extends React.Component {
               {...getInputProps({
                 placeholder: 'Enter the destination for your trip. E.g. Canada, Banff, Paris, Australia',
                 className: 'location-search-input form-control',
-                name: 'destination',
-                type: 'text'
               })}
             />
             <div className="autocomplete-dropdown-container">
