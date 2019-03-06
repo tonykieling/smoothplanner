@@ -23,6 +23,7 @@ user2 = User.create({
 user3 = User.create({
   name: "Darlan Princivale",
   email: "darlan@user.com",
+  suggestions: true
 })
 
 user4 = User.create({
@@ -33,7 +34,6 @@ user4 = User.create({
 
 
 # CREATE ITINERARIES
-Itinerary.create(
 Trip.create(
 {
   name: "Christmas trip",
@@ -56,7 +56,7 @@ Trip.create(
   user_id: 3
 })
 
-Itinerary.create(
+Trip.create(
   {
     name: "Going to Zurich",
     time_start:'September 1, 2019',
@@ -64,7 +64,7 @@ Itinerary.create(
     user_id: 4
   })
 
-Itinerary.create(
+Trip.create(
   {
     name: "Japan Trip 2020",
     time_start:'July 1, 2020',
@@ -84,7 +84,7 @@ Item.create({
   city_arrival: 'Cancun',
   venue: 'YVR Airport',
   confirmation: 'ABC4YQ',
-  trip_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -94,7 +94,7 @@ Item.create({
   venue: 'Mariott Cancun Resort',
   details: 'booking pending',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -102,7 +102,7 @@ Item.create({
   item_type: 'E',
   title: 'Day trip to Chechen Itza',
   details: 'Rent a car from hotel. Drive should take 2 hours',
-  trip_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -111,7 +111,7 @@ Item.create({
   item_type: 'E',
   title: 'New year party',
   details: 'www.partyatcancun2019.com',
-  trip_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -119,7 +119,7 @@ Item.create({
   item_type: 'E',
   title: 'Brunch',
   details: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -130,7 +130,7 @@ Item.create({
   city_arrival: 'Vancouver',
   confirmation: 'TBC4YQ',
   venue: 'Cancun International Airport',
-  itinerary_id: 1
+  trip_id: 1
 })
 
 
@@ -142,7 +142,7 @@ Item.create({
   city_depart: 'Vancouver',
   city_arrival: 'Basel',
   confirmation: 'ABC4YQ',
-  trip_id: 1
+  trip_id: 2
 })
 
 Item.create({
@@ -151,7 +151,7 @@ Item.create({
   item_type: 'A',
   venue: 'Basel Sheraton',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: 1
+  trip_id: 2
 })
 
 Item.create({
@@ -160,14 +160,14 @@ Item.create({
   item_type: 'A',
   venue: 'Geneva Marriot',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: 1
+  trip_id: 2
 })
 
 Item.create({
   time_start: 'July 10, 2019 14:30:00',
   item_type: 'E',
   title: 'Go to Jungfrau',
-  trip_id: 1
+  trip_id: 2
 })
 
 Item.create({
@@ -178,7 +178,7 @@ Item.create({
   city_arrival: 'Geneva',
   title: 'Avis car rental',
   details: 'pick up at airport',
-  trip_id: 1
+  trip_id: 2
 })
 
 # third items trip
@@ -189,5 +189,5 @@ Item.create({
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Zurich',
-  itinerary_id: 3
+  trip_id: 3
 })
