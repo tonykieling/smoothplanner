@@ -11,16 +11,15 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: 1,
-      itineraries: []
+      current_user: {name: "Bob", id: 1},
+      trips: []
     }
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3001/api/v1/users/${this.state.current_user}.json`)
+    axios.get(`http://localhost:3001/api/v1/users/${this.state.current_user.id}.json`)
     .then(response => {
-      console.log(response.data)
-      this.setState({itineraries: response.data})
+      this.setState({trips: response.data})
     })
     .catch(error => {
       console.log(error)
@@ -42,7 +41,7 @@ class App extends Component {
               <img src={logo} alt="Logo"/>
             <h3>Smooth Planner</h3>
           </div>
-          <TripsList trips={this.state.itineraries} />
+          <TripsList trips={this.state.trips} />
         </nav> 
       </header>
       <main>
@@ -51,7 +50,8 @@ class App extends Component {
             <button type="button" className="btn btn-outline-success">+ Accomodation</button>
             <button type="button" className="btn btn-outline-success">+ Event</button>
         </div>
-        <Route path="/itineraries/:id" exact component={ ItemsContainer } />
+        <Route path="/trips/:id" exact component={ ItemsContainer } />
+        {/* <Route path="/" render={()=> <h3>Hello Welcome!</h3>}/> */}
         </main>
       </div>
       </BrowserRouter>

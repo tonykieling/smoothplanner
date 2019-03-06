@@ -4,9 +4,6 @@ import ItemsContainerA from './component_items_container_A';
 import ItemsContainerE from './component_items_container_E';
 import ItemsContainerT from './component_items_container_T';
 
-// import the JS function to expand and collapse the cards to call it in the componentDidMount lifecycle
-import exp_coll from './expand';
-
 
 // this container will call the specific container (Accommodation, Event or Transportation)
 // in order to mont the user's trip page
@@ -17,22 +14,29 @@ export default class ItemsContainer extends Component {
 
     this.state = {
       currentUser: {name: "Bob"},
-      cards: [], 
-      tripID: props.match.params.id
+      cards: []
     }
   }
 
-  componentDidMount() {
-    exp_coll();
-    axios.get(`http://localhost:3001/api/v1/trips/${this.state.tripID}.json`)
-    .then(response => {
-      this.setState({cards: response.data});
-      console.log(response.data)
-    })
-    .catch(error => {
-      console.log(error)
-    })
+  fetchTripDetails() {
+    axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
+        .then(response => {
+        this.setState({cards: response.data});
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.fetchTripDetails();
+    }
+  };
+
+  componentDidMount() {
+    this.fetchTripDetails();
+  };
 
   render() {
     const itineraries = this.state;

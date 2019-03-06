@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '../node_modules/react-router-dom'
 
-export default class Home extends Component {
+export default class TripsList extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,7 +17,7 @@ export default class Home extends Component {
       }
     }
     const trips = this.props.trips.map((trip) => {
-      return (<Link key={trip.id} to={'/itineraries/' + trip.id } className={dateCheck(trip.time_end)}>{trip.name}</Link>)
+      return (<Link key={trip.id} to={'/trips/' + trip.id } className={dateCheck(trip.time_end)}>{trip.name}</Link>)
     })
     
     return (
