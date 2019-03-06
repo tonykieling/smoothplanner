@@ -1,12 +1,29 @@
 module Api::V1
-  class TripsController < ApplicationController
+  class ItemsController < ApplicationController
     def index
-    end
-
-    def show
-      @trip = Trip.find(params[:id])
-      @items = @trip.items.order(:time_start)
+      @items = Item.all
+      puts "HEREEEE"
       render json: @items
     end
+
+    def destroy
+      @item = Item.find(params[:id])
+      
+      if @item.destroy
+        head :no_content, status: :ok
+      else
+        render json: @item.errors, status: :unprocessable_entity
+      end
+
+    end
+
+
+
+    # private
+
+    # def item_params
+    #   params.require(:item).permit(:id)
+    # end
+
   end
 end
