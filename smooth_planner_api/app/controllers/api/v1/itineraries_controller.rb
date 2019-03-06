@@ -12,7 +12,8 @@ module Api::V1
     end
 
     def create
-      puts params
+      @itinerary = Itinerary.new(params[:name])
+      @itinerary.save
     end
   end
 end

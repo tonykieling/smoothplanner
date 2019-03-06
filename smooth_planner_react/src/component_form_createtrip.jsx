@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import LocationSearchInput from './component_form_autocomplete';
 
 class CreateTrip extends Component {
   constructor(props) {
     super(props);
     // Declare State
     this.state = {
-      title: '',
+      name: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   onChangeTitle = (event)=>{
-    this.setState({title: event.target.value})
+    this.setState({name: event.target.value})
     console.log("state change!", this.state)
   }
   
