@@ -3172,3 +3172,43 @@ Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
 Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-06 04:06:58 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-06 04:06:59 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrip Load (1.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/trips/3.json" for 10.0.2.2 at 2019-03-06 04:07:07 +0000
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-06 04:07:07 +0000
+Processing by Api::V1::TripsController#show as JSON
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"3"}
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTrip Load (1.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 3]]
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.8ms)
+
+
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/v1/items/12" for 10.0.2.2 at 2019-03-06 04:07:09 +0000
+Processing by Api::V1::ItemsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 2.1ms)
+
+
