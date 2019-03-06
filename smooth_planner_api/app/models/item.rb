@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-  belongs_to :itinerary
+  belongs_to :trip
 end

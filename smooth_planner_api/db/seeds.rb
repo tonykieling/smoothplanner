@@ -18,7 +18,7 @@ user2 = User.create({
   email: "suzy@user.com",
 })
 
-Itinerary.create(
+Trip.create(
 {
   name: "Christmas trip",
   time_start:'December 24, 2019',
@@ -26,7 +26,7 @@ Itinerary.create(
   user_id: 2
 })
 
-Itinerary.create(
+Trip.create(
 {
   name: "Summer holidays in Europe",
   time_start:'July 1, 2019',
@@ -34,7 +34,7 @@ Itinerary.create(
   user_id: 1
 })
 
-Itinerary.create(
+Trip.create(
 {
   id: 't03',
   name: "Valentine day in Paris",
@@ -48,7 +48,7 @@ Item.create({
   city_depart: 'Vancouver',
   city_arrival: 'Cancun',
   confirmation: 'ABC4YQ',
-  itinerary_id: 0
+  trip_id: 0
 })
 
 Item.create({
@@ -58,7 +58,7 @@ Item.create({
   venue: 'Mariott Cancun Resort',
   details: 'booking pending',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 0
+  trip_id: 0
 })
 
 Item.create({
@@ -66,7 +66,7 @@ Item.create({
   item_type: 'E',
   title: 'Day trip to Chechen Itza',
   details: 'Rent a car from hotel. Drive should take 2 hours',
-  itinerary_id: 0
+  trip_id: 0
 })
 
 Item.create({
@@ -75,7 +75,7 @@ Item.create({
   item_type: 'E',
   title: 'New year party',
   details: 'www.partyatcancun2019.com',
-  itinerary_id: 0
+  trip_id: 0
 })
 
 Item.create({
@@ -83,7 +83,7 @@ Item.create({
   item_type: 'E',
   title: 'Brunch',
   details: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 0
+  trip_id: 0
 })
 
 Item.create({
@@ -93,7 +93,7 @@ Item.create({
   city_depart: 'Vancouver',
   city_arrival: 'Basel',
   confirmation: 'ABC4YQ',
-  itinerary_id: 1
+  trip_id: 1
 })
 
 Item.create({
@@ -102,7 +102,7 @@ Item.create({
   item_type: 'A',
   venue: 'Basel Sheraton',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 1
+  trip_id: 1
 })
 
 Item.create({
@@ -111,14 +111,14 @@ Item.create({
   item_type: 'A',
   venue: 'Geneva Marriot',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 1
+  trip_id: 1
 })
 
 Item.create({
   time_start: 'July 10, 2019 14:30:00',
   item_type: 'E',
   title: 'Go to Jungfrau',
-  itinerary_id: 1
+  trip_id: 1
 })
 
 Item.create({
@@ -129,5 +129,5 @@ Item.create({
   city_arrival: 'Geneva',
   title: 'Avis car rental',
   details: 'pick up at airport',
-  itinerary_id: 1
+  trip_id: 1
 })
