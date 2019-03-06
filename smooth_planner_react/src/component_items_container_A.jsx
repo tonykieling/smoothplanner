@@ -22,7 +22,7 @@ export default class ItemsContainer extends Component {
             <div className="card-body">
               <span> <strong>Confirmation #: </strong> {item.confirmation}</span>
               <span> <strong>Files uploaded:</strong> reservation_hotel_Zurich.pdf</span> <br />
-              <span> <strong>URL:</strong> www.sleepdream.com/sz</span>
+              <span> <strong>Website: </strong> {item.url}</span>
               <span> <strong>Phone:</strong>{item.phone}</span>  <br />
               <span> <strong>Address:</strong>{item.address}</span> <br />
               <span> {item.details ? `<strong>Details: </strong>${item.details}` : "" }</span>
