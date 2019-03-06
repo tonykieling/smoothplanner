@@ -1,26 +1,53 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
-class CreateItinerary extends Component {
+class CreateTrip extends Component {
+  constructor(props) {
+    super(props);
+    // Declare State
+    this.state = {
+      name: '',
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  onChangeTitle = (event)=>{
+    this.setState({name: event.target.value})
+    console.log("state change!", this.state)
+  }
+  
+  handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('http://localhost:3001/api/v1/itineraries', this.state)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  
   render() {
+   
     return (
-      <div className="create-itinerary">
-        <h3>Create New Itinerary</h3>
-        <form >
-          <div className="form-group">
-            <label htmlFor="itinerary-name">Itinerary Title</label>
-            <input type="text" name="itinerary-name" className="form-control" placeholder="Enter a title for your Itinerary"/>
-            <small id="emailHelp" className="form-text text-muted">Example: Canada Day 2019, Trip to India etc</small>
-          </div>
-          <label htmlFor="dt_start">Itinerary begins on: </label>
-          <input type ='date' name="dt_start" className="form-control"/>
-
-          <label htmlFor="dt_end">Itinerary end on: </label>
-          <input type ='date' name="dt_end" className="form-control"/>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
-      </div>
+      <div className="create-form-container">
+        <div className="form-title">
+          <h4 className="card-title">Create New Trip</h4>
+        </div>
+      <form className="form-inline m-sm-1" onSubmit={this.handleSubmit}>
+          <input 
+            type="text" 
+            name="Trip-name" 
+            className="form-control w-75 mr-sm-3" 
+            placeholder="Example: Trip to India, Weekend getaway in Victoria etc."
+            onChange={this.onChangeTitle}
+            value={this.state.title}
+            required
+          />
+          <button type="submit" className="btn btn-primary">Start Planning!</button>
+      </form>
+    </div>
     )
   }
 }
 
-export default CreateItinerary;
+export default CreateTrip;
