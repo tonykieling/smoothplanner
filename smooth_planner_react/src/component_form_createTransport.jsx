@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import LocationSearchInput from './component_form_autocomplete';
+import postTAE from './helper_postTAEdetails';
 
 function concatDateandTime(date, time) {
   const concatString = `${date} ${time}`
@@ -18,14 +18,14 @@ class CreateTransport extends Component {
       time_start: '',
       dt_end: '',
       confirmation: '',
-      details: ''
+      details: '',
+      type:'T'
     }
   }
   onChangeHandler = (event) => {
     const stateName = event.target.name
     const value = event.target.value
     this.setState({[stateName]:value})
-    
   }
   handlesSubmit = (event)=>{
     event.preventDefault();
@@ -33,9 +33,14 @@ class CreateTransport extends Component {
     const start_timestamp = concatDateandTime(this.state.dt_start_raw, this.state.time_start)
     //  combining date and time for end
     const end_timestamp = concatDateandTime(this.state.dt_end_raw, this.state.time_end)
-    
     this.setState({dt_start: start_timestamp, dt_end: end_timestamp})
-    console.log(this.state)
+    postTAE(this.state) 
+  }
+  onChangeDepartCity = (city_depart) => {
+    this.setState({city_depart})
+  }
+  onChangeArriveCity = (city_arrival) => {
+    this.setState({city_arrival})
   }
  
 
@@ -53,7 +58,7 @@ class CreateTransport extends Component {
               className="form-control" 
               name="city_depart" 
               placeholder="Departing City"
-              onChange = {this.onChangeHandler}
+              handleAddress = {this.onChangeDepartCity}
             />
           </div>
           <div className="row form-group">
@@ -63,7 +68,6 @@ class CreateTransport extends Component {
               className="form-control col-sm-3" 
               name="dt_start"
               onChange = {this.onChangeHandler}
-
               required
             />
             <input 
@@ -81,7 +85,7 @@ class CreateTransport extends Component {
               className="form-control" 
               name="city_arrival" 
               placeholder="Arrival City" 
-              onChange = {this.onChangeHandler}
+              handleAddress = {this.onChangeArriveCity}
             />
           </div>
           <div className="row form-group">

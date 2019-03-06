@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
@@ -6,8 +7,10 @@ import ItemsContainer from './component_items_container';
 import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
 import logo from './styles/images/plane_world.png'
-import GoogleRecommendation from './component_recomendation';
-import CreateItinerary from './component_form_createtrip';
+import CreateTrip from './component_form_createtrip';
+import CreateTransport from './component_form_createTransport';
+
+
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +18,8 @@ class App extends Component {
     this.state = {
       itineraries: []
     }
+    const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+    const googleApiScript = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`
   }
 
   componentDidMount() {
@@ -27,6 +32,7 @@ class App extends Component {
       console.log(error)
     })
   }
+  
 
   render() {
     // console.log(this.state.itineraries.forEach((item) => {
@@ -55,14 +61,10 @@ class App extends Component {
             <button type="button" className="btn btn-outline-success">+ Accomodation</button>
             <button type="button" className="btn btn-outline-success">+ Event</button>
         </div>
-<<<<<<< HEAD
+        <CreateTrip />
+        <CreateTransport />
         <Route path="/itineraries/:id" exact component={ ItemsContainer } />
         </main>
-=======
-      </header>
-        <ItemsContainer />
-        <CreateItinerary />
->>>>>>> feature/reccomendations
       </div>
       </BrowserRouter>
     );
