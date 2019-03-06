@@ -1,7 +1,11 @@
 module Api::V1
-  class ItemsController < ApplicationController
+  class TripsController < ApplicationController
     def index
-      @items = Item.all
+    end
+
+    def show
+      @trip = Trip.find(params[:id])
+      @items = @trip.items.order(:time_start)
       render json: @items
     end
   end
