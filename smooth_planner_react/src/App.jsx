@@ -11,14 +11,15 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      current_user: 1,
       itineraries: []
     }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/itineraries.json')
+    axios.get(`http://localhost:3001/api/v1/users/${this.state.current_user}.json`)
     .then(response => {
-      // console.log(response.data)
+      console.log(response.data)
       this.setState({itineraries: response.data})
     })
     .catch(error => {

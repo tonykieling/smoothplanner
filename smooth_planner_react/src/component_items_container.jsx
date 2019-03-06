@@ -24,7 +24,7 @@ export default class ItemsContainer extends Component {
 
   componentDidMount() {
     exp_coll();
-    axios.get(`http://localhost:3001/api/v1/itineraries/${this.state.tripID}.json`)
+    axios.get(`http://localhost:3001/api/v1/trips/${this.state.tripID}.json`)
     .then(response => {
       this.setState({cards: response.data});
       console.log(response.data)

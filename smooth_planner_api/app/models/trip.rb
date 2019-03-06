@@ -1,4 +1,4 @@
-class Itinerary < ApplicationRecord
+class Trip < ApplicationRecord
   belongs_to :user
   has_many :items
 end
