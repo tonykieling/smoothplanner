@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 
 // this is the specific container for EVENT card type
 export default class ItemsContainer extends Component {
+
+  // calls delete item method on items_container
+  handle_deleteItem = () => {
+    this.props.delete_item(this.props.item.id);
+  }
+  
   
   render() {
     const item = this.props.item;
@@ -11,8 +17,11 @@ export default class ItemsContainer extends Component {
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
           <div className="card">
             <div className="card-header">
+              <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
+              <i className="far fa-edit"></i>
               <h4><strong>{item.title}</strong></h4>
             </div>
+
             <div className="card-body">
               <span> <strong>When:</strong>{item.time_start}</span> <br />
               <span> <strong>Where: </strong>{item.time_end}</span>  <br />

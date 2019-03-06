@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 
 // this is the specific container for TRANSPORTATION card type
 export default class ItemsContainer extends Component {
+
+  // calls delete item method on items_container
+  handle_deleteItem = () => {
+    this.props.delete_item(this.props.item.id);
+  }
+
+
   render() {
     
     const item = this.props.item;
@@ -10,8 +17,11 @@ export default class ItemsContainer extends Component {
     return (
           <div className="card">
             <div className="card-header" >
-              <h4><strong>Going to {item.city_arrival}</strong></h4>
+              <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
+              <i className="far fa-edit"></i>
+              <span><strong>Going to {item.city_arrival}</strong></span>
             </div>
+            
             <div className="card-body">
               <span> <strong>Departure: </strong>{item.time_start}</span>
               <span> <strong>Arrival: </strong>{item.time_end}</span> <br />
