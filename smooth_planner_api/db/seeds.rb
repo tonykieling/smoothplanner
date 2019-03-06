@@ -23,6 +23,10 @@ user2 = User.create({
 user3 = User.create({
   name: "Darlan Princivale",
   email: "darlan@user.com",
+<<<<<<< HEAD
+=======
+  suggestions: true
+>>>>>>> feature/seed
 })
 
 user4 = User.create({
@@ -33,7 +37,11 @@ user4 = User.create({
 
 
 # CREATE ITINERARIES
+<<<<<<< HEAD
 Itinerary.create(
+=======
+Trip.create(
+>>>>>>> feature/seed
 {
   name: "Christmas trip",
   time_start:'December 24, 2019',
@@ -41,7 +49,7 @@ Itinerary.create(
   user_id: 2
 })
 
-Itinerary.create(
+Trip.create(
 {
   name: "Summer holidays in Europe",
   time_start:'July 1, 2019',
@@ -49,21 +57,35 @@ Itinerary.create(
   user_id: 1
 })
 
-Itinerary.create(
+Trip.create(
 {
   name: "Valentine day in Paris",
+<<<<<<< HEAD
   user_id: 3
 })
 
 Itinerary.create(
+=======
+  user_id: 4
+})
+
+Trip.create(
+>>>>>>> feature/seed
   {
     name: "Going to Zurich",
     time_start:'September 1, 2019',
     time_end:'September 15, 2019',
+<<<<<<< HEAD
     user_id: 4
   })
 
 Itinerary.create(
+=======
+    user_id: 3
+  })
+
+Trip.create(
+>>>>>>> feature/seed
   {
     name: "Japan Trip 2020",
     time_start:'July 1, 2020',
@@ -83,7 +105,7 @@ Item.create({
   city_arrival: 'Cancun',
   venue: 'YVR Airport',
   confirmation: 'ABC4YQ',
-  itinerary_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -93,7 +115,7 @@ Item.create({
   venue: 'Mariott Cancun Resort',
   details: 'booking pending',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -101,7 +123,7 @@ Item.create({
   item_type: 'E',
   title: 'Day trip to Chechen Itza',
   details: 'Rent a car from hotel. Drive should take 2 hours',
-  itinerary_id: 0
+  trip_id: 1
 })
 
 Item.create({
@@ -110,26 +132,34 @@ Item.create({
   item_type: 'E',
   title: 'New year party',
   details: 'www.partyatcancun2019.com',
-  itinerary_id: 0
+  trip_id: 1
 })
 
 Item.create({
-  time_start: 'January 2, 2020 11:30:00',
+  time_start: 'January 2, 2020 6:30:00',
   item_type: 'E',
   title: 'Brunch',
   details: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 0
+  trip_id: 1
 })
 
 Item.create({
+<<<<<<< HEAD
   time_start: 'January 2, 2020 06:00:00',
+=======
+  time_start: 'January 2, 2020 10:00:00',
+>>>>>>> feature/seed
   time_end: 'December 2, 2020 16:30:00',
   item_type: 'T',
   city_depart: 'Cancun',
   city_arrival: 'Vancouver',
   confirmation: 'TBC4YQ',
   venue: 'Cancun International Airport',
+<<<<<<< HEAD
   itinerary_id: 0
+=======
+  trip_id: 1
+>>>>>>> feature/seed
 })
 
 
@@ -140,8 +170,13 @@ Item.create({
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Basel',
+<<<<<<< HEAD
   confirmation: 'A2C4YQ',
   itinerary_id: 1
+=======
+  confirmation: 'ABC4YQ',
+  trip_id: 2
+>>>>>>> feature/seed
 })
 
 Item.create({
@@ -150,7 +185,7 @@ Item.create({
   item_type: 'A',
   venue: 'Basel Sheraton',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 1
+  trip_id: 2
 })
 
 Item.create({
@@ -159,14 +194,14 @@ Item.create({
   item_type: 'A',
   venue: 'Geneva Marriot',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  itinerary_id: 1
+  trip_id: 2
 })
 
 Item.create({
   time_start: 'July 10, 2019 14:30:00',
   item_type: 'E',
   title: 'Go to Jungfrau',
-  itinerary_id: 1
+  trip_id: 2
 })
 
 Item.create({
@@ -177,9 +212,10 @@ Item.create({
   city_arrival: 'Geneva',
   title: 'Avis car rental',
   details: 'pick up at airport',
-  itinerary_id: 1
+  trip_id: 2
 })
 
+<<<<<<< HEAD
 Item.create({
   time_start: 'July 5, 2019 14:30:00',
   time_end:'July 15, 2019 10:30:00',
@@ -200,6 +236,8 @@ Item.create({
   itinerary_id: 1
 })
 
+=======
+>>>>>>> feature/seed
 # third items trip
 # the user has just started thinking the trip
 Item.create({
@@ -208,5 +246,9 @@ Item.create({
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Zurich',
+<<<<<<< HEAD
   itinerary_id: 3
+=======
+  trip_id: 3
+>>>>>>> feature/seed
 })

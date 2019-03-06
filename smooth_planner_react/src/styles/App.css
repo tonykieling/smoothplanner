@@ -7,7 +7,7 @@ nav {
   flex-direction: column;
   border: 1px solid black;
   background-color: #f5f6f7e8;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   width: 200px;
@@ -44,11 +44,11 @@ section {
   
 }
 
-.itinerary_card-parent {
+/* .itinerary_card-parent {
   width: 600px;
-}
+} */
 
-.itinerary_card-parent > .itinerary_card-main {
+/* .itinerary_card-parent > .itinerary_card-main {
   border: 1px solid black;
   padding: 5px;
   width: 600px;
@@ -64,7 +64,7 @@ section {
   margin-bottom: 0;
   margin-top: 0;
   color: brown;
-}
+} */
 
 .to_time {
   float: right;
@@ -74,13 +74,13 @@ section {
   /* background-color: #555; */
 /* } */
 
-.itinerary_card-parent > .itinerary_card-hiden {
+/* .itinerary_card-parent > .itinerary_card-hiden { */
   /* transition:height 1s ease-in-out; */
-  display: none;
+  /* display: none;
   overflow: hidden;
-  width: 600px;
+  width: 600px; */
   /* background-color: "whitesmoke"; */
-}
+/* } */
 
 .card {
   min-width: 70%;
@@ -133,4 +133,34 @@ body {
 .form-title  {
   border-bottom: 2px solid black;
   margin: 10px
+}
+
+
+
+.fa-trash-alt {
+  float: right;
+  font-size: 10px;
+  cursor: pointer;
+  color: red;
+  opacity: 0.5;
+}
+
+.fa-trash-alt:hover {
+  opacity: 1;
+  font-size: 14px;
+}
+
+
+.fa-edit {
+  float: right;
+  font-size: 10px;
+  cursor: pointer;
+  color: orange;
+  opacity: 0.5;
+  margin-right: 5px;
+}
+
+.fa-edit:hover {
+  opacity: 1;
+  font-size: 14px;
 }
