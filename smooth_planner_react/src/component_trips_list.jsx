@@ -22,6 +22,7 @@ export default class TripsList extends Component {
     
     return (
       <div className="list-group trip-list">
+        <button type="button" className="btn btn-outline-success">+ New Trip</button>
         <h4>Your Trips</h4>
         <ul>
           {trips}

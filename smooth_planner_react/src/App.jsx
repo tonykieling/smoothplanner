@@ -34,22 +34,23 @@ class App extends Component {
       <header>
         <nav>
           <div className="logo">
-            <Link to={'/'}><img src={logo} alt="Logo"/></Link>
+            <Link to={'/'}><i class="fas fa-home fa-2x"></i></Link>
             <h3>Smooth Planner</h3>
           </div>
+          <div className="add_new_buttons">
+            <button type="button" className="btn btn-outline-success">+ Transportation</button>
+            <button type="button" className="btn btn-outline-success">+ Accomodation</button>
+            <button type="button" className="btn btn-outline-success">+ Event</button>
+        </div>
         </nav> 
         <div className="side-bar">
           <TripsList trips={this.state.trips} />
         </div>
       </header>
       <main>
-        <div className="add_new_buttons">
-            <button type="button" className="btn btn-outline-success">+ Transportation</button>
-            <button type="button" className="btn btn-outline-success">+ Accomodation</button>
-            <button type="button" className="btn btn-outline-success">+ Event</button>
-        </div>
+        
         <Route path="/trips/:id" exact component={ ItemsContainer } />
-        <Route path="/" exact render={()=> <h3>Hello Welcome!</h3>}/>
+        <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
         </main>
       </div>
       </BrowserRouter>
