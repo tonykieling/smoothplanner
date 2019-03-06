@@ -33,16 +33,14 @@ class App extends Component {
       <div className="App">
       <header>
         <nav>
-          <div>
-            <Link to={'/'}>Home</Link>
-            {/* <Link to={`/${:itinerary.id}`}></Link><h1>User </h1> */}
-            </div>
-          <div>
-              <img src={logo} alt="Logo"/>
+          <div className="logo">
+            <Link to={'/'}><img src={logo} alt="Logo"/></Link>
             <h3>Smooth Planner</h3>
           </div>
-          <TripsList trips={this.state.trips} />
         </nav> 
+        <div className="side-bar">
+          <TripsList trips={this.state.trips} />
+        </div>
       </header>
       <main>
         <div className="add_new_buttons">
@@ -51,14 +49,12 @@ class App extends Component {
             <button type="button" className="btn btn-outline-success">+ Event</button>
         </div>
         <Route path="/trips/:id" exact component={ ItemsContainer } />
-        {/* <Route path="/" render={()=> <h3>Hello Welcome!</h3>}/> */}
+        <Route path="/" render={()=> <h3>Hello Welcome!</h3>}/>
         </main>
       </div>
       </BrowserRouter>
     );
   }
 }
-
-
 
 export default App;
