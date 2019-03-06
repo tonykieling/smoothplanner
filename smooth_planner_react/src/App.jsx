@@ -6,8 +6,6 @@ import ItemsContainer from './component_items_container';
 import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
 import logo from './styles/images/plane_world.png'
-import GoogleRecommendation from './component_recomendation';
-import CreateItinerary from './component_form_createtrip';
 
 class App extends Component {
   constructor(props) {
@@ -55,14 +53,8 @@ class App extends Component {
             <button type="button" className="btn btn-outline-success">+ Accomodation</button>
             <button type="button" className="btn btn-outline-success">+ Event</button>
         </div>
-<<<<<<< HEAD
         <Route path="/itineraries/:id" exact component={ ItemsContainer } />
         </main>
-=======
-      </header>
-        <ItemsContainer />
-        <CreateItinerary />
->>>>>>> feature/reccomendations
       </div>
       </BrowserRouter>
     );
