@@ -3,7 +3,6 @@ import axios from 'axios';
 import ItemsContainerA from './component_items_container_A';
 import ItemsContainerE from './component_items_container_E';
 import ItemsContainerT from './component_items_container_T';
-import Popup from "reactjs-popup";
 import ReactModal from 'react-modal';
 import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
@@ -59,7 +58,6 @@ export default class ItemsContainer extends Component {
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
-          console.log("data: ", response.data);
           this.setState({cards: response.data});
       })
       .catch(error => {
@@ -129,7 +127,7 @@ export default class ItemsContainer extends Component {
 
           <div>
             {/* Accommodation Button */}
-            <button onClick={this.handleOpenModalA} className="btn btn-outline-primary">+ Accommodation</button>
+            <button onClick={this.handleOpenModalA} className="btn btn-outline-success">+ Accommodation</button>
             <ReactModal 
               isOpen={this.state.showModalA}
               contentLabel="onRequestClose Example"
@@ -141,7 +139,7 @@ export default class ItemsContainer extends Component {
 
           <div>
             {/* Event Button */}
-            <button onClick={this.handleOpenModalE} className="btn btn-outline-primary">+ Event</button>
+            <button onClick={this.handleOpenModalE} className="btn btn-outline-info">+ Event</button>
             <ReactModal 
               isOpen={this.state.showModalE}
               contentLabel="onRequestClose Example"
