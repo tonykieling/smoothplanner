@@ -23,30 +23,26 @@ class CreateAccomodation extends Component {
     console.log(this.state)
   }
   handleChangeEndDate(date) {
-    const parsedDate = Date.parse(date);
     this.setState({
-      endDate: parsedDate,
+      time_end: date,
     });
   }
   handleChangeStartDate(date) {
-    const parsedDate = Date.parse(date);
     this.setState({
-      startDate: parsedDate,
+      time_start: date,
     });
   }
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
     this.props.addItem(this.state);
+    this.props.closeModal();
   }
   onChangeVenue = (venue) => {
     this.setState({venue})
   }
   onChangeLatLng = (latlng) => {
-    this.setState({
-      geo_location: latlng
-    })
-    console.log("state change!", this.state)    
+    this.setState({geo_location: latlng})   
   }
 
 
@@ -62,7 +58,7 @@ class CreateAccomodation extends Component {
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
-              selected = {this.state.startDate}
+              selected = {this.state.time_start}
               onChange = {this.handleChangeStartDate}
               showTimeSelect
               timeFormat="HH:mm"
@@ -78,7 +74,7 @@ class CreateAccomodation extends Component {
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
-              selected = {this.state.endDate}
+              selected = {this.state.time_end}
               onChange = {this.handleChangeEndDate}
               showTimeSelect
               timeFormat="HH:mm"

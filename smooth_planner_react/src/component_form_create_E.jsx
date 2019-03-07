@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LocationSearchInput from './component_form_autocomplete';
 
-import postTAE from './helper_postTAEdetails';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -15,18 +14,16 @@ class CreateEvent extends Component {
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
-
   handleChangeStartDate(date) {
-    const parsedDate = Date.parse(date);
     this.setState({
-      startDate: parsedDate,
+      time_start: date,
     });
   }
-
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
     this.props.addItem(this.state);
+    this.props.closeModal();
   }
   onChangeVenue = (venue) => {
     this.setState({venue})
@@ -55,7 +52,7 @@ class CreateEvent extends Component {
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
-              selected = {this.state.startDate}
+              selected = {this.state.time_start}
               onChange = {this.handleChangeStartDate}
               showTimeSelect
               timeFormat="HH:mm"
