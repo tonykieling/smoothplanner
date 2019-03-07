@@ -117,7 +117,7 @@ body {
 
 .fa-trash-alt {
   float: right;
-  font-size: 10px;
+  font-size: 16px;
   cursor: pointer;
   color: red;
   opacity: 0.5;
@@ -125,13 +125,16 @@ body {
 
 .fa-trash-alt:hover {
   opacity: 1;
-  font-size: 14px;
+  font-size: 20px;
 }
 
+.edit-bt {
+  position: relative;
+}
 
 .fa-edit {
   float: right;
-  font-size: 10px;
+  font-size: 16px;
   cursor: pointer;
   color: orange;
   opacity: 0.5;
@@ -140,5 +143,28 @@ body {
 
 .fa-edit:hover {
   opacity: 1;
-  font-size: 14px;
+  font-size: 20px;
 }
+
+.edit-bt:hover .edit-hint {
+  visibility: visible;
+  opacity: 1;
+}
+
+.edit-bt .edit-hint {
+  visibility: hidden;
+  width: 120px;
+  background-color: orange;
+  color: darkblue;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 100;
+  bottom: 120%;
+  left: 50%;
+  /* margin-left: -60px; */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
