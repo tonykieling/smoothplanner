@@ -21,6 +21,8 @@ nav {
   width: 100px;
 }
 
+
+
 .side-bar {
   display: flex;
   flex-direction: column;
@@ -34,6 +36,7 @@ nav {
 
 .card-header {
   background-color: #dfe3e6;
+  padding: .25rem;
 }
 
 .trip-list > button {
@@ -101,7 +104,7 @@ section {
   font-family: 'Courgette', cursive;
   font-weight: 700;
 }
-.fa-home {
+.fa-home, .fa-print, .fa-share-alt {
   color: #fff;
 }
 
@@ -216,3 +219,18 @@ body {
   transition: opacity 1s;
 }
 
+@media print {
+  .print_share, .side-bar, .trip-list, .add_new_buttons, .far, .fas, .to_time {
+    display: none;
+  }
+  main, .items_container, .cards_list {
+    margin-left: 0;
+    width: 100%;
+  }
+  .card-body {
+    padding: 5px;
+  }
+  .cards_list {
+    padding-top: 0;
+  }
+}
