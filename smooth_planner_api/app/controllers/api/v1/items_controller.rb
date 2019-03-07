@@ -7,9 +7,13 @@ module Api::V1
 
     def destroy
       @item = Item.find(params[:id])
-      
+
       if @item.destroy
-        head :no_content, status: :ok
+        # head :no_content, status: :ok
+        temp_trip = @item.trip_id
+        @trip = Trip.find(temp_trip)
+        @items = @trip.items.order(:time_start)
+        render json: @items
       else
         render json: @item.errors, status: :unprocessable_entity
       end
