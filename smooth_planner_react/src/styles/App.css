@@ -197,6 +197,10 @@ body {
   font-size: 20px;
 }
 
+.fa-2x:hover {
+  font-size: 2.15em;
+}
+
 .edit-bt:hover .edit-hint {
   visibility: visible;
   opacity: 1;
