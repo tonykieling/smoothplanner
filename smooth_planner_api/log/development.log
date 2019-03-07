@@ -6457,3 +6457,267 @@ Processing by Api::V1::TripsController#show as JSON
 Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:44:30 +0000
+Processing by Api::V1::UsersController#show as JSON
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 01:44:30 +0000
+  Parameters: {"id"=>"1"}
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (1.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 26ms (Views: 14.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:44:41 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 01:44:52 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (6.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 41ms (Views: 24.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:48:21 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (3.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 27ms (Views: 20.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:48:38 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:49:05 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:49:50 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (13.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 20ms (Views: 5.9ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:52:11 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:52:43 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:56:41 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 01:56:59 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 02:00:49 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (2.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 02:01:46 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (2.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 02:03:04 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-07 02:09:55 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (1.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (5.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:09:56 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (1.0ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-07 02:09:58 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 19ms (Views: 2.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:09:59 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 02:10:09 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-07 02:10:20 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:10:21 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 16ms (Views: 5.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-07 02:10:22 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:10:23 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-07 02:10:25 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (1.8ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (4.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:10:26 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (2.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 33ms (Views: 19.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-07 02:10:31 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:10:32 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 02:10:54 +0000
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:10:54 +0000
+Processing by Api::V1::UsersController#show as JSON
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (1.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrip Load (2.0ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+  [1m[36mItem Load (2.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 33ms (Views: 26.7ms | ActiveRecord: 2.0ms)
+
+
+Completed 200 OK in 49ms (Views: 39.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:10:58 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.8ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 20ms (Views: 11.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-07 02:11:01 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:11:02 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-07 02:11:26 +0000
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-07 02:11:26 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+Processing by Api::V1::UsersController#show as JSON
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (2.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 133ms (Views: 29.6ms | ActiveRecord: 3.2ms)
+
+
+  [1m[36mTrip Load (19.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 36ms (Views: 15.7ms | ActiveRecord: 19.2ms)
+
+

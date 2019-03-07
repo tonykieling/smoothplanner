@@ -51,8 +51,8 @@ class App extends Component {
       </header>
       <main>
         
-        <Route path="/trips/:id" exact component={ ItemsContainer } />
-        {/* <Route path="/trips/:id" render={()=><ItemsContainer trips={this.state.trips}/>}/> */}
+        {/* <Route path="/trips/:id" exact component={ ItemsContainer } /> */}
+        <Route path="/trips/:id" render={(props)=><ItemsContainer {...props} trips={this.state.trips}/>}/>
         <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
         </main>
       </div>
