@@ -1,39 +1,44 @@
 import React, { Component } from 'react';
 import LocationSearchInput from './component_form_autocomplete';
-import postTAE from './helper_postTAEdetails';
 
-function concatDateandTime(date, time) {
-  const concatString = `${date} ${time}`
-  return Date.parse(concatString)
-}
+import postTAE from './helper_postTAEdetails';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 class CreateTransport extends Component {
   constructor(props){
     super(props);
     //Declare state
     this.state = {
-      city_depart: '',
-      city_arrival: '',
-      dt_start: '',
-      time_start: '',
-      dt_end: '',
-      confirmation: '',
-      details: '',
-      type:'T'
+      item_type:'T',
+      trip_id: 4
     }
+    this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
+    this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
+
   }
   onChangeHandler = (event) => {
     const stateName = event.target.name
     const value = event.target.value
     this.setState({[stateName]:value})
+    console.log(this.state)
+  }
+  handleChangeEndDate(date) {
+    const parsedDate = Date.parse(date);
+    this.setState({
+      endDate: parsedDate,
+    });
+  }
+  handleChangeStartDate(date) {
+    const parsedDate = Date.parse(date);
+    this.setState({
+      startDate: parsedDate,
+    });
   }
   handlesSubmit = (event)=>{
     event.preventDefault();
-    //  Combiming date and time for start
-    const start_timestamp = concatDateandTime(this.state.dt_start_raw, this.state.time_start)
-    //  combining date and time for end
-    const end_timestamp = concatDateandTime(this.state.dt_end_raw, this.state.time_end)
-    this.setState({dt_start: start_timestamp, dt_end: end_timestamp})
+    console.log(this.state)
     postTAE(this.state) 
   }
   onChangeDepartCity = (city_depart) => {
@@ -62,50 +67,45 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="row form-group">
-            <label for="dt_start_raw" className="col-sm-3 col-form-label">Date & Time:</label>
-            <input
-              type="date" 
-              className="form-control col-sm-3" 
-              name="dt_start"
-              onChange = {this.onChangeHandler}
-              required
-            />
-            <input 
-            type="time"
-            className="form-control col-sm-3"
-            name="time_start"
-            onChange = {this.onChangeHandler}
-            />
-
-          </div>
-          <div className="row form-group">
             <label for="city_arrival" className="col-sm-3 col-form-label">Arrival</label>
             <LocationSearchInput
               type="text" 
-              className="form-control" 
+              className="form-control col-sm-10" 
               name="city_arrival" 
               placeholder="Arrival City" 
               handleAddress = {this.onChangeArriveCity}
             />
           </div>
           <div className="row form-group">
-            <label for="dt_end"className="col-sm-3 col-form-label">Date & Time:</label>
-            < input 
-              type="date"
-              className="form-control col-sm-9" 
-              name="dt_end_raw"
-              onChange = {this.onChangeHandler}
-              required
+            <label for="time_start" className="col-sm-3 col-form-label">Departing:</label>
+            <DatePicker
+              name="time_start"
+              placeholderText = "Click to select"
+              selected = {this.state.startDate}
+              onChange = {this.handleChangeStartDate}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={30}
+              dateFormat="dd/MM/YYYY h:mm aa"
+              timeCaption="time"
+              className = "form-control col-sm-10"
             />
-            <input 
-            type="time"
-            className="form-control col-sm-3"
-            name="time_end"
-            onChange = {this.onChangeHandler}
+            <label for="time_end"className="col-sm-3 col-form-label">Arriving:</label>
+            <DatePicker
+              name="time_end"
+              placeholderText = "Click to select"
+              selected = {this.state.endDate}
+              onChange = {this.handleChangeEndDate}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={30}
+              dateFormat="dd/MM/YYYY h:mm aa"
+              timeCaption="time"
+              className = "form-control col-sm-10"
             />
           </div>
           <div className="row form-group">
-            <label for="confirmation-number" className="col-sm-3 col-form-label">Reservation #:</label>
+            <label for="confirmation" className="col-sm-3 col-form-label">Reservation #:</label>
             <input 
               type="text" 
               className="form-control col-sm-9" 
@@ -119,7 +119,8 @@ class CreateTransport extends Component {
             <textarea 
               className="form-control col-sm-9"
               name="details"
-              onChange = {this.onChangeHandler}>
+              onChange = {this.onChangeHandler}
+              value = {this.state.details}>
             </textarea>
           </div>
           <div className ="form-group">

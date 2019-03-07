@@ -19,6 +19,13 @@ module Api::V1
       google_reccomendations(params[:id])
     end
 
+    def create
+      newitem = Item.new(item_params)
+      puts newitem
+      newitem.save
+    end
+
+
     private 
     def google_reccomendations(item)
       # @items = itinerary.items
@@ -37,5 +44,25 @@ module Api::V1
         }).body
       render json: @recos
     end
+
+    def item_params
+      params.require(:item).permit(
+        :title, 
+        :time_start, 
+        :time_end, 
+        :item_type,
+        :details,
+        :confirmation,
+        :city_depart,
+        :city_arrival,
+        :venue,
+        :address,
+        :phone,
+        :trip_id,
+        :url,
+        :geo_location
+      )
+    end
+
   end
 end

@@ -56,6 +56,8 @@ class App extends Component {
         </div>
         <Route path="/trips/:id" exact component={ ItemsContainer } />
         <Route path="/" exact render={()=> <h3>Hello Welcome!</h3>}/>
+        <CreateTrip />
+        <CreateTransport />
         </main>
       </div>
       </BrowserRouter>
