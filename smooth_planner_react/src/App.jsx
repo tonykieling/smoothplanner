@@ -6,7 +6,6 @@ import ItemsContainer from './component_items_container';
 // import Home from './component_home';
 import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
-<<<<<<< HEAD
 import logo from './styles/images/plane_world.png'
 import CreateTrip from './component_form_createtrip';
 import CreateTransport from './component_form_createTransport';
@@ -14,8 +13,6 @@ import CreateAccomodation from './component_form_create_A';
 import CreateEvent from './component_form_create_E';
 
 
-=======
->>>>>>> 716bdbc9d6543cc818f25fb7f2fb8ef4784f1799
 
 class App extends Component {
   constructor(props) {
@@ -64,13 +61,8 @@ class App extends Component {
       <main>
         
         <Route path="/trips/:id" exact component={ ItemsContainer } />
-<<<<<<< HEAD
-        <Route path="/" exact render={()=> <h3>Hello Welcome!</h3>}/>
-        <CreateEvent />
-=======
         {/* <Route path="/trips/:id" render={()=><ItemsContainer trips={this.state.trips}/>}/> */}
         <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
->>>>>>> 716bdbc9d6543cc818f25fb7f2fb8ef4784f1799
         </main>
       </div>
       </BrowserRouter>

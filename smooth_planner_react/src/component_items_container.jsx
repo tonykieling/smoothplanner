@@ -3,6 +3,7 @@ import axios from 'axios';
 import ItemsContainerA from './component_items_container_A';
 import ItemsContainerE from './component_items_container_E';
 import ItemsContainerT from './component_items_container_T';
+import CreateTransport from './component_form_createTransport';
 
 
 // this container will call the specific container (Accommodation, Event or Transportation)
@@ -50,6 +51,9 @@ export default class ItemsContainer extends Component {
       this.fetchTripDetails();
     }
   };
+  renderForm() {
+    
+  }
 
   render() {
     const itineraries = this.state;
@@ -69,7 +73,7 @@ export default class ItemsContainer extends Component {
     return (
       <div className="items_container">
       <div className="add_new_buttons">
-            <button type="button" className="btn btn-outline-primary">+ Transportation</button>
+            <button type="button" className="btn btn-outline-primary" onClick={this.renderForm}>+ Transportation</button>
             <button type="button" className="btn btn-outline-success">+ Accomodation</button>
             <button type="button" className="btn btn-outline-info">+ Event</button>
       </div>
