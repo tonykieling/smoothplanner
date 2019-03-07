@@ -31,9 +31,13 @@ user4 = User.create({
   email: "neila@user.com"
 })
 
+user5 = User.create({
+  name: "Simone K",
+  email: "simone@user.com"
+})
 
 
-# CREATE ITINERARIES
+# CREATE TRIPS
 trip1 = Trip.create(
 {
   name: "Christmas trip",
@@ -71,6 +75,38 @@ trip5 = Trip.create(
   time_end:'July 15, 2020',
   user_id: user1.id
 })
+
+trip6 = Trip.create(
+  {
+    name: "Businnes meeting at Toronto",
+    time_start:'April 1, 2019',
+    time_end:'July 4, 2019',
+    user_id: user1.id
+  })
+
+trip6 = Trip.create(
+  {
+    name: "Businnes meeting at Calgary",
+    time_start:'August 5, 2019',
+    time_end:'August 9, 2019',
+    user_id: user1.id
+  })
+
+trip6 = Trip.create(
+  {
+    name: "Go Shopping",
+    time_start:'March 22, 2019',
+    time_end:'March 24, 2019',
+    user_id: user1.id
+  })
+
+trip7 = Trip.create(
+  {
+    name: "Hawaii Time",
+    time_start:'March 2, 2017',
+    time_end:'March 20, 2017',
+    user_id: user1.id
+  })
 
 
 
@@ -210,4 +246,124 @@ Item.create({
   city_depart: 'Vancouver',
   city_arrival: 'Zurich',
   trip_id: trip3.id
+})
+
+# forth items trip
+Item.create({
+  time_start: 'March 22, 2019 7:30:00',
+  time_end: 'March 24, 2020 01:00:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Seattle',
+  details: 'we need to purchase clothes and visit uncle Paul. Going by car.',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'March 24, 2019 01:00:00',
+  time_end: 'March 24, 2020 03:30:00',
+  item_type: 'T',
+  city_depart: 'Seattle',
+  city_arrival: 'Vancouver',
+  details: 'we need to go back sharp 01:00!',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'March 22, 2019 10:30:00',
+  title: 'Go Walmart',
+  item_type: 'E',
+  city_depart: 'Vancouver',
+  city_arrival: 'Seattle',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'March 23, 2019 11:30:00',
+  item_type: 'E',
+
+  venue: 'Yammy Food Restaurant',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'March 23, 2019 06:30:00',
+  item_type: 'E',
+  venue: 'Tropical Best Food',
+  details: 'uncle Paul and family and us',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'March 22, 2019 10:00:00',
+  time_end: 'March 24, 2020 10:30:00',
+  item_type: 'A',
+  venue: 'Hotel Star',
+  trip_id: trip6.id
+})
+
+
+Item.create({
+  time_start: 'March 23, 2019 11:30:00',
+  time_end: 'March 23, 2019 20:30:00',
+  item_type: 'E',
+  venue: "Cloth's Super Store'",
+  details: "let's check this new store with uncle Paul. Whole day activity and dinner at the end.",
+  trip_id: trip6.id
+})
+
+
+
+
+
+# fiveth items trip
+Item.create({
+  time_start: 'March 2, 2017 7:30:00',
+  time_end: 'March 2, 2017 01:00:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Hawaii',
+  details: 'it will be a great time',
+  trip_id: trip7.id
+})
+
+Item.create({
+  time_start: 'March 20, 2017 1:00:00',
+  time_end: 'March 20, 2027 03:30:00',
+  item_type: 'T',
+  city_depart: 'Hawaii',
+  city_arrival: 'Vancouver',
+  details: 'going back home',
+  trip_id: trip7.id
+})
+
+Item.create({
+  time_start: 'March 2, 2017 18:30:00',
+  title: 'Meet Alice',
+  item_type: 'E',
+  details: 'dinner somewhere',
+  trip_id: trip7.id
+})
+
+Item.create({
+  time_start: 'March 3, 2017 11:30:00',
+  item_type: 'E',
+  venue: 'Food Restaurant',
+  trip_id: trip7.id
+})
+
+Item.create({
+  time_start: 'March 5, 2017 06:30:00',
+  item_type: 'E',
+  venue: 'Tropical Restaurant',
+  details: 'coconot, please',
+  trip_id: trip7.id
+})
+
+Item.create({
+  time_start: 'March 2, 2017 10:00:00',
+  time_end: 'March 20, 2027 10:30:00',
+  item_type: 'A',
+  venue: 'Hawaii Hotels',
+  trip_id: trip7.id
 })

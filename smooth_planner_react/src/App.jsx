@@ -45,7 +45,7 @@ class App extends Component {
           </div>
           <div className="print_share">
           <i className="fas fa-share-alt fa-2x"></i>
-          <i className="fas fa-print fa-2x"></i>
+          <a href="javascript:window.print()"><i className="fas fa-print fa-2x"></i></a>
           </div>
         </nav> 
         <div className="side-bar">
