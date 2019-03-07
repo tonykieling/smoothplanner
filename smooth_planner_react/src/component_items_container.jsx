@@ -12,7 +12,6 @@ export default class ItemsContainer extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       cards: []
     }
@@ -41,6 +40,7 @@ export default class ItemsContainer extends Component {
     })
     .catch(error => console.log(error));
   }
+
 
   componentDidMount() {
     this.fetchTripDetails();
