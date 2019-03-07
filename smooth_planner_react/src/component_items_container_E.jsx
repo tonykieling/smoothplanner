@@ -14,6 +14,7 @@ export default class ItemsContainer extends Component {
   
   render() {
     const item = this.props.item;
+    const details = <p><b>XXDetails: </b>item.details</p>
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
@@ -25,8 +26,8 @@ export default class ItemsContainer extends Component {
             </div>
 
             <div className="card-body">
-              <span> <strong>When:</strong>{item.time_start}</span> <br />
-              <span> <strong>Where: </strong>{item.time_end}</span>  <br />
+              <span> <strong>When:</strong>{Date.parse(item.time_start)} {item.time_end? ` - ${Date.parse(item.time_end)}` : ""}</span> <br />
+              <span> <strong>Where: </strong>{item.venue}</span>  <br />
             </div>
           
             <div className="card-body">
@@ -35,7 +36,7 @@ export default class ItemsContainer extends Component {
               <span> <strong>Website: </strong>{item.url} </span>
               <span className="to_time"> <strong>Phone:</strong>{item.phone}</span>  <br />
               <span> <strong>Address:</strong>{item.address}</span>  <br />
-              <span> {item.details ? `<strong>Details: </strong>${item.details}` : "" }</span>
+              <span> {item.details ? details : null }</span>
             </div>
         </div>
     )

@@ -19,7 +19,8 @@ export default class ItemsContainer extends Component {
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
-        this.setState({cards: response.data});
+          console.log("data: ", response.data);
+          this.setState({cards: response.data});
       })
       .catch(error => {
         console.log(error)
