@@ -34,6 +34,12 @@ class CreateEvent extends Component {
     })
     console.log("state change!", this.state)    
   }
+  onChangeHandler = (event) => {
+    const stateName = event.target.name
+    const value = event.target.value
+    this.setState({[stateName]:value})
+    console.log(this.state)
+  }
 
 
   render() {
@@ -45,7 +51,7 @@ class CreateEvent extends Component {
         <form onSubmit={this.handlesSubmit}>
           <div class="row form-group">
             <label for="title" class="col-sm-3 col-form-label">Title</label>
-            <input type="text" class="form-control col-sm-9" name="title" placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" />
+            <input type="text" class="form-control col-sm-9" name="title" placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" onChange = {this.onChangeHandler} value={this.state.title} />
           </div>
           <div class="row form-group">
             <label for="dt_start" class="col-sm-3 col-form-label">Event time:</label>
