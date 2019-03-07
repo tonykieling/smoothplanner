@@ -15,6 +15,7 @@ export default class ItemsContainer extends Component {
   render() {
     
     const item = this.props.item;
+    const details = <p><b>XXDetails: </b>item.details</p>
 
     return (
           <div className="card">
@@ -36,7 +37,7 @@ export default class ItemsContainer extends Component {
             <div className="card-body">
               <span> <strong>Confirmation #: </strong>{item.confirmation}</span>
               <span className="to_time"> <strong>Files uploaded: </strong> ticket_to_Zurich.pdf</span> <br />
-              <span> {item.details ? `<strong>Details: </strong>${item.details}` : "" }</span>
+              <span> {item.details ? details : null }</span>
               {/* right now, if details is empty, it doesnt show up */}
             </div>
           </div>
