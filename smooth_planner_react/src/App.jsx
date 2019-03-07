@@ -3,14 +3,8 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
 import ItemsContainer from './component_items_container';
-// import Home from './component_home';
 import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
-import logo from './styles/images/plane_world.png'
-import CreateTrip from './component_form_createtrip';
-import CreateTransport from './component_form_createTransport';
-import CreateAccomodation from './component_form_create_A';
-import CreateEvent from './component_form_create_E';
 
 
 
@@ -60,8 +54,7 @@ class App extends Component {
       </header>
       <main>
         
-        {/* <Route path="/trips/:id" exact component={ ItemsContainer } /> */}
-        <Route path="/trips/:id" render={(props)=><ItemsContainer {...props} trips={this.state.trips}/>}/>
+        <Route path="/trips/:id" render={(props)=><ItemsContainer {...props}/>}/>
         <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
         </main>
       </div>
