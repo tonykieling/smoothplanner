@@ -36,10 +36,6 @@ nav {
   background-color: #dfe3e6;
 }
 
-.trip-list {
-  /* margin-top: 1em; */
-}
-
 .trip-list > button {
   margin: 8px 35px 20px;
   background-color: #faebd773;

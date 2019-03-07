@@ -22,7 +22,6 @@ export default class LocationSearchInput extends React.Component {
   handleSelect = address => {
     geocodeByAddress(address)
       .then(results => {
-        this.props.handleAddress(results[0].formatted_address)
         return getLatLng(results[0])
       })
       .then(latlng => {
@@ -42,10 +41,8 @@ export default class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Enter the destination for your trip. E.g. Canada, Banff, Paris, Australia',
-                className: 'location-search-input form-control',
-                name: 'destination',
-                type: 'text'
+                placeholder: 'Type location...',
+                className: 'location-search-input form-control col-sm-10',
               })}
             />
             <div className="autocomplete-dropdown-container">

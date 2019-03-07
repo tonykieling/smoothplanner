@@ -7,9 +7,12 @@ class CreateTrip extends Component {
     // Declare State
     this.state = {
       name: '',
+      user_id: 1
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
+  // Change handlers to control form inputs
   onChangeTitle = (event)=>{
     this.setState({name: event.target.value})
     console.log("state change!", this.state)
@@ -17,7 +20,7 @@ class CreateTrip extends Component {
   
   handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3001/api/v1/itineraries', this.state)
+    axios.post('http://localhost:3001/api/v1/trips', this.state)
     .then(function (response) {
       console.log(response);
     })
