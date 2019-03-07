@@ -5,27 +5,48 @@
 
 nav {
   position: fixed;
-  border: 1px solid black;
   display: flex;
   width: 100%;
-  background-color: #bccbdae3;
+  background-color: rgba(0,0,0,.35);
   z-index: 1;
+  justify-content: space-between;
+  padding-top: 10px; 
+  color: #fff;
+}
 
+.print_share {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 100px;
 }
 
 .side-bar {
   display: flex;
   flex-direction: column;
   /* border: 1px solid black; */
-  background-color: #bccbdae3;
+  background-color: rgba(0,0,0,.35);
   position: fixed;
   top: 56px;
   bottom: 0;
   width: 200px;
 }
 
+.card-header {
+  background-color: #dfe3e6;
+}
+
 .trip-list {
-  margin-top: 2em;
+  /* margin-top: 1em; */
+}
+
+.trip-list > button {
+  margin: 8px 35px 20px;
+  background-color: #faebd773;
+  color: ghostwhite;
+  font-size: 20px;
+  font-weight: 800;
+  border: none;
 }
 
 .trip-list > ul {
@@ -33,12 +54,20 @@ nav {
   padding-left: 10px;
 }
 .trip-list > ul > a {
-  padding: 5px;
+  padding: 3px;
+}
+
+.trip-list > h4 {
+  color: #fff;
 }
 
 main {
   margin-left: 200px;
-  padding: 5px;
+  padding: 60px 5px 0;
+  top: 55px;
+  display: flex;
+  width: 85%;
+  justify-content: space-around;
 }
 
 section {
@@ -59,7 +88,6 @@ section {
   float: right;
 }
 
-
 .card {
   min-width: 70%;
   margin: 5px 0;
@@ -67,17 +95,41 @@ section {
 
 .logo {
   display: flex;
-  height: 55px;
+  width: 300px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.logo > h2 {
+  color: #f6f6f6;
+  font-family: 'Courgette', cursive;
+  font-weight: 700;
+}
+.fa-home {
+  color: #fff;
 }
 
 .add_new_buttons {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 5px;
-  margin: 53px 125px 2px 125px;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  padding-top: 3px;
 }
 
+.add_new_buttons > button {
+  background-color: #6c757d;
+  color: ghostwhite;
+  font-size: 20px;
+  font-weight: 800;
+  border: none;
+}
+
+.cards_list {
+  padding-top: 47px;
+}
 
 footer{
   display: flex;
@@ -97,13 +149,13 @@ footer{
 } 
 
 body {
-  /* background-image: url("./images/pexels-photo-1320684.jpeg"); */
+  background-image: url("./images/amazing-austria-dawn-1323550.jpg");
   /* background-image: url("https://www.indietraveller.co/wp-content/uploads/2014/05/bigtrip__large.jpg"); */
   background-attachment:fixed;
   background-size: auto;
   width: 100%;
   background-size: cover;
-  background-position: 100%;
+  background-position: 0 100%;
   /* min view width should be 550px */
   font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
 }
