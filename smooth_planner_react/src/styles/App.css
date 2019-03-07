@@ -10,14 +10,14 @@ nav {
   background-color: rgba(0,0,0,.35);
   z-index: 1;
   justify-content: space-between;
+  padding-top: 10px; 
+  color: #fff;
 }
 
 .print_share {
   display: flex;
-  color: #fff;
   align-items: flex-start;
   justify-content: space-evenly;
-  padding-top: 10px; 
   width: 100px;
 }
 
@@ -57,6 +57,10 @@ nav {
   padding: 3px;
 }
 
+.trip-list > h4 {
+  color: #fff;
+}
+
 main {
   margin-left: 200px;
   padding: 60px 5px 0;
@@ -91,16 +95,15 @@ section {
 
 .logo {
   display: flex;
-  height: 55px;
-  width: 275px;
+  width: 300px;
   align-items: flex-start;
   justify-content: space-evenly;
-  padding-top: 10px; 
 }
 
-.logo > h3 {
+.logo > h2 {
   color: #f6f6f6;
   font-family: 'Courgette', cursive;
+  font-weight: 700;
 }
 .fa-home {
   color: #fff;

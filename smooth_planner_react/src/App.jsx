@@ -5,14 +5,14 @@ import ItemsContainer from './component_items_container';
 // import Home from './component_home';
 import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
-import logo from './styles/images/plane_world.png'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       current_user: {name: "Bob", id: 1},
-      trips: []
+      trips: [],
+      selected_trip: { id: 2, title: "Japan Trip" }
     }
   }
   //Simone and Neila
@@ -35,11 +35,14 @@ class App extends Component {
         <nav>
           <div className="logo">
             <Link to={'/'}><i className="fas fa-home fa-2x"></i></Link>
-            <h3>Smooth Planner</h3>
+            <h2>Smooth Planner</h2>
+          </div>
+          <div>
+            <h4>{this.state.selected_trip.title}</h4>
           </div>
           <div className="print_share">
-          <i class="fas fa-share-alt fa-2x"></i>
-          <i class="fas fa-print fa-2x"></i>
+          <i className="fas fa-share-alt fa-2x"></i>
+          <i className="fas fa-print fa-2x"></i>
           </div>
         </nav> 
         <div className="side-bar">
