@@ -89,6 +89,7 @@ class CreateTransport extends Component {
               dateFormat="dd/MM/YYYY h:mm aa"
               timeCaption="time"
               className = "form-control col-sm-10"
+              required
             />
             <label for="time_end"className="col-sm-3 col-form-label">Arriving:</label>
             <DatePicker
@@ -102,6 +103,7 @@ class CreateTransport extends Component {
               dateFormat="dd/MM/YYYY h:mm aa"
               timeCaption="time"
               className = "form-control col-sm-10"
+              required
             />
           </div>
           <div className="row form-group">

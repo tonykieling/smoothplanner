@@ -10,6 +10,7 @@ import logo from './styles/images/plane_world.png'
 import CreateTrip from './component_form_createtrip';
 import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
+import CreateEvent from './component_form_create_E';
 
 
 
@@ -57,7 +58,7 @@ class App extends Component {
         </div>
         <Route path="/trips/:id" exact component={ ItemsContainer } />
         <Route path="/" exact render={()=> <h3>Hello Welcome!</h3>}/>
-        <CreateAccomodation />
+        <CreateEvent />
         </main>
       </div>
       </BrowserRouter>
