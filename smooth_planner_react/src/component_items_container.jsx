@@ -17,7 +17,6 @@ export default class ItemsContainer extends Component {
     super(props);
     this.state = {
       cards: [],
-      
     }
   }
 
@@ -41,7 +40,16 @@ export default class ItemsContainer extends Component {
     .catch(error => console.log(error));
   }
 
-
+  addItem = (data) => {
+    axios.post('http://localhost:3001/api/v1/items', data)
+    .then(response => {
+      this.setState({cards: response.data});
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  
   componentDidMount() {
     this.fetchTripDetails();
   }
@@ -71,13 +79,15 @@ export default class ItemsContainer extends Component {
       <div className="items_container">
       <div className="add_new_buttons">
             
-      <Popup trigger={<button type="button" className="btn btn-outline-primary">+ Transportation</button>} 
-        modal
-      >
-     <CreateTransport />
-  </Popup>
-            <button type="button" className="btn btn-outline-success">+ Accomodation</button>
-            <button type="button" className="btn btn-outline-info">+ Event</button>
+      <Popup trigger={<button type="button" className="btn btn-outline-info">+ Transportation</button>} modal>
+        <CreateTransport addItem={this.addItem} tripID={this.props.match.params.id}/>
+      </Popup>
+      <Popup trigger={<button type="button" className="btn btn-outline-info">+ Accomodation</button>} modal>
+        <CreateAccomodation addItem={this.addItem} tripID={this.props.match.params.id}/>
+      </Popup>
+      <Popup trigger={<button type="button" className="btn btn-outline-info">+ Event</button>} modal>
+        <CreateEvent addItem={this.addItem} tripID={this.props.match.params.id}/>
+      </Popup>
       </div>
       <div className="cards_list">
         {allCards}

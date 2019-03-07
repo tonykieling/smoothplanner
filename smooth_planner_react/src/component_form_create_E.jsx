@@ -11,7 +11,7 @@ class CreateEvent extends Component {
     //Declare state
     this.state = {
       item_type:'E',
-      trip_id: 2
+      trip_id: this.props.tripID,
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -26,7 +26,7 @@ class CreateEvent extends Component {
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
-    postTAE(this.state) 
+    this.props.addItem(this.state);
   }
   onChangeVenue = (venue) => {
     this.setState({venue})

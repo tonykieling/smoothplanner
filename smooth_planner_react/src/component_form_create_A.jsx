@@ -11,7 +11,7 @@ class CreateAccomodation extends Component {
     //Declare state
     this.state = {
       item_type:'A',
-      trip_id: 4
+      trip_id: this.props.tripID
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -37,7 +37,7 @@ class CreateAccomodation extends Component {
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
-    postTAE(this.state) 
+    this.props.addItem(this.state);
   }
   onChangeVenue = (venue) => {
     this.setState({venue})

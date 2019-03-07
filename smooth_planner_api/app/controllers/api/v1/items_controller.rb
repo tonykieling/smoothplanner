@@ -26,7 +26,13 @@ module Api::V1
     def create
       newitem = Item.new(item_params)
       puts newitem
-      newitem.save
+      if newitem.save
+        @trip = Trip.find(params[:trip_id])
+        @items = @trip.items.order(:time_start)
+        render json: @items
+      else
+        render json: @newitem.errors, status: :unprocessable_entity   
+      end
     end
 
 
