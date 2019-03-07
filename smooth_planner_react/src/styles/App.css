@@ -5,12 +5,20 @@
 
 nav {
   position: fixed;
-  /* border: 1px solid black; */
   display: flex;
   width: 100%;
   background-color: rgba(0,0,0,.35);
   z-index: 1;
+  justify-content: space-between;
+}
 
+.print_share {
+  display: flex;
+  color: #fff;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-top: 10px; 
+  width: 100px;
 }
 
 .side-bar {
@@ -33,7 +41,7 @@ nav {
 }
 
 .trip-list > button {
-  margin: 10px 35px 20px;
+  margin: 8px 35px 20px;
   background-color: #faebd773;
   color: ghostwhite;
   font-size: 20px;
@@ -103,14 +111,21 @@ section {
   justify-content: space-around;
   align-items: center;
   width: 50%;
+  position: fixed;
+  z-index: 1;
+  padding-top: 3px;
 }
 
 .add_new_buttons > button {
-  background-color: #faebd773;
+  background-color: #6c757d;
   color: ghostwhite;
   font-size: 20px;
   font-weight: 800;
   border: none;
+}
+
+.cards_list {
+  padding-top: 47px;
 }
 
 footer{

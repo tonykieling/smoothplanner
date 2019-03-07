@@ -13,7 +13,6 @@ export default class ItemsContainer extends Component {
     super(props);
 
     this.state = {
-      currentUser: {name: "Bob"},
       cards: []
     }
   }
@@ -69,7 +68,14 @@ export default class ItemsContainer extends Component {
 
     return (
       <div className="items_container">
+      <div className="add_new_buttons">
+            <button type="button" className="btn btn-outline-primary">+ Transportation</button>
+            <button type="button" className="btn btn-outline-success">+ Accomodation</button>
+            <button type="button" className="btn btn-outline-info">+ Event</button>
+      </div>
+      <div className="cards_list">
         {allCards}
+      </div>
       </div>
     )
   }

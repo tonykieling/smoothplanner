@@ -37,11 +37,10 @@ class App extends Component {
             <Link to={'/'}><i className="fas fa-home fa-2x"></i></Link>
             <h3>Smooth Planner</h3>
           </div>
-          <div className="add_new_buttons">
-            <button type="button" className="btn btn-outline-primary">+ Transportation</button>
-            <button type="button" className="btn btn-outline-secondary">+ Accomodation</button>
-            <button type="button" className="btn btn-outline-info">+ Event</button>
-        </div>
+          <div className="print_share">
+          <i class="fas fa-share-alt fa-2x"></i>
+          <i class="fas fa-print fa-2x"></i>
+          </div>
         </nav> 
         <div className="side-bar">
           <TripsList trips={this.state.trips} />
@@ -50,6 +49,7 @@ class App extends Component {
       <main>
         
         <Route path="/trips/:id" exact component={ ItemsContainer } />
+        {/* <Route path="/trips/:id" render={()=><ItemsContainer trips={this.state.trips}/>}/> */}
         <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
         </main>
       </div>
