@@ -4,6 +4,8 @@ import ItemsContainerA from './component_items_container_A';
 import ItemsContainerE from './component_items_container_E';
 import ItemsContainerT from './component_items_container_T';
 import CreateTransport from './component_form_createTransport';
+import CreateAccomodation from './component_form_create_A';
+import CreateEvent from './component_form_create_E';
 
 
 // this container will call the specific container (Accommodation, Event or Transportation)
@@ -35,7 +37,8 @@ export default class ItemsContainer extends Component {
       // filter the cards array in order to get rid of the deleted item and update the screen
       const temp_cards = this.state.cards.filter(card => card.id !== id);
       this.setState({
-        cards: temp_cards
+        cards: temp_cards,
+        showTForm: false
       });
     })
     .catch(error => console.log(error));
@@ -51,8 +54,13 @@ export default class ItemsContainer extends Component {
       this.fetchTripDetails();
     }
   };
-  renderForm() {
-    
+  renderForm = (type) => {
+    if(type === 'T') {
+     (this.state.showTForm) ? this.setState({showTForm: false}) : this.setState({showTForm: true})
+    } else if (type === 'A') {
+      (this.state.showAForm) ? this.setState({showAForm: false}) : this.setState({showAForm: true})
+    } else 
+    (this.state.showEForm) ? this.setState({showEForm: false}) : this.setState({showEForm: true})
   }
 
   render() {
@@ -73,10 +81,13 @@ export default class ItemsContainer extends Component {
     return (
       <div className="items_container">
       <div className="add_new_buttons">
-            <button type="button" className="btn btn-outline-primary" onClick={this.renderForm}>+ Transportation</button>
-            <button type="button" className="btn btn-outline-success">+ Accomodation</button>
-            <button type="button" className="btn btn-outline-info">+ Event</button>
+            <button type="button" className="btn btn-outline-primary" onClick={this.renderForm("T")}>+ Transportation</button>
+            <button type="button" className="btn btn-outline-success" onClick={this.renderForm("A")}>+ Accomodation</button>
+            <button type="button" className="btn btn-outline-info" onClick={this.renderForm("E")}>+ Event</button>
       </div>
+      {this.state.showTForm ? (<CreateTransport />): null}
+      {this.state.showAForm ? (<CreateAccomodation />): null}
+      {this.state.showEForm ? (<CreateEvent />): null}
       <div className="cards_list">
         {allCards}
       </div>
