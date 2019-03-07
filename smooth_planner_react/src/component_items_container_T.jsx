@@ -6,7 +6,7 @@ export default class ItemsContainer extends Component {
 
   // calls delete item method on items_container
   handle_deleteItem = () => {
-    const check = window.confirm(`Are you sure you want to delete this Transportation card?`);
+    const check = window.confirm(`Are you sure you want to delete this item?`);
     if (check === true)
       this.props.delete_item(this.props.item.id);
   }
@@ -20,10 +20,10 @@ export default class ItemsContainer extends Component {
           <div className="card">
             <div className="card-header" >
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
-              <div className="edit-bt">
+              {/* <div className="edit-bt"> */}
                 <i className="far fa-edit"></i>
-                <div className="edit-hint">Edit Card</div>
-              </div>
+                {/* <div className="edit-hint">Edit Card</div>
+              </div> */}
               <h4><strong>Going to {item.city_arrival}</strong></h4>
             </div>
             

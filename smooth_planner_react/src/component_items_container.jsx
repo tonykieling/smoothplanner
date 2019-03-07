@@ -31,11 +31,7 @@ export default class ItemsContainer extends Component {
   delete_item = (id) => {
     axios.delete(`http://localhost:3001/api/v1/items/${id}`)
     .then(response => {
-      // filter the cards array in order to get rid of the deleted item and update the screen
-      const temp_cards = this.state.cards.filter(card => card.id !== id);
-      this.setState({
-        cards: temp_cards
-      });
+      this.setState({cards: response.data});
     })
     .catch(error => console.log(error));
   }
