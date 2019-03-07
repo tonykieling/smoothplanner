@@ -34,13 +34,13 @@ class App extends Component {
       <header>
         <nav>
           <div className="logo">
-            <Link to={'/'}><i class="fas fa-home fa-2x"></i></Link>
+            <Link to={'/'}><i className="fas fa-home fa-2x"></i></Link>
             <h3>Smooth Planner</h3>
           </div>
           <div className="add_new_buttons">
-            <button type="button" className="btn btn-outline-success">+ Transportation</button>
-            <button type="button" className="btn btn-outline-success">+ Accomodation</button>
-            <button type="button" className="btn btn-outline-success">+ Event</button>
+            <button type="button" className="btn btn-outline-primary">+ Transportation</button>
+            <button type="button" className="btn btn-outline-secondary">+ Accomodation</button>
+            <button type="button" className="btn btn-outline-info">+ Event</button>
         </div>
         </nav> 
         <div className="side-bar">

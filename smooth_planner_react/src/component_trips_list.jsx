@@ -19,10 +19,11 @@ export default class TripsList extends Component {
     const trips = this.props.trips.map((trip) => {
       return (<Link key={trip.id} to={'/trips/' + trip.id } className={dateCheck(trip.time_end)}>{trip.name}</Link>)
     })
+
     
     return (
       <div className="list-group trip-list">
-        <button type="button" className="btn btn-outline-success">+ New Trip</button>
+        <button type="button" className="btn btn-outline-warning">+ New Trip</button>
         <h4>Your Trips</h4>
         <ul>
           {trips}

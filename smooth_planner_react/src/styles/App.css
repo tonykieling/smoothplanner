@@ -34,6 +34,11 @@ nav {
 
 .trip-list > button {
   margin: 10px 35px 20px;
+  background-color: #faebd773;
+  color: ghostwhite;
+  font-size: 20px;
+  font-weight: 800;
+  border: none;
 }
 
 .trip-list > ul {
@@ -41,14 +46,13 @@ nav {
   padding-left: 10px;
 }
 .trip-list > ul > a {
-  padding: 5px;
+  padding: 3px;
 }
 
 main {
   margin-left: 200px;
-  padding: 5px;
+  padding: 60px 5px 0;
   top: 55px;
-  position: fixed;
   display: flex;
   width: 85%;
   justify-content: space-around;
@@ -98,9 +102,16 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 40%;
+  width: 50%;
 }
 
+.add_new_buttons > button {
+  background-color: #faebd773;
+  color: ghostwhite;
+  font-size: 20px;
+  font-weight: 800;
+  border: none;
+}
 
 footer{
   display: flex;
