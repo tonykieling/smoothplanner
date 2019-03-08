@@ -20,6 +20,7 @@ export default class ItemsContainer extends Component {
     super(props);
     this.state = {
       cards: [],
+      suggestions: [],
       showModalT: false,
       showModalA: false,
       showModalE: false
@@ -67,18 +68,7 @@ export default class ItemsContainer extends Component {
       })
   }
 
-  fetchRecomendations(item_id) {
-    console.log("Fetching recommendations from the server")
-    axios.get(`http://localhost:3001/api/v1/items/${item_id}.json`)
-      .then(response => {
-        this.setState({reccomendations: response.data.results})
-      })
-      .catch(error => {
-        console.log(error )
-      })
-
-  }
-
+ 
   // delete method which connects to the database and runs destroy method on
   // items_controller to the specific item
   delete_item = (id) => {
@@ -101,7 +91,6 @@ export default class ItemsContainer extends Component {
   
   componentDidMount() {
     this.fetchTripDetails();
-    this.fetchRecomendations(33);
   }
 
   componentDidUpdate = (prevProps) => {
@@ -166,8 +155,8 @@ export default class ItemsContainer extends Component {
             
           <div className="cards_list">
             {allCards}
-            <RecomendationCard />
           </div>
+          <RecomendationCard item_id={33}/>
       </div>
     )
   }
