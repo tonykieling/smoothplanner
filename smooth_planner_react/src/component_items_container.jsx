@@ -7,6 +7,7 @@ import ReactModal from 'react-modal';
 import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
 import CreateEvent from './component_form_create_E';
+import RecomendationCard from './component_recomendation';
 
 
 // this container will call the specific container (Accommodation, Event or Transportation)
@@ -53,24 +54,39 @@ export default class ItemsContainer extends Component {
     this.setState({ showModalE: false });
   }
 
+   //  Finds the item_id for the first accomodation card so that suggestions can be made based on the id
+   findIDforA = () => {
+    this.state.cards.forEach((card) => {
+      // console.log(card)
+      if(card.item_type === 'A') {
+        this.setState({itemIDForReccomendation: card.id})
+        return;
+      }
+    })
+  }
 
 
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
           this.setState({cards: response.data});
+          this.findIDforA();
       })
       .catch(error => {
         console.log(error)
       })
   }
 
+ 
+
+ 
   // delete method which connects to the database and runs destroy method on
   // items_controller to the specific item
   delete_item = (id) => {
     axios.delete(`http://localhost:3001/api/v1/items/${id}`)
     .then(response => {
       this.setState({cards: response.data});
+      this.findIDforA();
     })
     .catch(error => console.log(error));
   }
@@ -79,6 +95,7 @@ export default class ItemsContainer extends Component {
     axios.post('http://localhost:3001/api/v1/items', data)
     .then(response => {
       this.setState({cards: response.data});
+      this.findIDforA();
     })
     .catch(function (error) {
       console.log(error);
@@ -96,9 +113,7 @@ export default class ItemsContainer extends Component {
   };
 
   render() {
-    const itineraries = this.state;
-
-    let allCards = itineraries.cards.map((item) => {
+    let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item}/>
       }
@@ -168,6 +183,7 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
+          {/* <RecomendationCard item_id={this.state.itemIDForReccomendation}/> */}
       </div>
     )
   }

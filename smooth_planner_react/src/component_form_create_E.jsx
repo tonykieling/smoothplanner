@@ -28,9 +28,8 @@ class CreateEvent extends Component {
     this.setState({venue})
   }
   onChangeLatLng = (latlng) => {
-    this.setState({
-      geo_location: latlng
-    })
+    const geo_location = `${latlng.lat} ${latlng.lng}`
+    this.setState({geo_location})
     console.log("state change!", this.state)    
   }
   onChangeHandler = (event) => {

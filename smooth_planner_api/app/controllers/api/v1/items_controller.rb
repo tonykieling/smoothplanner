@@ -20,7 +20,15 @@ module Api::V1
     end
 
     def show
-      google_reccomendations(params[:id])
+      location = Item.find_by({id: params[:id]}).geo_location
+      @recos = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?", :params => {
+        :query => "restaurants",
+        :key => Rails.application.secrets.google_api_key,
+        :radius => "10000",
+        :location => location, # hardcoded for now to VPL's lat and long
+        :type => "restaurant"
+        }).body
+      render json: JSON.parse(@recos)
     end
 
     def create
@@ -29,7 +37,7 @@ module Api::V1
       if newitem.save
         @trip = Trip.find(newitem.trip_id)
         @items = @trip.items.order(:time_start)
-        puts @items
+        puts @items.inspect
         render json: @items
       end
       
@@ -37,24 +45,7 @@ module Api::V1
 
 
     private 
-    def google_reccomendations(item)
-      # @items = itinerary.items
-
-      # Below makes HTTP requests to google 
-      # Places API https://developers.google.com/places/web-service/search#TextSearchRequests
-      # HTTP.get("http://example.com/resource", :params => {:foo => "bar"})
-
-      @recos = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?", :params => {
-        :query => "restaurants",
-        :key => Rails.application.secrets.google_api_key,
-        :radius => "10000",
-        :location => "49.2803221,-123.112195", # hardcoded for now to VPL's lat and long
-        :region => "CA",# hardcoded for Canada, multiple region coding better refines the results"
-        :type => "restaurant"
-        }).body
-      render json: @recos
-    end
-
+ 
     def item_params
       params.require(:item).permit(
         :title, 
