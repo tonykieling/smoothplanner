@@ -20,7 +20,6 @@ export default class ItemsContainer extends Component {
     super(props);
     this.state = {
       cards: [],
-      suggestions: [],
       showModalT: false,
       showModalA: false,
       showModalE: false
@@ -55,6 +54,16 @@ export default class ItemsContainer extends Component {
     this.setState({ showModalE: false });
   }
 
+   //  Finds the item_id for the first accomodation card so that suggestions can be made based on the id
+   findIDforA = () => {
+    this.state.cards.forEach((card) => {
+      // console.log(card)
+      if(card.item_type === 'A') {
+        this.setState({itemIDForReccomendation: card.id})
+        return;
+      }
+    })
+  }
 
 
   fetchTripDetails() {
@@ -62,11 +71,14 @@ export default class ItemsContainer extends Component {
         .then(response => {
           console.log("data: ", response.data);
           this.setState({cards: response.data});
+          this.findIDforA();
       })
       .catch(error => {
         console.log(error)
       })
   }
+
+ 
 
  
   // delete method which connects to the database and runs destroy method on
@@ -75,6 +87,7 @@ export default class ItemsContainer extends Component {
     axios.delete(`http://localhost:3001/api/v1/items/${id}`)
     .then(response => {
       this.setState({cards: response.data});
+      this.findIDforA();
     })
     .catch(error => console.log(error));
   }
@@ -83,6 +96,7 @@ export default class ItemsContainer extends Component {
     axios.post('http://localhost:3001/api/v1/items', data)
     .then(response => {
       this.setState({cards: response.data});
+      this.findIDforA();
     })
     .catch(function (error) {
       console.log(error);
@@ -155,7 +169,7 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-          <RecomendationCard item_id={33}/>
+          <RecomendationCard item_id={this.state.itemIDForReccomendation}/>
       </div>
     )
   }
