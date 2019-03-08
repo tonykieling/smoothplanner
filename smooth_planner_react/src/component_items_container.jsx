@@ -3,11 +3,11 @@ import axios from 'axios';
 import ItemsContainerA from './component_items_container_A';
 import ItemsContainerE from './component_items_container_E';
 import ItemsContainerT from './component_items_container_T';
-import Popup from "reactjs-popup";
 import ReactModal from 'react-modal';
 import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
 import CreateEvent from './component_form_create_E';
+import RecomendationCard from './component_recomendation';
 
 
 // this container will call the specific container (Accommodation, Event or Transportation)
@@ -67,6 +67,18 @@ export default class ItemsContainer extends Component {
       })
   }
 
+  fetchRecomendations(item_id) {
+    console.log("Fetching recommendations from the server")
+    axios.get(`http://localhost:3001/api/v1/items/${item_id}.json`)
+      .then(response => {
+        this.setState({reccomendations: response.data.results})
+      })
+      .catch(error => {
+        console.log(error )
+      })
+
+  }
+
   // delete method which connects to the database and runs destroy method on
   // items_controller to the specific item
   delete_item = (id) => {
@@ -89,6 +101,7 @@ export default class ItemsContainer extends Component {
   
   componentDidMount() {
     this.fetchTripDetails();
+    this.fetchRecomendations(33);
   }
 
   componentDidUpdate = (prevProps) => {
@@ -98,13 +111,12 @@ export default class ItemsContainer extends Component {
   };
 
   render() {
-    const itineraries = this.state;
-
-    let allCards = itineraries.cards.map((item) => {
+    let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item}/>
       }
       else if (item.item_type === "E") {
+
         return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item}/>
       }
       else {
@@ -154,6 +166,7 @@ export default class ItemsContainer extends Component {
             
           <div className="cards_list">
             {allCards}
+            <RecomendationCard />
           </div>
       </div>
     )
