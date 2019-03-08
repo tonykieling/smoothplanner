@@ -53,9 +53,6 @@ class App extends Component {
             <Link to={'/'}><i className="fas fa-home fa-2x"></i></Link>
             <h2>Smooth Planner</h2>
           </div>
-          <div>
-            <h4>{this.state.selected_trip.title}</h4>
-          </div>
           <div className="print_share">
           <i onClick={this.handleOpenModalShare} className="fas fa-share-alt fa-2x"></i>
           <a href="javascript:window.print()"><i className="fas fa-print fa-2x"></i></a>
@@ -67,7 +64,7 @@ class App extends Component {
       </header>
       <main>
         {/* <Share /> */}
-        <Route path="/trips/:id" render={(props)=><ItemsContainer {...props}/>}/>
+        <Route path="/trips/:id" render={(props)=><ItemsContainer {...props} trips={this.state.trips}/>}/>
         <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
       </main>
       
