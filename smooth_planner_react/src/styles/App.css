@@ -118,7 +118,7 @@ section {
   padding-top: 3px;
 }
 
-.add_new_buttons > button {
+.add_new_buttons > div > button {
   background-color: #6c757d;
   color: ghostwhite;
   font-size: 20px;
@@ -226,6 +226,11 @@ body {
   top: 25%;
   left: 10%;
   right: 10%;
+}
+
+.ReactModal__Content--after-open {
+  margin-top: 80px;
+  bottom: 0;
 }
 
 @media print {
