@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import LocationSearchInput from './component_form_autocomplete';
-
-import postTAE from './helper_postTAEdetails';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -54,7 +52,7 @@ class CreateAccomodation extends Component {
         </div>
         <form onSubmit={this.handlesSubmit}>
           <div class="row form-group">
-            <label for="dt_start" class="col-sm-3 col-form-label">Check in:</label>
+            <label htmlFor="dt_start" class="col-sm-3 col-form-label">Check in:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -70,7 +68,7 @@ class CreateAccomodation extends Component {
             />
           </div>
           <div class="row form-group">
-            <label for="dt_end" class="col-sm-3 col-form-label">Check out:</label>
+            <label htmlFor="dt_end" class="col-sm-3 col-form-label">Check out:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
@@ -86,7 +84,7 @@ class CreateAccomodation extends Component {
             />
           </div>
           <div class="row form-group">
-            <label for="confirmation" class="col-sm-3 col-form-label">Reservation #:</label>
+            <label htmlFor="confirmation" class="col-sm-3 col-form-label">Reservation #:</label>
             <input 
               type="text" 
               class="form-control col-sm-9" 
@@ -96,7 +94,7 @@ class CreateAccomodation extends Component {
             />
           </div>
           <div class="row form-group" id="locationField">
-            <label for="venue" class="col-sm-3 col-form-label">Venue: </label>
+            <label htmlFor="venue" class="col-sm-3 col-form-label">Venue: </label>
             <LocationSearchInput
               type="text" 
               className="form-control col-sm-10" 
@@ -107,7 +105,7 @@ class CreateAccomodation extends Component {
             />
           </div>
           <div class="row form-group">
-            <label for="details" class="col-sm-3 col-form-label">Details:</label>
+            <label htmlFor="details" class="col-sm-3 col-form-label">Details:</label>
             <textarea 
               className="form-control col-sm-9"
               name="details"

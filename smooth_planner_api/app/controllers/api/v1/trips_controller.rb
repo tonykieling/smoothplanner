@@ -14,6 +14,10 @@ module Api::V1
       newtrip.save
     end
 
+    def update
+      @trip = Trip.find(params[:id])
+    end
+
     private
     def trip_params
       params.require(:trip).permit(:name, :user_id)

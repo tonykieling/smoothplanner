@@ -109,17 +109,22 @@ export default class ItemsContainer extends Component {
         return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item}/>
       }
     });
-    console.log(this.props.trips)
-    const title = ()=>{
-      this.props.trips.forEach((trip)=>{
-        return trip;
-      })
-    }
+    // console.log("these are the trips", this.props.trips)
+    // console.log("this is the trip id", this.props.match.params.id)
+    // const title =()=>{
+    //   let tripName = "bob"
+    //   this.props.trips.forEach((trip)=>{
+    //     if (this.props.match.params.id === trip.id) {
+    //     tripName = trip.name;
+    //     }
+    //   })
+    //   return tripName;
+    // }
 
     return (
       <div className="items_container">
         <div className="trip_title">
-          <h4>{title} </h4>
+          <h4>Japan </h4>
           <h6>Feb 4 - Mar 2, 2019</h6>
         </div>
         <div className="add_new_buttons">
