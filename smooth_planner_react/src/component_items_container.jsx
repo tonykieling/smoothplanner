@@ -69,7 +69,6 @@ export default class ItemsContainer extends Component {
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
-          console.log("data: ", response.data);
           this.setState({cards: response.data});
           this.findIDforA();
       })
@@ -125,9 +124,19 @@ export default class ItemsContainer extends Component {
         return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item}/>
       }
     });
+    console.log(this.props.trips)
+    const title = ()=>{
+      this.props.trips.forEach((trip)=>{
+        return trip;
+      })
+    }
 
     return (
       <div className="items_container">
+        <div className="trip_title">
+          <h4>{title} </h4>
+          <h6>Feb 4 - Mar 2, 2019</h6>
+        </div>
         <div className="add_new_buttons">
           <div>
             {/* Transportation button */}
@@ -143,7 +152,7 @@ export default class ItemsContainer extends Component {
 
           <div>
             {/* Accommodation Button */}
-            <button onClick={this.handleOpenModalA} className="btn btn-outline-primary">+ Accommodation</button>
+            <button onClick={this.handleOpenModalA} className="btn btn-outline-success">+ Accommodation</button>
             <ReactModal 
               isOpen={this.state.showModalA}
               contentLabel="onRequestClose Example"
@@ -155,7 +164,7 @@ export default class ItemsContainer extends Component {
 
           <div>
             {/* Event Button */}
-            <button onClick={this.handleOpenModalE} className="btn btn-outline-primary">+ Event</button>
+            <button onClick={this.handleOpenModalE} className="btn btn-outline-info">+ Event</button>
             <ReactModal 
               isOpen={this.state.showModalE}
               contentLabel="onRequestClose Example"

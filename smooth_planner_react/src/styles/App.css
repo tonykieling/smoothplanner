@@ -62,7 +62,7 @@ nav {
 
 main {
   margin-left: 200px;
-  padding: 60px 5px 0;
+  /* padding: 60px 5px 0; */
   top: 55px;
   display: flex;
   width: 85%;
@@ -80,7 +80,19 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+}
+
+.trip_title {
+  color: #ffff;
+  z-index: 1;
+  position: fixed;
+  align-items: center;
+  display: flex;
+  top: 15px;
+}
+
+.trip_title > h4 {
+  padding-right: 10px;
 }
 
 .to_time {
@@ -116,9 +128,10 @@ section {
   position: fixed;
   z-index: 1;
   padding-top: 3px;
+  top: 60px;
 }
 
-.add_new_buttons > button {
+.add_new_buttons > div > button {
   background-color: #6c757d;
   color: ghostwhite;
   font-size: 20px;
@@ -127,7 +140,7 @@ section {
 }
 
 .cards_list {
-  padding-top: 47px;
+  padding-top: 107px;
 }
 
 footer{
@@ -226,6 +239,11 @@ body {
   top: 25%;
   left: 10%;
   right: 10%;
+}
+
+.ReactModal__Content--after-open {
+  margin-top: 80px;
+  bottom: 0;
 }
 
 @media print {
