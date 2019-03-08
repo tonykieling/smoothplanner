@@ -8,6 +8,7 @@ export default class RecomendationCard extends Component {
       suggestions: [{}],
       index: 0
     }
+    this.fetchRecommendations = this.fetchRecommendations.bind(this);
   }
 
   fetchRecommendations(item_id) {
@@ -15,11 +16,28 @@ export default class RecomendationCard extends Component {
     axios.get(`http://localhost:3001/api/v1/items/${item_id}.json`)
       .then(response => {
         this.setState({suggestions: response.data.results})
-        console.log(this.state.suggestions[0].name)
       })
       .catch(error => {
         console.log(error )
       })
+  }
+  handleLeftClick = () => {
+    let newIndex, currentIndex = this.state.index;
+    if(currentIndex === 0) {
+      newIndex = 19
+    } else {
+      newIndex = currentIndex - 1
+    }
+    this.setState({index: newIndex})
+  }
+  handleRightClick = () => {
+    let newIndex, currentIndex = this.state.index;
+    if(currentIndex === 19) {
+      newIndex = 0
+    } else {
+      newIndex = currentIndex + 1
+    }
+    this.setState({index: newIndex})
   }
 
   componentDidMount() {
@@ -31,7 +49,7 @@ export default class RecomendationCard extends Component {
           <div className="card-header">
             Suggestions for you
           </div>
-          <i class="fas fa-chevron-left fa-9x"></i>
+          <i class="fas fa-chevron-left fa-9x" onClick={this.handleLeftClick}></i>
           <div className="card-body">
             <p className="card-text">
             <a href="https://www.google.com/search?q=miku+vancouver&place_id=ChIJlyu4u4NxhlQRkUpN_iFwl8Q">
@@ -41,7 +59,7 @@ export default class RecomendationCard extends Component {
             </p>
             <a href="#" class="btn btn-primary">Add to Itinerary</a>
           </div>
-          <i class="fas fa-chevron-right fa-9x"></i>
+          <i class="fas fa-chevron-right fa-9x" onClick={this.handleRightClick}></i>
       </div>
     )
   }

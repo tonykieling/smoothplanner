@@ -105,7 +105,6 @@ export default class ItemsContainer extends Component {
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item}/>
       }
       else if (item.item_type === "E") {
-
         return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item}/>
       }
       else {
