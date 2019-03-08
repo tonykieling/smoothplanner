@@ -238,3 +238,13 @@ body {
     padding-top: 0;
   }
 }
+
+ul .fa-trash-alt {
+  opacity: 0.5;
+  font-size: 10px;
+}
+
+.fa-trash-alt:hover {
+  opacity: 1;
+  font-size: 15px;
+}

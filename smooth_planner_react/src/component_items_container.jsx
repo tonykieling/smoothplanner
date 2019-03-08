@@ -14,12 +14,12 @@ export default class ItemsContainer extends Component {
     this.state = {
       cards: []
     }
+    console.log("XXXXXX: ", this.props.match.params.id)
   }
 
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
-          console.log("data: ", response.data);
           this.setState({cards: response.data});
       })
       .catch(error => {

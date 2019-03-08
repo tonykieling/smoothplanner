@@ -14,6 +14,19 @@ module Api::V1
       newtrip.save
     end
 
+    def destroy
+      @trip = Trip.find(params[:id])
+
+      if @trip.destroy
+        temp_user = @trip.user_id
+        @user = User.find(temp_user)
+        @trips = @user.trips.order(:time_start)
+        render json: @trips
+      else
+        render json: @trip.errors, status: :unprocessable_entity
+      end
+    end
+
     private
     def trip_params
       params.require(:trip).permit(:name, :user_id)

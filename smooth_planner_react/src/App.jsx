@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       current_user: {name: "Bob", id: 1},
       trips: [],
-      selected_trip: { id: 2, title: "Japan Trip" }
+      // selected_trip: { id: 2, title: "Japan Trip" }
+      selected_trip: { id: 9}
     }
   }
   //Simone and Neila
@@ -27,6 +28,15 @@ class App extends Component {
     .catch(error => {
       console.log(error)
     })
+  }
+
+  delete_trip = () => {
+    console.log("trip_id: ", this.state.selected_trip.id);
+    // axios.delete(`http://localhost:3001/api/v1/trips/${id}`)
+    // .then(response => {
+    //   this.setState({trips: response.data});
+    // })
+    // .catch(error => console.log(error));
   }
   
 
@@ -49,7 +59,7 @@ class App extends Component {
           </div>
         </nav> 
         <div className="side-bar">
-          <TripsList trips={this.state.trips} />
+          <TripsList trips={this.state.trips} delete_trip={this.delete_trip}/>
         </div>
       </header>
       <main>

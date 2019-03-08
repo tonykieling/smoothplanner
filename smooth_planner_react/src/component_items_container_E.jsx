@@ -6,6 +6,7 @@ export default class ItemsContainer extends Component {
 
   // calls delete item method on items_container
   handle_deleteItem = () => {
+    console.log("this.propsITEM: ", this.props);
     const check = window.confirm(`Are you sure you want to delete this item?`);
     if (check === true)
       this.props.delete_item(this.props.item.id);
