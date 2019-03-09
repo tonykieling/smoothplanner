@@ -37,8 +37,11 @@ class CreateAccomodation extends Component {
     this.props.addItem(this.state);
     this.props.closeModal();
   }
-  onChangeVenue = (venue) => {
-    this.setState({venue})
+  onChangeVenue = (address, venue) => {
+    this.setState({
+      venue,
+      address
+    })
   }
   onChangeLatLng = (latlng) => {
     const geo_location = `${latlng.lat} ${latlng.lng}`
