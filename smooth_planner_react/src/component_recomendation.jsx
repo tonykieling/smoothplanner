@@ -42,37 +42,46 @@ export default class RecomendationCard extends Component {
   }
   componentDidUpdate(prevProps) {
     if(this.props.item_id && (this.props.item_id !== prevProps.item_id)) {
-      console.log("yeah", this.props.item_id)
       this.fetchRecommendations(this.props.item_id)
     }
   }
 
-
-
   render() {
+    const currentSuggestion = this.state.suggestions[this.state.index];
+    let ItemToBeAdded ={};
+    if(currentSuggestion.geometry) {
+      ItemToBeAdded = {
+        address: currentSuggestion.formatted_address,
+        venue: currentSuggestion.name,
+        geo_location: `${currentSuggestion.geometry.location.lat},${currentSuggestion.geometry.location.lng}`,
+      }
+    }
+    console.log("currentSuggestion", ItemToBeAdded);
     return (
         <div className="card">
           <div className="card-header">
+            <img src={currentSuggestion.icon} />
             Suggestions for you
+            <i class="far fa-calendar-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
           </div>
+          
           <div className="card-body row">
             <div className="col-4">
               <i className="fas fa-chevron-left fa-5x carousel-pointer" onClick={this.handleLeftClick}></i>
             </div>
             <div className="col-4">
               <p className="card-text">
-                {this.state.suggestions[this.state.index].name}
-                Rating: {this.state.suggestions[this.state.index].rating} | {this.state.suggestions[this.state.index].user_ratings_total} users | Price: {this.state.suggestions[0].price_level}
-                <a href="#" className="btn btn-primary">Add to Itinerary</a>
+                {currentSuggestion.name}
+                Rating: {currentSuggestion.rating} | {currentSuggestion.user_ratings_total} users | Price: {currentSuggestion.price_level}
               </p>
             </div>
             <div className="col-4">
               <i className="fas fa-chevron-right fa-5x carousel-pointer" onClick={this.handleRightClick}></i>
             </div>
-              
-            
           </div>
-          
+          <div className="card-footer">
+            <img src="powered_by_google_on_white.png" alt="Powered by Google" />
+          </div>
       </div>
     )
   }
