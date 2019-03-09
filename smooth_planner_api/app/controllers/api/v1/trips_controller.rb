@@ -14,6 +14,17 @@ module Api::V1
       newtrip.save
     end
 
+    def destroy
+      puts "params= #{params}"
+      trip = Trip.find(params[:id])
+      user = User.find(params[:user])
+      
+      puts "user= #{user.id}"
+      puts "trip= #{trip.id}"
+      trip.destroy
+
+    end
+
     def update
       @trip = Trip.find(params[:id])
       @user = User.where(params[:email])
