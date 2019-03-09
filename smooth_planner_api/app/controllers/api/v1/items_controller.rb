@@ -37,11 +37,22 @@ module Api::V1
       if newitem.save
         @trip = Trip.find(newitem.trip_id)
         @items = @trip.items.order(:time_start)
-        puts @items.inspect
         render json: @items
       end
       
     end
+
+    def update
+      item_to_update = Item.find(params[:id])
+      item_to_update.update(item_params)
+      if item_to_update.save
+        @trip = Trip.find(item_to_update.trip_id)
+        @items = @trip.items.order(:time_start)
+        render json: @items
+      end
+    end
+    
+
 
 
     private 

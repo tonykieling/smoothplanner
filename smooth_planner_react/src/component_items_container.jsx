@@ -42,7 +42,16 @@ export default class ItemsContainer extends Component {
 
   //  Modal state handling functions for editing an item
   //  Accomodation modal
-  handleOpenModalAEdit = (item) => {this.setState({ showModalAEdit: true, itemToEdit: item});}
+  handleOpenModalEdit = (type, item) => {
+    if(type === 'T') {
+      this.setState({ showModalTEdit: true, itemToEdit: item});
+    } else if (type === 'A') {
+      this.setState({ showModalAEdit: true, itemToEdit: item});
+    } else if (type === 'E') {
+      this.setState({ showModalEEdit: true, itemToEdit: item});
+    }
+  }
+
   handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false});}
 
 
@@ -96,14 +105,19 @@ export default class ItemsContainer extends Component {
   }
 
   editItem = (item)=> {
-    if(item.item_type === 'A') {
-      this.handleOpenModalAEdit(item); 
-    } else if (item.item_type === 'T') {
-      this.handleOpenModalTEdit(item);
-    } else if (item.item_type === 'E') {
-      this.handleOpenModalEEdit(item);
-    }
+    this.handleOpenModalEdit(item.item_type, item);
+  }
 
+  putItem =(data) => {
+    console.log(data);
+    axios.put(`http://localhost:3001/api/v1/items/${data.id}`, data)
+      .then(response => {
+        this.setState({cards: response.data});
+        this.findIDforA();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
   
   componentDidMount() {
@@ -185,7 +199,7 @@ export default class ItemsContainer extends Component {
           contentLabel="onRequestClose Example"
           onRequestClose={this.handleCloseModalAEdit}
         >
-          <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit}  />
+          <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
         </ReactModal>
             
           <div className="cards_list">
