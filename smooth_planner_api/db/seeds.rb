@@ -44,7 +44,6 @@ trip1 = Trip.create(
   time_start:'December 24, 2019',
   time_end:'January 3, 2020'
 })
-
 trip1.users << user1
 
 trip2 = Trip.create(

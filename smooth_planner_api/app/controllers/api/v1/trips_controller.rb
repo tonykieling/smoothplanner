@@ -15,16 +15,26 @@ module Api::V1
     end
 
     def destroy
-      @trip = Trip.find(params[:id])
-      temp_user = @trip.user_id
+      trip = Trip.find(params[:id])
 
-      if @trip.destroy
-        @user = User.find(temp_user)
-        @trips = Trip.where(user_id:@user).order(:time_start)
-        render json: @trips
-      else
-        render json: @trip.errors, status: :unprocessable_entity
-      end
+      # if @trip.destroy
+      #   @user = User.find(temp_user)
+      #   @trips = Trip.where(user_id:@user).order(:time_start)
+      #   render json: @trips
+      # else
+      #   render json: @trip.errors, status: :unprocessable_entity
+      # end
+    end
+
+    def update
+      @trip = Trip.find(params[:id])
+      @user = User.where(params[:email])
+      # if @user?
+      #   @trip.users << @user
+      #   render status: 200 plain: "Successfully added user"
+      # else
+      #   render status: 400 plain: "No user with that email address"
+      # end
     end
 
     private

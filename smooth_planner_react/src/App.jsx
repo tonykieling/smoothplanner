@@ -44,9 +44,9 @@ class App extends Component {
   }
 
   delete_trip = (trip) => {
-    console.log("idii: ", trip.id)
+    console.log("idii: ", this.state.current_user.id)
     console.log("tripsbefore: ", this.state.trips);
-    axios.delete(`http://localhost:3001/api/v1/trips/${trip.id}`)
+    axios.delete(`http://localhost:3001/api/v1/trips/${trip.id}`, {data: {user: this.state.current_user.id}} )
     .then(response => {
       this.setState({trips: response.data});
       console.log("tripsafter: ", this.state.trips);

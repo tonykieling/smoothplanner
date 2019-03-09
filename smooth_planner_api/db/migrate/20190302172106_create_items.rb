@@ -12,7 +12,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.string :venue
       t.string :address
       t.integer :phone
-      t.references :itinerary, foreign_key: true
+      t.references :itinerary, foreign_key: true, on_delete: :cascade
 
       t.timestamps
     end
