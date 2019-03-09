@@ -199,7 +199,7 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-          {/* <RecomendationCard item_id={this.state.itemIDForReccomendation}/> */}
+          <RecomendationCard item_id={this.state.itemIDForReccomendation}/>
       </div>
     )
   }
