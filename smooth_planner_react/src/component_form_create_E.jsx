@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LocationSearchInput from './component_form_autocomplete';
 
-import postTAE from './helper_postTAEdetails';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -11,22 +10,20 @@ class CreateEvent extends Component {
     //Declare state
     this.state = {
       item_type:'E',
-      trip_id: 2
+      trip_id: this.props.tripID,
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
-
   handleChangeStartDate(date) {
-    const parsedDate = Date.parse(date);
     this.setState({
-      startDate: parsedDate,
+      time_start: date,
     });
   }
-
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
-    postTAE(this.state) 
+    this.props.addItem(this.state);
+    this.props.closeModal();
   }
   onChangeVenue = (venue) => {
     this.setState({venue})
@@ -36,6 +33,12 @@ class CreateEvent extends Component {
       geo_location: latlng
     })
     console.log("state change!", this.state)    
+  }
+  onChangeHandler = (event) => {
+    const stateName = event.target.name
+    const value = event.target.value
+    this.setState({[stateName]:value})
+    console.log(this.state)
   }
 
 
@@ -48,14 +51,14 @@ class CreateEvent extends Component {
         <form onSubmit={this.handlesSubmit}>
           <div class="row form-group">
             <label for="title" class="col-sm-3 col-form-label">Title</label>
-            <input type="text" class="form-control col-sm-9" name="title" placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" />
+            <input type="text" class="form-control col-sm-9" name="title" placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" onChange = {this.onChangeHandler} value={this.state.title} />
           </div>
           <div class="row form-group">
             <label for="dt_start" class="col-sm-3 col-form-label">Event time:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
-              selected = {this.state.startDate}
+              selected = {this.state.time_start}
               onChange = {this.handleChangeStartDate}
               showTimeSelect
               timeFormat="HH:mm"

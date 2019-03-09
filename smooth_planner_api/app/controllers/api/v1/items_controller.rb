@@ -25,8 +25,14 @@ module Api::V1
 
     def create
       newitem = Item.new(item_params)
-      puts newitem
-      newitem.save
+      puts item_params
+      if newitem.save
+        @trip = Trip.find(newitem.trip_id)
+        @items = @trip.items.order(:time_start)
+        puts @items
+        render json: @items
+      end
+      
     end
 
 
@@ -64,7 +70,7 @@ module Api::V1
         :phone,
         :trip_id,
         :url,
-        :geo_location
+        :geo_location,
       )
     end
 

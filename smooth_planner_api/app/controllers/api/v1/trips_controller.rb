@@ -16,11 +16,11 @@ module Api::V1
 
     def destroy
       @trip = Trip.find(params[:id])
+      temp_user = @trip.user_id
 
       if @trip.destroy
-        temp_user = @trip.user_id
         @user = User.find(temp_user)
-        @trips = @user.trips.order(:time_start)
+        @trips = Trip.where(user_id:@user).order(:time_start)
         render json: @trips
       else
         render json: @trip.errors, status: :unprocessable_entity

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import LocationSearchInput from './component_form_autocomplete';
-
-import postTAE from './helper_postTAEdetails';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,7 +10,7 @@ class CreateTransport extends Component {
     //Declare state
     this.state = {
       item_type:'T',
-      trip_id: 4
+      trip_id: this.props.tripID
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -25,21 +23,20 @@ class CreateTransport extends Component {
     console.log(this.state)
   }
   handleChangeEndDate(date) {
-    const parsedDate = Date.parse(date);
     this.setState({
-      endDate: parsedDate,
+      time_end: date,
     });
   }
   handleChangeStartDate(date) {
-    const parsedDate = Date.parse(date);
     this.setState({
-      startDate: parsedDate,
+      time_start: date,
     });
   }
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
-    postTAE(this.state) 
+    this.props.addItem(this.state);
+    this.props.closeModal();
   }
   onChangeDepartCity = (city_depart) => {
     this.setState({city_depart})
@@ -81,7 +78,7 @@ class CreateTransport extends Component {
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
-              selected = {this.state.startDate}
+              selected = {this.state.time_start}
               onChange = {this.handleChangeStartDate}
               showTimeSelect
               timeFormat="HH:mm"
@@ -95,12 +92,12 @@ class CreateTransport extends Component {
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
-              selected = {this.state.endDate}
+              selected = {this.state.time_end}
               onChange = {this.handleChangeEndDate}
               showTimeSelect
               timeFormat="HH:mm"
               timeIntervals={30}
-              dateFormat="dd/MM/YYYY h:mm aa"
+              dateFormat="dd/MM/YYYY :mm aa"
               timeCaption="time"
               className = "form-control col-sm-10"
               required
