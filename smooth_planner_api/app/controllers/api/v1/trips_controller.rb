@@ -17,12 +17,12 @@ module Api::V1
     def update
       @trip = Trip.find(params[:id])
       @user = User.where(params[:email])
-      if @user?
-        @trip.users << @user
-        render status: 200 plain: "Successfully added user"
-      else
-        render status: 400 plain: "No user with that email address"
-      end
+      # if @user?
+      #   @trip.users << @user
+      #   render status: 200 plain: "Successfully added user"
+      # else
+      #   render status: 400 plain: "No user with that email address"
+      # end
     end
 
     private
