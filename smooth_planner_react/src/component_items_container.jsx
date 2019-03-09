@@ -188,6 +188,3 @@ export default class ItemsContainer extends Component {
     )
   }
 }
-
-
-

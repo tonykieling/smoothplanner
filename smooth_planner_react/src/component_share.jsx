@@ -13,7 +13,15 @@ export default class Share extends Component {
 
   handlesSubmit = (event)=>{
     event.preventDefault();
-    console.log(this.refs.email.value) // To make axios PUT to add trip to user.
+    console.log(this.refs.email.value)
+    console.log(this.props.match.params.id)
+    axios.put(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}`, this.refs.email.value)
+    .then(response => {
+      console.log(response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
     this.props.closeModal();
   }
 

@@ -42,71 +42,80 @@ trip1 = Trip.create(
 {
   name: "Christmas trip",
   time_start:'December 24, 2019',
-  time_end:'January 3, 2020',
-  user_id: user2.id
+  time_end:'January 3, 2020'
 })
+
+trip1.users << user1
 
 trip2 = Trip.create(
 {
   name: "Summer holidays in Europe",
   time_start:'July 1, 2019',
-  time_end:'July 15, 2019',
-  user_id: user1.id
+  time_end:'July 15, 2019'
 })
+trip2.users << user2
+trip2.users << user1
 
 trip3 = Trip.create(
 {
-  name: "Valentine day in Paris",
-  user_id: user4.id
+  name: "Valentine day in Paris"
 })
+trip3.users << user2
+trip3.users << user1
 
 trip4 = Trip.create(
   {
     name: "Going to Zurich",
     time_start:'September 1, 2019',
-    time_end:'September 15, 2019',
-    user_id: user3.id
-  })
+    time_end:'September 15, 2019'
+  }
+)
+trip4.users << user2
 
 trip5 = Trip.create(
 {
   name: "Japan Trip 2020",
   time_start:'July 1, 2020',
-  time_end:'July 15, 2020',
-  user_id: user1.id
+  time_end:'July 15, 2020'
 })
+trip5.users << user1
 
 trip6 = Trip.create(
   {
     name: "Businnes meeting at Toronto",
     time_start:'April 1, 2019',
-    time_end:'July 4, 2019',
-    user_id: user1.id
-  })
-
-trip6 = Trip.create(
-  {
-    name: "Businnes meeting at Calgary",
-    time_start:'August 5, 2019',
-    time_end:'August 9, 2019',
-    user_id: user1.id
-  })
-
-trip6 = Trip.create(
-  {
-    name: "Go Shopping",
-    time_start:'March 22, 2019',
-    time_end:'March 24, 2019',
-    user_id: user1.id
-  })
+    time_end:'July 4, 2019'
+  }
+)
+trip6.users << user2
 
 trip7 = Trip.create(
   {
+    name: "Businnes meeting at Calgary",
+    time_start:'August 5, 2019',
+    time_end:'August 9, 2019'
+  }
+)
+trip7.users << user1
+
+trip8 = Trip.create(
+  {
+    name: "Go Shopping",
+    time_start:'March 22, 2019',
+    time_end:'March 24, 2019'
+  }
+)
+trip8.users << user1
+
+trip9 = Trip.create(
+  {
     name: "Hawaii Time",
     time_start:'March 2, 2017',
-    time_end:'March 20, 2017',
-    user_id: user1.id
-  })
+    time_end:'March 20, 2017'
+  }
+)
+trip9.users << user2
+trip9.users << user1
 
 
 
@@ -237,6 +246,7 @@ Item.create({
   trip_id: trip2.id
 })
 
+
 # third items trip
 # the user has just started thinking the trip
 Item.create({
@@ -247,6 +257,7 @@ Item.create({
   city_arrival: 'Zurich',
   trip_id: trip3.id
 })
+
 
 # forth items trip
 Item.create({

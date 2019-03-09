@@ -54,7 +54,7 @@ class CreateTransport extends Component {
         </div>
         <form onSubmit={this.handlesSubmit}>
           <div className="row form-group">
-            <label for="city_depart" className="col-sm-3 col-form-label">Departing</label>
+            <label htmlFor="city_depart" className="col-sm-3 col-form-label">Departing</label>
             <LocationSearchInput
               type="text" 
               className="form-control" 
@@ -64,7 +64,7 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="row form-group">
-            <label for="city_arrival" className="col-sm-3 col-form-label">Arrival</label>
+            <label htmlFor="city_arrival" className="col-sm-3 col-form-label">Arrival</label>
             <LocationSearchInput
               type="text" 
               className="form-control col-sm-10" 
@@ -74,7 +74,7 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="row form-group">
-            <label for="time_start" className="col-sm-3 col-form-label">Departing:</label>
+            <label htmlFor="time_start" className="col-sm-3 col-form-label">Departing:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -88,7 +88,7 @@ class CreateTransport extends Component {
               className = "form-control col-sm-10"
               required
             />
-            <label for="time_end"className="col-sm-3 col-form-label">Arriving:</label>
+            <label htmlFor="time_end"className="col-sm-3 col-form-label">Arriving:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
@@ -104,7 +104,7 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="row form-group">
-            <label for="confirmation" className="col-sm-3 col-form-label">Reservation #:</label>
+            <label htmlFor="confirmation" className="col-sm-3 col-form-label">Reservation #:</label>
             <input 
               type="text" 
               className="form-control col-sm-9" 
@@ -114,7 +114,7 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="row form-group">
-            <label for="details" className="col-sm-3 col-form-label">Details:</label>
+            <label htmlFor="details" className="col-sm-3 col-form-label">Details:</label>
             <textarea 
               className="form-control col-sm-9"
               name="details"
