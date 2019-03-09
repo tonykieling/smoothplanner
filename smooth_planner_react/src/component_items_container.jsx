@@ -135,13 +135,13 @@ export default class ItemsContainer extends Component {
   render() {
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
-        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={ () => {this.editItem('A')}}/>
+        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
       else if (item.item_type === "E") {
-        return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={ () => {this.editItem('E')}}/>
+        return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
       else {
-        return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={ () => {this.editItem('T')}}/>
+        return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
     });
     console.log(this.props.trips)
@@ -209,7 +209,7 @@ export default class ItemsContainer extends Component {
           contentLabel="onRequestClose Example"
           onRequestClose={this.handleCloseModalTEdit}
         >
-          <CreateAccomodation closeModal={this.handleCloseModalTEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+          <CreateTransport closeModal={this.handleCloseModalTEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
         </ReactModal>
 
         <ReactModal 
@@ -217,7 +217,7 @@ export default class ItemsContainer extends Component {
           contentLabel="onRequestClose Example"
           onRequestClose={this.handleCloseModalEEdit}
         >
-          <CreateAccomodation closeModal={this.handleCloseModalEEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+          <CreateEvent closeModal={this.handleCloseModalEEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
         </ReactModal>
             
           <div className="cards_list">
