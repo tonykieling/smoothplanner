@@ -161,11 +161,7 @@ export default class ItemsContainer extends Component {
           <div>
             {/* Transportation button */}
             <button onClick={this.handleOpenModalT} className="btn btn-outline-primary">+ Transportation</button>
-            <ReactModal 
-              isOpen={this.state.showModalT}
-              contentLabel="onRequestClose Example"
-              onRequestClose={this.handleCloseModalT}
-            >
+            <ReactModal isOpen={this.state.showModalT} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalT}>
               <CreateTransport addItem={this.addItem} closeModal={this.handleCloseModalT} tripID={this.props.match.params.id} />
             </ReactModal>
           </div>
@@ -173,11 +169,7 @@ export default class ItemsContainer extends Component {
           <div>
             {/* Accommodation Button */}
             <button onClick={this.handleOpenModalA} className="btn btn-outline-success">+ Accommodation</button>
-            <ReactModal 
-              isOpen={this.state.showModalA}
-              contentLabel="onRequestClose Example"
-              onRequestClose={this.handleCloseModalA}
-            >
+            <ReactModal isOpen={this.state.showModalA} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalA}>
               <CreateAccomodation addItem={this.addItem} closeModal={this.handleCloseModalA} tripID={this.props.match.params.id} />
             </ReactModal>
           </div>
@@ -185,38 +177,22 @@ export default class ItemsContainer extends Component {
           <div>
             {/* Event Button */}
             <button onClick={this.handleOpenModalE} className="btn btn-outline-info">+ Event</button>
-            <ReactModal 
-              isOpen={this.state.showModalE}
-              contentLabel="onRequestClose Example"
-              onRequestClose={this.handleCloseModalE}
-            >
+            <ReactModal isOpen={this.state.showModalE} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalE}>
               <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id} />
             </ReactModal>
           </div>
         </div>
 
         {/* Edit Modals */}
-        <ReactModal 
-          isOpen={this.state.showModalAEdit}
-          contentLabel="onRequestClose Example"
-          onRequestClose={this.handleCloseModalAEdit}
-        >
+        <ReactModal isOpen={this.state.showModalAEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalAEdit}>
           <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
         </ReactModal>
 
-        <ReactModal 
-          isOpen={this.state.showModalTEdit}
-          contentLabel="onRequestClose Example"
-          onRequestClose={this.handleCloseModalTEdit}
-        >
+        <ReactModal isOpen={this.state.showModalTEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalTEdit}>
           <CreateTransport closeModal={this.handleCloseModalTEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
         </ReactModal>
 
-        <ReactModal 
-          isOpen={this.state.showModalEEdit}
-          contentLabel="onRequestClose Example"
-          onRequestClose={this.handleCloseModalEEdit}
-        >
+        <ReactModal isOpen={this.state.showModalEEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalEEdit}>
           <CreateEvent closeModal={this.handleCloseModalEEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
         </ReactModal>
             
