@@ -17,11 +17,12 @@ module Api::V1
     def update
       @trip = Trip.find(params[:id])
       @user = User.where(params[:email])
+      @successful = {message: "User was successfully added"}
       # if @user?
       #   @trip.users << @user
-      #   render status: 200 plain: "Successfully added user"
+      #   render json: @successful 
       # else
-      #   render status: 400 plain: "No user with that email address"
+      #   render json: @item.errors, status: :unprocessable_entity
       # end
     end
 
