@@ -130,7 +130,8 @@ Item.create({
   venue: 'Mariott Cancun Resort',
   details: 'booking pending',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: trip1.id
+  trip_id: trip1.id,
+  geo_location: "21.0861941,-86.7735822"
 })
 
 Item.create({
@@ -187,7 +188,8 @@ Item.create({
   item_type: 'A',
   venue: 'Basel Sheraton',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: trip2.id
+  trip_id: trip2.id,
+  geo_location: "47.3906215,8.5077417",
 })
 
 Item.create({
@@ -196,7 +198,8 @@ Item.create({
   item_type: 'A',
   venue: 'Geneva Marriot',
   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: trip2.id
+  trip_id: trip2.id,
+  geo_location: "46.2114276,6.1451236",
 })
 
 Item.create({
@@ -299,7 +302,8 @@ Item.create({
   time_end: 'March 24, 2020 10:30:00',
   item_type: 'A',
   venue: 'Hotel Star',
-  trip_id: trip6.id
+  trip_id: trip6.id,
+  geo_location: "28.5955924,77.1683188",
 })
 
 
@@ -324,7 +328,7 @@ Item.create({
   city_depart: 'Vancouver',
   city_arrival: 'Hawaii',
   details: 'it will be a great time',
-  trip_id: trip7.id
+  trip_id: trip7.id,
 })
 
 Item.create({
@@ -365,5 +369,6 @@ Item.create({
   time_end: 'March 20, 2027 10:30:00',
   item_type: 'A',
   venue: 'Hawaii Hotels',
-  trip_id: trip7.id
+  trip_id: trip7.id,
+  geo_location: "21.3281792,-157.8691135"
 })
