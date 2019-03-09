@@ -28907,3 +28907,207 @@ Processing by Api::V1::ItemsController#show as JSON
 Completed 200 OK in 1723ms (Views: 7.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/api/v1/trips/8.json" for 10.0.2.2 at 2019-03-09 23:36:52 +0000
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-09 23:36:52 +0000
+Processing by Api::V1::TripsController#show as JSON
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (6.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 8]]
+  [1m[36mTrip Load (1.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 22ms (Views: 6.3ms | ActiveRecord: 7.2ms)
+
+
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/items/20.json" for 10.0.2.2 at 2019-03-09 23:36:53 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"20"}
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+Completed 200 OK in 1563ms (Views: 17.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-09 23:37:18 +0000
+Started GET "/api/v1/trips/8.json" for 10.0.2.2 at 2019-03-09 23:37:18 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTrip Load (1.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mItem Load (4.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 8]]
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/v1/items/20.json" for 10.0.2.2 at 2019-03-09 23:37:19 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"20"}
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+Completed 200 OK in 195ms (Views: 7.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/trips/7.json" for 10.0.2.2 at 2019-03-09 23:37:24 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mTrip Load (1.0ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 7]]
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/trips/6.json" for 10.0.2.2 at 2019-03-09 23:37:25 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mTrip Load (1.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 6]]
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/trips/9.json" for 10.0.2.2 at 2019-03-09 23:37:27 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mTrip Load (1.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 9]]
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/items/27.json" for 10.0.2.2 at 2019-03-09 23:37:27 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 1389ms (Views: 10.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/items" for 10.0.2.2 at 2019-03-09 23:37:48 +0000
+Processing by Api::V1::ItemsController#create as HTML
+  Parameters: {"item_type"=>"A", "trip_id"=>"9", "address"=>"401 7th Ave, New York, NY 10001, USA", "venue"=>"Hotel Pennsylvania, 7th Avenue, New York, NY, USA", "geo_location"=>"40.7497723 -73.9906244", "time_start"=>"2019-03-09T21:30:00.379Z", "time_end"=>"2019-03-09T23:00:00.235Z", "confirmation"=>"g", "details"=>"g", "item"=>{"time_start"=>"2019-03-09T21:30:00.379Z", "time_end"=>"2019-03-09T23:00:00.235Z", "item_type"=>"A", "details"=>"g", "confirmation"=>"g", "venue"=>"Hotel Pennsylvania, 7th Avenue, New York, NY, USA", "address"=>"401 7th Ave, New York, NY 10001, USA", "trip_id"=>"9", "geo_location"=>"40.7497723 -73.9906244"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "confirmation", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["time_start", "2019-03-09 21:30:00.379000"], ["time_end", "2019-03-09 23:00:00.235000"], ["item_type", "A"], ["details", "g"], ["confirmation", "g"], ["venue", "Hotel Pennsylvania, 7th Avenue, New York, NY, USA"], ["address", "401 7th Ave, New York, NY 10001, USA"], ["trip_id", 9], ["created_at", "2019-03-09 23:37:48.574342"], ["updated_at", "2019-03-09 23:37:48.574342"], ["geo_location", "40.7497723 -73.9906244"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 9]]
+Completed 200 OK in 30ms (Views: 3.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/v1/items/29.json" for 10.0.2.2 at 2019-03-09 23:37:48 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"29"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+Completed 200 OK in 1318ms (Views: 6.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/items" for 10.0.2.2 at 2019-03-09 23:39:03 +0000
+Processing by Api::V1::ItemsController#create as HTML
+  Parameters: {"item_type"=>"E", "trip_id"=>"9", "dispatchConfig"=>nil, "_targetInst"=>nil, "_dispatchListeners"=>nil, "_dispatchInstances"=>nil, "nativeEvent"=>nil, "type"=>nil, "target"=>nil, "eventPhase"=>nil, "bubbles"=>nil, "cancelable"=>nil, "defaultPrevented"=>nil, "isTrusted"=>nil, "view"=>nil, "detail"=>nil, "screenX"=>nil, "screenY"=>nil, "clientX"=>nil, "clientY"=>nil, "pageX"=>nil, "pageY"=>nil, "ctrlKey"=>nil, "shiftKey"=>nil, "altKey"=>nil, "metaKey"=>nil, "button"=>nil, "buttons"=>nil, "title"=>"Dinner", "time_start"=>"2019-03-10T03:30:00.945Z", "confirmation"=>"abc", "address"=>"9604 Cameron St, Burnaby, BC V3J 1M2, Canada", "venue"=>"Green Leaf Café, Cameron Street, Burnaby, BC, Canada", "geo_location"=>"49.2532755 -122.89843180000003", "details"=>"hbxcklbhdif", "item"=>{"title"=>"Dinner", "time_start"=>"2019-03-10T03:30:00.945Z", "item_type"=>"E", "details"=>"hbxcklbhdif", "confirmation"=>"abc", "venue"=>"Green Leaf Café, Cameron Street, Burnaby, BC, Canada", "address"=>"9604 Cameron St, Burnaby, BC V3J 1M2, Canada", "trip_id"=>"9", "geo_location"=>"49.2532755 -122.89843180000003"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "details", "confirmation", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "Dinner"], ["time_start", "2019-03-10 03:30:00.945000"], ["item_type", "E"], ["details", "hbxcklbhdif"], ["confirmation", "abc"], ["venue", "Green Leaf Café, Cameron Street, Burnaby, BC, Canada"], ["address", "9604 Cameron St, Burnaby, BC V3J 1M2, Canada"], ["trip_id", 9], ["created_at", "2019-03-09 23:39:03.653176"], ["updated_at", "2019-03-09 23:39:03.653176"], ["geo_location", "49.2532755 -122.89843180000003"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 9]]
+Completed 200 OK in 28ms (Views: 11.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/v1/items/29.json" for 10.0.2.2 at 2019-03-09 23:39:03 +0000
+Started GET "/api/v1/items/27.json" for 10.0.2.2 at 2019-03-09 23:39:03 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"29"}
+  Parameters: {"id"=>"27"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 1411ms (Views: 12.2ms | ActiveRecord: 1.2ms)
+
+
+Completed 200 OK in 1427ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/items" for 10.0.2.2 at 2019-03-09 23:39:33 +0000
+Processing by Api::V1::ItemsController#create as HTML
+  Parameters: {"item_type"=>"T", "trip_id"=>"9", "city_depart"=>"Vancouver, BC, Canada", "city_arrival"=>"Los Angeles International Airport (LAX), 1 World Way, Los Angeles, CA 90045, USA", "geo_location"=>"33.9415889 -118.40852999999998", "time_start"=>"2019-03-09T22:30:00.277Z", "time_end"=>"2019-03-15T22:00:00.000Z", "item"=>{"time_start"=>"2019-03-09T22:30:00.277Z", "time_end"=>"2019-03-15T22:00:00.000Z", "item_type"=>"T", "city_depart"=>"Vancouver, BC, Canada", "city_arrival"=>"Los Angeles International Airport (LAX), 1 World Way, Los Angeles, CA 90045, USA", "trip_id"=>"9", "geo_location"=>"33.9415889 -118.40852999999998"}}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-03-09 22:30:00.277000"], ["time_end", "2019-03-15 22:00:00"], ["item_type", "T"], ["city_depart", "Vancouver, BC, Canada"], ["city_arrival", "Los Angeles International Airport (LAX), 1 World Way, Los Angeles, CA 90045, USA"], ["trip_id", 9], ["created_at", "2019-03-09 23:39:33.410197"], ["updated_at", "2019-03-09 23:39:33.410197"], ["geo_location", "33.9415889 -118.40852999999998"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 9]]
+Completed 200 OK in 25ms (Views: 7.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/v1/items/29.json" for 10.0.2.2 at 2019-03-09 23:39:33 +0000
+Started GET "/api/v1/items/27.json" for 10.0.2.2 at 2019-03-09 23:39:33 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"29"}
+  Parameters: {"id"=>"27"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mItem Load (2.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 201ms (Views: 6.6ms | ActiveRecord: 0.5ms)
+
+
+Completed 200 OK in 246ms (Views: 6.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/trips/9.json" for 10.0.2.2 at 2019-03-09 23:41:46 +0000
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-09 23:41:46 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (6.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"9"}
+Completed 200 OK in 90ms (Views: 81.5ms | ActiveRecord: 6.9ms)
+
+
+  [1m[36mTrip Load (3.9ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 9]]
+Completed 200 OK in 37ms (Views: 22.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/items/29.json" for 10.0.2.2 at 2019-03-09 23:41:46 +0000
+Started GET "/api/v1/items/27.json" for 10.0.2.2 at 2019-03-09 23:41:46 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"27"}
+  Parameters: {"id"=>"29"}
+  [1m[36mItem Load (16.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+Completed 200 OK in 1103ms (Views: 6.3ms | ActiveRecord: 16.2ms)
+
+
+Completed 200 OK in 1118ms (Views: 28.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/trips/9.json" for 10.0.2.2 at 2019-03-09 23:49:06 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"9"}
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-09 23:49:06 +0000
+  [1m[36mTrip Load (47.7ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+  [1m[36mItem Load (11.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 9]]
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.8ms)
+
+
+Completed 200 OK in 163ms (Views: 57.4ms | ActiveRecord: 59.5ms)
+
+
+Started GET "/api/v1/items/29.json" for 10.0.2.2 at 2019-03-09 23:49:06 +0000
+Started GET "/api/v1/items/27.json" for 10.0.2.2 at 2019-03-09 23:49:06 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"29"}
+  Parameters: {"id"=>"27"}
+  [1m[36mItem Load (3.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 2662ms (Views: 6.3ms | ActiveRecord: 3.5ms)
+
+
+Completed 200 OK in 2670ms (Views: 10.0ms | ActiveRecord: 3.0ms)
+
+

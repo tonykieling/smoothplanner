@@ -68,6 +68,7 @@ class CreateTransport extends Component {
               placeholder="Departing City"
               handleAddress = {this.onChangeDepartCity}
               address = {this.state.city_depart}
+              handleLatLng = { () => {}}
             />
           </div>
           <div className="row form-group">

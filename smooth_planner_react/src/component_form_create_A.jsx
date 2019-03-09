@@ -39,8 +39,8 @@ class CreateAccomodation extends Component {
   }
   onChangeVenue = (address, venue) => {
     this.setState({
-      venue,
-      address
+      address,
+      venue
     })
   }
   onChangeLatLng = (latlng) => {

@@ -71,7 +71,8 @@ export default class RecomendationCard extends Component {
             </div>
             <div className="col-4">
               <p className="card-text">
-                {currentSuggestion.name}
+                {currentSuggestion.name} 
+                {currentSuggestion.formatted_address}
                 Rating: {currentSuggestion.rating} | {currentSuggestion.user_ratings_total} users | Price: {currentSuggestion.price_level}
               </p>
             </div>
