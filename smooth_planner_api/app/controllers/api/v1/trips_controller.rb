@@ -6,6 +6,7 @@ module Api::V1
     def show
       @trip = Trip.find(params[:id])
       @items = @trip.items.order(:time_start)
+      # puts @items.inspect
       render json: @items
     end
 
@@ -16,14 +17,16 @@ module Api::V1
 
     def update
       @trip = Trip.find(params[:id])
-      @user = User.where(params[:email])
-      @successful = {message: "User was successfully added"}
-      # if @user?
-      #   @trip.users << @user
-      #   render json: @successful 
+      @user = User.where("email = ?", params[:email])
+      puts params[:email]
+      puts @user.inspect
+      # @successful = {message: "User was successfully added"}
+      if (@user.length == 1)
+        @trip.users << @user
+        render json: @trip.users
       # else
-      #   render json: @item.errors, status: :unprocessable_entity
-      # end
+        # render json: @item.errors, status: :unprocessable_entity
+      end
     end
 
     private
