@@ -9,9 +9,6 @@ export default class ItemsContainer extends Component {
     if (check === true)
       this.props.delete_item(this.props.item.id);
   }
-  // handle_editItem = () => {
-  //   this.props.editItem(this.props.item);
-  // }
 
   render() {
 

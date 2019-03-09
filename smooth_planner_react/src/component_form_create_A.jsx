@@ -34,7 +34,6 @@ class CreateAccomodation extends Component {
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
-    //  edit this for post
     this.props.addItem(this.state);
     this.props.closeModal();
   }

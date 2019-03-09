@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LocationSearchInput from './component_form_autocomplete';
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -11,6 +10,7 @@ class CreateEvent extends Component {
     this.state = {
       item_type:'E',
       trip_id: this.props.tripID,
+      ...(this.props.item || {})
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -87,6 +87,7 @@ class CreateEvent extends Component {
                 placeholder="Hotel" 
                 handleAddress = {this.onChangeVenue}
                 handleLatLng = {this.onChangeLatLng}
+                address = {this.state.venue}
               />
           </div>
           <div class="row form-group">

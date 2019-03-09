@@ -52,9 +52,6 @@ module Api::V1
       end
     end
     
-
-
-
     private 
  
     def item_params

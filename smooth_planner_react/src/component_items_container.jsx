@@ -53,6 +53,8 @@ export default class ItemsContainer extends Component {
   }
 
   handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false});}
+  handleCloseModalEEdit = () => {this.setState({ showModalEEdit: false});}
+  handleCloseModalTEdit = () => {this.setState({ showModalTEdit: false});}
 
 
    //  Finds the item_id for the first accomodation card so that suggestions can be made based on the id
@@ -133,13 +135,13 @@ export default class ItemsContainer extends Component {
   render() {
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
-        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
+        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={ () => {this.editItem('A')}}/>
       }
       else if (item.item_type === "E") {
-        return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item}/>
+        return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={ () => {this.editItem('E')}}/>
       }
       else {
-        return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item}/>
+        return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={ () => {this.editItem('T')}}/>
       }
     });
     console.log(this.props.trips)
@@ -200,6 +202,22 @@ export default class ItemsContainer extends Component {
           onRequestClose={this.handleCloseModalAEdit}
         >
           <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+        </ReactModal>
+
+        <ReactModal 
+          isOpen={this.state.showModalTEdit}
+          contentLabel="onRequestClose Example"
+          onRequestClose={this.handleCloseModalTEdit}
+        >
+          <CreateAccomodation closeModal={this.handleCloseModalTEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+        </ReactModal>
+
+        <ReactModal 
+          isOpen={this.state.showModalEEdit}
+          contentLabel="onRequestClose Example"
+          onRequestClose={this.handleCloseModalEEdit}
+        >
+          <CreateAccomodation closeModal={this.handleCloseModalEEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
         </ReactModal>
             
           <div className="cards_list">
