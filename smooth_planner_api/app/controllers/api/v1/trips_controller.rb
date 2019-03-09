@@ -23,6 +23,9 @@ module Api::V1
       puts "trip= #{trip.id}"
       trip.destroy
 
+      trip = user.trips.order(:time_start)
+      render json: trip
+
     end
 
     def update
