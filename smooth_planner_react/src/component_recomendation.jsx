@@ -57,7 +57,7 @@ export default class RecomendationCard extends Component {
           </div>
           <div className="card-body row">
             <div className="col-4">
-              <i className="fas fa-chevron-left fa-5x" onClick={this.handleLeftClick}></i>
+              <i className="fas fa-chevron-left fa-5x carousel-pointer" onClick={this.handleLeftClick}></i>
             </div>
             <div className="col-4">
               <p className="card-text">
@@ -67,7 +67,7 @@ export default class RecomendationCard extends Component {
               </p>
             </div>
             <div className="col-4">
-              <i className="fas fa-chevron-right fa-5x" onClick={this.handleRightClick}></i>
+              <i className="fas fa-chevron-right fa-5x carousel-pointer" onClick={this.handleRightClick}></i>
             </div>
               
             

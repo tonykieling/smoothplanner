@@ -245,6 +245,9 @@ body {
   margin-top: 80px;
   bottom: 0;
 }
+.carousel-pointer:hover{
+  cursor: pointer
+}
 
 @media print {
   .print_share, .side-bar, .trip-list, .add_new_buttons, .far, .fas, .to_time {

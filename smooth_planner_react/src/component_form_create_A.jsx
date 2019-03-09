@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import LocationSearchInput from './component_form_autocomplete';
-
-import postTAE from './helper_postTAEdetails';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -11,7 +9,8 @@ class CreateAccomodation extends Component {
     //Declare state
     this.state = {
       item_type:'A',
-      trip_id: this.props.tripID
+      trip_id: this.props.tripID,
+      ...(this.props.item || {})
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -35,6 +34,7 @@ class CreateAccomodation extends Component {
   handlesSubmit = (event)=>{
     event.preventDefault();
     console.log(this.state)
+    //  edit this for post
     this.props.addItem(this.state);
     this.props.closeModal();
   }
@@ -106,6 +106,7 @@ class CreateAccomodation extends Component {
               placeholder="Hotel" 
               handleAddress = {this.onChangeVenue}
               handleLatLng = {this.onChangeLatLng}
+              address = {this.state.venue}
             />
           </div>
           <div class="row form-group">

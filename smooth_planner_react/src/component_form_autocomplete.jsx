@@ -11,7 +11,7 @@ import {
 export default class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: '' };
+    this.state = { address: this.props.address };
   }
  
   handleChange = address => {

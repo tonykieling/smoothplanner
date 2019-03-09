@@ -22,37 +22,29 @@ export default class ItemsContainer extends Component {
       cards: [],
       showModalT: false,
       showModalA: false,
-      showModalE: false
+      showModalE: false,
+      showModalAEdit: false,
+      showModalTEdit: false,
+      showModalEEdit: false,
+      itemToEdit: {}
     }
-    this.handleOpenModalT = this.handleOpenModalT.bind(this);
-    this.handleCloseModalT = this.handleCloseModalT.bind(this);
-    this.handleOpenModalA = this.handleOpenModalA.bind(this);
-    this.handleCloseModalA = this.handleCloseModalA.bind(this);
-    this.handleOpenModalE= this.handleOpenModalE.bind(this);
-    this.handleCloseModalE = this.handleCloseModalE.bind(this);
   }
-  //  Modal state handling functions
+  //  Modal state handling functions for a new Item
   // Transport modal
-  handleOpenModalT (){
-    this.setState({ showModalT: true });
-  }
-  handleCloseModalT () {
-    this.setState({ showModalT: false });
-  }
+  handleOpenModalT = () => {this.setState({ showModalT: true });}
+  handleCloseModalT = () => {this.setState({ showModalT: false });}
   // Accomodation modal
-  handleOpenModalA (){
-    this.setState({ showModalA: true });
-  }
-  handleCloseModalA () {
-    this.setState({ showModalA: false });
-  }
+  handleOpenModalA = () => {this.setState({ showModalA: true });}
+  handleCloseModalA = () => {this.setState({ showModalA: false });}
   // Event
-  handleOpenModalE (){
-    this.setState({ showModalE: true });
-  }
-  handleCloseModalE () {
-    this.setState({ showModalE: false });
-  }
+  handleOpenModalE = () => {this.setState({ showModalE: true });}
+  handleCloseModalE = () => {this.setState({ showModalE: false });}
+
+  //  Modal state handling functions for editing an item
+  //  Accomodation modal
+  handleOpenModalAEdit = (item) => {this.setState({ showModalAEdit: true, itemToEdit: item});}
+  handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false});}
+
 
    //  Finds the item_id for the first accomodation card so that suggestions can be made based on the id
    findIDforA = () => {
@@ -91,6 +83,7 @@ export default class ItemsContainer extends Component {
     .catch(error => console.log(error));
   }
 
+  //  Adds a new item to the data base on form submitting
   addItem = (data) => {
     axios.post('http://localhost:3001/api/v1/items', data)
     .then(response => {
@@ -100,6 +93,17 @@ export default class ItemsContainer extends Component {
     .catch(function (error) {
       console.log(error);
     });
+  }
+
+  editItem = (item)=> {
+    if(item.item_type === 'A') {
+      this.handleOpenModalAEdit(item); 
+    } else if (item.item_type === 'T') {
+      this.handleOpenModalTEdit(item);
+    } else if (item.item_type === 'E') {
+      this.handleOpenModalEEdit(item);
+    }
+
   }
   
   componentDidMount() {
@@ -115,7 +119,7 @@ export default class ItemsContainer extends Component {
   render() {
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
-        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item}/>
+        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
       else if (item.item_type === "E") {
         return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item}/>
@@ -174,11 +178,20 @@ export default class ItemsContainer extends Component {
             </ReactModal>
           </div>
         </div>
+
+        {/* Edit Modals */}
+        <ReactModal 
+          isOpen={this.state.showModalAEdit}
+          contentLabel="onRequestClose Example"
+          onRequestClose={this.handleCloseModalAEdit}
+        >
+          <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit}  />
+        </ReactModal>
             
           <div className="cards_list">
             {allCards}
           </div>
-          <RecomendationCard item_id={this.state.itemIDForReccomendation}/>
+          {/* <RecomendationCard item_id={this.state.itemIDForReccomendation}/> */}
       </div>
     )
   }
