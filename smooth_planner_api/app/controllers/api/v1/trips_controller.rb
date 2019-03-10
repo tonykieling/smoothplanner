@@ -18,14 +18,13 @@ module Api::V1
     def update
       @trip = Trip.find(params[:id])
       @user = User.where("email = ?", params[:email])
-      puts params[:email]
-      puts @user.inspect
-      # @successful = {message: "User was successfully added"}
+      @successful = [{ message: "User was successfully added" }]
+      @unsuccessful = [{ message: "No user exists with that email so could not be added to this trip." }]
       if (@user.length == 1)
         @trip.users << @user
-        render json: @trip.users
-      # else
-        # render json: @item.errors, status: :unprocessable_entity
+        render json: @successful
+      else
+        render json: @unsuccessful
       end
     end
 

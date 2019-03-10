@@ -17,7 +17,7 @@ export default class Share extends Component {
     console.log(this.props.match.params.id)
     axios.put(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`, {email: this.refs.email.value})
     .then(response => {
-      console.log(response.data)
+      // console.log(response.data)
     })
     .catch(function (error) {
       console.log(error);
