@@ -24,8 +24,6 @@ export default class ItemsContainer extends Component {
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
               {/* <div className="edit-bt"> */}
               <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
-                {/* <div className="edit-hint">Edit Card</div>
-              </div> */}
               <h4><b>Going to {item.city_arrival}</b></h4>
             </div>
             
