@@ -26,7 +26,9 @@ export default class ItemsContainer extends Component {
       showModalAEdit: false,
       showModalTEdit: false,
       showModalEEdit: false,
-      itemToEdit: {}
+      itemToEdit: {},
+      recommendationsVisible: false,
+      itemIDForReccomendation: null,
     }
   }
   //  Modal state handling functions for a new Item
@@ -57,13 +59,14 @@ export default class ItemsContainer extends Component {
   handleCloseModalTEdit = () => {this.setState({ showModalTEdit: false});}
 
 
-   //  Finds the item_id for the first accomodation card so that suggestions can be made based on the id
-   findIDforA = () => {
+  areThereAnyRecommendations = () => {
     this.state.cards.forEach((card) => {
-      // console.log(card)
+      console.log("card", this.state.cards)
       if(card.item_type === 'A') {
-        this.setState({itemIDForReccomendation: card.id})
-        return;
+        this.setState({
+          recommendationsVisible: true,
+          itemIDForReccomendation: card.id,
+        })
       }
     })
   }
@@ -73,7 +76,6 @@ export default class ItemsContainer extends Component {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
           this.setState({cards: response.data});
-          this.findIDforA();
       })
       .catch(error => {
         console.log(error)
@@ -86,8 +88,7 @@ export default class ItemsContainer extends Component {
   delete_item = (id) => {
     axios.delete(`http://localhost:3001/api/v1/items/${id}`)
     .then(response => {
-      this.setState({cards: response.data});
-      this.findIDforA();
+      this.setState({cards: response.data})
     })
     .catch(error => console.log(error));
   }
@@ -96,8 +97,7 @@ export default class ItemsContainer extends Component {
   addItem = (data) => {
     axios.post('http://localhost:3001/api/v1/items', data)
     .then(response => {
-      this.setState({cards: response.data});
-      this.findIDforA();
+      this.setState({cards: response.data})
     })
     .catch(function (error) {
       console.log(error);
@@ -113,7 +113,7 @@ export default class ItemsContainer extends Component {
     axios.put(`http://localhost:3001/api/v1/items/${data.id}`, data)
       .then(response => {
         this.setState({cards: response.data});
-        this.findIDforA();
+        this.areThereAnyRecommendations();
       })
       .catch(function (error) {
         console.log(error);
@@ -122,11 +122,20 @@ export default class ItemsContainer extends Component {
   
   componentDidMount() {
     this.fetchTripDetails();
+    this.areThereAnyRecommendations();
   }
 
-  componentDidUpdate = (prevProps) => {
+  componentDidUpdate = (prevProps, prevState) => {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       this.fetchTripDetails();
+      this.setState({
+        recommendationsVisible: false,
+        itemIDForReccomendation: null,
+      })
+      this.areThereAnyRecommendations();
+    }
+    if(prevState.cards.length !== this.state.cards.length) {
+      this.areThereAnyRecommendations();
     }
   };
 
@@ -197,7 +206,7 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-          <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/>
+            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/> : <h1>Add a card for recommendations</h1> }
       </div>
     )
   }
