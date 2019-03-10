@@ -260,3 +260,18 @@ body {
     padding-top: 0;
   }
 }
+
+.location-search-input {
+  width: 100%
+}
+
+.suggestion-item {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.suggestion-item--active {
+  background-color: green;
+  cursor: pointer;
+  color: white;
+}
+               

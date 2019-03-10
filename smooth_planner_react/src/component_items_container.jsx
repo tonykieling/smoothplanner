@@ -75,7 +75,12 @@ export default class ItemsContainer extends Component {
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
-          this.setState({cards: response.data});
+          this.setState({
+            cards: response.data,
+            recommendationsVisible: false,
+            itemIDForReccomendation: null
+          });
+          this.areThereAnyRecommendations();
       })
       .catch(error => {
         console.log(error)
@@ -128,11 +133,6 @@ export default class ItemsContainer extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       this.fetchTripDetails();
-      this.setState({
-        recommendationsVisible: false,
-        itemIDForReccomendation: null,
-      })
-      this.areThereAnyRecommendations();
     }
     if(prevState.cards.length !== this.state.cards.length) {
       this.areThereAnyRecommendations();
@@ -206,7 +206,7 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/> : <h1>Add a card for recommendations</h1> }
+            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/> : <h4>Add a card for recommendations</h4> }
       </div>
     )
   }
