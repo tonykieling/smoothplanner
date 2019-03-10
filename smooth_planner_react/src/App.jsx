@@ -73,7 +73,7 @@ class App extends Component {
           </div>
         </nav> 
         <div className="side-bar">
-          <TripsList trips={this.state.trips} />
+          <TripsList trips={this.state.trips} currentUser = {this.state.current_user.id}/>
         </div>
       </header>
       <main>

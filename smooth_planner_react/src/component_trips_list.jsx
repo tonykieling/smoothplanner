@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from '../node_modules/react-router-dom'
+import { Link } from '../node_modules/react-router-dom';
+import ReactModal from 'react-modal';
+import CreateTrip from './component_form_createtrip';
 
 export default class TripsList extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      showModalNewTrip: false
     }
   }
+  handleOpenModalNewTrip = () => {this.setState({ showModalNewTrip: true });}
+  handleCloseModalNewTrip = () => {this.setState({ showModalNewTrip: false });}
+
   render() {
     function dateCheck(tripEnds) {
       const diff = Date.parse(tripEnds) - Date.now()
@@ -23,11 +29,13 @@ export default class TripsList extends Component {
     
     return (
       <div className="list-group trip-list">
-        <button type="button" className="btn btn-outline-warning">+ New Trip</button>
+        <button type="button" className="btn btn-outline-warning" onClick={this.handleOpenModalNewTrip} >+ New Trip</button>
+          <ReactModal isOpen={this.state.showModalNewTrip} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalNewTrip}>
+            <CreateTrip closeModal={this.handleCloseModalNewTrip} currentUser={this.props.currentUser}/>
+          </ReactModal>
         <h4>Your Trips</h4>
         <ul>
           {trips}
-          
         </ul>
       </div>
     )
