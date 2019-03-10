@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 
 
 // this is the specific container for TRANSPORTATION card type
@@ -25,18 +26,18 @@ export default class ItemsContainer extends Component {
                 <i className="far fa-edit"></i>
                 {/* <div className="edit-hint">Edit Card</div>
               </div> */}
-              <h4><strong>Going to {item.city_arrival}</strong></h4>
+              <h4><b>Going to {item.city_arrival}</b></h4>
             </div>
             
             <div className="card-body">
-              <span> <strong>Departure: </strong>{item.time_start}</span>
-              <span> <strong>Arrival: </strong>{item.time_end}</span> <br />
-              <span> <strong>Leaving from: </strong>{item.city_depart} {item.venue ? ` - ${item.venue}` : ""}</span>  <br />
+              <span> <b>Departure: </b>{moment(item.time_start).format('MMM Do YYYY')}<b>  -  </b></span>
+              <span><b>Arrival: </b>{moment(item.time_end).format('MMM Do YYYY')}</span> <br />
+              <span> <b>Leaving from: </b>{item.city_depart} {item.venue ? ` - ${item.venue}` : ""}</span>  <br />
             </div>
 
             <div className="card-body">
-              <span> <strong>Confirmation #: </strong>{item.confirmation}</span>
-              <span className="to_time"> <strong>Files uploaded: </strong> ticket_to_Zurich.pdf</span> <br />
+              <span> <b>Confirmation #: </b>{item.confirmation}</span>
+              <span className="to_time"> <b>Files uploaded: </b> ticket_to_Zurich.pdf</span> <br />
               <span> {item.details ? details : null }</span>
               {/* right now, if details is empty, it doesnt show up */}
             </div>

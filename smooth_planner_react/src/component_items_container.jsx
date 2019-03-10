@@ -114,7 +114,10 @@ export default class ItemsContainer extends Component {
   // function to get the real trip's date
   // if the user commit some mistake, it will get the date based on the first and last events (cards)
   realDates = (tripInfo) => {
+console.log("this.state.current_trip: ", this.state.current_trip);
+console.log("tripInfo: ", tripInfo);
     if (this.state.cards.length > 0) {
+console.log("has cards");
       const firstDay = this.state.cards[0];
       const lastDay = this.state.cards[this.state.cards.length - 1];
       return(
@@ -124,6 +127,7 @@ export default class ItemsContainer extends Component {
         </div>
       )
     } else {
+console.log("NOOO cards");
       return(
         <div>
           {/* <span>{tripInfo ? moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
@@ -147,6 +151,7 @@ export default class ItemsContainer extends Component {
   };
 
   render() {
+console.log("RENDERthis.state.cards: ", this.state.cards);
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item}/>

@@ -51,8 +51,8 @@ trip1.users << user1
 trip2 = Trip.create(
 {
   name: "Summer holidays in Europe",
-  time_start:'July 1, 2019',
-  time_end:'July 15, 2019'
+  time_start:'July 1, 2019 10:00:00',
+  time_end:'July 15, 2019 23:00:00'
 })
 trip2.users << user2
 trip2.users << user1
@@ -95,14 +95,14 @@ trip6 = Trip.create(
 trip6.users << user2
 
 
-trip7 = Trip.create(
+trip9 = Trip.create(
   {
     name: "Businnes meeting at Calgary",
     time_start:'August 5, 2019',
     time_end:'August 9, 2019'
   }
 )
-trip7.users << user1
+trip9.users << user1
 
 
 trip8 = Trip.create(
@@ -115,15 +115,15 @@ trip8 = Trip.create(
 trip8.users << user1
 
 
-trip9 = Trip.create(
+trip7 = Trip.create(
   {
     name: "Hawaii Time",
-    time_start:'March 2, 2017',
-    time_end:'March 20, 2017'
+    time_start:'March 2, 2017 10:00:00',
+    time_end:'March 20, 2017 23:00:00'
   }
 )
-trip9.users << user2
-trip9.users << user1
+trip7.users << user2
+trip7.users << user1
 
 
 
@@ -208,21 +208,21 @@ Item.create({
   trip_id: trip2.id
 })
 
-Item.create({
-  time_start: 'July 5, 2019 14:30:00',
-  time_end:'July 15, 2019 10:30:00',
-  item_type: 'A',
-  venue: 'Geneva Marriot',
-  address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-  trip_id: trip2.id
-})
+# Item.create({
+#   time_start: 'July 5, 2019 14:30:00',
+#   time_end:'July 15, 2019 10:30:00',
+#   item_type: 'A',
+#   venue: 'Geneva Marriot',
+#   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
+#   trip_id: trip2.id
+# })
 
-Item.create({
-  time_start: 'July 10, 2019 14:30:00',
-  item_type: 'E',
-  title: 'Go to Jungfrau',
-  trip_id: trip2.id
-})
+# Item.create({
+#   time_start: 'July 10, 2019 14:30:00',
+#   item_type: 'E',
+#   title: 'Go to Jungfrau',
+#   trip_id: trip2.id
+# })
 
 Item.create({
   time_start: 'July 5, 2019 14:30:00',

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 
 
 // this is the specific container for EVENT card type
@@ -11,7 +12,25 @@ export default class ItemsContainer extends Component {
       this.props.delete_item(this.props.item.id);
   }
   
+  //function to format the date's presentation for accommodation
+  presentDate = () => {
+    if (this.props.item.time_end != null)
+      return(
+        <div>
+          <span> <b>When: </b> {moment(this.props.item.time_start).format('MMM Do YYYY')}</span>
+          <span> <b> - </b> {moment(this.props.item.time_end).format('MMM Do YYYY')}</span>
+        </div>
+      )
+    else {
+      return(
+        <div>
+          <span> <b>When: </b> {moment(this.props.item.time_start).format('MMM Do YYYY')}</span>
+        </div>
+      )
+    }
+  }
   
+
   render() {
     const item = this.props.item;
     const details = <p><b>XXDetails: </b>item.details</p>
@@ -22,20 +41,20 @@ export default class ItemsContainer extends Component {
             <div className="card-header">
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
               <i className="far fa-edit"></i>
-              <h4><strong>{item.title}</strong></h4>
+              <h4><b>{item.title}</b></h4>
             </div>
 
             <div className="card-body">
-              <span> <strong>When:</strong>{Date.parse(item.time_start)} {item.time_end? ` - ${Date.parse(item.time_end)}` : ""}</span> <br />
-              <span> <strong>Where: </strong>{item.venue}</span>  <br />
+              {this.presentDate()}
+              <span> <b>Where: </b>{item.venue}</span>  <br />
             </div>
           
             <div className="card-body">
-              <span> <strong>Confirmation #: </strong>{item.confirmation}</span>
-              <span className="to_time"> <strong>Files uploaded:</strong> - </span> <br />
-              <span> <strong>Website: </strong>{item.url} </span>
-              <span className="to_time"> <strong>Phone:</strong>{item.phone}</span>  <br />
-              <span> <strong>Address:</strong>{item.address}</span>  <br />
+              <span> <b>Confirmation #: </b>{item.confirmation}</span>
+              <span className="to_time"> <b>Files uploaded:</b> - </span> <br />
+              <span> <b>Website: </b>{item.url} </span>
+              <span className="to_time"> <b>Phone:</b>{item.phone}</span>  <br />
+              <span> <b>Address:</b>{item.address}</span>  <br />
               <span> {item.details ? details : null }</span>
             </div>
         </div>
