@@ -9,6 +9,7 @@ import ReactModal from 'react-modal';
 
 
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -31,7 +32,9 @@ class App extends Component {
   handleCloseModalShare () {
     this.setState({ showModalShare: false });
   }
-  
+
+ 
+
 
   componentDidMount() {
     axios.get(`http://localhost:3001/api/v1/users/${this.state.current_user.id}.json`)
@@ -55,6 +58,8 @@ class App extends Component {
     })
       .catch(error => console.log(error));
   }
+
+
   
 
   render() {
