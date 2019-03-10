@@ -37,6 +37,7 @@ user5 = User.create({
 })
 
 
+
 # CREATE TRIPS
 trip1 = Trip.create(
 {
@@ -44,8 +45,8 @@ trip1 = Trip.create(
   time_start:'December 24, 2019',
   time_end:'January 3, 2020'
 })
-
 trip1.users << user1
+
 
 trip2 = Trip.create(
 {
@@ -56,12 +57,14 @@ trip2 = Trip.create(
 trip2.users << user2
 trip2.users << user1
 
+
 trip3 = Trip.create(
 {
   name: "Valentine day in Paris"
 })
 trip3.users << user2
 trip3.users << user1
+
 
 trip4 = Trip.create(
   {
@@ -72,6 +75,7 @@ trip4 = Trip.create(
 )
 trip4.users << user2
 
+
 trip5 = Trip.create(
 {
   name: "Japan Trip 2020",
@@ -79,6 +83,7 @@ trip5 = Trip.create(
   time_end:'July 15, 2020'
 })
 trip5.users << user1
+
 
 trip6 = Trip.create(
   {
@@ -89,6 +94,7 @@ trip6 = Trip.create(
 )
 trip6.users << user2
 
+
 trip7 = Trip.create(
   {
     name: "Businnes meeting at Calgary",
@@ -98,6 +104,7 @@ trip7 = Trip.create(
 )
 trip7.users << user1
 
+
 trip8 = Trip.create(
   {
     name: "Go Shopping",
@@ -106,6 +113,7 @@ trip8 = Trip.create(
   }
 )
 trip8.users << user1
+
 
 trip9 = Trip.create(
   {
@@ -179,6 +187,7 @@ Item.create({
 })
 
 
+
 # second items trip
 Item.create({
   time_start: 'July 1, 2019 06:20:00',
@@ -246,6 +255,8 @@ Item.create({
   trip_id: trip2.id
 })
 
+
+
 # third items trip
 # the user has just started thinking the trip
 Item.create({
@@ -256,6 +267,8 @@ Item.create({
   city_arrival: 'Zurich',
   trip_id: trip3.id
 })
+
+
 
 # forth items trip
 Item.create({
@@ -320,8 +333,6 @@ Item.create({
   details: "let's check this new store with uncle Paul. Whole day activity and dinner at the end.",
   trip_id: trip6.id
 })
-
-
 
 
 

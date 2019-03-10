@@ -111,29 +111,29 @@ export default class ItemsContainer extends Component {
   }
 
 
-        // const realDates = this.checkDates();
-        realDates = (tripInfo) => {
-          // console.log("klop: ", Object.keys(tripInfo).length == 0)
-          if (this.state.cards.length > 0) {
-            console.log("BIGGERthan0: ", this.state.cards[0])
-            const firstDay = this.state.cards[0];
-            const lastDay = this.state.cards[this.state.cards.length - 1];
-            return(
-              <div>
-                <span>{moment(firstDay).format('MMM Do')} - </span>
-                <span>{moment(lastDay).format('MMM Do YYYY')}</span>
-              </div>
-            )
-          } else {
-            console.log("smallerthan0")
-            return(
-              <div>
-                <span>{tripInfo ? moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
-                <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span>
-              </div>
-            )
-          }
-        }
+  // function to get the real trip's date
+  // if the user commit some mistake, it will get the date based on the first and last events (cards)
+  realDates = (tripInfo) => {
+    if (this.state.cards.length > 0) {
+      const firstDay = this.state.cards[0];
+      const lastDay = this.state.cards[this.state.cards.length - 1];
+      return(
+        <div>
+          <span>{moment(firstDay).format('MMM Do')} - </span>
+          <span>{moment(lastDay).format('MMM Do YYYY')}</span>
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          {/* <span>{tripInfo ? moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
+          <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span> */}
+          <span>{moment(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment(tripInfo.time_end).format('MMM Do YYYY')} </span>
+        </div>
+      )
+    }
+  }
   
   
   componentDidMount() {
@@ -173,26 +173,16 @@ export default class ItemsContainer extends Component {
     if (this.props.trips.length > 0) {
       this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
     }
+    const tripInfo = this.state.current_trip;
 
-
-      // auxiliary variable to only simplified the access to this.state.current_trip content
-      const tripInfo = this.state.current_trip;
-      // const firstDay = this.state.cards[0];
-      // const lastDay = this.state.cards[this.state.cards.length - 1];
 
       return (
         <div className="items_container">
           <div className="trip_title">
             <h4>{ tripInfo ? tripInfo.name : null}</h4>
             <div>
-              {/* {console.log("tripInfo:: ", tripInfo)};
-              {console.log("cards: ", this.state.cards)} */}
-              {/* {this.state.cards.length > 0 ? this.realDates(tripInfo) : null} */}
               {this.realDates(tripInfo)}
-                {/* <span>{firstDay ? moment(firstDay).format('MMM Do') : null}  - </span>
-                <span>{lastDay ? moment(lastDay).format('MMM Do YYYY') : null} </span> */}
             </div>
-
             <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
 
