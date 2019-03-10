@@ -8,6 +8,7 @@ import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
 import CreateEvent from './component_form_create_E';
 import RecomendationCard from './component_recomendation';
+import moment from 'moment'
 
 
 // this container will call the specific container (Accommodation, Event or Transportation)
@@ -22,7 +23,8 @@ export default class ItemsContainer extends Component {
       cards: [],
       showModalT: false,
       showModalA: false,
-      showModalE: false
+      showModalE: false,
+      current_trip: 0
     }
     this.handleOpenModalT = this.handleOpenModalT.bind(this);
     this.handleCloseModalT = this.handleCloseModalT.bind(this);
@@ -78,6 +80,13 @@ export default class ItemsContainer extends Component {
   }
 
  
+  // calls delete trip method on App
+  handle_deleteTrip = () => {
+    console.log("TRIP_INFO: ", this.state.current_trip);
+    const check = window.confirm(`Are you sure you want to delete this Trip?`);
+    if (check === true)
+      this.props.delete_trip(this.state.current_trip);
+  }
 
  
   // delete method which connects to the database and runs destroy method on
@@ -135,13 +144,25 @@ export default class ItemsContainer extends Component {
     //   })
     //   return tripName;
     // }
+      if (this.props.trips.length > 0) {
+        this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
+      }
 
-    return (
-      <div className="items_container">
-        <div className="trip_title">
-          <h4>Japan </h4>
-          <h6>Feb 4 - Mar 2, 2019</h6>
+
+      // auxiliary variable to only simplified the access to this.state.current_trip content
+      const tripInfo = this.state.current_trip;
+
+
+      return (
+        <div className="items_container">
+          <div className="trip_title">
+            <h4>{ tripInfo ? tripInfo.name : null}</h4>
+            <span>{tripInfo ? 
+              moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
+            <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span>
+            <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
+
         <div className="add_new_buttons">
           <div>
             {/* Transportation button */}

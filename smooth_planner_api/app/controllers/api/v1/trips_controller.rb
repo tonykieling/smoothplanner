@@ -15,6 +15,14 @@ module Api::V1
       newtrip.save
     end
 
+    def destroy
+      trip = Trip.find(params[:id])
+      user = User.find(params[:user])
+      trip.destroy
+      trip = user.trips.order(:time_start)
+      render json: trip
+    end
+
     def update
       @trip = Trip.find(params[:id])
       @user = User.where("email = ?", params[:email])
