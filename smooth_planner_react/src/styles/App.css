@@ -176,7 +176,7 @@ body {
   margin: 10px
 }
 
-.fa-calendar-plus, .fa-trash-alt, .fa-edit {
+.fa-plus, .fa-trash-alt, .fa-edit {
   float: right;
   font-size: 16px;
   cursor: pointer;
@@ -197,7 +197,7 @@ body {
   margin-right: 5px;
 }
 
-.fa-calendar-plus {
+.fa-plus {
   color: green;
 }
 

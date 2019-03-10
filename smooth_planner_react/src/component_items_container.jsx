@@ -60,6 +60,10 @@ export default class ItemsContainer extends Component {
 
 
   areThereAnyRecommendations = () => {
+    this.setState({
+      recommendationsVisible: false,
+      itemIDForReccomendation: null,
+    })
     this.state.cards.forEach((card) => {
       console.log("card", this.state.cards)
       if(card.item_type === 'A') {
@@ -67,6 +71,7 @@ export default class ItemsContainer extends Component {
           recommendationsVisible: true,
           itemIDForReccomendation: card.id,
         })
+        return card.id;
       }
     })
   }
@@ -77,8 +82,6 @@ export default class ItemsContainer extends Component {
         .then(response => {
           this.setState({
             cards: response.data,
-            recommendationsVisible: false,
-            itemIDForReccomendation: null
           });
           this.areThereAnyRecommendations();
       })
@@ -206,7 +209,7 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/> : <h4>Add a card for recommendations</h4> }
+            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/> : null }
       </div>
     )
   }

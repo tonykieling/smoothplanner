@@ -69,7 +69,7 @@ export default class RecomendationCard extends Component {
           <div className="card-header">
             <img src={currentSuggestion.icon} alt="suggestion-icon" />
             Suggestions for you
-            <i className="far fa-calendar-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
+            <i className="fas fa-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
           </div>
           
           <div className="card-body row">
