@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import google from './styles/images/google.png';
 
 export default class RecomendationCard extends Component {
   constructor(){
@@ -16,7 +17,7 @@ export default class RecomendationCard extends Component {
     axios.get(`http://localhost:3001/api/v1/items/${item_id}.json`)
       .then(response => {
         this.setState({suggestions: response.data.results})
-        console.log(this.state.suggestions)
+        // console.log(this.state.suggestions)
       })
       .catch(error => {
         console.log(error )
@@ -81,7 +82,7 @@ export default class RecomendationCard extends Component {
             </div>
           </div>
           <div className="card-footer">
-            <img src="powered_by_google_on_white.png" alt="Powered by Google" />
+            <img src={google} alt="Powered by Google" />
           </div>
       </div>
     )

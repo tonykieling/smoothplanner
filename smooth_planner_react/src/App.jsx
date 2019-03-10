@@ -15,7 +15,6 @@ class App extends Component {
     this.state = {
       current_user: {name: "Bob", id: 1},
       trips: [],
-      // selected_trip: { id: 2, title: "Japan Trip" },
       showModalShare: false
     }
 
