@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import ItemsContainerA from './component_items_container_A';
 import ItemsContainerE from './component_items_container_E';
 import ItemsContainerT from './component_items_container_T';
@@ -8,7 +9,6 @@ import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
 import CreateEvent from './component_form_create_E';
 import RecomendationCard from './component_recomendation';
-import moment from 'moment'
 
 
 // this container will call the specific container (Accommodation, Event or Transportation)
@@ -82,7 +82,6 @@ export default class ItemsContainer extends Component {
  
   // calls delete trip method on App
   handle_deleteTrip = () => {
-    console.log("TRIP_INFO: ", this.state.current_trip);
     const check = window.confirm(`Are you sure you want to delete this Trip?`);
     if (check === true)
       this.props.delete_trip(this.state.current_trip);
@@ -110,6 +109,32 @@ export default class ItemsContainer extends Component {
       console.log(error);
     });
   }
+
+
+        // const realDates = this.checkDates();
+        realDates = (tripInfo) => {
+          // console.log("klop: ", Object.keys(tripInfo).length == 0)
+          if (this.state.cards.length > 0) {
+            console.log("BIGGERthan0: ", this.state.cards[0])
+            const firstDay = this.state.cards[0];
+            const lastDay = this.state.cards[this.state.cards.length - 1];
+            return(
+              <div>
+                <span>{moment(firstDay).format('MMM Do')} - </span>
+                <span>{moment(lastDay).format('MMM Do YYYY')}</span>
+              </div>
+            )
+          } else {
+            console.log("smallerthan0")
+            return(
+              <div>
+                <span>{tripInfo ? moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
+                <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span>
+              </div>
+            )
+          }
+        }
+  
   
   componentDidMount() {
     this.fetchTripDetails();
@@ -144,22 +169,30 @@ export default class ItemsContainer extends Component {
     //   })
     //   return tripName;
     // }
-      if (this.props.trips.length > 0) {
-        this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
-      }
+
+    if (this.props.trips.length > 0) {
+      this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
+    }
 
 
       // auxiliary variable to only simplified the access to this.state.current_trip content
       const tripInfo = this.state.current_trip;
-
+      // const firstDay = this.state.cards[0];
+      // const lastDay = this.state.cards[this.state.cards.length - 1];
 
       return (
         <div className="items_container">
           <div className="trip_title">
             <h4>{ tripInfo ? tripInfo.name : null}</h4>
-            <span>{tripInfo ? 
-              moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
-            <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span>
+            <div>
+              {/* {console.log("tripInfo:: ", tripInfo)};
+              {console.log("cards: ", this.state.cards)} */}
+              {/* {this.state.cards.length > 0 ? this.realDates(tripInfo) : null} */}
+              {this.realDates(tripInfo)}
+                {/* <span>{firstDay ? moment(firstDay).format('MMM Do') : null}  - </span>
+                <span>{lastDay ? moment(lastDay).format('MMM Do YYYY') : null} </span> */}
+            </div>
+
             <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
 
