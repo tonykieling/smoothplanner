@@ -7,7 +7,7 @@ class CreateTrip extends Component {
     // Declare State
     this.state = {
       name: '',
-      user_id: 1
+      user_id: this.props.currentUser
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,8 +21,8 @@ class CreateTrip extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     axios.post('http://localhost:3001/api/v1/trips', this.state)
-    .then(function (response) {
-      console.log(response);
+    .then(response => {
+      this.props.closeModal();
     })
     .catch(function (error) {
       console.log(error);

@@ -11,8 +11,12 @@ module Api::V1
     end
 
     def create
-      newtrip = Trip.new(trip_params)
+      @user = User.find(params[:user_id])
+      newtrip = Trip.create(trip_params)
+      newtrip.users << @user
       newtrip.save
+      @items = newtrip.items.order(:time_start)
+      render json: @items
     end
 
     def destroy
@@ -38,7 +42,7 @@ module Api::V1
 
     private
     def trip_params
-      params.require(:trip).permit(:name, :user_id)
+      params.require(:trip).permit(:name)
     end
   end
 end
