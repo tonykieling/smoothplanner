@@ -185,7 +185,7 @@ body {
   margin: 10px
 }
 
-.fa-trash-alt, .fa-edit {
+.fa-plus, .fa-trash-alt, .fa-edit {
   float: right;
   font-size: 16px;
   cursor: pointer;
@@ -206,7 +206,7 @@ body {
   margin-right: 5px;
 }
 
-.fa-calendar-plus {
+.fa-plus {
   color: green;
   font-size: 30px;
   cursor: pointer;
@@ -278,3 +278,18 @@ body {
     padding-top: 0;
   }
 }
+
+.location-search-input {
+  width: 100%
+}
+
+.suggestion-item {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.suggestion-item--active {
+  background-color: green;
+  cursor: pointer;
+  color: white;
+}
+               

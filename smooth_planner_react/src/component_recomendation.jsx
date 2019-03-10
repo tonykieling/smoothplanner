@@ -46,6 +46,9 @@ export default class RecomendationCard extends Component {
       this.fetchRecommendations(this.props.item_id)
     }
   }
+  componentDidMount() {
+    this.fetchRecommendations(this.props.item_id);
+  }
 
   render() {
     const currentSuggestion = this.state.suggestions[this.state.index];
@@ -65,18 +68,18 @@ export default class RecomendationCard extends Component {
     return (
         <div className="card">
           <div className="card-header">
-            <img src={currentSuggestion.icon} />
+            <img src={currentSuggestion.icon} alt="suggestion-icon" />
             Suggestions for you
-            <i class="far fa-calendar-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
+            <i className="fas fa-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
           </div>
           
           <div className="card-body row">
             <div className="col-4">
               <i className="fas fa-chevron-left fa-5x carousel-pointer" onClick={this.handleLeftClick}></i>
             </div>
-            <div className="col-4">
-              <p className="card-text">
-                <a href={url} target="_blank">{currentSuggestion.name}</a>
+            <div className="col-4 card-text">
+                <h5><a href={url} target="_blank" rel='noreferrer noopener'>{currentSuggestion.name}</a></h5>
+                <p>
                 {currentSuggestion.formatted_address}
                 Rating: {currentSuggestion.rating} | {currentSuggestion.user_ratings_total} users | Price: {currentSuggestion.price_level}
               </p>
