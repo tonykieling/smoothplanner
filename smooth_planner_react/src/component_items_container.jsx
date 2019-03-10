@@ -24,37 +24,40 @@ export default class ItemsContainer extends Component {
       showModalT: false,
       showModalA: false,
       showModalE: false,
-      current_trip: 0
+      current_trip: 0,
+      showModalAEdit: false,
+      showModalTEdit: false,
+      showModalEEdit: false,
+      itemToEdit: {}
     }
-    this.handleOpenModalT = this.handleOpenModalT.bind(this);
-    this.handleCloseModalT = this.handleCloseModalT.bind(this);
-    this.handleOpenModalA = this.handleOpenModalA.bind(this);
-    this.handleCloseModalA = this.handleCloseModalA.bind(this);
-    this.handleOpenModalE= this.handleOpenModalE.bind(this);
-    this.handleCloseModalE = this.handleCloseModalE.bind(this);
   }
-  //  Modal state handling functions
+  //  Modal state handling functions for a new Item
   // Transport modal
-  handleOpenModalT (){
-    this.setState({ showModalT: true });
-  }
-  handleCloseModalT () {
-    this.setState({ showModalT: false });
-  }
+  handleOpenModalT = () => {this.setState({ showModalT: true });}
+  handleCloseModalT = () => {this.setState({ showModalT: false });}
   // Accomodation modal
-  handleOpenModalA (){
-    this.setState({ showModalA: true });
-  }
-  handleCloseModalA () {
-    this.setState({ showModalA: false });
-  }
+  handleOpenModalA = () => {this.setState({ showModalA: true });}
+  handleCloseModalA = () => {this.setState({ showModalA: false });}
   // Event
-  handleOpenModalE (){
-    this.setState({ showModalE: true });
+  handleOpenModalE = (item) => {this.setState({ showModalE: true, itemToAdd: item});}
+  handleCloseModalE = () => {this.setState({ showModalE: false });}
+
+  //  Modal state handling functions for editing an item
+  //  Accomodation modal
+  handleOpenModalEdit = (type, item) => {
+    if(type === 'T') {
+      this.setState({ showModalTEdit: true, itemToEdit: item});
+    } else if (type === 'A') {
+      this.setState({ showModalAEdit: true, itemToEdit: item});
+    } else if (type === 'E') {
+      this.setState({ showModalEEdit: true, itemToEdit: item});
+    }
   }
-  handleCloseModalE () {
-    this.setState({ showModalE: false });
-  }
+
+  handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false});}
+  handleCloseModalEEdit = () => {this.setState({ showModalEEdit: false});}
+  handleCloseModalTEdit = () => {this.setState({ showModalTEdit: false});}
+
 
    //  Finds the item_id for the first accomodation card so that suggestions can be made based on the id
    findIDforA = () => {
@@ -100,6 +103,7 @@ export default class ItemsContainer extends Component {
     .catch(error => console.log(error));
   }
 
+  //  Adds a new item to the data base on form submitting
   addItem = (data) => {
     axios.post('http://localhost:3001/api/v1/items', data)
     .then(response => {
@@ -109,6 +113,22 @@ export default class ItemsContainer extends Component {
     .catch(function (error) {
       console.log(error);
     });
+  }
+
+  editItem = (item)=> {
+    this.handleOpenModalEdit(item.item_type, item);
+  }
+
+  putItem =(data) => {
+    console.log(data);
+    axios.put(`http://localhost:3001/api/v1/items/${data.id}`, data)
+      .then(response => {
+        this.setState({cards: response.data});
+        this.findIDforA();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
   
   componentDidMount() {
@@ -124,13 +144,13 @@ export default class ItemsContainer extends Component {
   render() {
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
-        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item}/>
+        return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
       else if (item.item_type === "E") {
-        return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item}/>
+        return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
       else {
-        return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item}/>
+        return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
     });
     // console.log("these are the trips", this.props.trips)
@@ -167,11 +187,7 @@ export default class ItemsContainer extends Component {
           <div>
             {/* Transportation button */}
             <button onClick={this.handleOpenModalT} className="btn btn-outline-primary">+ Transportation</button>
-            <ReactModal 
-              isOpen={this.state.showModalT}
-              contentLabel="onRequestClose Example"
-              onRequestClose={this.handleCloseModalT}
-            >
+            <ReactModal isOpen={this.state.showModalT} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalT}>
               <CreateTransport addItem={this.addItem} closeModal={this.handleCloseModalT} tripID={this.props.match.params.id} />
             </ReactModal>
           </div>
@@ -179,11 +195,7 @@ export default class ItemsContainer extends Component {
           <div>
             {/* Accommodation Button */}
             <button onClick={this.handleOpenModalA} className="btn btn-outline-success">+ Accommodation</button>
-            <ReactModal 
-              isOpen={this.state.showModalA}
-              contentLabel="onRequestClose Example"
-              onRequestClose={this.handleCloseModalA}
-            >
+            <ReactModal isOpen={this.state.showModalA} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalA}>
               <CreateAccomodation addItem={this.addItem} closeModal={this.handleCloseModalA} tripID={this.props.match.params.id} />
             </ReactModal>
           </div>
@@ -191,20 +203,29 @@ export default class ItemsContainer extends Component {
           <div>
             {/* Event Button */}
             <button onClick={this.handleOpenModalE} className="btn btn-outline-info">+ Event</button>
-            <ReactModal 
-              isOpen={this.state.showModalE}
-              contentLabel="onRequestClose Example"
-              onRequestClose={this.handleCloseModalE}
-            >
-              <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id} />
+            <ReactModal isOpen={this.state.showModalE} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalE}>
+              <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id} item={this.state.itemToAdd}/>
             </ReactModal>
           </div>
         </div>
+
+        {/* Edit Modals */}
+        <ReactModal isOpen={this.state.showModalAEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalAEdit}>
+          <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+        </ReactModal>
+
+        <ReactModal isOpen={this.state.showModalTEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalTEdit}>
+          <CreateTransport closeModal={this.handleCloseModalTEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+        </ReactModal>
+
+        <ReactModal isOpen={this.state.showModalEEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalEEdit}>
+          <CreateEvent closeModal={this.handleCloseModalEEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+        </ReactModal>
             
           <div className="cards_list">
             {allCards}
           </div>
-          {/* <RecomendationCard item_id={this.state.itemIDForReccomendation}/> */}
+          <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/>
       </div>
     )
   }

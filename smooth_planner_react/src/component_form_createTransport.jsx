@@ -10,7 +10,8 @@ class CreateTransport extends Component {
     //Declare state
     this.state = {
       item_type:'T',
-      trip_id: this.props.tripID
+      trip_id: this.props.tripID,
+      ...(this.props.item || {})
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -44,6 +45,11 @@ class CreateTransport extends Component {
   onChangeArriveCity = (city_arrival) => {
     this.setState({city_arrival})
   }
+  onChangeLatLng = (latlng) => {
+    const geo_location = `${latlng.lat} ${latlng.lng}`
+    this.setState({geo_location})
+    console.log("state change!", this.state)    
+  }
  
 
   render() {
@@ -61,6 +67,8 @@ class CreateTransport extends Component {
               name="city_depart" 
               placeholder="Departing City"
               handleAddress = {this.onChangeDepartCity}
+              address = {this.state.city_depart}
+              handleLatLng = { () => {}}
             />
           </div>
           <div className="row form-group">
@@ -71,6 +79,8 @@ class CreateTransport extends Component {
               name="city_arrival" 
               placeholder="Arrival City" 
               handleAddress = {this.onChangeArriveCity}
+              address = {this.state.city_arrival}
+              handleLatLng = {this.onChangeLatLng}
             />
           </div>
           <div className="row form-group">

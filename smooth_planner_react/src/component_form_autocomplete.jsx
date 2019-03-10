@@ -11,7 +11,7 @@ import {
 export default class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: '' };
+    this.state = { address: this.props.address };
   }
  
   handleChange = address => {
@@ -23,7 +23,8 @@ export default class LocationSearchInput extends React.Component {
     this.setState({ address });
     geocodeByAddress(address)
       .then(results => {
-        this.props.handleAddress(results[0].formatted_address)
+        console.log(results, address)
+        this.props.handleAddress(results[0].formatted_address, address)
         return getLatLng(results[0])
       })
       .then(latlng => {

@@ -175,37 +175,33 @@ body {
   margin: 10px
 }
 
-
-
-.fa-trash-alt {
+.fa-calendar-plus, .fa-trash-alt, .fa-edit {
   float: right;
   font-size: 16px;
   cursor: pointer;
-  color: red;
   opacity: 0.5;
 }
 
-.fa-trash-alt:hover {
+.fa-trash-alt:hover, .fa-edit:hover, .fa-calendar-plus:hover {
   opacity: 1;
   font-size: 20px;
+}
+
+.fa-trash-alt {
+  color: red;
+}
+
+.fa-edit {
+  color: orange;
+  margin-right: 5px;
+}
+
+.fa-calendar-plus {
+  color: green;
 }
 
 .edit-bt {
   position: relative;
-}
-
-.fa-edit {
-  float: right;
-  font-size: 16px;
-  cursor: pointer;
-  color: orange;
-  opacity: 0.5;
-  margin-right: 5px;
-}
-
-.fa-edit:hover {
-  opacity: 1;
-  font-size: 20px;
 }
 
 .fa-2x:hover {
@@ -243,6 +239,9 @@ body {
 .ReactModal__Content--after-open {
   margin-top: 80px;
   bottom: 0;
+}
+.carousel-pointer:hover{
+  cursor: pointer
 }
 
 @media print {

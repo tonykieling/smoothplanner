@@ -21,7 +21,7 @@ export default class ItemsContainer extends Component {
           <div className="card">
             <div className="card-header">
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
-              <i className="far fa-edit"></i>
+              <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
               <h4><strong>{item.title}</strong></h4>
             </div>
 

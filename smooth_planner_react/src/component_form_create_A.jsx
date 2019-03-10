@@ -9,7 +9,8 @@ class CreateAccomodation extends Component {
     //Declare state
     this.state = {
       item_type:'A',
-      trip_id: this.props.tripID
+      trip_id: this.props.tripID,
+      ...(this.props.item || {})
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -36,8 +37,11 @@ class CreateAccomodation extends Component {
     this.props.addItem(this.state);
     this.props.closeModal();
   }
-  onChangeVenue = (venue) => {
-    this.setState({venue})
+  onChangeVenue = (address, venue) => {
+    this.setState({
+      address,
+      venue
+    })
   }
   onChangeLatLng = (latlng) => {
     const geo_location = `${latlng.lat} ${latlng.lng}`
@@ -104,6 +108,7 @@ class CreateAccomodation extends Component {
               placeholder="Hotel" 
               handleAddress = {this.onChangeVenue}
               handleLatLng = {this.onChangeLatLng}
+              address = {this.state.venue}
             />
           </div>
           <div class="row form-group">

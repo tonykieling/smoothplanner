@@ -10,6 +10,7 @@ class CreateEvent extends Component {
     this.state = {
       item_type:'E',
       trip_id: this.props.tripID,
+      ...(this.props.item || {})
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -24,8 +25,8 @@ class CreateEvent extends Component {
     this.props.addItem(this.state);
     this.props.closeModal();
   }
-  onChangeVenue = (venue) => {
-    this.setState({venue})
+  onChangeVenue = (address, venue) => {
+    this.setState({address, venue})
   }
   onChangeLatLng = (latlng) => {
     const geo_location = `${latlng.lat} ${latlng.lng}`
@@ -86,6 +87,7 @@ class CreateEvent extends Component {
                 placeholder="Hotel" 
                 handleAddress = {this.onChangeVenue}
                 handleLatLng = {this.onChangeLatLng}
+                address = {this.state.venue}
               />
           </div>
           <div class="row form-group">
