@@ -36,6 +36,10 @@ nav {
 .card-header {
   background-color: #dfe3e6;
   padding: .25rem;
+  display: flex;
+  justify-content: space-between;
+
+
 }
 
 .trip-list > button {
@@ -182,14 +186,14 @@ body {
   margin: 10px
 }
 
-.fa-calendar-plus, .fa-trash-alt, .fa-edit {
+.fa-trash-alt, .fa-edit {
   float: right;
   font-size: 16px;
   cursor: pointer;
   opacity: 0.5;
 }
 
-.fa-trash-alt:hover, .fa-edit:hover, .fa-calendar-plus:hover {
+.fa-trash-alt:hover, .fa-edit:hover {
   opacity: 1;
   font-size: 20px;
 }
@@ -205,6 +209,15 @@ body {
 
 .fa-calendar-plus {
   color: green;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0.5;
+  float: right;
+}
+
+.fa-calendar-plus:hover {
+  opacity: 1;
+  font-size: 35px;
 }
 
 .edit-bt {
