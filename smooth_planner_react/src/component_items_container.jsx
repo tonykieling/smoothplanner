@@ -114,31 +114,24 @@ export default class ItemsContainer extends Component {
   // function to get the real trip's date
   // if the user commit some mistake, it will get the date based on the first and last events (cards)
   realDates = (tripInfo) => {
-console.log("this.state.current_trip: ", this.state.current_trip);
-console.log("tripInfo: ", tripInfo);
     if (this.state.cards.length > 0) {
-console.log("has cards");
-      const firstDay = this.state.cards[0];
-      const lastDay = this.state.cards[this.state.cards.length - 1];
+      const firstDay = this.state.cards[0].time_start;
+      const lastDay = this.state.cards[this.state.cards.length - 1].time_end;
       return(
         <div>
-          <span>{moment(firstDay).format('MMM Do')} - </span>
-          <span>{moment(lastDay).format('MMM Do YYYY')}</span>
+          <span>{moment.utc(firstDay).format('MMM Do')} - </span>
+          <span>{moment.utc(lastDay).format('MMM Do YYYY')}</span>
         </div>
       )
     } else {
-console.log("NOOO cards");
       return(
         <div>
-          {/* <span>{tripInfo ? moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
-          <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span> */}
-          <span>{moment(tripInfo.time_start).format('MMM Do')}  - </span>
-          <span>{moment(tripInfo.time_end).format('MMM Do YYYY')} </span>
+          <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span>
         </div>
       )
     }
   }
-  
   
   componentDidMount() {
     this.fetchTripDetails();
@@ -151,7 +144,7 @@ console.log("NOOO cards");
   };
 
   render() {
-console.log("RENDERthis.state.cards: ", this.state.cards);
+// console.log("RENDERthis.state.cards: ", this.state.cards);
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item}/>
