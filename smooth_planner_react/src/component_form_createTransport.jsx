@@ -21,7 +21,6 @@ class CreateTransport extends Component {
     const stateName = event.target.name
     const value = event.target.value
     this.setState({[stateName]:value})
-    console.log(this.state)
   }
   handleChangeEndDate(date) {
     this.setState({
@@ -35,7 +34,6 @@ class CreateTransport extends Component {
   }
   handlesSubmit = (event)=>{
     event.preventDefault();
-    console.log(this.state)
     this.props.addItem(this.state);
     this.props.closeModal();
   }
@@ -47,8 +45,7 @@ class CreateTransport extends Component {
   }
   onChangeLatLng = (latlng) => {
     const geo_location = `${latlng.lat} ${latlng.lng}`
-    this.setState({geo_location})
-    console.log("state change!", this.state)    
+    this.setState({geo_location})   
   }
  
 
@@ -133,7 +130,6 @@ class CreateTransport extends Component {
             </textarea>
           </div>
           <div className ="form-group">
-            {/* <a role="button" className="btn btn-outline-primary">Upload files</a> */}
           </div>
           <div className="form-group">
             <button type="submit" className="col-sm-12 btn btn-primary">Submit</button>

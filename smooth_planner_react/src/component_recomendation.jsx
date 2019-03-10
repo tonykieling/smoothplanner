@@ -13,11 +13,9 @@ export default class RecomendationCard extends Component {
   }
 
   fetchRecommendations(item_id) {
-    console.log("Fetching recommendations from the server", item_id)
     axios.get(`http://localhost:3001/api/v1/items/${item_id}.json`)
       .then(response => {
         this.setState({suggestions: response.data.results})
-        console.log(this.state.suggestions)
       })
       .catch(error => {
         console.log(error )
@@ -61,7 +59,6 @@ export default class RecomendationCard extends Component {
         url,
       }
     }
-    console.log("currentSuggestion", ItemToBeAdded);
     return (
         <div className="card">
           <div className="card-header">

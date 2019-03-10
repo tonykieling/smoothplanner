@@ -119,7 +119,6 @@ export default class ItemsContainer extends Component {
   }
 
   putItem =(data) => {
-    console.log(data);
     axios.put(`http://localhost:3001/api/v1/items/${data.id}`, data)
       .then(response => {
         this.setState({cards: response.data});
@@ -133,10 +132,7 @@ export default class ItemsContainer extends Component {
   // function to get the real trip's date
   // if the user commit some mistake, it will get the date based on the first and last events (cards)
   realDates = (tripInfo) => {
-console.log("this.state.current_trip: ", this.state.current_trip);
-console.log("tripInfo: ", tripInfo);
     if (this.state.cards.length > 0) {
-console.log("has cards");
       const firstDay = this.state.cards[0];
       const lastDay = this.state.cards[this.state.cards.length - 1];
       return(
@@ -146,11 +142,8 @@ console.log("has cards");
         </div>
       )
     } else {
-console.log("NOOO cards");
       return(
         <div>
-          {/* <span>{tripInfo ? moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
-          <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span> */}
           <span>{moment(tripInfo.time_start).format('MMM Do')}  - </span>
           <span>{moment(tripInfo.time_end).format('MMM Do YYYY')} </span>
         </div>
@@ -181,17 +174,6 @@ console.log("NOOO cards");
         return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
     });
-    // console.log("these are the trips", this.props.trips)
-    // console.log("this is the trip id", this.props.match.params.id)
-    // const title =()=>{
-    //   let tripName = "bob"
-    //   this.props.trips.forEach((trip)=>{
-    //     if (this.props.match.params.id === trip.id) {
-    //     tripName = trip.name;
-    //     }
-    //   })
-    //   return tripName;
-    // }
 
     if (this.props.trips.length > 0) {
       this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]

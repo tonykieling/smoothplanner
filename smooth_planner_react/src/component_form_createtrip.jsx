@@ -15,7 +15,6 @@ class CreateTrip extends Component {
   // Change handlers to control form inputs
   onChangeTitle = (event)=>{
     this.setState({name: event.target.value})
-    console.log("state change!", this.state)
   }
   
   handleSubmit = (event) => {
