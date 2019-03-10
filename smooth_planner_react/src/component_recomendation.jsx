@@ -48,12 +48,16 @@ export default class RecomendationCard extends Component {
 
   render() {
     const currentSuggestion = this.state.suggestions[this.state.index];
+    let url = "https://www.google.com/maps/search/?api=1&query="
     let ItemToBeAdded ={};
     if(currentSuggestion.geometry) {
+      const geo_location =  `${currentSuggestion.geometry.location.lat},${currentSuggestion.geometry.location.lng}`;
+      url = `${url}${geo_location}&query_place_id=${currentSuggestion.place_id}`;
       ItemToBeAdded = {
         address: currentSuggestion.formatted_address,
         venue: currentSuggestion.name,
-        geo_location: `${currentSuggestion.geometry.location.lat},${currentSuggestion.geometry.location.lng}`,
+        geo_location,
+        url,
       }
     }
     console.log("currentSuggestion", ItemToBeAdded);
@@ -71,7 +75,7 @@ export default class RecomendationCard extends Component {
             </div>
             <div className="col-4">
               <p className="card-text">
-                {currentSuggestion.name} 
+                <a href={url} target="_blank">{currentSuggestion.name}</a>
                 {currentSuggestion.formatted_address}
                 Rating: {currentSuggestion.rating} | {currentSuggestion.user_ratings_total} users | Price: {currentSuggestion.price_level}
               </p>
