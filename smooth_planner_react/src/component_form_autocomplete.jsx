@@ -1,6 +1,6 @@
 //  form autocomplete component. THis component's state saves the address. 
 //  to completely integrate it, need to pass a helper function to save it in parent's state.
-import React, { Component } from 'react';
+import React from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
   geocodeByAddress,

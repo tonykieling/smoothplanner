@@ -49,7 +49,7 @@ class CreateEvent extends Component {
         </div>
         <form onSubmit={this.handlesSubmit}>
           <div class="row form-group">
-            <label for="title" class="col-sm-3 col-form-label">Title</label>
+            <label htmlFor="title" class="col-sm-3 col-form-label">Title</label>
             <input type="text" class="form-control col-sm-9" name="title" placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" onChange = {this.onChangeHandler} value={this.state.title} />
           </div>
           <div class="row form-group">
@@ -69,7 +69,7 @@ class CreateEvent extends Component {
             />
           </div>
           <div class="row form-group">
-          <label for="confirmation" class="col-sm-3 col-form-label">Reservation #:</label>
+          <label htmlFor="confirmation" class="col-sm-3 col-form-label">Reservation #:</label>
             <input 
               type="text" 
               class="form-control col-sm-9" 
@@ -79,7 +79,7 @@ class CreateEvent extends Component {
             />
             </div>
           <div class="row form-group" id="locationField">
-            <label for="venue" class="col-sm-3 col-form-label">Venue: </label>
+            <label htmlFor="venue" class="col-sm-3 col-form-label">Venue: </label>
               <LocationSearchInput
                 type="text" 
                 className="form-control col-sm-10" 
@@ -91,7 +91,7 @@ class CreateEvent extends Component {
               />
           </div>
           <div class="row form-group">
-            <label for="details" class="col-sm-3 col-form-label">Details:</label>
+            <label htmlFor="details" class="col-sm-3 col-form-label">Details:</label>
             <textarea 
               className="form-control col-sm-9"
               name="details"

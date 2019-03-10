@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       current_user: {name: "Bob", id: 1},
       trips: [],
-      selected_trip: { id: 2, title: "Japan Trip" },
+      // selected_trip: { id: 2, title: "Japan Trip" },
       showModalShare: false
     }
 
@@ -25,6 +25,7 @@ class App extends Component {
   
   // Share
   handleOpenModalShare() {
+
     this.setState({ showModalShare: true });
   }
   handleCloseModalShare () {
@@ -40,6 +41,19 @@ class App extends Component {
     .catch(error => {
       console.log(error)
     })
+  }
+
+
+  delete_trip = (trip) => {
+    console.log("current_user_id: ", this.state.current_user.id)
+    console.log("trip_id: ", trip.id);
+    axios.delete(`http://localhost:3001/api/v1/trips/${trip.id}`, {data: {user: this.state.current_user.id}} )
+    .then(response => {
+      this.setState({trips: response.data});
+      window.location = "/"
+      // console.log("tripsafter: ", this.state.trips);
+    })
+      .catch(error => console.log(error));
   }
   
 
@@ -64,21 +78,22 @@ class App extends Component {
       </header>
       <main>
         {/* <Share /> */}
-        <Route path="/trips/:id" render={(props)=><ItemsContainer {...props} trips={this.state.trips}/>}/>
+        <Route path="/trips/:id" render={
+                        (props)=><ItemsContainer {...props} trips={this.state.trips} delete_trip={this.delete_trip}/>
+                        }/>
         <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
       </main>
       
-      
+      <Route path="/trips/:id" render={(props)=>
       <div>
         <ReactModal 
           isOpen={this.state.showModalShare}
           contentLabel="onRequestClose Example"
           onRequestClose={this.handleCloseModalShare}
         >
-          <Share closeModal={this.handleCloseModalShare} tripID={this.state.selected_trip.id} />
-
+          <Share closeModal={this.handleCloseModalShare} {...props}/>
         </ReactModal>
-      </div>
+      </div> }/>
       </div>
       </BrowserRouter>
     );

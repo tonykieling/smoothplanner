@@ -8,6 +8,7 @@ import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
 import CreateEvent from './component_form_create_E';
 import RecomendationCard from './component_recomendation';
+import moment from 'moment'
 
 
 // this container will call the specific container (Accommodation, Event or Transportation)
@@ -23,6 +24,7 @@ export default class ItemsContainer extends Component {
       showModalT: false,
       showModalA: false,
       showModalE: false,
+      current_trip: 0,
       showModalAEdit: false,
       showModalTEdit: false,
       showModalEEdit: false,
@@ -78,6 +80,15 @@ export default class ItemsContainer extends Component {
       .catch(error => {
         console.log(error)
       })
+  }
+
+ 
+  // calls delete trip method on App
+  handle_deleteTrip = () => {
+    console.log("TRIP_INFO: ", this.state.current_trip);
+    const check = window.confirm(`Are you sure you want to delete this Trip?`);
+    if (check === true)
+      this.props.delete_trip(this.state.current_trip);
   }
 
  
@@ -142,19 +153,36 @@ export default class ItemsContainer extends Component {
         return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
       }
     });
-    console.log(this.props.trips)
-    const title = ()=>{
-      this.props.trips.forEach((trip)=>{
-        return trip;
-      })
-    }
+    // console.log("these are the trips", this.props.trips)
+    // console.log("this is the trip id", this.props.match.params.id)
+    // const title =()=>{
+    //   let tripName = "bob"
+    //   this.props.trips.forEach((trip)=>{
+    //     if (this.props.match.params.id === trip.id) {
+    //     tripName = trip.name;
+    //     }
+    //   })
+    //   return tripName;
+    // }
+      if (this.props.trips.length > 0) {
+        this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
+      }
 
-    return (
-      <div className="items_container">
-        <div className="trip_title">
-          <h4>{title} </h4>
-          <h6>Feb 4 - Mar 2, 2019</h6>
+
+      // auxiliary variable to only simplified the access to this.state.current_trip content
+      const tripInfo = this.state.current_trip;
+
+
+      return (
+        <div className="items_container">
+          <div className="trip_title">
+            <h4>{ tripInfo ? tripInfo.name : null}</h4>
+            <span>{tripInfo ? 
+              moment(tripInfo.time_start).format('MMM Do') : null}  - </span>
+            <span>{tripInfo ? moment(tripInfo.time_end).format('MMM Do YYYY') : null} </span>
+            <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
+
         <div className="add_new_buttons">
           <div>
             {/* Transportation button */}
