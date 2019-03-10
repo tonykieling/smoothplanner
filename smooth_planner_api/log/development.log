@@ -1,0 +1,850 @@
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-10 18:21:18 +0000
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-10 18:21:18 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6.1) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6.1) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (106.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smooth_planner_api_development"[0m
+  [1m[35m (104.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smooth_planner_api_test"[0m
+  [1m[35m (261.0ms)[0m  [1m[35mCREATE DATABASE "smooth_planner_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (269.4ms)[0m  [1m[35mCREATE DATABASE "smooth_planner_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "documents" CASCADE[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "documents" ("id" bigserial primary key, "file_name" character varying, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_documents_on_item_id" ON "documents"  ("item_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "time_start" timestamp, "time_end" timestamp, "item_type" character varying, "details" character varying, "confirmation" character varying, "city_depart" character varying, "city_arrival" character varying, "venue" character varying, "address" character varying, "phone" integer, "trip_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "url" character varying, "geo_location" character varying)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_trip_id" ON "items"  ("trip_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "trips" ("id" bigserial primary key, "name" character varying, "time_start" timestamp, "time_end" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips_users" CASCADE[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "trips_users" ("user_id" bigint NOT NULL, "trip_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "suggestions" boolean)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "documents" ADD CONSTRAINT "fk_rails_9fa64cfbd0"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "items" ADD CONSTRAINT "fk_rails_f17fa238d4"
+FOREIGN KEY ("trip_id")
+  REFERENCES "trips" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190309204411)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190302172114),
+(20190302172055),
+(20190302172106),
+(20190305234446),
+(20190308221638),
+(20190302172043),
+(20190305212543);
+
+[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-10 18:21:41.292119"], ["updated_at", "2019-03-10 18:21:41.292119"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "documents" CASCADE[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE "documents" ("id" bigserial primary key, "file_name" character varying, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_documents_on_item_id" ON "documents"  ("item_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "time_start" timestamp, "time_end" timestamp, "item_type" character varying, "details" character varying, "confirmation" character varying, "city_depart" character varying, "city_arrival" character varying, "venue" character varying, "address" character varying, "phone" integer, "trip_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "url" character varying, "geo_location" character varying)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_trip_id" ON "items"  ("trip_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "trips" ("id" bigserial primary key, "name" character varying, "time_start" timestamp, "time_end" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips_users" CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "trips_users" ("user_id" bigint NOT NULL, "trip_id" bigint NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "suggestions" boolean)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "documents" ADD CONSTRAINT "fk_rails_9fa64cfbd0"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "items" ADD CONSTRAINT "fk_rails_f17fa238d4"
+FOREIGN KEY ("trip_id")
+  REFERENCES "trips" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190309204411)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190302172114),
+(20190302172055),
+(20190302172106),
+(20190305234446),
+(20190308221638),
+(20190302172043),
+(20190305212543);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-10 18:21:41.393580"], ["updated_at", "2019-03-10 18:21:41.393580"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-03-10 18:21:41.397790"], ["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bob Collins"], ["email", "bob@user.com"], ["created_at", "2019-03-10 18:21:41.485415"], ["updated_at", "2019-03-10 18:21:41.485415"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Suzy Halpert"], ["email", "suzy@user.com"], ["created_at", "2019-03-10 18:21:41.491385"], ["updated_at", "2019-03-10 18:21:41.491385"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "suggestions") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Darlan Princivale"], ["email", "darlan@user.com"], ["created_at", "2019-03-10 18:21:41.494142"], ["updated_at", "2019-03-10 18:21:41.494142"], ["suggestions", "t"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Neila Corad"], ["email", "neila@user.com"], ["created_at", "2019-03-10 18:21:41.496864"], ["updated_at", "2019-03-10 18:21:41.496864"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Simone K"], ["email", "simone@user.com"], ["created_at", "2019-03-10 18:21:41.499453"], ["updated_at", "2019-03-10 18:21:41.499453"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Christmas trip"], ["time_start", "2019-12-24 00:00:00"], ["time_end", "2020-01-03 00:00:00"], ["created_at", "2019-03-10 18:21:41.516240"], ["updated_at", "2019-03-10 18:21:41.516240"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Summer holidays in Europe"], ["time_start", "2019-07-01 00:00:00"], ["time_end", "2019-07-15 00:00:00"], ["created_at", "2019-03-10 18:21:41.606952"], ["updated_at", "2019-03-10 18:21:41.606952"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Valentine day in Paris"], ["created_at", "2019-03-10 18:21:41.616571"], ["updated_at", "2019-03-10 18:21:41.616571"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Going to Zurich"], ["time_start", "2019-09-01 00:00:00"], ["time_end", "2019-09-15 00:00:00"], ["created_at", "2019-03-10 18:21:41.645347"], ["updated_at", "2019-03-10 18:21:41.645347"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 4]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Japan Trip 2020"], ["time_start", "2020-07-01 00:00:00"], ["time_end", "2020-07-15 00:00:00"], ["created_at", "2019-03-10 18:21:41.657246"], ["updated_at", "2019-03-10 18:21:41.657246"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Businnes meeting at Toronto"], ["time_start", "2019-04-01 00:00:00"], ["time_end", "2019-07-04 00:00:00"], ["created_at", "2019-03-10 18:21:41.663804"], ["updated_at", "2019-03-10 18:21:41.663804"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Businnes meeting at Calgary"], ["time_start", "2019-08-05 00:00:00"], ["time_end", "2019-08-09 00:00:00"], ["created_at", "2019-03-10 18:21:41.670262"], ["updated_at", "2019-03-10 18:21:41.670262"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 7]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Go Shopping"], ["time_start", "2019-03-22 00:00:00"], ["time_end", "2019-03-24 00:00:00"], ["created_at", "2019-03-10 18:21:41.676641"], ["updated_at", "2019-03-10 18:21:41.676641"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 8]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hawaii Time"], ["time_start", "2017-03-02 00:00:00"], ["time_end", "2017-03-20 00:00:00"], ["created_at", "2019-03-10 18:21:41.682909"], ["updated_at", "2019-03-10 18:21:41.682909"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["time_start", "2019-12-24 08:20:00"], ["time_end", "2020-12-25 06:30:00"], ["item_type", "T"], ["confirmation", "ABC4YQ"], ["city_depart", "Vancouver"], ["city_arrival", "Cancun"], ["venue", "YVR Airport"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:41.755755"], ["updated_at", "2019-03-10 18:21:41.755755"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["time_start", "2019-12-25 08:20:00"], ["time_end", "2020-01-03 10:30:00"], ["item_type", "A"], ["details", "booking pending"], ["venue", "Mariott Cancun Resort"], ["address", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:41.760982"], ["updated_at", "2019-03-10 18:21:41.760982"], ["geo_location", "21.0861941,-86.7735822"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Day trip to Chechen Itza"], ["time_start", "2019-12-27 08:20:00"], ["item_type", "E"], ["details", "Rent a car from hotel. Drive should take 2 hours"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:41.765502"], ["updated_at", "2019-03-10 18:21:41.765502"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "time_end", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "New year party"], ["time_start", "2019-12-31 20:00:00"], ["time_end", "2020-01-01 01:00:00"], ["item_type", "E"], ["details", "www.partyatcancun2019.com"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:41.769779"], ["updated_at", "2019-03-10 18:21:41.769779"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Brunch"], ["time_start", "2020-01-02 06:30:00"], ["item_type", "E"], ["details", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:41.774218"], ["updated_at", "2019-03-10 18:21:41.774218"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["time_start", "2020-01-02 10:00:00"], ["time_end", "2020-12-02 16:30:00"], ["item_type", "T"], ["confirmation", "TBC4YQ"], ["city_depart", "Cancun"], ["city_arrival", "Vancouver"], ["venue", "Cancun International Airport"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:41.778478"], ["updated_at", "2019-03-10 18:21:41.778478"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-01 06:20:00"], ["time_end", "2020-07-01 11:30:00"], ["item_type", "T"], ["confirmation", "ABC4YQ"], ["city_depart", "Vancouver"], ["city_arrival", "Basel"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:41.782764"], ["updated_at", "2019-03-10 18:21:41.782764"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-01 14:30:00"], ["time_end", "2019-07-05 10:30:00"], ["item_type", "A"], ["venue", "Basel Sheraton"], ["address", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:41.786963"], ["updated_at", "2019-03-10 18:21:41.786963"], ["geo_location", "47.3906215,8.5077417"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-05 14:30:00"], ["time_end", "2019-07-15 10:30:00"], ["item_type", "A"], ["venue", "Geneva Marriot"], ["address", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:41.793295"], ["updated_at", "2019-03-10 18:21:41.793295"], ["geo_location", "46.2114276,6.1451236"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Go to Jungfrau"], ["time_start", "2019-07-10 14:30:00"], ["item_type", "E"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:41.797460"], ["updated_at", "2019-03-10 18:21:41.797460"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Avis car rental"], ["time_start", "2019-07-05 14:30:00"], ["time_end", "2019-07-15 10:30:00"], ["item_type", "T"], ["details", "pick up at airport"], ["city_depart", "Basel"], ["city_arrival", "Geneva"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:41.801459"], ["updated_at", "2019-03-10 18:21:41.801459"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "time_end", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Beach time!!!"], ["time_start", "2019-07-05 14:30:00"], ["time_end", "2019-07-15 10:30:00"], ["item_type", "E"], ["details", "take some sun"], ["venue", "any place with beach and sun"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:41.805888"], ["updated_at", "2019-03-10 18:21:41.805888"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-15 08:20:00"], ["time_end", "2020-07-15 17:30:00"], ["item_type", "T"], ["confirmation", "A3C4YQ"], ["city_depart", "Geneva"], ["city_arrival", "Vancouver"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:41.810124"], ["updated_at", "2019-03-10 18:21:41.810124"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2019-09-01 10:20:00"], ["time_end", "2020-09-02 07:30:00"], ["item_type", "T"], ["city_depart", "Vancouver"], ["city_arrival", "Zurich"], ["trip_id", 3], ["created_at", "2019-03-10 18:21:41.814420"], ["updated_at", "2019-03-10 18:21:41.814420"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-03-22 07:30:00"], ["time_end", "2020-03-24 01:00:00"], ["item_type", "T"], ["details", "we need to purchase clothes and visit uncle Paul. Going by car."], ["city_depart", "Vancouver"], ["city_arrival", "Seattle"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:41.818599"], ["updated_at", "2019-03-10 18:21:41.818599"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-03-24 01:00:00"], ["time_end", "2020-03-24 03:30:00"], ["item_type", "T"], ["details", "we need to go back sharp 01:00!"], ["city_depart", "Seattle"], ["city_arrival", "Vancouver"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:41.828561"], ["updated_at", "2019-03-10 18:21:41.828561"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Go Walmart"], ["time_start", "2019-03-22 10:30:00"], ["item_type", "E"], ["city_depart", "Vancouver"], ["city_arrival", "Seattle"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:41.842507"], ["updated_at", "2019-03-10 18:21:41.842507"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["time_start", "2019-03-23 11:30:00"], ["item_type", "E"], ["venue", "Yammy Food Restaurant"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:41.851472"], ["updated_at", "2019-03-10 18:21:41.851472"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["time_start", "2019-03-23 06:30:00"], ["item_type", "E"], ["details", "uncle Paul and family and us"], ["venue", "Tropical Best Food"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:41.855714"], ["updated_at", "2019-03-10 18:21:41.855714"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2019-03-22 10:00:00"], ["time_end", "2020-03-24 10:30:00"], ["item_type", "A"], ["venue", "Hotel Star"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:41.859833"], ["updated_at", "2019-03-10 18:21:41.859833"], ["geo_location", "28.5955924,77.1683188"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2019-03-23 11:30:00"], ["time_end", "2019-03-23 20:30:00"], ["item_type", "E"], ["details", "let's check this new store with uncle Paul. Whole day activity and dinner at the end."], ["venue", "Cloth's Super Store'"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:41.864021"], ["updated_at", "2019-03-10 18:21:41.864021"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2017-03-02 07:30:00"], ["time_end", "2017-03-02 01:00:00"], ["item_type", "T"], ["details", "it will be a great time"], ["city_depart", "Vancouver"], ["city_arrival", "Hawaii"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:41.868139"], ["updated_at", "2019-03-10 18:21:41.868139"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2017-03-20 01:00:00"], ["time_end", "2027-03-20 03:30:00"], ["item_type", "T"], ["details", "going back home"], ["city_depart", "Hawaii"], ["city_arrival", "Vancouver"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:41.872293"], ["updated_at", "2019-03-10 18:21:41.872293"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Meet Alice"], ["time_start", "2017-03-02 18:30:00"], ["item_type", "E"], ["details", "dinner somewhere"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:41.876516"], ["updated_at", "2019-03-10 18:21:41.876516"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["time_start", "2017-03-03 11:30:00"], ["item_type", "E"], ["venue", "Food Restaurant"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:41.880534"], ["updated_at", "2019-03-10 18:21:41.880534"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["time_start", "2017-03-05 06:30:00"], ["item_type", "E"], ["details", "coconot, please"], ["venue", "Tropical Restaurant"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:41.884611"], ["updated_at", "2019-03-10 18:21:41.884611"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2017-03-02 10:00:00"], ["time_end", "2027-03-20 10:30:00"], ["item_type", "A"], ["venue", "Hawaii Hotels"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:41.888600"], ["updated_at", "2019-03-10 18:21:41.888600"], ["geo_location", "21.3281792,-157.8691135"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (104.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smooth_planner_api_development"[0m
+  [1m[35m (108.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smooth_planner_api_test"[0m
+  [1m[35m (280.5ms)[0m  [1m[35mCREATE DATABASE "smooth_planner_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (255.4ms)[0m  [1m[35mCREATE DATABASE "smooth_planner_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "documents" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "documents" ("id" bigserial primary key, "file_name" character varying, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_documents_on_item_id" ON "documents"  ("item_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "time_start" timestamp, "time_end" timestamp, "item_type" character varying, "details" character varying, "confirmation" character varying, "city_depart" character varying, "city_arrival" character varying, "venue" character varying, "address" character varying, "phone" integer, "trip_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "url" character varying, "geo_location" character varying)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_trip_id" ON "items"  ("trip_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "trips" ("id" bigserial primary key, "name" character varying, "time_start" timestamp, "time_end" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips_users" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "trips_users" ("user_id" bigint NOT NULL, "trip_id" bigint NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "suggestions" boolean)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "documents" ADD CONSTRAINT "fk_rails_9fa64cfbd0"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "items" ADD CONSTRAINT "fk_rails_f17fa238d4"
+FOREIGN KEY ("trip_id")
+  REFERENCES "trips" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190309204411)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190302172114),
+(20190302172055),
+(20190302172106),
+(20190305234446),
+(20190308221638),
+(20190302172043),
+(20190305212543);
+
+[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-10 18:21:49.690010"], ["updated_at", "2019-03-10 18:21:49.690010"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "documents" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "documents" ("id" bigserial primary key, "file_name" character varying, "item_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_documents_on_item_id" ON "documents"  ("item_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "time_start" timestamp, "time_end" timestamp, "item_type" character varying, "details" character varying, "confirmation" character varying, "city_depart" character varying, "city_arrival" character varying, "venue" character varying, "address" character varying, "phone" integer, "trip_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "url" character varying, "geo_location" character varying)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_trip_id" ON "items"  ("trip_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "trips" ("id" bigserial primary key, "name" character varying, "time_start" timestamp, "time_end" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "trips_users" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "trips_users" ("user_id" bigint NOT NULL, "trip_id" bigint NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "suggestions" boolean)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "documents" ADD CONSTRAINT "fk_rails_9fa64cfbd0"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "items" ADD CONSTRAINT "fk_rails_f17fa238d4"
+FOREIGN KEY ("trip_id")
+  REFERENCES "trips" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190309204411)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190302172114),
+(20190302172055),
+(20190302172106),
+(20190305234446),
+(20190308221638),
+(20190302172043),
+(20190305212543);
+
+[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-10 18:21:49.806940"], ["updated_at", "2019-03-10 18:21:49.806940"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-03-10 18:21:49.811257"], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bob Collins"], ["email", "bob@user.com"], ["created_at", "2019-03-10 18:21:49.894092"], ["updated_at", "2019-03-10 18:21:49.894092"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Suzy Halpert"], ["email", "suzy@user.com"], ["created_at", "2019-03-10 18:21:49.898939"], ["updated_at", "2019-03-10 18:21:49.898939"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "suggestions") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Darlan Princivale"], ["email", "darlan@user.com"], ["created_at", "2019-03-10 18:21:49.903312"], ["updated_at", "2019-03-10 18:21:49.903312"], ["suggestions", "t"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Neila Corad"], ["email", "neila@user.com"], ["created_at", "2019-03-10 18:21:49.908202"], ["updated_at", "2019-03-10 18:21:49.908202"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Simone K"], ["email", "simone@user.com"], ["created_at", "2019-03-10 18:21:49.911328"], ["updated_at", "2019-03-10 18:21:49.911328"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Christmas trip"], ["time_start", "2019-12-24 00:00:00"], ["time_end", "2020-01-03 00:00:00"], ["created_at", "2019-03-10 18:21:49.930421"], ["updated_at", "2019-03-10 18:21:49.930421"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Summer holidays in Europe"], ["time_start", "2019-07-01 00:00:00"], ["time_end", "2019-07-15 00:00:00"], ["created_at", "2019-03-10 18:21:50.033344"], ["updated_at", "2019-03-10 18:21:50.033344"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Valentine day in Paris"], ["created_at", "2019-03-10 18:21:50.043285"], ["updated_at", "2019-03-10 18:21:50.043285"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Going to Zurich"], ["time_start", "2019-09-01 00:00:00"], ["time_end", "2019-09-15 00:00:00"], ["created_at", "2019-03-10 18:21:50.053019"], ["updated_at", "2019-03-10 18:21:50.053019"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Japan Trip 2020"], ["time_start", "2020-07-01 00:00:00"], ["time_end", "2020-07-15 00:00:00"], ["created_at", "2019-03-10 18:21:50.060048"], ["updated_at", "2019-03-10 18:21:50.060048"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Businnes meeting at Toronto"], ["time_start", "2019-04-01 00:00:00"], ["time_end", "2019-07-04 00:00:00"], ["created_at", "2019-03-10 18:21:50.069789"], ["updated_at", "2019-03-10 18:21:50.069789"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Businnes meeting at Calgary"], ["time_start", "2019-08-05 00:00:00"], ["time_end", "2019-08-09 00:00:00"], ["created_at", "2019-03-10 18:21:50.081667"], ["updated_at", "2019-03-10 18:21:50.081667"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 7]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Go Shopping"], ["time_start", "2019-03-22 00:00:00"], ["time_end", "2019-03-24 00:00:00"], ["created_at", "2019-03-10 18:21:50.092799"], ["updated_at", "2019-03-10 18:21:50.092799"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 8]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips" ("name", "time_start", "time_end", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hawaii Time"], ["time_start", "2017-03-02 00:00:00"], ["time_end", "2017-03-20 00:00:00"], ["created_at", "2019-03-10 18:21:50.102357"], ["updated_at", "2019-03-10 18:21:50.102357"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 2], ["trip_id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["time_start", "2019-12-24 08:20:00"], ["time_end", "2020-12-25 06:30:00"], ["item_type", "T"], ["confirmation", "ABC4YQ"], ["city_depart", "Vancouver"], ["city_arrival", "Cancun"], ["venue", "YVR Airport"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:50.151177"], ["updated_at", "2019-03-10 18:21:50.151177"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["time_start", "2019-12-25 08:20:00"], ["time_end", "2020-01-03 10:30:00"], ["item_type", "A"], ["details", "booking pending"], ["venue", "Mariott Cancun Resort"], ["address", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:50.156634"], ["updated_at", "2019-03-10 18:21:50.156634"], ["geo_location", "21.0861941,-86.7735822"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Day trip to Chechen Itza"], ["time_start", "2019-12-27 08:20:00"], ["item_type", "E"], ["details", "Rent a car from hotel. Drive should take 2 hours"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:50.161185"], ["updated_at", "2019-03-10 18:21:50.161185"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (1.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "time_end", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "New year party"], ["time_start", "2019-12-31 20:00:00"], ["time_end", "2020-01-01 01:00:00"], ["item_type", "E"], ["details", "www.partyatcancun2019.com"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:50.168484"], ["updated_at", "2019-03-10 18:21:50.168484"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Brunch"], ["time_start", "2020-01-02 06:30:00"], ["item_type", "E"], ["details", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:50.177294"], ["updated_at", "2019-03-10 18:21:50.177294"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["time_start", "2020-01-02 10:00:00"], ["time_end", "2020-12-02 16:30:00"], ["item_type", "T"], ["confirmation", "TBC4YQ"], ["city_depart", "Cancun"], ["city_arrival", "Vancouver"], ["venue", "Cancun International Airport"], ["trip_id", 1], ["created_at", "2019-03-10 18:21:50.182369"], ["updated_at", "2019-03-10 18:21:50.182369"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-01 06:20:00"], ["time_end", "2020-07-01 11:30:00"], ["item_type", "T"], ["confirmation", "ABC4YQ"], ["city_depart", "Vancouver"], ["city_arrival", "Basel"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:50.187743"], ["updated_at", "2019-03-10 18:21:50.187743"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-01 14:30:00"], ["time_end", "2019-07-05 10:30:00"], ["item_type", "A"], ["venue", "Basel Sheraton"], ["address", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:50.193553"], ["updated_at", "2019-03-10 18:21:50.193553"], ["geo_location", "47.3906215,8.5077417"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-05 14:30:00"], ["time_end", "2019-07-15 10:30:00"], ["item_type", "A"], ["venue", "Geneva Marriot"], ["address", "Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:50.199743"], ["updated_at", "2019-03-10 18:21:50.199743"], ["geo_location", "46.2114276,6.1451236"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Go to Jungfrau"], ["time_start", "2019-07-10 14:30:00"], ["item_type", "E"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:50.204157"], ["updated_at", "2019-03-10 18:21:50.204157"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Avis car rental"], ["time_start", "2019-07-05 14:30:00"], ["time_end", "2019-07-15 10:30:00"], ["item_type", "T"], ["details", "pick up at airport"], ["city_depart", "Basel"], ["city_arrival", "Geneva"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:50.208543"], ["updated_at", "2019-03-10 18:21:50.208543"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "time_end", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Beach time!!!"], ["time_start", "2019-07-05 14:30:00"], ["time_end", "2019-07-15 10:30:00"], ["item_type", "E"], ["details", "take some sun"], ["venue", "any place with beach and sun"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:50.212851"], ["updated_at", "2019-03-10 18:21:50.212851"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "confirmation", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-07-15 08:20:00"], ["time_end", "2020-07-15 17:30:00"], ["item_type", "T"], ["confirmation", "A3C4YQ"], ["city_depart", "Geneva"], ["city_arrival", "Vancouver"], ["trip_id", 2], ["created_at", "2019-03-10 18:21:50.217240"], ["updated_at", "2019-03-10 18:21:50.217240"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2019-09-01 10:20:00"], ["time_end", "2020-09-02 07:30:00"], ["item_type", "T"], ["city_depart", "Vancouver"], ["city_arrival", "Zurich"], ["trip_id", 3], ["created_at", "2019-03-10 18:21:50.221448"], ["updated_at", "2019-03-10 18:21:50.221448"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-03-22 07:30:00"], ["time_end", "2020-03-24 01:00:00"], ["item_type", "T"], ["details", "we need to purchase clothes and visit uncle Paul. Going by car."], ["city_depart", "Vancouver"], ["city_arrival", "Seattle"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:50.225678"], ["updated_at", "2019-03-10 18:21:50.225678"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-03-24 01:00:00"], ["time_end", "2020-03-24 03:30:00"], ["item_type", "T"], ["details", "we need to go back sharp 01:00!"], ["city_depart", "Seattle"], ["city_arrival", "Vancouver"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:50.229753"], ["updated_at", "2019-03-10 18:21:50.229753"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Go Walmart"], ["time_start", "2019-03-22 10:30:00"], ["item_type", "E"], ["city_depart", "Vancouver"], ["city_arrival", "Seattle"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:50.234106"], ["updated_at", "2019-03-10 18:21:50.234106"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["time_start", "2019-03-23 11:30:00"], ["item_type", "E"], ["venue", "Yammy Food Restaurant"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:50.238169"], ["updated_at", "2019-03-10 18:21:50.238169"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["time_start", "2019-03-23 06:30:00"], ["item_type", "E"], ["details", "uncle Paul and family and us"], ["venue", "Tropical Best Food"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:50.242183"], ["updated_at", "2019-03-10 18:21:50.242183"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2019-03-22 10:00:00"], ["time_end", "2020-03-24 10:30:00"], ["item_type", "A"], ["venue", "Hotel Star"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:50.246357"], ["updated_at", "2019-03-10 18:21:50.246357"], ["geo_location", "28.5955924,77.1683188"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2019-03-23 11:30:00"], ["time_end", "2019-03-23 20:30:00"], ["item_type", "E"], ["details", "let's check this new store with uncle Paul. Whole day activity and dinner at the end."], ["venue", "Cloth's Super Store'"], ["trip_id", 6], ["created_at", "2019-03-10 18:21:50.250361"], ["updated_at", "2019-03-10 18:21:50.250361"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2017-03-02 07:30:00"], ["time_end", "2017-03-02 01:00:00"], ["item_type", "T"], ["details", "it will be a great time"], ["city_depart", "Vancouver"], ["city_arrival", "Hawaii"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:50.254515"], ["updated_at", "2019-03-10 18:21:50.254515"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "details", "city_depart", "city_arrival", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2017-03-20 01:00:00"], ["time_end", "2027-03-20 03:30:00"], ["item_type", "T"], ["details", "going back home"], ["city_depart", "Hawaii"], ["city_arrival", "Vancouver"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:50.258604"], ["updated_at", "2019-03-10 18:21:50.258604"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "time_start", "item_type", "details", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Meet Alice"], ["time_start", "2017-03-02 18:30:00"], ["item_type", "E"], ["details", "dinner somewhere"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:50.262707"], ["updated_at", "2019-03-10 18:21:50.262707"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (8.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["time_start", "2017-03-03 11:30:00"], ["item_type", "E"], ["venue", "Food Restaurant"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:50.277934"], ["updated_at", "2019-03-10 18:21:50.277934"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "details", "venue", "trip_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["time_start", "2017-03-05 06:30:00"], ["item_type", "E"], ["details", "coconot, please"], ["venue", "Tropical Restaurant"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:50.283689"], ["updated_at", "2019-03-10 18:21:50.283689"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["time_start", "2017-03-02 10:00:00"], ["time_end", "2027-03-20 10:30:00"], ["item_type", "A"], ["venue", "Hawaii Hotels"], ["trip_id", 7], ["created_at", "2019-03-10 18:21:50.289950"], ["updated_at", "2019-03-10 18:21:50.289950"], ["geo_location", "21.3281792,-157.8691135"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-10 18:21:58 +0000
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-10 18:21:58 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (72.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.8ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 327ms (Views: 53.1ms | ActiveRecord: 32.6ms)
+
+
+  [1m[36mTrip Load (5.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 521ms (Views: 72.3ms | ActiveRecord: 56.6ms)
+
+
+Started GET "/api/v1/items/8.json" for 10.0.2.2 at 2019-03-10 18:22:00 +0000
+Started GET "/api/v1/items/9.json" for 10.0.2.2 at 2019-03-10 18:22:00 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"9"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 1026ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 1036ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:22:18 +0000
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"Indian holiday", "user_id"=>1, "trip"=>{"name"=>"Indian holiday"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:23:58 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"Victoria", "user_id"=>1, "trip"=>{"name"=>"Victoria"}}
+Completed 204 No Content in 0ms (ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:26:17 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"Vancvouer", "user_id"=>1, "trip"=>{"name"=>"Vancvouer"}}
+Completed 204 No Content in 2ms (ActiveRecord: 3.1ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:27:57 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"Greece", "user_id"=>1, "trip"=>{"name"=>"Greece"}}
+Completed 204 No Content in 0ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-10 18:29:17 +0000
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-10 18:29:17 +0000
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (57.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.7ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 211ms (Views: 16.1ms | ActiveRecord: 42.7ms)
+
+
+  [1m[36mItem Load (3.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 369ms (Views: 73.6ms | ActiveRecord: 52.9ms)
+
+
+Started GET "/api/v1/items/9.json" for 10.0.2.2 at 2019-03-10 18:29:19 +0000
+Started GET "/api/v1/items/8.json" for 10.0.2.2 at 2019-03-10 18:29:19 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"9"}
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 1883ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 1892ms (Views: 8.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:29:32 +0000
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"JOrdan", "user_id"=>1, "trip"=>{"name"=>"JOrdan"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-10 18:31:24 +0000
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-10 18:31:24 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as JSON
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (77.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (10.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+  [1m[36mTrip Load (1.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 357ms (Views: 62.7ms | ActiveRecord: 99.8ms)
+
+
+Completed 200 OK in 384ms (Views: 73.7ms | ActiveRecord: 97.0ms)
+
+
+Started GET "/api/v1/items/9.json" for 10.0.2.2 at 2019-03-10 18:31:25 +0000
+Started GET "/api/v1/items/8.json" for 10.0.2.2 at 2019-03-10 18:31:25 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"9"}
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 901ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 994ms (Views: 10.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:31:36 +0000
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"Muscat", "user_id"=>1, "trip"=>{"name"=>"Muscat"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-10 18:32:28 +0000
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-10 18:32:28 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (50.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 330ms (Views: 54.2ms | ActiveRecord: 60.3ms)
+
+
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 309ms (Views: 35.6ms | ActiveRecord: 113.6ms)
+
+
+Started GET "/api/v1/items/9.json" for 10.0.2.2 at 2019-03-10 18:32:29 +0000
+Started GET "/api/v1/items/8.json" for 10.0.2.2 at 2019-03-10 18:32:29 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"id"=>"9"}
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 1420ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 1432ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:32:35 +0000
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"Jordan", "user_id"=>1, "trip"=>{"name"=>"Jordan"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jordan"], ["created_at", "2019-03-10 18:32:35.991858"], ["updated_at", "2019-03-10 18:32:35.991858"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 10]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 10]]
+Completed 200 OK in 56ms (Views: 2.3ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-10 18:37:59 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 369ms (Views: 29.9ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/api/v1/trips" for 10.0.2.2 at 2019-03-10 18:38:09 +0000
+Processing by Api::V1::TripsController#create as HTML
+  Parameters: {"name"=>"go", "user_id"=>1, "trip"=>{"name"=>"go"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trips" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "go"], ["created_at", "2019-03-10 18:38:09.899660"], ["updated_at", "2019-03-10 18:38:09.899660"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "trips_users" ("user_id", "trip_id") VALUES ($1, $2)[0m  [["user_id", 1], ["trip_id", 11]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 11]]
+Completed 200 OK in 95ms (Views: 1.3ms | ActiveRecord: 13.8ms)
+
+
