@@ -102,6 +102,13 @@ section {
   min-width: 70%;
   margin: 5px 0;
 }
+.card-header > img {
+  max-height: 60%;
+}
+
+.card-footer {
+  padding: .25rem;
+}
 
 .logo {
   display: flex;
