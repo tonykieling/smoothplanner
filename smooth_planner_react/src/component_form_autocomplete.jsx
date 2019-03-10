@@ -42,8 +42,8 @@ export default class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Type location...',
-                className: 'location-search-input form-control col-sm-10',
+                placeholder: 'Type location here',
+                className: 'location-search-input form-control wd-60',
               })}
             />
             <div className="autocomplete-dropdown-container">
@@ -52,15 +52,10 @@ export default class LocationSearchInput extends React.Component {
                 const className = suggestion.active
                   ? 'suggestion-item--active'
                   : 'suggestion-item';
-                // inline style for demonstration purpose - this needs to be changed in line with the overall styling of the app
-                const style = suggestion.active
-                  ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                  : { backgroundColor: '#ffffff', cursor: 'pointer' };
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {
                       className,
-                      style,
                     })}
                   >
                     <span>{suggestion.description}</span>
