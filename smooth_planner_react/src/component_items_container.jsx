@@ -60,6 +60,7 @@ export default class ItemsContainer extends Component {
 
 
   areThereAnyRecommendations = () => {
+    //  Reset to z
     this.setState({
       recommendationsVisible: false,
       itemIDForReccomendation: null,
@@ -76,21 +77,18 @@ export default class ItemsContainer extends Component {
     })
   }
 
-
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
           this.setState({
             cards: response.data,
           });
-          this.areThereAnyRecommendations();
       })
       .catch(error => {
         console.log(error)
       })
   }
 
- 
   // delete method which connects to the database and runs destroy method on
   // items_controller to the specific item
   delete_item = (id) => {
