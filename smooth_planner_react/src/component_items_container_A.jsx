@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 
 // this is the specific container for ACCOMMODATION card type
 export default class ItemsContainer extends Component {
@@ -10,6 +11,24 @@ export default class ItemsContainer extends Component {
       this.props.delete_item(this.props.item.id);
   }
 
+  //function to format the date's presentation for accommodation
+  presentDate = () => {
+    if (this.props.item.time_end != null)
+      return(
+        <div>
+          <span> <b>First Day: </b> {moment(this.props.item.time_start).format('MMM Do YYYY')}</span>
+          <span className="to_time"> <b>Last Day: </b> {moment(this.props.item.time_end).format('MMM Do YYYY')}</span>
+        </div>
+      )
+    else {
+      return(
+        <div>
+          <span> <b>First Day: </b> {moment(this.props.item.time_start).format('MMM Do YYYY')}</span>
+        </div>
+      )
+    }
+  }
+
   render() {
 
     const item = this.props.item;
@@ -19,23 +38,22 @@ export default class ItemsContainer extends Component {
           <div className="card">
             <div className="card-header" >
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
-              <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
-              <h4><strong>{item.title ? item.title : item.venue}</strong></h4>
+              <i className="far fa-edit"></i>
+              <h4><b>{item.title ? item.title : item.venue}</b></h4>
             </div>
             
             <div className="card-body">
-              <span> <strong>First Day:</strong> {item.time_start}</span>
-              <span className="to_time"> <strong>Last Day:</strong> {item.time_end}</span>  <br />
-              <span> <strong>Venue: </strong> {item.venue}</span>
+              {this.presentDate()}
+              <span><b>Venue: </b> {item.venue}</span>
             </div>
               
             <div className="card-body">
-              <span> <strong>Confirmation #: </strong> {item.confirmation}</span>
-              <span> <strong>Files uploaded:</strong> reservation_hotel_Zurich.pdf</span> <br />
-              <span> <strong>Website: </strong> {item.url}</span>
-              <span> <strong>Phone:</strong>{item.phone}</span>  <br />
-              <span> <strong>Address:</strong>{item.address}</span> <br />
-              <span> {item.details ? `<strong>Details: </strong>${item.details}` : "" }</span>
+              <span> <b>Confirmation #: </b> {item.confirmation}</span>
+              <span> <b>Files uploaded:</b> reservation_hotel_Zurich.pdf</span> <br />
+              <span> <b>Website: </b> {item.url}</span>
+              <span> <b>Phone:</b>{item.phone}</span>  <br />
+              <span> <b>Address:</b>{item.address}</span> <br />
+              <span> {item.details ? `<b>Details: </b>${item.details}` : "" }</span>
             </div>
           </div>
     )
