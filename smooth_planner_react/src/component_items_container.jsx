@@ -170,7 +170,6 @@ console.log("NOOO cards");
   };
 
   render() {
-console.log("RENDERthis.state.cards: ", this.state.cards);
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
