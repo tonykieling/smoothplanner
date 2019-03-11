@@ -18,13 +18,13 @@ export default class ItemsContainer extends Component {
       return(
         <div>
           <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span>
-          <span> <b> - </b> {moment.utc(this.props.item.time_end).format('llll')}</span>
+          <span> <b> - </b> {moment.utc(this.props.item.time_end).format('llll')}</span><br />
         </div>
       )
     else {
       return(
         <div>
-          <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span>
+          <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span> <br />
         </div>
       )
     }
@@ -42,7 +42,7 @@ export default class ItemsContainer extends Component {
             <div className="card-header">
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
               <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
-              <h4><b>{item.title}</b></h4>
+              <h4><b>{item.title || item.venue || item.url}</b></h4>
             </div>
 
             <div className="card-body">
@@ -51,10 +51,10 @@ export default class ItemsContainer extends Component {
             </div>
           
             <div className="card-body">
-              <span> <b>Confirmation #: </b>{item.confirmation}</span>
+              <span><b>Confirmation #: </b>{item.confirmation}</span>
               <span className="to_time"> <b>Files uploaded:</b> - </span> <br />
-              <span> <b>Website: </b>{item.url} </span>
-              <span className="to_time"> <b>Phone:</b>{item.phone}</span>  <br />
+              <span><b>Website: </b>{item.url} </span>
+              <span className="to_time"><b>Phone:</b>{item.phone}</span>  <br />
               {item.address ? address : null}
               {item.details ? details : null }
             </div>

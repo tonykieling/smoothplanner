@@ -69,8 +69,7 @@ export default class ItemsContainer extends Component {
     this.state.cards.forEach((card) => {
       if(card.item_type === 'A' && card.geo_location) {
         this.setState({
-          recommendationsVisible: true,
-          itemIDForReccomendation: card.id,
+          recommendationsVisible: true,itemIDForReccomendation: card.id,
         })
         return card.id;
       }
@@ -140,18 +139,18 @@ export default class ItemsContainer extends Component {
   realDates = (tripInfo) => {
     if (this.state.cards.length > 0) {
       const firstDay = this.state.cards[0].time_start;
-      const lastDay = this.state.cards[this.state.cards.length - 1].time_end;
+      const lastDay = this.state.cards[this.state.cards.length - 1].time_end || false;
       return(
         <div>
           <span>{moment.utc(firstDay).format('MMM Do')} - </span>
-          <span>{moment.utc(lastDay).format('MMM Do YYYY')}</span>
+          <span>{lastDay? moment.utc(lastDay).format('MMM Do YYYY') : null}</span>
         </div>
       )
     } else {
       return(
         <div>
-          <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
-          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span>
+          {/* <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span> */}
         </div>
       )
     }
