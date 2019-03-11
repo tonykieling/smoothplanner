@@ -30,7 +30,8 @@ export default class ItemsContainer extends Component {
       showModalEEdit: false,
       itemToEdit: {},
       recommendationsVisible: false,
-      itemIDForReccomendation: null,
+      itemIDForReccomendationR: null,
+      itemIDForReccomendationP: null,
     }
   }
   //  Modal state handling functions for a new Item
@@ -64,14 +65,21 @@ export default class ItemsContainer extends Component {
     //  Reset to no recommendations
     this.setState({
       recommendationsVisible: false,
-      itemIDForReccomendation: null,
+      itemIDForReccomendationR: null,
+      itemIDForReccomendationP: null,
     })
     this.state.cards.forEach((card) => {
       if(card.item_type === 'A' && card.geo_location) {
         this.setState({
-          recommendationsVisible: true,itemIDForReccomendation: card.id,
+          recommendationsVisible: true,
+          itemIDForReccomendationR: card.id,
         })
-        return card.id;
+      }
+      if(card.item_type === 'E' && card.geo_location) {
+        this.setState({
+          recommendationsVisible: true,
+          itemIDForReccomendationP: card.id,
+        })
       }
     })
   }
@@ -174,14 +182,29 @@ export default class ItemsContainer extends Component {
   render() {
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
+        if(item.id === this.state.itemIDForReccomendationR) {
+          return (
+            <div>
+              <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
+              <RecomendationCard item_id={this.state.itemIDForReccomendationR} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/>
+            </div>
+          )
+        }
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
-      }
-      else if (item.item_type === "E") {
+      } else if (item.item_type === "E") {
+        if(item.id === this.state.itemIDForReccomendationP) {
+          return (
+            <div>
+              <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
+              <RecomendationCard item_id={this.state.itemIDForReccomendationP} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/>
+            </div>
+          )
+        }
         return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
-      }
-      else {
+      } else if (item.item_type === 'T') {
         return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
-      }
+      } 
+      return null;
     });
 
 
@@ -238,8 +261,8 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/> : null }
-            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/> : null }
+            {/* { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/> : null } 
+            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/> : null } */}
       </div>
     )
   }
