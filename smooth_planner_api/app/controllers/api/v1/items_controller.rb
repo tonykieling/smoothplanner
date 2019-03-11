@@ -21,12 +21,16 @@ module Api::V1
 
     def show
       location = Item.find_by({id: params[:id]}).geo_location
+      reco_type = params[:suggestionType]
+      query = params[:query]
+      puts reco_type
+      puts query
       @recos = HTTP.get("https://maps.googleapis.com/maps/api/place/textsearch/json?", :params => {
-        :query => "restaurants",
+        :query => query,
         :key => Rails.application.secrets.google_api_key,
         :radius => "10000",
-        :location => location, # hardcoded for now to VPL's lat and long
-        :type => "restaurant"
+        :location => location, 
+        :type => reco_type,
         }).body
       render json: JSON.parse(@recos)
     end

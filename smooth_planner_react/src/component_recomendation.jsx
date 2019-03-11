@@ -12,49 +12,45 @@ export default class RecomendationCard extends Component {
     this.fetchRecommendations = this.fetchRecommendations.bind(this);
   }
 
-  fetchRecommendations(item_id) {
+  fetchRecommendations(item_id, suggestionType, query) {
     console.log("Fetching recommendations from the server", item_id)
-    axios.get(`http://localhost:3001/api/v1/items/${item_id}.json`)
+    axios.get(`http://localhost:3001/api/v1/items/${item_id}.json?suggestionType=${suggestionType}&query=${query}`)
       .then(response => {
         this.setState({suggestions: response.data.results})
-        console.log(this.state.suggestions)
       })
       .catch(error => {
         console.log(error )
       })
   }
   handleLeftClick = () => {
-    let newIndex, currentIndex = this.state.index;
-    if(currentIndex === 0) {
-      newIndex = 19
-    } else {
-      newIndex = currentIndex - 1
+    let newIndex = this.state.index - 1;
+    if(newIndex < 0) {
+      newIndex = this.state.suggestions.length - 1;
     }
     this.setState({index: newIndex})
   }
   handleRightClick = () => {
-    let newIndex, currentIndex = this.state.index;
-    if(currentIndex === 19) {
-      newIndex = 0
-    } else {
-      newIndex = currentIndex + 1
+    let newIndex = this.state.index + 1;
+    if(newIndex >= this.state.suggestions.length) {
+      newIndex = 0;
     }
     this.setState({index: newIndex})
   }
+ 
   componentDidUpdate(prevProps) {
     if(this.props.item_id && (this.props.item_id !== prevProps.item_id)) {
-      this.fetchRecommendations(this.props.item_id)
+      this.fetchRecommendations(this.props.item_id, this.props.type, this.props.query)
     }
   }
   componentDidMount() {
-    this.fetchRecommendations(this.props.item_id);
+    this.fetchRecommendations(this.props.item_id, this.props.type, this.props.query);
   }
 
   render() {
     const currentSuggestion = this.state.suggestions[this.state.index];
     let url = "https://www.google.com/maps/search/?api=1&query="
     let ItemToBeAdded ={};
-    if(currentSuggestion.geometry) {
+    if(currentSuggestion && currentSuggestion.geometry) {
       const geo_location =  `${currentSuggestion.geometry.location.lat},${currentSuggestion.geometry.location.lng}`;
       url = `${url}${geo_location}&query_place_id=${currentSuggestion.place_id}`;
       ItemToBeAdded = {
@@ -64,7 +60,6 @@ export default class RecomendationCard extends Component {
         url,
       }
     }
-    console.log("currentSuggestion", ItemToBeAdded);
     return (
         <div className="card">
           <div className="card-header">
@@ -72,7 +67,6 @@ export default class RecomendationCard extends Component {
             Suggestions for you
             <i className="fas fa-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
           </div>
-          
           <div className="card-body row">
             <div className="col-4">
               <i className="fas fa-chevron-left fa-5x carousel-pointer" onClick={this.handleLeftClick}></i>
