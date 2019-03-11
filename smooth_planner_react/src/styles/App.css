@@ -137,6 +137,32 @@ section {
   padding: .25rem;
 }
 
+.card-reco-center {
+  display: flex;
+  background-color: #ffc10794;
+  align-items: center;
+}
+
+.card-reco-body {
+  justify-content: space-between;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.card-reco-body > .card-text {
+  min-width: 35vw;
+}
+
+.card-reco-body > .card-text > div {
+  display: flex;
+}
+
+.card-reco-body > .card-text > div > img {
+  height: 2.25rem;
+  margin-right: 10px;
+}
+
+
 .logo {
   display: flex;
   width: 300px;
@@ -235,12 +261,10 @@ body {
 .fa-plus {
   color: green;
   font-size: 30px;
-  cursor: pointer;
-  opacity: 0.5;
-  float: right;
+  margin-top: 0;
 }
 
-.fa-calendar-plus:hover {
+.fa-plus:hover {
   opacity: 1;
   font-size: 35px;
 }

@@ -239,7 +239,7 @@ export default class ItemsContainer extends Component {
             {allCards}
           </div>
             { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/> : null }
-            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/> : null }
+            {/* { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/> : null } */}
       </div>
     )
   }
