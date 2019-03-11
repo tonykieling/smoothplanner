@@ -3,4 +3,5 @@ class UserTrip < ActiveRecord::Migration[5.1]
     create_join_table :users, :trips
     remove_column :trips, :user_id
   end
+  
 end

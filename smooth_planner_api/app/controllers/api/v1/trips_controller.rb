@@ -14,8 +14,12 @@ module Api::V1
       @user = User.find(params[:user_id])
       newtrip = Trip.create(trip_params)
       newtrip.users << @user
-      newtrip.save 
-      render json: newtrip.id
+      if newtrip.save 
+        render json: newtrip.id
+      end
+      else
+        render json: "Error! Please try again"
+      end
     end
 
     def destroy
