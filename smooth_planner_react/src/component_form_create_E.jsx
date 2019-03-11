@@ -14,6 +14,7 @@ class CreateEvent extends Component {
       venue: '',
       details: '',
       confirmation: '',
+      address: '',
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -48,6 +49,7 @@ class CreateEvent extends Component {
         venue: this.props.item.venue,
         details: this.props.item.details,
         confirmation: this.props.item.confirmation,
+        address: this.props.item.address,
        });
     }
   }

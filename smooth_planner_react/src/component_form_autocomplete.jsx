@@ -51,7 +51,7 @@ export default class LocationSearchInput extends React.Component {
             <input
               {...getInputProps({
                 placeholder: 'Type location here',
-                className: 'form-control col-sm-9',
+                className: 'form-control',
               })}
             />
             <div className="autocomplete-dropdown-container">

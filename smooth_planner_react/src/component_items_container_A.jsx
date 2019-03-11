@@ -32,7 +32,7 @@ export default class ItemsContainer extends Component {
   render() {
 
     const item = this.props.item;
-    const details = <span> {item.details ? details : null }</span>
+    const details = <span> {item.details ? item.details : null }</span>
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)

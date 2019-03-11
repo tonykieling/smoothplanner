@@ -13,6 +13,7 @@ class CreateAccomodation extends Component {
       venue:'',
       details:'',
       confirmation:'',
+      address: '',
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -56,6 +57,7 @@ class CreateAccomodation extends Component {
         venue: this.props.item.venue,
         details: this.props.item.details,
         confirmation: this.props.item.confirmation,
+        address: this.props.item.address
        });
     }
   }
