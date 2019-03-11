@@ -19,7 +19,6 @@ class CreateAccomodation extends Component {
     const stateName = event.target.name
     const value = event.target.value
     this.setState({[stateName]:value})
-    console.log(this.state)
   }
   handleChangeEndDate(date) {
     this.setState({
@@ -52,13 +51,13 @@ class CreateAccomodation extends Component {
 
   render() {
     return(
-      <div class="create-form-container">
-        <div class="form-title">
-        <h4 class="card-title">Add/Edit Accomodation</h4>
+      <div className="create-form-container">
+        <div className="form-title">
+        <h4 className="card-title">Add/Edit Accomodation</h4>
         </div>
         <form onSubmit={this.handlesSubmit}>
-          <div class="row form-group">
-            <label htmlFor="dt_start" class="col-sm-3 col-form-label">Check in:</label>
+          <div className="row form-group">
+            <label htmlFor="dt_start" className="col-sm-3 col-form-label">Check in:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -73,8 +72,8 @@ class CreateAccomodation extends Component {
               required
             />
           </div>
-          <div class="row form-group">
-            <label htmlFor="dt_end" class="col-sm-3 col-form-label">Check out:</label>
+          <div className="row form-group">
+            <label htmlFor="dt_end" className="col-sm-3 col-form-label">Check out:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
@@ -89,18 +88,18 @@ class CreateAccomodation extends Component {
               required
             />
           </div>
-          <div class="row form-group">
-            <label htmlFor="confirmation" class="col-sm-3 col-form-label">Reservation #:</label>
+          <div className="row form-group">
+            <label htmlFor="confirmation" className="col-sm-3 col-form-label">Reservation #:</label>
             <input 
               type="text" 
-              class="form-control col-sm-9" 
+              className="form-control col-sm-9" 
               name="confirmation"
               onChange = {this.onChangeHandler}
               value = {this.state.confirmation}
             />
           </div>
-          <div class="row form-group" id="locationField">
-            <label htmlFor="venue" class="col-sm-3 col-form-label">Venue: </label>
+          <div className="row form-group" id="locationField">
+            <label htmlFor="venue" className="col-sm-3 col-form-label">Venue: </label>
             <LocationSearchInput
               type="text" 
               className="form-control col-sm-10" 
@@ -111,8 +110,8 @@ class CreateAccomodation extends Component {
               address = {this.state.venue}
             />
           </div>
-          <div class="row form-group">
-            <label htmlFor="details" class="col-sm-3 col-form-label">Details:</label>
+          <div className="row form-group">
+            <label htmlFor="details" className="col-sm-3 col-form-label">Details:</label>
             <textarea 
               className="form-control col-sm-9"
               name="details"
@@ -120,11 +119,11 @@ class CreateAccomodation extends Component {
               value = {this.state.details}>
             </textarea>
           </div>
-          <div class ="form-group">
-            {/* <a role="button" class="btn btn-outline-primary" href="#">Upload files</a> */}
+          <div className ="form-group">
+            {/* <a role="button" className="btn btn-outline-primary" href="#">Upload files</a> */}
           </div>
-          <div class="form-group">
-            <button type="submit" class="col-sm-12 btn btn-primary">Submit</button>
+          <div className="form-group">
+            <button type="submit" className="col-sm-12 btn btn-primary">Submit</button>
           </div>
         </form>
     </div>

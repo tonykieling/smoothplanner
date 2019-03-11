@@ -11,19 +11,17 @@ import {
 export default class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: this.props.address };
+    this.state = { address: '' };
   }
  
   handleChange = address => {
     this.setState({ address });
-    console.log("state", this.state);
   };
  
   handleSelect = address => {
     this.setState({ address });
     geocodeByAddress(address)
       .then(results => {
-        console.log(results, address)
         this.props.handleAddress(results[0].formatted_address, address)
         return getLatLng(results[0])
       })
@@ -32,6 +30,14 @@ export default class LocationSearchInput extends React.Component {
       })
       .catch(error => console.error('Error', error));
   };
+
+  componentDidMount() {
+    let address = '';
+    if(this.props.address) {
+      address = this.props.address;
+    }
+    this.setState({address})
+  }
  
   render() {
     return (
