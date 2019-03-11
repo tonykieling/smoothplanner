@@ -116,6 +116,14 @@ section {
   text-align: start;
 }
 
+.card-body-lower {
+  padding-top: 2px;
+}
+
+.card-body-upper {
+  padding-bottom: 6px;
+}
+
 .item-card-head{
   display: inline;
 }
@@ -181,7 +189,6 @@ footer{
 
 body {
   background-image: url("./images/amazing-austria-dawn-1323550.jpg");
-  /* background-image: url("https://www.indietraveller.co/wp-content/uploads/2014/05/bigtrip__large.jpg"); */
   background-attachment:fixed;
   background-size: auto;
   width: 100%;

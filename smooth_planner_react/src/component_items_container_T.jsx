@@ -37,7 +37,7 @@ export default class ItemsContainer extends Component {
   render() {
     
     const item = this.props.item;
-    const details = <p><b>Details: </b>{item.details}</p>
+    const details = <span><b>Details: </b>{item.details}</span>
 
     return (
           <div className="card">
@@ -47,12 +47,12 @@ export default class ItemsContainer extends Component {
               <h4 className="item-card-head"><b>Going to {item.city_arrival}</b></h4>
             </div>
             
-            <div className="card-body">
+            <div className="card-body card-body-upper">
               {this.formatDate()}
               <span> <b>Leaving from: </b>{item.city_depart} {item.venue ? ` - ${item.venue}` : ""}</span>  <br />
             </div>
 
-            <div className="card-body">
+            <div className="card-body card-body-lower">
               <span> <b>Confirmation #: </b>{item.confirmation}</span>
               <span> {item.details ? details : null }</span>
             </div>

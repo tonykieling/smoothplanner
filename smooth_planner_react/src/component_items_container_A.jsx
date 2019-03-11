@@ -16,8 +16,8 @@ export default class ItemsContainer extends Component {
     if (this.props.item.time_end != null)
       return(
         <div className="timestamp">
-          <span> <b>First Day: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')} </span>
-          <span> <b> Last Day: </b> {moment(this.props.item.time_end).format('dddd, MMM Do YYYY')}</span>
+          <span> <b>Dates: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')} </span>
+          <span> <b> - </b> {moment(this.props.item.time_end).format('dddd, MMM Do YYYY')}</span>
         </div>
       )
     else {
@@ -32,7 +32,10 @@ export default class ItemsContainer extends Component {
   render() {
 
     const item = this.props.item;
-    const details = <span> <b>Details: </b>{item.details}</span>
+    const details = <span> <b>Details: </b>{item.details}<br /></span>
+    const address = <span> <b>Address:</b> {item.address}<br /></span> 
+    const phone = <span> <b>Phone:</b>{item.phone}<br /></span>
+    const confirmation = <span> <b>Confirmation #: </b> {item.confirmation}<br /></span>
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
@@ -45,17 +48,16 @@ export default class ItemsContainer extends Component {
               </div>
             </div>
             
-            <div className="card-body">
+            <div className="card-body card-body-upper">
               {this.presentDate()}
-              <p><b>Venue: </b> <a href={item.url} target="_blank" rel="noopener noreferrer">{item.venue}</a></p>
+              <span><b>Venue: </b> <a href={item.url} target="_blank" rel="noopener noreferrer">{item.venue}</a></span>
             </div>
               
-            <div className="card-body">
-              <span> <b>Confirmation #: </b> {item.confirmation}</span><br />
-              <span> <b>Website: </b> {item.url}</span>
-              <span> <b>Phone:</b>{item.phone}</span>  <br />
-              <span> <b>Address:</b>{item.address}</span> <br />
-              <span> {item.details ? details : null}</span>
+            <div className="card-body card-body-lower">
+              { item.confirmation? confirmation : null }
+              { item.phone? phone : null }
+              { item.address? address : null }
+              {item.details ? details : null}
             </div>
           </div>
     )

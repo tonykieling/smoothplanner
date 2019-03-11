@@ -33,8 +33,10 @@ export default class ItemsContainer extends Component {
 
   render() {
     const item = this.props.item;
-    const address = <dir><span> <b>Address:</b>{item.address}</span>  <br /></dir>
-    const details = <div><p><b>Details: </b>{item.details}</p></div>
+    const address = <span> <b>Address:</b>{item.address}<br /></span>
+    const details = <span><b>Details: </b>{item.details}<br /></span>
+    const phone = <span> <b>Phone:</b>{item.phone}<br /></span>
+    const confirmation = <span> <b>Confirmation #: </b> {item.confirmation}<br /></span>
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
@@ -45,16 +47,14 @@ export default class ItemsContainer extends Component {
               <h4 className="item-card-head"><b>{item.title}</b></h4>
             </div>
 
-            <div className="card-body">
+            <div className="card-body card-body-upper">
               {this.presentDate()}
-              <span> <b>Where: </b>{item.venue}</span>  <br />
+              <span> <b>Where: </b><a href={item.url} target="_blank" rel="noopener noreferrer">{item.venue}</a></span>  <br />
             </div>
           
-            <div className="card-body">
-              <span> <b>Confirmation #: </b>{item.confirmation}</span>
-              <span className="to_time"> <b>Files uploaded:</b> - </span> <br />
-              <span> <b>Website: </b>{item.url} </span>
-              <span className="to_time"> <b>Phone:</b>{item.phone}</span>  <br />
+            <div className="card-body card-body-lower">
+              { item.confirmation? confirmation : null }
+              { item.phone? phone : null }
               {item.address ? address : null}
               {item.details ? details : null }
             </div>

@@ -152,8 +152,8 @@ export default class ItemsContainer extends Component {
     } else {
       return(
         <div>
-          <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
-          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span>
+          {/* <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span> */}
         </div>
       )
     }
