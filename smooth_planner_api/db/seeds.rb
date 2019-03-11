@@ -57,8 +57,8 @@ trip3.users << user1
 trip4 = Trip.create(
   {
     name: "Going to Zurich",
-    time_start:'September 1, 2019 10:00:00',
-    time_end:'September 15, 2019 23:00:00'
+    # time_start:'September 1, 2019 10:00:00',
+    # time_end:'September 8, 2019 23:00:00'
   }
 )
 trip4.users << user2
@@ -67,8 +67,8 @@ trip4.users << user2
 trip5 = Trip.create(
 {
   name: "Japan Trip 2020",
-  time_start:'July 1, 2020 10:00:00',
-  time_end:'July 15, 2020 23:00:00'
+  # time_start:'July 1, 2020 10:00:00',
+  # time_end:'July 15, 2020 23:00:00'
 })
 trip5.users << user1
 
@@ -76,8 +76,8 @@ trip5.users << user1
 trip6 = Trip.create(
   {
     name: "Business meeting in Toronto",
-    time_start:'April 1, 2019 10:00:00',
-    time_end:'July 4, 2019 23:00:00'
+    # time_start:'April 1, 2019 10:00:00',
+    # time_end:'July 4, 2019 23:00:00'
   }
 )
 trip6.users << user2
@@ -86,8 +86,8 @@ trip6.users << user2
 trip7 = Trip.create(
   {
     name: "Hawaii Time",
-    time_start:'March 2, 2017 10:00:00',
-    time_end:'March 20, 2017 23:00:00'
+    # time_start:'March 2, 2017 10:00:00',
+    # time_end:'March 20, 2017 23:00:00'
   }
 )
 trip7.users << user2
@@ -97,8 +97,8 @@ trip7.users << user1
 trip8 = Trip.create(
   {
     name: "Go Shopping",
-    time_start:'March 22, 2019 10:00:00',
-    time_end:'March 24, 2019 23:00:00'
+    # time_start:'March 22, 2019 10:00:00',
+    # time_end:'March 24, 2019 23:00:00'
   }
 )
 trip8.users << user1
@@ -108,8 +108,8 @@ trip8.users << user2
 trip9 = Trip.create(
   {
     name: "Business meeting in Calgary",
-    time_start:'August 5, 2019 10:00:00',
-    time_end:'August 9, 2019 23:00:00'
+    # time_start:'August 5, 2019 10:00:00',
+    # time_end:'August 9, 2019 23:00:00'
   }
 )
 trip9.users << user1
@@ -471,4 +471,108 @@ Item.create({
   venue: 'Hawaii Hotels',
   trip_id: trip7.id,
   geo_location: "19.8723469,-155.1250591"
+})
+
+
+
+
+# CREATE TRIPS ITEMS
+# eighth items trip
+# trip_name: "Going to Zurich"
+Item.create({
+  time_start:'September 1, 2019 10:00:00',
+  time_end:'September 1, 2019 16:15:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Zurich',
+  details: 'the tickets were a good deal',
+  trip_id: trip4.id
+})
+
+Item.create({
+  time_start:'September 8, 2019 07:00:00',
+  time_end:'September 8, 2019 18:55:00',
+  item_type: 'T',
+  city_depart: 'Zurich',
+  city_arrival: 'Vancouver',
+  trip_id: trip4.id
+})
+
+Item.create({
+  time_start:'September 1, 2019 10:00:00',
+  time_end:'September 8, 2019 04:15:00',
+  item_type: 'A',
+  venue: "Emma's house",
+  details: "gonna stay in my friend's house and celebrate her birthday",
+  trip_id: trip4.id,
+  geo_location: "47.3773697,8.3966319"
+})
+
+Item.create({
+  time_start:'September 2, 2019 10:00:00',
+  time_end:'September 7, 2019 18:00:00',
+  item_type: 'E',
+  venue: 'visit Zurich as whole during the week',
+  trip_id: trip4.id
+})
+
+Item.create({
+  time_start:'September 5, 2019 17:00:00',
+  time_end:'September 6, 2019 02:00:00',
+  item_type: 'E',
+  venue: 'X Club',
+  details: "Emma's birthday party",
+  trip_id: trip4.id
+})
+
+
+
+# CREATE TRIPS ITEMS
+# nineth items trip
+# trip_name: "Businnes meeting in Toronto"
+# the user has just started thinking the trip
+Item.create({
+  time_start: 'April 2, 2019 05:45:00',
+  time_end: 'April 2, 2019 11:10:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Toronto',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'April 5, 2019 08:45:00',
+  time_end: 'April 5, 2019 15:10:00',  
+  item_type: 'T',
+  city_depart: 'Toronto',
+  city_arrival: 'Vancouver',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'April 2, 2019 11:45:00',
+  time_end: 'April 5, 2019 11:10:00',
+  title: "Toronto's business meeting",
+  item_type: 'A',
+  details: 'need to confirm with Marley the accommodation in her house',
+  trip_id: trip6.id,
+  geo_location: '43.664934,-79.4250289',
+})
+
+Item.create({
+  time_start: 'April 3, 2019 09:00:00',
+  title: "business meeting at DevHub Place",
+  item_type: 'E',
+  venue: 'DevHub Toronto',
+  details: 'need to prepare the presentation',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'April 4, 2019 18:00:00',
+  title: "Friend's dinner",
+  item_type: 'E',
+  venue: "Great moement's restaurant",
+  details: 'meet old friends',
+  trip_id: trip6.id
 })
