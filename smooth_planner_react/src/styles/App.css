@@ -100,10 +100,6 @@ section {
   font-size: 25px;
 }
 
-.to_time {
-  float: right;
-}
-
 .card {
   min-width: 70%;
   margin: 5px 0;

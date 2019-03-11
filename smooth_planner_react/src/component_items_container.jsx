@@ -80,8 +80,10 @@ export default class ItemsContainer extends Component {
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
+          const current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
           this.setState({
             cards: response.data,
+            current_trip,
           });
           this.areThereAnyRecommendations();
       })
@@ -183,9 +185,7 @@ export default class ItemsContainer extends Component {
       }
     });
 
-    if (this.props.trips.length > 0) {
-      this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
-    }
+
     const tripInfo = this.state.current_trip;
 
 

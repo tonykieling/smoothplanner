@@ -11,7 +11,7 @@ import {
 export default class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: this.props.address };
+    this.state = { address: '' };
   }
  
   handleChange = address => {
@@ -30,6 +30,14 @@ export default class LocationSearchInput extends React.Component {
       })
       .catch(error => console.error('Error', error));
   };
+
+  componentDidMount() {
+    let address = '';
+    if(this.props.address) {
+      address = this.props.address;
+    }
+    this.setState({address})
+  }
  
   render() {
     return (
@@ -43,7 +51,7 @@ export default class LocationSearchInput extends React.Component {
             <input
               {...getInputProps({
                 placeholder: 'Type location here',
-                className: 'location-search-input form-control wd-60',
+                className: 'form-control',
               })}
             />
             <div className="autocomplete-dropdown-container">

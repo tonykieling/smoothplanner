@@ -19,14 +19,14 @@ export default class ItemsContainer extends Component {
     const trip = this.props.item;
     if (moment.utc(trip.time_start).format('dddd') === moment.utc(trip.time_end).format('dddd')) {
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>Departure: </b>{moment.utc(trip.time_start).format('LLLL')}</span>
           <span><b> - Arrival: </b>{moment.utc(trip.time_end).format('LTS')}</span> <br />
         </div>
       )
     } else {
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>Departure: </b>{moment.utc(trip.time_start).format('LLLL')}</span><br />
           <span><b>Arrival: </b>{moment.utc(trip.time_end).format('LLLL')}</span> <br />
         </div>

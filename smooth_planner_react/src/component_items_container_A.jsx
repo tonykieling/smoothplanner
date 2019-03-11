@@ -22,7 +22,7 @@ export default class ItemsContainer extends Component {
       )
     else {
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>First Day: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')} - no last day yet.</span>
         </div>
       )

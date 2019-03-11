@@ -16,14 +16,14 @@ export default class ItemsContainer extends Component {
   presentDate = () => {
     if (this.props.item.time_end != null)
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span>
           <span> <b> - </b> {moment.utc(this.props.item.time_end).format('llll')}</span>
         </div>
       )
     else {
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span>
         </div>
       )

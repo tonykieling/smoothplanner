@@ -11,7 +11,11 @@ class CreateTransport extends Component {
     this.state = {
       item_type:'T',
       trip_id: this.props.tripID,
-      ...(this.props.item || {})
+      venue: '',
+      details: '',
+      confirmation: '',
+      city_depart: '',
+      city_arrival: '',
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -47,6 +51,19 @@ class CreateTransport extends Component {
     const geo_location = `${latlng.lat} ${latlng.lng}`
     this.setState({geo_location})   
   }
+  componentDidMount() {
+    if(this.props.item) {
+      this.setState({
+        time_start: this.props.item.time_start,
+        time_end: this.props.item.time_end,
+        venue: this.props.item.venue,
+        details: this.props.item.details,
+        confirmation: this.props.item.confirmation,
+        city_depart: this.props.item.city_depart,
+        city_arrival: this.props.item.city_arrival,
+       });
+    }
+  }
  
 
   render() {
@@ -57,7 +74,7 @@ class CreateTransport extends Component {
         </div>
         <form onSubmit={this.handlesSubmit}>
           <div className="row form-group">
-            <label htmlFor="city_depart" className="col-sm-3 col-form-label">Departing</label>
+            <label htmlFor="city_depart" className="col-sm-3 col-form-label">Leaving from:</label>
             <LocationSearchInput
               type="text" 
               className="form-control" 
@@ -66,22 +83,23 @@ class CreateTransport extends Component {
               handleAddress = {this.onChangeDepartCity}
               address = {this.state.city_depart}
               handleLatLng = { () => {}}
+              required
             />
           </div>
           <div className="row form-group">
-            <label htmlFor="city_arrival" className="col-sm-3 col-form-label">Arrival</label>
+            <label htmlFor="city_arrival" className="col-sm-3 col-form-label">Arrving in:</label>
             <LocationSearchInput
               type="text" 
-              className="form-control col-sm-10" 
               name="city_arrival" 
               placeholder="Arrival City" 
               handleAddress = {this.onChangeArriveCity}
               address = {this.state.city_arrival}
               handleLatLng = {this.onChangeLatLng}
+              required
             />
           </div>
           <div className="row form-group">
-            <label htmlFor="time_start" className="col-sm-3 col-form-label">Departing:</label>
+            <label htmlFor="time_start" className="col-sm-3 col-form-label">Departing Time:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -95,7 +113,7 @@ class CreateTransport extends Component {
               className = "form-control col-sm-10"
               required
             />
-            <label htmlFor="time_end"className="col-sm-3 col-form-label">Arriving:</label>
+            <label htmlFor="time_end"className="col-sm-3 col-form-label">Arriving Time:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
