@@ -38,9 +38,11 @@ export default class ItemsContainer extends Component {
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
           <div className="card">
             <div className="card-header" >
-              <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
-              <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
               <h4><b>{item.title ? item.title : item.venue}</b></h4>
+              <div>
+                <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
+                <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
+              </div>
             </div>
             
             <div className="card-body">
