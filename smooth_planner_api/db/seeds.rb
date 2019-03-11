@@ -98,14 +98,15 @@ trip6 = Trip.create(
 trip6.users << user2
 
 
-trip9 = Trip.create(
+trip7 = Trip.create(
   {
-    name: "Businnes meeting at Calgary",
-    time_start:'August 5, 2019 10:00:00',
-    time_end:'August 9, 2019 23:00:00'
+    name: "Hawaii Time",
+    time_start:'March 2, 2017 10:00:00',
+    time_end:'March 20, 2017 23:00:00'
   }
 )
-trip9.users << user1
+trip7.users << user2
+trip7.users << user1
 
 
 trip8 = Trip.create(
@@ -118,16 +119,14 @@ trip8 = Trip.create(
 trip8.users << user1
 
 
-trip7 = Trip.create(
+trip9 = Trip.create(
   {
-    name: "Hawaii Time",
-    time_start:'March 2, 2017 10:00:00',
-    time_end:'March 20, 2017 23:00:00'
+    name: "Businnes meeting in Calgary",
+    time_start:'August 5, 2019 10:00:00',
+    time_end:'August 9, 2019 23:00:00'
   }
 )
-trip7.users << user2
-trip7.users << user1
-
+trip9.users << user1
 
 
 
@@ -180,7 +179,7 @@ Item.create({
   time_end: 'January 1, 2020 01:00:00',
   item_type: 'E',
   title: 'New year party',
-  details: 'www.partyatcancun2019.com',
+  url: 'www.partyatcancun2019.com',
   venue: 'RedLight Beach',
   trip_id: trip1.id
 })
@@ -197,71 +196,144 @@ Item.create({
 
 
 
-# # second items trip
-# Item.create({
-#   time_start: 'July 1, 2019 06:20:00',
-#   time_end: 'July 1, 2020 11:30:00',
-#   item_type: 'T',
-#   city_depart: 'Vancouver',
-#   city_arrival: 'Basel',
-#   confirmation: 'ABC4YQ',
-#   trip_id: trip2.id
-# })
+# second items trip
+Item.create({
+  time_start: 'July 1, 2019 06:20:00',
+  time_end: 'July 1, 2019 20:30:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Basel',
+  confirmation: 'ABC4YQ',
+  trip_id: trip2.id
+})
 
-# Item.create({
-#   time_start: 'July 1, 2019 14:30:00',
-#   time_end:'July 5, 2019 10:30:00',
-#   item_type: 'A',
-#   venue: 'Basel Sheraton',
-#   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-#   trip_id: trip2.id,
-#   geo_location: "47.3906215,8.5077417",
-# })
+Item.create({
+  time_start: 'July 1, 2019 14:00:00',
+  time_end:'July 5, 2019 10:00:00',
+  item_type: 'A',
+  venue: 'Basel Sheraton',
+  address: 'Boulevard Kukulcan Retorno Chac, Basel',
+  trip_id: trip2.id
+})
 
-# Item.create({
-#   time_start: 'July 5, 2019 14:30:00',
-#   time_end:'July 15, 2019 10:30:00',
-#   item_type: 'A',
-#   venue: 'Geneva Marriot',
-#   address: 'Boulevard Kukulcan Retorno Chac, Zona Hotelera, 77500 Cancún, Q.R., Mexico',
-#   trip_id: trip2.id,
-#   geo_location: "46.2114276,6.1451236",
-# })
+Item.create({
+  time_start: 'July 10, 2019 09:00:00',
+  item_type: 'E',
+  title: 'Go to Jungfrau',
+  details: 'whole day event',
+  trip_id: trip2.id
+})
 
-# Item.create({
-#   time_start: 'July 5, 2019 14:30:00',
-#   time_end:'July 15, 2019 10:30:00',
-#   item_type: 'E',
-#   venue: 'any place with beach and sun',
-#   title: 'Beach time!!!',
-#   details: 'take some sun',
-#   trip_id: trip2.id
-# })
+Item.create({
+  time_start: 'July 5, 2019 11:00:00',
+  time_end:'July 5, 2019 12:30:00',
+  item_type: 'T',
+  city_depart: 'Basel',
+  city_arrival: 'Geneva',
+  title: 'Avis car rental',
+  details: 'pick up at airport',
+  trip_id: trip2.id
+})
 
-# Item.create({
-#   time_start: 'July 15, 2019 08:20:00',
-#   time_end: 'July 15, 2020 17:30:00',
-#   item_type: 'T',
-#   city_depart: 'Geneva',
-#   city_arrival: 'Vancouver',
-#   confirmation: 'A3C4YQ',
-#   trip_id: trip2.id
-# })
+Item.create({
+  time_start: 'July 5, 2019 14:00:00',
+  time_end:'July 15, 2019 11:00:00',
+  item_type: 'A',
+  venue: 'Geneva Home Hotels',
+  details: 'near downtown',
+  trip_id: trip2.id
+})
+
+Item.create({
+  time_start: 'July 10, 2019 14:00:00',
+  item_type: 'E',
+  title: 'Museum Time!!',
+  venue: 'Geneva Museum',
+  details: 'I love this museum',
+  trip_id: trip2.id
+})
+
+Item.create({
+  time_start: 'July 12, 2019 18:00:00',
+  time_end: 'July 12, 2019 20:00:00',
+  item_type: 'E',
+  title: 'Concert',
+  venue: 'Arena Place',
+  details: 'music moment',
+  trip_id: trip2.id
+})
+
+Item.create({
+  time_start: 'July 15, 2019 08:20:00',
+  time_end: 'July 15, 2019 17:30:00',
+  item_type: 'T',
+  city_depart: 'Geneva',
+  city_arrival: 'Vancouver',
+  confirmation: 'A3C4YQ',
+  trip_id: trip2.id
+})
 
 
-
-# # third items trip
-# # the user has just started thinking the trip
-# Item.create({
-#   time_start: 'September 1, 2019 10:20:00',
-#   time_end: 'September 2, 2020 07:30:00',
-#   item_type: 'T',
-#   city_depart: 'Vancouver',
-#   city_arrival: 'Zurich',
-#   trip_id: trip3.id
-# })
+# third items trip
+Item.create({
+  time_start: 'July 5, 2019 10:00:00',
+  time_end: 'July 9, 2019 23:00:00',
+  title: 'new businnes in Calgary is coming',
+  item_type: 'E',
+  details: 'need to confirm with John',
+  trip_id: trip9.id
+})
 
 
+# forth items trip
+# the user has just started thinking the trip
+Item.create({
+  time_start: 'February 10, 2018 08:00:00',
+  time_end: 'February 10, 2018 19:30:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Paris',
+  trip_id: trip3.id
+})
+
+Item.create({
+  time_start: 'February 15, 2018 09:00:00',
+  time_end: 'February 15, 2018 20:00:00',
+  item_type: 'T',
+  city_depart: 'Paris',
+  city_arrival: 'Vancouver',
+  trip_id: trip3.id
+})
+
+Item.create({
+  time_start: 'February 10, 2018 14:00:00',
+  time_end: 'February 15, 2018 10:00:00',
+  item_type: 'A',
+  venue: 'Best Time Hotels',
+  address: 'Romantic Street, 123, Paris',
+  trip_id: trip3.id
+})
+
+Item.create({
+  time_start: 'February 12, 2018 18:00:00',
+  title: 'Romantic Dinner',
+  item_type: 'E',
+  venue: 'Monamour Restaurant',
+  address: 'Flowers Street, 321, Paris',
+  details: 'remember to ask the hotel a taxi',
+  trip_id: trip3.id
+})
+
+
+Item.create({
+  time_start: 'February 14, 2018 08:00:00',
+  title: 'A little History',
+  item_type: 'E',
+  venue: 'Louvre Museum',
+  address: 'Rue de Rivoli, 75001 Paris, France',
+  details: 'need to order the tickets one day before',
+  trip_id: trip3.id
+})
 
 # # forth items trip
 # Item.create({

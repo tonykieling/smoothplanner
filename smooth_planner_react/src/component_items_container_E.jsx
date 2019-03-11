@@ -33,7 +33,8 @@ export default class ItemsContainer extends Component {
 
   render() {
     const item = this.props.item;
-    const details = <p><b>XXDetails: </b>item.details</p>
+    const address = <dir><span> <b>Address:</b>{item.address}</span>  <br /></dir>
+    const details = <div><p><b>Details: </b>{item.details}</p></div>
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
@@ -54,8 +55,8 @@ export default class ItemsContainer extends Component {
               <span className="to_time"> <b>Files uploaded:</b> - </span> <br />
               <span> <b>Website: </b>{item.url} </span>
               <span className="to_time"> <b>Phone:</b>{item.phone}</span>  <br />
-              <span> <b>Address:</b>{item.address}</span>  <br />
-              <span> {item.details ? details : null }</span>
+              {item.address ? address : null}
+              {item.details ? details : null }
             </div>
         </div>
     )
