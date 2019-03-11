@@ -139,24 +139,23 @@ export default class ItemsContainer extends Component {
   // if the user commit some mistake, it will get the date based on the first and last events (cards)
   realDates = (tripInfo) => {
     if (this.state.cards.length > 0) {
-      const firstDay = this.state.cards[0];
-      const lastDay = this.state.cards[this.state.cards.length - 1];
+      const firstDay = this.state.cards[0].time_start;
+      const lastDay = this.state.cards[this.state.cards.length - 1].time_end;
       return(
         <div>
-          <span>{moment(firstDay).format('MMM Do')} - </span>
-          <span>{moment(lastDay).format('MMM Do YYYY')}</span>
+          <span>{moment.utc(firstDay).format('MMM Do')} - </span>
+          <span>{moment.utc(lastDay).format('MMM Do YYYY')}</span>
         </div>
       )
     } else {
       return(
         <div>
-          <span>{moment(tripInfo.time_start).format('MMM Do')}  - </span>
-          <span>{moment(tripInfo.time_end).format('MMM Do YYYY')} </span>
+          <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span>
         </div>
       )
     }
   }
-  
   
   componentDidMount() {
     this.fetchTripDetails();

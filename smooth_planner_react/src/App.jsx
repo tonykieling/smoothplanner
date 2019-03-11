@@ -46,8 +46,8 @@ class App extends Component {
   delete_trip = (trip) => {
     axios.delete(`http://localhost:3001/api/v1/trips/${trip.id}`, {data: {user: this.state.current_user.id}} )
     .then(response => {
-      this.setState({trips: response.data});
       window.location = "/"
+      this.setState({trips: response.data});
     })
       .catch(error => console.log(error));
   }
