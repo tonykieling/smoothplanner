@@ -13,8 +13,6 @@ export default class Share extends Component {
 
   handlesSubmit = (event)=>{
     event.preventDefault();
-    console.log(this.refs.email.value)
-    console.log(this.props.match.params.id)
     axios.put(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`, {email: this.refs.email.value})
     .then(response => {
       // console.log(response.data)

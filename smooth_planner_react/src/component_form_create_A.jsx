@@ -32,7 +32,6 @@ class CreateAccomodation extends Component {
   }
   handlesSubmit = (event)=>{
     event.preventDefault();
-    console.log(this.state)
     this.props.addItem(this.state);
     this.props.closeModal();
   }
@@ -44,8 +43,7 @@ class CreateAccomodation extends Component {
   }
   onChangeLatLng = (latlng) => {
     const geo_location = `${latlng.lat} ${latlng.lng}`
-    this.setState({geo_location})
-    console.log("state change!", this.state)    
+    this.setState({geo_location})   
   }
 
 

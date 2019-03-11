@@ -26,7 +26,6 @@ class App extends Component {
   
   // Share
   handleOpenModalShare() {
-
     this.setState({ showModalShare: true });
   }
   handleCloseModalShare () {
@@ -48,13 +47,10 @@ class App extends Component {
 
 
   delete_trip = (trip) => {
-    console.log("current_user_id: ", this.state.current_user.id)
-    console.log("trip_id: ", trip.id);
     axios.delete(`http://localhost:3001/api/v1/trips/${trip.id}`, {data: {user: this.state.current_user.id}} )
     .then(response => {
-      this.setState({trips: response.data});
       window.location = "/"
-      // console.log("tripsafter: ", this.state.trips);
+      this.setState({trips: response.data});
     })
       .catch(error => console.log(error));
   }

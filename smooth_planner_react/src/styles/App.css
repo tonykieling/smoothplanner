@@ -20,8 +20,6 @@ nav {
   width: 100px;
 }
 
-
-
 .side-bar {
   display: flex;
   flex-direction: column;
@@ -35,10 +33,10 @@ nav {
 .card-header {
   background-color: #dfe3e6;
   padding: .25rem;
-  display: flex;
-  justify-content: space-between;
+}
 
-
+.card-header > h4, div {
+  display: inline;
 }
 
 .trip-list > button {
@@ -95,6 +93,16 @@ section {
 
 .trip_title > h4 {
   padding-right: 10px;
+}
+
+.trip_title > .fa-trash-alt {
+  margin-left: .5rem;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.trip_title > .fa-trash-alt:hover {
+  font-size: 25px;
 }
 
 .to_time {
@@ -185,11 +193,13 @@ body {
   margin: 10px
 }
 
+
 .fa-plus, .fa-trash-alt, .fa-edit {
   float: right;
   font-size: 16px;
   cursor: pointer;
   opacity: 0.5;
+  margin-top: .5rem;
 }
 
 .fa-trash-alt:hover, .fa-edit:hover {

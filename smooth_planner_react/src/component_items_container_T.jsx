@@ -5,6 +5,7 @@ import moment from 'moment'
 // this is the specific container for TRANSPORTATION card type
 export default class ItemsContainer extends Component {
 
+  
   // calls delete item method on items_container
   handle_deleteItem = () => {
     const check = window.confirm(`Are you sure you want to delete this item?`);
@@ -13,10 +14,30 @@ export default class ItemsContainer extends Component {
   }
 
 
+  // function to format date inside the cards
+  formatDate = () => {
+    const trip = this.props.item;
+    if (moment.utc(trip.time_start).format('dddd') === moment.utc(trip.time_end).format('dddd')) {
+      return(
+        <div>
+          <span> <b>Departure: </b>{moment.utc(trip.time_start).format('LLLL')}</span>
+          <span><b> - Arrival: </b>{moment.utc(trip.time_end).format('LTS')}</span> <br />
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          <span> <b>Departure: </b>{moment.utc(trip.time_start).format('LLLL')}</span><br />
+          <span><b>Arrival: </b>{moment.utc(trip.time_end).format('LLLL')}</span> <br />
+        </div>
+      )
+    }
+  }
+
   render() {
     
     const item = this.props.item;
-    const details = <p><b>XXDetails: </b>item.details</p>
+    const details = <p><b>Details: </b>{item.details}</p>
 
     return (
           <div className="card">
@@ -28,8 +49,7 @@ export default class ItemsContainer extends Component {
             </div>
             
             <div className="card-body">
-              <span> <b>Departure: </b>{moment(item.time_start).format('MMM Do YYYY')}<b>  -  </b></span>
-              <span><b>Arrival: </b>{moment(item.time_end).format('MMM Do YYYY')}</span> <br />
+              {this.formatDate()}
               <span> <b>Leaving from: </b>{item.city_depart} {item.venue ? ` - ${item.venue}` : ""}</span>  <br />
             </div>
 
@@ -37,7 +57,6 @@ export default class ItemsContainer extends Component {
               <span> <b>Confirmation #: </b>{item.confirmation}</span>
               <span className="to_time"> <b>Files uploaded: </b> ticket_to_Zurich.pdf</span> <br />
               <span> {item.details ? details : null }</span>
-              {/* right now, if details is empty, it doesnt show up */}
             </div>
           </div>
     )

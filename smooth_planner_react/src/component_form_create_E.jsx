@@ -99,8 +99,12 @@ class CreateEvent extends Component {
               value = {this.state.details}>
             </textarea>
           </div>
+<<<<<<< HEAD
           <div className ="form-group">
             {/* <a role="button" className="btn btn-outline-primary" href="#">Upload files</a> */}
+=======
+          <div class ="form-group">
+>>>>>>> 2c9afa1cc7fd7dc26d8399342b2446090e2851f5
           </div>
           <div className="form-group">
             <button type="submit" className="col-sm-12 btn btn-primary">Submit</button>
