@@ -19,14 +19,14 @@ export default class ItemsContainer extends Component {
     const trip = this.props.item;
     if (moment.utc(trip.time_start).format('dddd') === moment.utc(trip.time_end).format('dddd')) {
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>Departure: </b>{moment.utc(trip.time_start).format('LLLL')}</span>
           <span><b> - Arrival: </b>{moment.utc(trip.time_end).format('LTS')}</span> <br />
         </div>
       )
     } else {
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>Departure: </b>{moment.utc(trip.time_start).format('LLLL')}</span><br />
           <span><b>Arrival: </b>{moment.utc(trip.time_end).format('LLLL')}</span> <br />
         </div>
@@ -37,25 +37,23 @@ export default class ItemsContainer extends Component {
   render() {
     
     const item = this.props.item;
-    const details = <p><b>Details: </b>{item.details}</p>
+    const details = <span><b>Details: </b>{item.details}</span>
 
     return (
           <div className="card">
-            <div className="card-header" >
+            <div className="card-header item-card-head" >
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
-              {/* <div className="edit-bt"> */}
               <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
-              <h4><b>Going to {item.city_arrival}</b></h4>
+              <h4 className="item-card-head"><b>Going to {item.city_arrival}</b></h4>
             </div>
             
-            <div className="card-body">
+            <div className="card-body card-body-upper">
               {this.formatDate()}
               <span> <b>Leaving from: </b>{item.city_depart} {item.venue ? ` - ${item.venue}` : ""}</span>  <br />
             </div>
 
-            <div className="card-body">
+            <div className="card-body card-body-lower">
               <span> <b>Confirmation #: </b>{item.confirmation}</span>
-              <span className="to_time"> <b>Files uploaded: </b> ticket_to_Zurich.pdf</span> <br />
               <span> {item.details ? details : null }</span>
             </div>
           </div>

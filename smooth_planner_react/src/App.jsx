@@ -14,9 +14,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: {name: "Bob", id: 1},
+      current_user: {name: "Suzy", id: 2},
       trips: [],
-      // selected_trip: { id: 2, title: "Japan Trip" },
       showModalShare: false
     }
 

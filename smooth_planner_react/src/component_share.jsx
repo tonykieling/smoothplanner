@@ -15,7 +15,7 @@ export default class Share extends Component {
     event.preventDefault();
     axios.put(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`, {email: this.refs.email.value})
     .then(response => {
-      // console.log(response.data)
+      
     })
     .catch(function (error) {
       console.log(error);
@@ -34,6 +34,7 @@ export default class Share extends Component {
           <input type="email" className="form-control" id="email" name="email" ref="email" aria-describedby="emailHelp" placeholder="Enter email"/>
           <small id="emailHelp" className="form-text text-muted">We'll never share this email with anyone else.</small>
         </div>
+        <h1>{this.state.message}</h1>
         <button type="button" className="btn btn-primary" onClick={this.handlesSubmit}>Submit</button>
       </form>
     );

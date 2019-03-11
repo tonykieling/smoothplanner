@@ -79,8 +79,10 @@ export default class ItemsContainer extends Component {
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
+          const current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
           this.setState({
             cards: response.data,
+            current_trip,
           });
           this.areThereAnyRecommendations();
       })
@@ -124,7 +126,7 @@ export default class ItemsContainer extends Component {
   }
 
   putItem =(data) => {
-    axios.put(`http://localhost:3001/api/v1/items/${data.id}`, data)
+    axios.put(`http://localhost:3001/api/v1/items/${data.id}`)
       .then(response => {
         this.setState({cards: response.data});
         this.areThereAnyRecommendations();
@@ -141,7 +143,7 @@ export default class ItemsContainer extends Component {
       const firstDay = this.state.cards[0].time_start;
       const lastDay = this.state.cards[this.state.cards.length - 1].time_end || false;
       return(
-        <div>
+        <div className="trip_duration">
           <span>{moment.utc(firstDay).format('MMM Do')} - </span>
           <span>{lastDay? moment.utc(lastDay).format('MMM Do YYYY') : null}</span>
         </div>
@@ -182,19 +184,15 @@ export default class ItemsContainer extends Component {
       }
     });
 
-    if (this.props.trips.length > 0) {
-      this.state.current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
-    }
+
     const tripInfo = this.state.current_trip;
 
 
       return (
         <div className="items_container">
           <div className="trip_title">
-            <h4>{ tripInfo ? tripInfo.name : null}</h4>
-            <div>
+            <h3>{ tripInfo ? tripInfo.name : null}</h3>
               {this.realDates(tripInfo)}
-            </div>
             <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
 
