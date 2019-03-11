@@ -28,10 +28,10 @@ module Api::V1
 
     def update
       @trip = Trip.find(params[:id])
-      @user = User.where("email = ?", params[:email])
+      @user = User.find_by(email: params[:email])
       @successful = [{ message: "User was successfully added" }]
       @unsuccessful = [{ message: "No user exists with that email so could not be added to this trip." }]
-      if (@user.length == 1)
+      if (@user && !(@trip.users.include?(@user)))
         @trip.users << @user
         render json: @successful
       else
