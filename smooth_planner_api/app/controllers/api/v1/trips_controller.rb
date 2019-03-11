@@ -16,7 +16,6 @@ module Api::V1
       newtrip.users << @user
       if newtrip.save 
         render json: newtrip.id
-      end
       else
         render json: "Error! Please try again"
       end
