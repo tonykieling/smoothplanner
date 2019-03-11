@@ -50,7 +50,7 @@ class CreateEvent extends Component {
             <input type="text" class="form-control col-sm-9" name="title" placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" onChange = {this.onChangeHandler} value={this.state.title} />
           </div>
           <div class="row form-group">
-            <label for="dt_start" class="col-sm-3 col-form-label">Event time:</label>
+            <label htmlFor="dt_start" class="col-sm-3 col-form-label">Event time:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"

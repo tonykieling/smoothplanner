@@ -45,7 +45,6 @@ export default class ItemsContainer extends Component {
   handleCloseModalE = () => {this.setState({ showModalE: false });}
 
   //  Modal state handling functions for editing an item
-  //  Accomodation modal
   handleOpenModalEdit = (type, item) => {
     if(type === 'T') {
       this.setState({ showModalTEdit: true, itemToEdit: item});
@@ -62,13 +61,13 @@ export default class ItemsContainer extends Component {
 
 
   areThereAnyRecommendations = () => {
-    //  Reset to z
+    //  Reset to no recommendations
     this.setState({
       recommendationsVisible: false,
       itemIDForReccomendation: null,
     })
     this.state.cards.forEach((card) => {
-      if(card.item_type === 'A') {
+      if(card.item_type === 'A' && card.geo_location) {
         this.setState({
           recommendationsVisible: true,
           itemIDForReccomendation: card.id,
@@ -84,6 +83,7 @@ export default class ItemsContainer extends Component {
           this.setState({
             cards: response.data,
           });
+          this.areThereAnyRecommendations();
       })
       .catch(error => {
         console.log(error)
@@ -159,7 +159,6 @@ export default class ItemsContainer extends Component {
   
   componentDidMount() {
     this.fetchTripDetails();
-    this.areThereAnyRecommendations();
   }
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -242,7 +241,8 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE}/> : null }
+            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/> : null }
+            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/> : null }
       </div>
     )
   }

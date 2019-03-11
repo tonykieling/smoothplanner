@@ -16410,3 +16410,254 @@ Processing by Api::V1::UsersController#show as JSON
 Completed 200 OK in 56ms (Views: 38.5ms | ActiveRecord: 3.3ms)
 
 
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-11 04:19:46 +0000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (2.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 952ms (Views: 116.5ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/api/v1/trips/9.json" for 10.0.2.2 at 2019-03-11 04:20:28 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 9]]
+Completed 200 OK in 151ms (Views: 1.8ms | ActiveRecord: 32.2ms)
+
+
+Started GET "/api/v1/trips/3.json" for 10.0.2.2 at 2019-03-11 04:20:32 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mTrip Load (0.9ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 3]]
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/v1/trips/8.json" for 10.0.2.2 at 2019-03-11 04:20:36 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mTrip Load (1.7ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 8]]
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/trips/2.json" for 10.0.2.2 at 2019-03-11 04:20:38 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.7ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 2]]
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/trips/7.json" for 10.0.2.2 at 2019-03-11 04:20:39 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mTrip Load (4.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mItem Load (14.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 7]]
+Completed 200 OK in 29ms (Views: 5.7ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/api/v1/trips/1.json" for 10.0.2.2 at 2019-03-11 04:20:41 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 1]]
+Completed 200 OK in 158ms (Views: 134.8ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/api/v1/trips/5.json" for 10.0.2.2 at 2019-03-11 04:20:52 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mTrip Load (2.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 5]]
+Completed 200 OK in 59ms (Views: 10.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/v1/trips/1.json" for 10.0.2.2 at 2019-03-11 04:20:54 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.8ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (2.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 1]]
+Completed 200 OK in 37ms (Views: 19.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/v1/items" for 10.0.2.2 at 2019-03-11 04:21:24 +0000
+Processing by Api::V1::ItemsController#create as HTML
+  Parameters: {"item_type"=>"A", "trip_id"=>"1", "address"=>"Half Hollow Hills Central School District, NY, USA", "venue"=>"Half Hollow Hills Central School District, NY, USA", "geo_location"=>"40.7767336 -73.38265849999999", "time_start"=>"2019-04-04T02:30:00.000Z", "time_end"=>"2019-03-14T03:00:00.000Z", "item"=>{"time_start"=>"2019-04-04T02:30:00.000Z", "time_end"=>"2019-03-14T03:00:00.000Z", "item_type"=>"A", "venue"=>"Half Hollow Hills Central School District, NY, USA", "address"=>"Half Hollow Hills Central School District, NY, USA", "trip_id"=>"1", "geo_location"=>"40.7767336 -73.38265849999999"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (2.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "time_end", "item_type", "venue", "address", "trip_id", "created_at", "updated_at", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-04-04 02:30:00"], ["time_end", "2019-03-14 03:00:00"], ["item_type", "A"], ["venue", "Half Hollow Hills Central School District, NY, USA"], ["address", "Half Hollow Hills Central School District, NY, USA"], ["trip_id", 1], ["created_at", "2019-03-11 04:21:24.285620"], ["updated_at", "2019-03-11 04:21:24.285620"], ["geo_location", "40.7767336 -73.38265849999999"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTrip Load (1.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 1]]
+Completed 200 OK in 45ms (Views: 6.6ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/v1/items/8.json?suggestionType=restaurant&query=restaurants" for 10.0.2.2 at 2019-03-11 04:21:24 +0000
+Started GET "/api/v1/items/8.json?suggestionType=point_of_interest&query=things%20to%20do" for 10.0.2.2 at 2019-03-11 04:21:24 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"restaurant", "query"=>"restaurants", "id"=>"8"}
+  Parameters: {"suggestionType"=>"point_of_interest", "query"=>"things to do", "id"=>"8"}
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 1081ms (Views: 19.3ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 1088ms (Views: 13.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/items" for 10.0.2.2 at 2019-03-11 04:24:27 +0000
+Processing by Api::V1::ItemsController#create as HTML
+  Parameters: {"item_type"=>"E", "trip_id"=>"1", "address"=>"540 Walt Whitman Rd, Huntington Station, NY 11747", "venue"=>"White Castle", "geo_location"=>"40.8104109,-73.4090394", "url"=>"https://www.google.com/maps/search/?api=1&query=40.8104109,-73.4090394&query_place_id=ChIJMcl1LA0p6IkRBZL1VY0gbCo", "time_start"=>"2019-04-04T03:00:00.000Z", "item"=>{"time_start"=>"2019-04-04T03:00:00.000Z", "item_type"=>"E", "venue"=>"White Castle", "address"=>"540 Walt Whitman Rd, Huntington Station, NY 11747", "trip_id"=>"1", "url"=>"https://www.google.com/maps/search/?api=1&query=40.8104109,-73.4090394&query_place_id=ChIJMcl1LA0p6IkRBZL1VY0gbCo", "geo_location"=>"40.8104109,-73.4090394"}}
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrip Load (2.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "items" ("time_start", "item_type", "venue", "address", "trip_id", "created_at", "updated_at", "url", "geo_location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["time_start", "2019-04-04 03:00:00"], ["item_type", "E"], ["venue", "White Castle"], ["address", "540 Walt Whitman Rd, Huntington Station, NY 11747"], ["trip_id", 1], ["created_at", "2019-03-11 04:24:27.160184"], ["updated_at", "2019-03-11 04:24:27.160184"], ["url", "https://www.google.com/maps/search/?api=1&query=40.8104109,-73.4090394&query_place_id=ChIJMcl1LA0p6IkRBZL1VY0gbCo"], ["geo_location", "40.8104109,-73.4090394"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTrip Load (1.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 1]]
+Completed 200 OK in 56ms (Views: 13.7ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/api/v1/trips/1.json" for 10.0.2.2 at 2019-03-11 04:26:39 +0000
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-11 04:26:39 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::V1::UsersController#show as JSON
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 81.2ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mTrip Load (88.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 297ms (Views: 111.7ms | ActiveRecord: 89.8ms)
+
+
+Started GET "/api/v1/items/8.json?suggestionType=restaurant&query=restaurants" for 10.0.2.2 at 2019-03-11 04:26:40 +0000
+Started GET "/api/v1/items/8.json?suggestionType=point_of_interest&query=things%20to%20do" for 10.0.2.2 at 2019-03-11 04:26:40 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"restaurant", "query"=>"restaurants", "id"=>"8"}
+  Parameters: {"suggestionType"=>"point_of_interest", "query"=>"things to do", "id"=>"8"}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (5.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 1174ms (Views: 33.1ms | ActiveRecord: 5.2ms)
+
+
+Completed 200 OK in 1203ms (Views: 22.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/items/8.json?suggestionType=point_of_interest&query=things%20to%20do" for 10.0.2.2 at 2019-03-11 04:26:41 +0000
+Started GET "/api/v1/items/8.json?suggestionType=restaurant&query=restaurants" for 10.0.2.2 at 2019-03-11 04:26:41 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"point_of_interest", "query"=>"things to do", "id"=>"8"}
+  Parameters: {"suggestionType"=>"restaurant", "query"=>"restaurants", "id"=>"8"}
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (2.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 329ms (Views: 30.3ms | ActiveRecord: 1.1ms)
+
+
+Completed 200 OK in 388ms (Views: 52.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-11 04:26:57 +0000
+Started GET "/api/v1/trips/1.json" for 10.0.2.2 at 2019-03-11 04:26:57 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (3.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (4.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 1]]
+Completed 200 OK in 46ms (Views: 18.4ms | ActiveRecord: 7.7ms)
+
+
+Completed 200 OK in 72ms (Views: 46.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/api/v1/items/8.json?suggestionType=restaurant&query=restaurants" for 10.0.2.2 at 2019-03-11 04:26:57 +0000
+Started GET "/api/v1/items/8.json?suggestionType=point_of_interest&query=things%20to%20do" for 10.0.2.2 at 2019-03-11 04:26:57 +0000
+Processing by Api::V1::ItemsController#show as JSON
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"restaurant", "query"=>"restaurants", "id"=>"8"}
+  Parameters: {"suggestionType"=>"point_of_interest", "query"=>"things to do", "id"=>"8"}
+  [1m[36mItem Load (2.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (3.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 314ms (Views: 23.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/v1/items/8.json?suggestionType=restaurant&query=restaurants" for 10.0.2.2 at 2019-03-11 04:26:58 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"restaurant", "query"=>"restaurants", "id"=>"8"}
+Completed 200 OK in 490ms (Views: 52.3ms | ActiveRecord: 3.5ms)
+
+
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Started GET "/api/v1/items/8.json?suggestionType=point_of_interest&query=things%20to%20do" for 10.0.2.2 at 2019-03-11 04:26:58 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"point_of_interest", "query"=>"things to do", "id"=>"8"}
+  [1m[36mItem Load (6.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 644ms (Views: 34.4ms | ActiveRecord: 6.3ms)
+
+
+Completed 200 OK in 716ms (Views: 20.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/users/1.json" for 10.0.2.2 at 2019-03-11 04:27:10 +0000
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrip Load (5.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" INNER JOIN "trips_users" ON "trips"."id" = "trips_users"."trip_id" WHERE "trips_users"."user_id" = $1 ORDER BY "trips"."time_start" ASC[0m  [["user_id", 1]]
+Completed 200 OK in 35ms (Views: 13.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/v1/trips/1.json" for 10.0.2.2 at 2019-03-11 04:27:23 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (1.0ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (2.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 1]]
+Completed 200 OK in 26ms (Views: 15.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/items/8.json?suggestionType=point_of_interest&query=things%20to%20do" for 10.0.2.2 at 2019-03-11 04:27:23 +0000
+Started GET "/api/v1/items/8.json?suggestionType=restaurant&query=restaurants" for 10.0.2.2 at 2019-03-11 04:27:23 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"point_of_interest", "query"=>"things to do", "id"=>"8"}
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"restaurant", "query"=>"restaurants", "id"=>"8"}
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (1.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 271ms (Views: 16.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/items/8.json?suggestionType=point_of_interest&query=things%20to%20do" for 10.0.2.2 at 2019-03-11 04:27:24 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"point_of_interest", "query"=>"things to do", "id"=>"8"}
+Completed 200 OK in 431ms (Views: 56.6ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Started GET "/api/v1/items/8.json?suggestionType=restaurant&query=restaurants" for 10.0.2.2 at 2019-03-11 04:27:24 +0000
+Processing by Api::V1::ItemsController#show as JSON
+  Parameters: {"suggestionType"=>"restaurant", "query"=>"restaurants", "id"=>"8"}
+  [1m[36mItem Load (3.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 347ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 372ms (Views: 31.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/trips/8.json" for 10.0.2.2 at 2019-03-11 04:28:34 +0000
+Processing by Api::V1::TripsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mTrip Load (2.1ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Load (3.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."trip_id" = $1 ORDER BY "items"."time_start" ASC[0m  [["trip_id", 8]]
+Completed 200 OK in 24ms (Views: 4.0ms | ActiveRecord: 5.7ms)
+
+
