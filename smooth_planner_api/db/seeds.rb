@@ -166,7 +166,7 @@ Item.create({
   time_end: 'January 1, 2020 01:00:00',
   item_type: 'E',
   title: 'New year party',
-  url: 'www.partyatcancun2019.com',
+  url: 'https://allevents.in/cancun/new-year',
   venue: 'RedLight Beach',
   trip_id: trip1.id
 })
@@ -376,7 +376,7 @@ Item.create({
   time_end: 'March 24, 2019 11:00:00',
   item_type: 'A',
   venue: 'Hotel Star',
-  url: 'http://www.starhotel.com',
+  url: 'https://www.marriott.com',
   trip_id: trip8.id,
   geo_location: "47.6142302,-122.3387594"
 })
