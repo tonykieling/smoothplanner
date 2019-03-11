@@ -6,7 +6,7 @@ nav {
   position: fixed;
   display: flex;
   width: 100%;
-  background-color: rgba(0,0,0,.35);
+  background-color: rgba(0,0,0,.65);
   z-index: 1;
   justify-content: space-between;
   padding-top: 10px; 
@@ -23,7 +23,7 @@ nav {
 .side-bar {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0,0,0,.35);
+  background-color: rgba(0,0,0,.65);
   position: fixed;
   top: 55px;
   bottom: 0;
@@ -87,8 +87,8 @@ section {
   top: 15px;
 }
 
-.trip_title > h4 {
-  padding-right: 10px;
+.trip_title > h3 {
+  padding-right: 20px;
 }
 
 .trip_title > .fa-trash-alt {
@@ -100,10 +100,15 @@ section {
   font-size: 25px;
 }
 
+.trip_duration {
+  font-size: 1.4rem;
+}
+
 .card {
   min-width: 70%;
   margin: 5px 0;
   font-size: 1.15rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .card-header > img {
   max-height: 60%;
@@ -195,7 +200,8 @@ body {
   background-size: cover;
   background-position: 0 100%;
   /* min view width should be 550px */
-  font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+  /* font-family: Helvetica Neue,Arial,Helvetica,sans-serif; */
+  font-family: 'Lato',sans-serif;
 }
 
 .form-title  {
