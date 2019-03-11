@@ -37,7 +37,8 @@ export default class ItemsContainer extends Component {
   render() {
     
     const item = this.props.item;
-    const details = <span><b>Details: </b>{item.details}</span>
+    const details = <span><b>Details: </b>{item.details}<br /></span>
+    const confirmation =<span> <b>Confirmation #: </b>{item.confirmation}<br /></span>
 
     return (
           <div className="card">
@@ -53,8 +54,8 @@ export default class ItemsContainer extends Component {
             </div>
 
             <div className="card-body card-body-lower">
-              <span> <b>Confirmation #: </b>{item.confirmation}</span>
-              <span> {item.details ? details : null }</span>
+              { item.confirmation? confirmation : null }
+              { item.details ? details : null }
             </div>
           </div>
     )
