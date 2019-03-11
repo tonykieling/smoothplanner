@@ -32,6 +32,7 @@ export default class ItemsContainer extends Component {
   render() {
 
     const item = this.props.item;
+    const details = <span> {item.details ? details : null }</span>
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
@@ -53,7 +54,7 @@ export default class ItemsContainer extends Component {
               <span> <b>Website: </b> {item.url}</span>
               <span> <b>Phone:</b>{item.phone}</span>  <br />
               <span> <b>Address:</b>{item.address}</span> <br />
-              <span> {item.details ? `<b>Details: </b>${item.details}` : "" }</span>
+              <span> {item.details ? details : null}</span>
             </div>
           </div>
     )
