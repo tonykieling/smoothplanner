@@ -59,7 +59,7 @@ export default class RecomendationCard extends Component {
 
   render() {
     const currentSuggestion = this.state.suggestions[this.state.index];
-    let url = "https://www.google.com/maps/search/?api=1&query="
+    let url = "https://www.google.com/maps/search/?api=1&query=";
     let ItemToBeAdded ={};
     if(currentSuggestion && currentSuggestion.geometry) {
       const geo_location =  `${currentSuggestion.geometry.location.lat},${currentSuggestion.geometry.location.lng}`;
@@ -74,7 +74,6 @@ export default class RecomendationCard extends Component {
     return (
         <div className="card">
           <div className="card-header">
-            <img src={currentSuggestion.icon} alt="suggestion-icon" />
             Suggestions for you
             <i className="fas fa-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
           </div>
@@ -87,7 +86,8 @@ export default class RecomendationCard extends Component {
                 <p>
                 {currentSuggestion.formatted_address}
                 Rating: {currentSuggestion.rating} | {currentSuggestion.user_ratings_total} users | Price: {currentSuggestion.price_level}
-              </p>
+                </p>
+                <img src={currentSuggestion.icon} alt="suggestion-icon" />
             </div>
             <div className="col-4">
               <i className="fas fa-chevron-right fa-5x carousel-pointer" onClick={this.handleRightClick}></i>
