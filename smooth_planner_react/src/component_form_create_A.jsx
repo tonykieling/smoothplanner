@@ -10,7 +10,9 @@ class CreateAccomodation extends Component {
     this.state = {
       item_type:'A',
       trip_id: this.props.tripID,
-      ...(this.props.item || {})
+      venue:'',
+      details:'',
+      confirmation:'',
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -44,6 +46,18 @@ class CreateAccomodation extends Component {
   onChangeLatLng = (latlng) => {
     const geo_location = `${latlng.lat} ${latlng.lng}`
     this.setState({geo_location})   
+  }
+
+  componentDidMount() {
+    if(this.props.item) {
+      this.setState({
+        time_start: this.props.item.time_start,
+        time_end: this.props.item.time_end,
+        venue: this.props.item.venue,
+        details: this.props.item.details,
+        confirmation: this.props.item.confirmation,
+       });
+    }
   }
 
 
@@ -107,6 +121,10 @@ class CreateAccomodation extends Component {
               handleLatLng = {this.onChangeLatLng}
               address = {this.state.venue}
             />
+          </div>
+          <div className="row form-group">
+            <label htmlFor="address" className="col-sm-3 col-form-label">Address: </label>
+            <input readOnly className="form-control col-sm-9" type="text" value={this.state.address} />
           </div>
           <div className="row form-group">
             <label htmlFor="details" className="col-sm-3 col-form-label">Details:</label>

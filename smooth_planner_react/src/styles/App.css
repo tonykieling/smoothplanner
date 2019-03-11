@@ -35,9 +35,9 @@ nav {
   padding: .25rem;
 }
 
-.card-header > h4, div {
+/* .card-header > h4, div {
   display: inline;
-}
+} */
 
 .trip-list > button {
   margin: 8px 35px 20px;

@@ -10,10 +10,10 @@ class CreateEvent extends Component {
     this.state = {
       item_type:'E',
       trip_id: this.props.tripID,
-      title: this.props.item.title,
-      time_start: this.props.time_start,
-      venue: this.props.venue,
-      details: this.props.details
+      title: '',
+      venue: '',
+      details: '',
+      confirmation: '',
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -38,6 +38,18 @@ class CreateEvent extends Component {
     const stateName = event.target.name
     const value = event.target.value
     this.setState({[stateName]:value})
+  }
+
+  componentDidMount() {
+    if(this.props.item) {
+      this.setState({
+        title: this.props.item.title,
+        time_start: this.props.item.time_start,
+        venue: this.props.item.venue,
+        details: this.props.item.details,
+        confirmation: this.props.item.confirmation,
+       });
+    }
   }
 
 
@@ -91,6 +103,11 @@ class CreateEvent extends Component {
               />
           </div>
           <div className="row form-group">
+            <label htmlFor="address" className="col-sm-3 col-form-label">Address: </label>
+            <input readOnly className="form-control col-sm-9" type="text" value={this.state.address} />
+          </div>
+
+          <div className="row form-group">
             <label htmlFor="details" className="col-sm-3 col-form-label">Details:</label>
             <textarea 
               className="form-control col-sm-9"
@@ -99,12 +116,8 @@ class CreateEvent extends Component {
               value = {this.state.details}>
             </textarea>
           </div>
-<<<<<<< HEAD
           <div className ="form-group">
             {/* <a role="button" className="btn btn-outline-primary" href="#">Upload files</a> */}
-=======
-          <div class ="form-group">
->>>>>>> 2c9afa1cc7fd7dc26d8399342b2446090e2851f5
           </div>
           <div className="form-group">
             <button type="submit" className="col-sm-12 btn btn-primary">Submit</button>
