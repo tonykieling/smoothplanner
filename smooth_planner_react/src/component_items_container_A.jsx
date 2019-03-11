@@ -16,8 +16,8 @@ export default class ItemsContainer extends Component {
     if (this.props.item.time_end != null)
       return(
         <div className="timestamp">
-          <span> <b>First Day: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')}</span>
-          <span className="to_time"> <b>Last Day: </b> {moment(this.props.item.time_end).format('dddd, MMM Do YYYY')}</span>
+          <span> <b>First Day: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')} </span>
+          <span> <b> Last Day: </b> {moment(this.props.item.time_end).format('dddd, MMM Do YYYY')}</span>
         </div>
       )
     else {
@@ -37,9 +37,9 @@ export default class ItemsContainer extends Component {
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
           <div className="card">
-            <div className="card-header item-card-head" >
-              <h4>{item.title ? item.title : item.venue}</h4>
-              <div>
+            <div className="card-header" >
+              <h4 className="item-card-head">{item.title ? item.title : item.venue}</h4>
+              <div className="item-card-head">
                 <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
                 <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
               </div>

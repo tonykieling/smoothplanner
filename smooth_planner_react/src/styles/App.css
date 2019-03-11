@@ -107,6 +107,7 @@ section {
 .card {
   min-width: 70%;
   margin: 5px 0;
+  font-size: 1.15rem;
 }
 .card-header > img {
   max-height: 60%;
@@ -114,7 +115,12 @@ section {
 .card-header > h4 {
   font-weight: bolder;
 }
-.item-card-head > h4, div {
+
+.card-body {
+  text-align: start;
+}
+
+.item-card-head{
   display: inline;
 }
 
@@ -284,7 +290,6 @@ body {
   }
   .card-body {
     padding: 5px;
-    text-align: start;
   }
   .cards_list {
     padding-top: 0;
