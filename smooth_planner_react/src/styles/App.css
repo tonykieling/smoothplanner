@@ -35,10 +35,6 @@ nav {
   padding: .25rem;
 }
 
-.card-header > h4, div {
-  display: inline;
-}
-
 .trip-list > button {
   margin: 8px 35px 20px;
   background-color: #faebd773;
@@ -96,8 +92,7 @@ section {
 }
 
 .trip_title > .fa-trash-alt {
-  margin-left: .5rem;
-  margin-top: 0;
+  margin: 0 .5rem .5rem .5rem;
   font-size: 20px;
 }
 
@@ -115,6 +110,12 @@ section {
 }
 .card-header > img {
   max-height: 60%;
+}
+.card-header > h4 {
+  font-weight: bolder;
+}
+.item-card-head > h4, div {
+  display: inline;
 }
 
 .card-footer {
@@ -283,6 +284,7 @@ body {
   }
   .card-body {
     padding: 5px;
+    text-align: start;
   }
   .cards_list {
     padding-top: 0;

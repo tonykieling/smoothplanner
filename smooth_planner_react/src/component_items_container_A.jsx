@@ -15,7 +15,7 @@ export default class ItemsContainer extends Component {
   presentDate = () => {
     if (this.props.item.time_end != null)
       return(
-        <div>
+        <div className="timestamp">
           <span> <b>First Day: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')}</span>
           <span className="to_time"> <b>Last Day: </b> {moment(this.props.item.time_end).format('dddd, MMM Do YYYY')}</span>
         </div>
@@ -32,13 +32,13 @@ export default class ItemsContainer extends Component {
   render() {
 
     const item = this.props.item;
-    const details = <span> {item.details ? details : null }</span>
+    const details = <span> <b>Details: </b>{item.details}</span>
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
           <div className="card">
-            <div className="card-header" >
-              <h4><b>{item.title ? item.title : item.venue}</b></h4>
+            <div className="card-header item-card-head" >
+              <h4>{item.title ? item.title : item.venue}</h4>
               <div>
                 <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
                 <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
@@ -47,12 +47,11 @@ export default class ItemsContainer extends Component {
             
             <div className="card-body">
               {this.presentDate()}
-              <span><b>Venue: </b> {item.venue}</span>
+              <p><b>Venue: </b> <a href={item.url} target="_blank" rel="noopener noreferrer">{item.venue}</a></p>
             </div>
               
             <div className="card-body">
-              <span> <b>Confirmation #: </b> {item.confirmation}</span>
-              <span> <b>Files uploaded:</b> reservation_hotel_Zurich.pdf</span> <br />
+              <span> <b>Confirmation #: </b> {item.confirmation}</span><br />
               <span> <b>Website: </b> {item.url}</span>
               <span> <b>Phone:</b>{item.phone}</span>  <br />
               <span> <b>Address:</b>{item.address}</span> <br />

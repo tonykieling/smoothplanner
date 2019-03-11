@@ -24,6 +24,7 @@ package-lock.json
 Gemfile.lock
 /smooth_planner_api/log/development.log
 secrets.yml
+/smooth_planner_api/tmp/pids/
 
 
 
