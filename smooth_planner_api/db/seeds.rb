@@ -12,28 +12,13 @@ require 'faker'
 # CREATE USER
 user1 = User.create({
   name: "Bob Collins",
-  email: "bob@user.com"
-})
-
-user2 = User.create({
-  name: "Suzy Halpert",
-  email: "suzy@user.com"
-})
-
-user3 = User.create({
-  name: "Darlan Princivale",
-  email: "darlan@user.com",
+  email: "bob@user.com",
   suggestions: true
 })
 
-user4 = User.create({
-  name: "Neila Corad",
-  email: "neila@user.com"
-})
-
-user5 = User.create({
-  name: "Simone K",
-  email: "simone@user.com"
+user2 = User.create({
+  name: "Alice Halpert",
+  email: "suzy@user.com"
 })
 
 
@@ -72,8 +57,8 @@ trip3.users << user1
 trip4 = Trip.create(
   {
     name: "Going to Zurich",
-    time_start:'September 1, 2019 10:00:00',
-    time_end:'September 15, 2019 23:00:00'
+    # time_start:'September 1, 2019 10:00:00',
+    # time_end:'September 8, 2019 23:00:00'
   }
 )
 trip4.users << user2
@@ -82,17 +67,17 @@ trip4.users << user2
 trip5 = Trip.create(
 {
   name: "Japan Trip 2020",
-  time_start:'July 1, 2020 10:00:00',
-  time_end:'July 15, 2020 23:00:00'
+  # time_start:'July 1, 2020 10:00:00',
+  # time_end:'July 15, 2020 23:00:00'
 })
 trip5.users << user1
 
 
 trip6 = Trip.create(
   {
-    name: "Businnes meeting at Toronto",
-    time_start:'April 1, 2019 10:00:00',
-    time_end:'July 4, 2019 23:00:00'
+    name: "Business meeting in Toronto",
+    # time_start:'April 1, 2019 10:00:00',
+    # time_end:'July 4, 2019 23:00:00'
   }
 )
 trip6.users << user2
@@ -101,8 +86,8 @@ trip6.users << user2
 trip7 = Trip.create(
   {
     name: "Hawaii Time",
-    time_start:'March 2, 2017 10:00:00',
-    time_end:'March 20, 2017 23:00:00'
+    # time_start:'March 2, 2017 10:00:00',
+    # time_end:'March 20, 2017 23:00:00'
   }
 )
 trip7.users << user2
@@ -112,18 +97,19 @@ trip7.users << user1
 trip8 = Trip.create(
   {
     name: "Go Shopping",
-    time_start:'March 22, 2019 10:00:00',
-    time_end:'March 24, 2019 23:00:00'
+    # time_start:'March 22, 2019 10:00:00',
+    # time_end:'March 24, 2019 23:00:00'
   }
 )
 trip8.users << user1
+trip8.users << user2
 
 
 trip9 = Trip.create(
   {
-    name: "Businnes meeting in Calgary",
-    time_start:'August 5, 2019 10:00:00',
-    time_end:'August 9, 2019 23:00:00'
+    name: "Business meeting in Calgary",
+    # time_start:'August 5, 2019 10:00:00',
+    # time_end:'August 9, 2019 23:00:00'
   }
 )
 trip9.users << user1
@@ -132,6 +118,7 @@ trip9.users << user1
 
 # CREATE TRIPS ITEMS
 # first items trip
+# trip_name: "Christmas trip"
 Item.create({
   time_start: 'December 24, 2019 08:20:00',
   time_end: 'December 24, 2019 15:30:00',
@@ -195,8 +182,9 @@ Item.create({
 
 
 
-
+# CREATE TRIPS ITEMS
 # second items trip
+# trip_name: "Summer holidays in Europe"
 Item.create({
   time_start: 'July 1, 2019 06:20:00',
   time_end: 'July 1, 2019 20:30:00',
@@ -213,7 +201,8 @@ Item.create({
   item_type: 'A',
   venue: 'Basel Sheraton',
   address: 'Boulevard Kukulcan Retorno Chac, Basel',
-  trip_id: trip2.id
+  trip_id: trip2.id,
+  geo_location: "47.5478711,7.5884424"
 })
 
 Item.create({
@@ -241,7 +230,8 @@ Item.create({
   item_type: 'A',
   venue: 'Geneva Home Hotels',
   details: 'near downtown',
-  trip_id: trip2.id
+  trip_id: trip2.id,
+  geo_location: "46.2035037,6.149709"
 })
 
 Item.create({
@@ -274,19 +264,40 @@ Item.create({
 })
 
 
+
+# CREATE TRIPS ITEMS
 # third items trip
+# trip_name: "Businnes meeting in Calgary"
+# the user has just started thinking the trip
 Item.create({
   time_start: 'July 5, 2019 10:00:00',
   time_end: 'July 9, 2019 23:00:00',
-  title: 'new businnes in Calgary is coming',
+  title: 'new business in Calgary is coming',
   item_type: 'E',
   details: 'need to confirm with John',
   trip_id: trip9.id
 })
 
 
+
+# CREATE TRIPS ITEMS
 # forth items trip
+# trip_name: "Japan Trip 2020"
 # the user has just started thinking the trip
+Item.create({
+  title: 'Japan Time',
+  item_type: 'E',
+  time_start:'July 1, 2020 10:00:00',
+  time_end:'July 15, 2020 23:00:00',
+  details: "let's plan this trip",
+  trip_id: trip5.id
+})
+
+
+
+# CREATE TRIPS ITEMS
+# fiveth items trip
+# trip_name: "Valentine day in Paris"
 Item.create({
   time_start: 'February 10, 2018 08:00:00',
   time_end: 'February 10, 2018 19:30:00',
@@ -311,7 +322,8 @@ Item.create({
   item_type: 'A',
   venue: 'Best Time Hotels',
   address: 'Romantic Street, 123, Paris',
-  trip_id: trip3.id
+  trip_id: trip3.id,
+  geo_location: '48.8564861,2.3502195'
 })
 
 Item.create({
@@ -324,7 +336,6 @@ Item.create({
   trip_id: trip3.id
 })
 
-
 Item.create({
   time_start: 'February 14, 2018 08:00:00',
   title: 'A little History',
@@ -335,122 +346,233 @@ Item.create({
   trip_id: trip3.id
 })
 
-# # forth items trip
-# Item.create({
-#   time_start: 'March 22, 2019 7:30:00',
-#   time_end: 'March 24, 2020 01:00:00',
-#   item_type: 'T',
-#   city_depart: 'Vancouver',
-#   city_arrival: 'Seattle',
-#   details: 'we need to purchase clothes and visit uncle Paul. Going by car.',
-#   trip_id: trip6.id
-# })
-
-# Item.create({
-#   time_start: 'March 24, 2019 01:00:00',
-#   time_end: 'March 24, 2020 03:30:00',
-#   item_type: 'T',
-#   city_depart: 'Seattle',
-#   city_arrival: 'Vancouver',
-#   details: 'we need to go back sharp 01:00!',
-#   trip_id: trip6.id
-# })
-
-# Item.create({
-#   time_start: 'March 22, 2019 10:30:00',
-#   title: 'Go Walmart',
-#   item_type: 'E',
-#   city_depart: 'Vancouver',
-#   city_arrival: 'Seattle',
-#   trip_id: trip6.id
-# })
-
-# Item.create({
-#   time_start: 'March 23, 2019 11:30:00',
-#   item_type: 'E',
-
-#   venue: 'Yammy Food Restaurant',
-#   trip_id: trip6.id
-# })
-
-# Item.create({
-#   time_start: 'March 23, 2019 06:30:00',
-#   item_type: 'E',
-#   venue: 'Tropical Best Food',
-#   details: 'uncle Paul and family and us',
-#   trip_id: trip6.id
-# })
-
-# Item.create({
-#   time_start: 'March 22, 2019 10:00:00',
-#   time_end: 'March 24, 2020 10:30:00',
-#   item_type: 'A',
-#   venue: 'Hotel Star',
-#   trip_id: trip6.id,
-#   geo_location: "28.5955924,77.1683188",
-# })
 
 
-# Item.create({
-#   time_start: 'March 23, 2019 11:30:00',
-#   time_end: 'March 23, 2019 20:30:00',
-#   item_type: 'E',
-#   venue: "Cloth's Super Store'",
-#   details: "let's check this new store with uncle Paul. Whole day activity and dinner at the end.",
-#   trip_id: trip6.id
-# })
+# CREATE TRIPS ITEMS
+# sixth items trip
+# trip_name: "Go Shopping"
+Item.create({
+  time_start: 'March 22, 2019 7:30:00',
+  time_end: 'March 22, 2019 09:00:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Seattle',
+  details: 'we need to purchase clothes and visit uncle Paul. Going by car.',
+  trip_id: trip8.id
+})
+
+Item.create({
+  time_start: 'March 24, 2019 01:00:00',
+  time_end: 'March 24, 2019 03:00:00',
+  item_type: 'T',
+  city_depart: 'Seattle',
+  city_arrival: 'Vancouver',
+  details: 'we need to go back sharp at 01:00!',
+  trip_id: trip8.id
+})
+
+Item.create({
+  time_start: 'March 22, 2019 10:00:00',
+  time_end: 'March 24, 2019 11:00:00',
+  item_type: 'A',
+  venue: 'Hotel Star',
+  url: 'http://www.starhotel.com',
+  trip_id: trip8.id,
+  geo_location: "47.6142302,-122.3387594"
+})
+
+Item.create({
+  time_start: 'March 22, 2019 10:30:00',
+  title: 'Go Walmart',
+  venue: 'East Walmart',
+  item_type: 'E',
+  city_depart: 'Vancouver',
+  city_arrival: 'Seattle',
+  trip_id: trip8.id
+})
+
+Item.create({
+  time_start: 'March 23, 2019 11:30:00',
+  item_type: 'E',
+  venue: 'Yammy Food Restaurant',
+  details: 'I wanna to know this new restaurant',
+  trip_id: trip8.id
+})
+
+Item.create({
+  time_start: 'March 23, 2019 06:30:00',
+  item_type: 'E',
+  venue: 'Tropical Best Food',
+  details: "let's meet uncle Paul and family in this dinner",
+  trip_id: trip8.id
+})
+
+Item.create({
+  time_start: 'March 23, 2019 11:30:00',
+  time_end: 'March 23, 2019 20:30:00',
+  item_type: 'E',
+  venue: "Cloth's Super Store'",
+  details: "let's check this new store with uncle Paul. Whole day activity and dinner at the end.",
+  trip_id: trip8.id
+})
 
 
 
-# # fiveth items trip
-# Item.create({
-#   time_start: 'March 2, 2017 7:30:00',
-#   time_end: 'March 2, 2017 01:00:00',
-#   item_type: 'T',
-#   city_depart: 'Vancouver',
-#   city_arrival: 'Hawaii',
-#   details: 'it will be a great time',
-#   trip_id: trip7.id
-# })
+# CREATE TRIPS ITEMS
+# seventh items trip
+# trip_name: "Hawaii Time"
+Item.create({
+  time_start: 'March 2, 2017 7:30:00',
+  time_end: 'March 2, 2017 01:00:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Hawaii',
+  details: 'it will be a great time',
+  trip_id: trip7.id
+})
 
-# Item.create({
-#   time_start: 'March 20, 2017 1:00:00',
-#   time_end: 'March 20, 2027 03:30:00',
-#   item_type: 'T',
-#   city_depart: 'Hawaii',
-#   city_arrival: 'Vancouver',
-#   details: 'going back home',
-#   trip_id: trip7.id
-# })
+Item.create({
+  time_start: 'March 20, 2017 1:00:00',
+  time_end: 'March 20, 2027 03:30:00',
+  item_type: 'T',
+  city_depart: 'Hawaii',
+  city_arrival: 'Vancouver',
+  details: 'going back home',
+  trip_id: trip7.id
+})
 
-# Item.create({
-#   time_start: 'March 2, 2017 18:30:00',
-#   title: 'Meet Alice',
-#   item_type: 'E',
-#   details: 'dinner somewhere',
-#   trip_id: trip7.id
-# })
+Item.create({
+  time_start: 'March 2, 2017 18:30:00',
+  title: "dinner somewhere",
+  item_type: 'E',
+  details: "Meet Alice's friend, Zuel",
+  trip_id: trip7.id
+})
 
-# Item.create({
-#   time_start: 'March 3, 2017 11:30:00',
-#   item_type: 'E',
-#   venue: 'Food Restaurant',
-#   trip_id: trip7.id
-# })
+Item.create({
+  time_start: 'March 3, 2017 11:30:00',
+  item_type: 'E',
+  venue: 'Food Restaurant',
+  trip_id: trip7.id
+})
 
-# Item.create({
-#   time_start: 'March 5, 2017 06:30:00',
-#   item_type: 'E',
-#   venue: 'Tropical Restaurant',
-#   details: 'coconot, please',
-#   trip_id: trip7.id
-# })
+Item.create({
+  time_start: 'March 5, 2017 06:30:00',
+  item_type: 'E',
+  venue: 'Tropical Restaurant',
+  details: 'coconot, please',
+  trip_id: trip7.id
+})
 
-# Item.create({
-#   time_start: 'March 2, 2017 10:00:00',
-#   time_end: 'March 20, 2027 10:30:00',
-#   item_type: 'A',
-#   venue: 'Hawaii Hotels',
-#   trip_id: trip7.id,
-#   geo_location: "21.3281792,-157.8691135"
-# })
+Item.create({
+  time_start: 'March 2, 2017 10:00:00',
+  time_end: 'March 20, 2027 10:30:00',
+  item_type: 'A',
+  venue: 'Hawaii Hotels',
+  trip_id: trip7.id,
+  geo_location: "19.8723469,-155.1250591"
+})
+
+
+
+
+# CREATE TRIPS ITEMS
+# eighth items trip
+# trip_name: "Going to Zurich"
+Item.create({
+  time_start:'September 1, 2019 10:00:00',
+  time_end:'September 1, 2019 16:15:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Zurich',
+  details: 'the tickets were a good deal',
+  trip_id: trip4.id
+})
+
+Item.create({
+  time_start:'September 8, 2019 07:00:00',
+  time_end:'September 8, 2019 18:55:00',
+  item_type: 'T',
+  city_depart: 'Zurich',
+  city_arrival: 'Vancouver',
+  trip_id: trip4.id
+})
+
+Item.create({
+  time_start:'September 1, 2019 10:00:00',
+  time_end:'September 8, 2019 04:15:00',
+  item_type: 'A',
+  venue: "Emma's house",
+  details: "gonna stay in my friend's house and celebrate her birthday",
+  trip_id: trip4.id,
+  geo_location: "47.3773697,8.3966319"
+})
+
+Item.create({
+  time_start:'September 2, 2019 10:00:00',
+  time_end:'September 7, 2019 18:00:00',
+  item_type: 'E',
+  venue: 'visit Zurich as whole during the week',
+  trip_id: trip4.id
+})
+
+Item.create({
+  time_start:'September 5, 2019 17:00:00',
+  time_end:'September 6, 2019 02:00:00',
+  item_type: 'E',
+  venue: 'X Club',
+  details: "Emma's birthday party",
+  trip_id: trip4.id
+})
+
+
+
+# CREATE TRIPS ITEMS
+# nineth items trip
+# trip_name: "Businnes meeting in Toronto"
+# the user has just started thinking the trip
+Item.create({
+  time_start: 'April 2, 2019 05:45:00',
+  time_end: 'April 2, 2019 11:10:00',
+  item_type: 'T',
+  city_depart: 'Vancouver',
+  city_arrival: 'Toronto',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'April 5, 2019 08:45:00',
+  time_end: 'April 5, 2019 15:10:00',  
+  item_type: 'T',
+  city_depart: 'Toronto',
+  city_arrival: 'Vancouver',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'April 2, 2019 11:45:00',
+  time_end: 'April 5, 2019 11:10:00',
+  title: "Toronto's business meeting",
+  item_type: 'A',
+  details: 'need to confirm with Marley the accommodation in her house',
+  trip_id: trip6.id,
+  geo_location: '43.664934,-79.4250289',
+})
+
+Item.create({
+  time_start: 'April 3, 2019 09:00:00',
+  title: "business meeting at DevHub Place",
+  item_type: 'E',
+  venue: 'DevHub Toronto',
+  details: 'need to prepare the presentation',
+  trip_id: trip6.id
+})
+
+Item.create({
+  time_start: 'April 4, 2019 18:00:00',
+  title: "Friend's dinner",
+  item_type: 'E',
+  venue: "Great moement's restaurant",
+  details: 'meet old friends',
+  trip_id: trip6.id
+})

@@ -18,13 +18,13 @@ export default class ItemsContainer extends Component {
       return(
         <div className="timestamp">
           <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span>
-          <span> <b> - </b> {moment.utc(this.props.item.time_end).format('llll')}</span>
+          <span> <b> - </b> {moment.utc(this.props.item.time_end).format('llll')}</span><br />
         </div>
       )
     else {
       return(
-        <div className="timestamp">
-          <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span>
+        <div>
+          <span> <b>When: </b> {moment.utc(this.props.item.time_start).format('llll')}</span> <br />
         </div>
       )
     }
@@ -44,7 +44,7 @@ export default class ItemsContainer extends Component {
             <div className="card-header item-card-head">
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
               <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
-              <h4 className="item-card-head"><b>{item.title}</b></h4>
+              <h4 className="item-card-head"><b>{item.title || item.venue || item.url}</b></h4>
             </div>
 
             <div className="card-body card-body-upper">
