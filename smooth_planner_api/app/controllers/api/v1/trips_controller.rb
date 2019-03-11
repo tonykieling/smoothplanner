@@ -14,9 +14,8 @@ module Api::V1
       @user = User.find(params[:user_id])
       newtrip = Trip.create(trip_params)
       newtrip.users << @user
-      newtrip.save
-      @items = newtrip.items.order(:time_start)
-      render json: @items
+      newtrip.save 
+      render json: newtrip.id
     end
 
     def destroy

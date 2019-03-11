@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 
 class CreateTrip extends Component {
   constructor(props) {
     super(props);
     // Declare State
     this.state = {
-      name: '',
-      user_id: this.props.currentUser
+      name: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,13 +18,7 @@ class CreateTrip extends Component {
   
   handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3001/api/v1/trips', this.state)
-    .then(response => {
-      this.props.closeModal();
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    this.props.addTrip(this.state.name);
   }
   
   render() {

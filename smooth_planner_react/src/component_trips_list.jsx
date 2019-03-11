@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from '../node_modules/react-router-dom';
-import ReactModal from 'react-modal';
 import CreateTrip from './component_form_createtrip';
+import ReactModal from 'react-modal';
+import axios from 'axios';
 
 export default class TripsList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showModalNewTrip: false
+      showModalNewTrip: false,
     }
   }
   handleOpenModalNewTrip = () => {this.setState({ showModalNewTrip: true });}
-  handleCloseModalNewTrip = () => {this.setState({ showModalNewTrip: false });}
+  handleCloseModalNewTrip = () => {this.setState({ showModalNewTrip: false});}
 
+  addTrip = (tripName) => {
+    axios.post('http://localhost:3001/api/v1/trips', {name: tripName, user_id: this.props.currentUser})
+    .then(response => {
+      window.location = `/trips/${response.data}`
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+  }
   render() {
     function dateCheck(tripEnds) {
       const diff = Date.parse(tripEnds) - Date.now()
@@ -31,7 +42,7 @@ export default class TripsList extends Component {
       <div className="list-group trip-list">
         <button type="button" className="btn btn-outline-warning" onClick={this.handleOpenModalNewTrip} >+ New Trip</button>
           <ReactModal isOpen={this.state.showModalNewTrip} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalNewTrip}>
-            <CreateTrip closeModal={this.handleCloseModalNewTrip} currentUser={this.props.currentUser}/>
+            <CreateTrip  addTrip={this.addTrip}/>
           </ReactModal>
         <h4>Your Trips</h4>
         <ul>
