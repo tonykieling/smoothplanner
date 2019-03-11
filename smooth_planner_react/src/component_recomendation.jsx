@@ -6,7 +6,16 @@ export default class RecomendationCard extends Component {
   constructor(){
     super();
     this.state = {
-      suggestions: [{name: '',}],
+      suggestions: [
+        {
+          name: '',
+          icon: '',
+          formatted_address: '',
+          rating:'',
+          user_ratings_total: '',
+          price_level: '',
+        }
+      ],
       index: 0
     }
     this.fetchRecommendations = this.fetchRecommendations.bind(this);
@@ -16,7 +25,9 @@ export default class RecomendationCard extends Component {
     console.log("Fetching recommendations from the server", item_id)
     axios.get(`http://localhost:3001/api/v1/items/${item_id}.json?suggestionType=${suggestionType}&query=${query}`)
       .then(response => {
-        this.setState({suggestions: response.data.results})
+        if(response.data.status === "OK") { 
+          this.setState({suggestions: response.data.results})
+        }
       })
       .catch(error => {
         console.log(error )

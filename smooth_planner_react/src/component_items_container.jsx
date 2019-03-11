@@ -67,8 +67,7 @@ export default class ItemsContainer extends Component {
       itemIDForReccomendation: null,
     })
     this.state.cards.forEach((card) => {
-      console.log("card", this.state.cards)
-      if(card.item_type === 'A') {
+      if(card.item_type === 'A' && card.geo_location) {
         this.setState({
           recommendationsVisible: true,
           itemIDForReccomendation: card.id,
@@ -84,6 +83,7 @@ export default class ItemsContainer extends Component {
           this.setState({
             cards: response.data,
           });
+          this.areThereAnyRecommendations();
       })
       .catch(error => {
         console.log(error)
@@ -164,10 +164,8 @@ console.log("NOOO cards");
     }
   }
   
-  
   componentDidMount() {
     this.fetchTripDetails();
-    this.areThereAnyRecommendations();
   }
 
   componentDidUpdate = (prevProps, prevState) => {
