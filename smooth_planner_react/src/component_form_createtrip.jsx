@@ -43,7 +43,7 @@ class CreateTrip extends Component {
         </div>
           <div className="form-group row">
             <button type="submit" className="btn btn-primary">Submit</button>
-            <button className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
+            <button type="button" className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
           </div>
       </form>
     </div>

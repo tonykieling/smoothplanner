@@ -64,7 +64,7 @@ class CreateEvent extends Component {
       <div className="create-form-container">
         <div className="form-title">
         <h4 className="card-title">
-          <i className="fas fa-utensils"></i> Add/Edit Event
+          <i className="fas fa-theater-masks"></i>Add/Edit Event
         </h4>
         </div>
         <form onSubmit={this.handlesSubmit}>
@@ -139,8 +139,8 @@ class CreateEvent extends Component {
             {/* <a role="button" className="btn btn-outline-primary" href="#">Upload files</a> */}
           </div>
           <div className="form-group">
-            <button type="button" className="btn btn-primary">Submit</button>
-            <button className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="button" className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
           </div>
         </form>
     </div>

@@ -40,15 +40,16 @@ nav {
   padding: 0%;
 }
 .ReactModal__Content--after-open {
-  margin: 5% 10% 5% 10%;
+  margin: 5% 20% 5% 20%;
   height: fit-content;
 }
 .create-form-container, .create-form-container-small {
-  margin: 2%;
-  padding: 5%;
-  background: aliceblue;
+  padding: 2%;
+  background: lightyellow;
   justify-content: space-around;
   align-items: center;
+  font-size: 1.25em;
+  
 }
 .trip-list > button {
   margin: 8px 35px 20px;

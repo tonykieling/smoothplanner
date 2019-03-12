@@ -163,8 +163,8 @@ class CreateTransport extends Component {
           <div className ="form-group">
           </div>
           <div className="form-group">
-            <button type="button" className="btn btn-primary">Submit</button>
-            <button className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="button" className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
           </div>
         </form>
       </div>

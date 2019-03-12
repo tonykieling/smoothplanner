@@ -41,8 +41,8 @@ export default class Share extends Component {
             <small id="emailHelp" className="form-text text-muted">We'll never share this email with anyone else.</small>
           </div>
           <div className="form-group">
-            <button type="button" className="btn btn-primary">Submit</button>
-            <button className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="button" className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
           </div>
         </form>
       </div>
