@@ -25,7 +25,7 @@ class CreateTrip extends Component {
    
     return (
       <div className="create-form-container-small">
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} autocomplete="off">
         <div className="form-title">
           <h4 className="card-title">Create New Trip</h4>
         </div>

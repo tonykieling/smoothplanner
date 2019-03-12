@@ -75,7 +75,7 @@ class CreateTransport extends Component {
           <i className="fas fa-plane"></i>Add/Edit Transportation
         </h4>
         </div>
-        <form onSubmit={this.handlesSubmit}>
+        <form onSubmit={this.handlesSubmit} autocomplete="off">
           <div className="form-group">
             <label htmlFor="city_depart" className="form-label">From:</label>
             <LocationSearchInput

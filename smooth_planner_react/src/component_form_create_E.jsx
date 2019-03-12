@@ -60,7 +60,7 @@ class CreateEvent extends Component {
           <i className="fas fa-theater-masks"></i>Add/Edit Event
         </h4>
         </div>
-        <form onSubmit={this.handlesSubmit}>
+        <form onSubmit={this.handlesSubmit} autocomplete="off">
           <div className="form-group">
             <label htmlFor="title" className="form-label">Title:</label>
             <input 
