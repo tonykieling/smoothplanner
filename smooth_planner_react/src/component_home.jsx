@@ -4,13 +4,13 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      tripID: props.match.params.id
+      tripID: ''
     }
   }
   render() {
     return (
       <div >
-        <h3>This is home. {this.state.tripID}</h3>
+        <h3>This is home. </h3>
         
       </div>
     )
