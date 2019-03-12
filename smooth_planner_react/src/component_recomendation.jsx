@@ -22,7 +22,6 @@ export default class RecomendationCard extends Component {
   }
 
   fetchRecommendations(item_id, suggestionType, query) {
-    console.log("Fetching recommendations from the server", item_id)
     axios.get(`http://localhost:3001/api/v1/items/${item_id}.json?suggestionType=${suggestionType}&query=${query}`)
       .then(response => {
         if(response.data.status === "OK") { 
@@ -71,27 +70,42 @@ export default class RecomendationCard extends Component {
         url,
       }
     }
+
+    const priceLevel = <span> | Price: {currentSuggestion.price_level} </span>
+    const users = <span> | {currentSuggestion.user_ratings_total} users </span>
+
     return (
         <div className="card">
           <div className="card-header">
-            Suggestions for you
-            <i className="fas fa-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
+            <h4 className="item-card-head">Suggestions for you</h4>
+            <div className="item-card-head">
+              <i className="fas fa-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
+            </div>
           </div>
-          <div className="card-body row">
-            <div className="col-4">
-              <i className="fas fa-chevron-left fa-5x carousel-pointer" onClick={this.handleLeftClick}></i>
-            </div>
-            <div className="col-4 card-text">
-                <h5><a href={url} target="_blank" rel='noreferrer noopener'>{currentSuggestion.name}</a></h5>
-                <p>
-                {currentSuggestion.formatted_address}
-                Rating: {currentSuggestion.rating} | {currentSuggestion.user_ratings_total} users | Price: {currentSuggestion.price_level}
-                </p>
+          <div className="card-reco-center">
+          <div className="">
+            <i className="fas fa-chevron-left fa-5x carousel-pointer" onClick={this.handleLeftClick}></i>
+          </div>
+          <div className="card-body row card-reco-body">
+            
+            <div className="col-9 card-text">
+              <div>
                 <img src={currentSuggestion.icon} alt="suggestion-icon" />
+                <h4><a href={url} target="_blank" rel='noreferrer noopener'>{currentSuggestion.name}</a></h4>
+              </div>
+              <p>
+              {currentSuggestion.formatted_address} <br />
+              Rating: {currentSuggestion.rating? currentSuggestion.rating : "None"}
+              {currentSuggestion.user_ratings_total? users : null}   
+              {currentSuggestion.price_level? priceLevel : null}
+              </p>
+                
             </div>
-            <div className="col-4">
-              <i className="fas fa-chevron-right fa-5x carousel-pointer" onClick={this.handleRightClick}></i>
-            </div>
+            
+          </div>
+          <div className="">
+            <i className="fas fa-chevron-right fa-5x carousel-pointer" onClick={this.handleRightClick}></i>
+          </div>
           </div>
           <div className="card-footer">
             <img src={google} alt="Powered by Google" />
