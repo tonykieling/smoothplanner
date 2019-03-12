@@ -51,7 +51,6 @@ export default class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Type location here',
                 className: 'form-control location-search-input col-sm-9',
               })}
             />

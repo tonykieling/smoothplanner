@@ -54,8 +54,8 @@ class CreateTransport extends Component {
   componentDidMount() {
     if(this.props.item) {
       this.setState({
-        time_start: this.props.item.time_start,
-        time_end: this.props.item.time_end,
+        time_start: new Date(this.props.item.time_start),
+        time_end: new Date(this.props.item.time_end),
         venue: this.props.item.venue,
         details: this.props.item.details,
         confirmation: this.props.item.confirmation,

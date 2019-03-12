@@ -47,7 +47,7 @@ class CreateEvent extends Component {
     if(this.props.item) {
       this.setState({
         title: this.props.item.title,
-        time_start: this.props.item.time_start,
+        time_start: new Date(this.props.item.time_start),
         venue: this.props.item.venue,
         details: this.props.item.details,
         confirmation: this.props.item.confirmation,
@@ -111,7 +111,7 @@ class CreateEvent extends Component {
                 type="text" 
                 className="form-control" 
                 name="venue" 
-                placeholder="Hotel" 
+                placeholder= {this.state.venue}
                 handleAddress = {this.onChangeVenue}
                 handleLatLng = {this.onChangeLatLng}
                 address = {this.state.venue}
