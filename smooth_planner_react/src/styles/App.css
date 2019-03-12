@@ -44,7 +44,7 @@ nav {
   padding: 0%;
 }
 .ReactModal__Content--after-open {
-  margin: 2% 10% 5% 10%;
+  margin: 5% 10% 5% 10%;
   height: fit-content;
 }
 .create-form-container, .create-form-container-small {

@@ -240,7 +240,7 @@ export default class ItemsContainer extends Component {
 
           <div>
             {/* Event Button */}
-            <button onClick={this.handleOpenModalE} className="btn btn-outline-info">+ Event</button>
+            <button onClick={this.handleOpenModalE} className="btn btn-outline-info" >+ Event</button>
             <ReactModal isOpen={this.state.showModalE} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalE}>
               <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id} item={this.state.itemToAdd}/>
             </ReactModal>
