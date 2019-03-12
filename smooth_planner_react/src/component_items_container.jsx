@@ -4,6 +4,7 @@ import moment from 'moment';
 import ItemsContainerA from './component_items_container_A';
 import ItemsContainerE from './component_items_container_E';
 import ItemsContainerT from './component_items_container_T';
+import ItemsContainerEmpty from './component_items_empty';
 import ReactModal from 'react-modal';
 import CreateTransport from './component_form_createTransport';
 import CreateAccomodation from './component_form_create_A';
@@ -192,6 +193,7 @@ export default class ItemsContainer extends Component {
           )
         }
         return <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
+
       } else if (item.item_type === "E") {
         if(item.id === this.state.itemIDForReccomendationP) {
           return (
@@ -202,12 +204,16 @@ export default class ItemsContainer extends Component {
           )
         }
         return <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
+
       } else if (item.item_type === 'T') {
         return <ItemsContainerT key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
-      } 
+      }
       return null;
     });
 
+    if (this.state.cards.length < 1) {
+      allCards = <ItemsContainerEmpty />
+    }
 
     const tripInfo = this.state.current_trip;
 

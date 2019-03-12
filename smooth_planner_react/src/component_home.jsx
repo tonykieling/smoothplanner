@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      tripID: ''
-    }
-  }
-  render() {
+  render() {   
     return (
-      <div >
-        <h3>This is home. </h3>
-        
+      <div>
+          <div className="home-card">
+            <h1> Hi <b>{this.props.user}</b>!!</h1> <br />
+            <h1>Welcome to <b>Smooth Planner</b> App.</h1> <br /><br />
+            <h3>Now, you will be able to plan your trip</h3>
+            <h3> in a easy way.</h3>
+          </div>        
       </div>
     )
   }
