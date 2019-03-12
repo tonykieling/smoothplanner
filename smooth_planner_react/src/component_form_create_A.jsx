@@ -141,7 +141,7 @@ class CreateAccomodation extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="url" className="form-label">Website: </label>
-            <input name="url" className="form-control" type="text" onChange = {this.onChangeHandler} value={this.state.url}/>
+            <input name="url" className="form-control" type="url" onChange = {this.onChangeHandler} value={this.state.url}/>
           </div>
           <div className="form-group">
             <label htmlFor="details" className="form-label">Details:</label>

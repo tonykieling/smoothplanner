@@ -355,3 +355,6 @@ form {
   color: white;
 }
 
+.react-datepicker__input-container {
+  min-width: 75%
+}
