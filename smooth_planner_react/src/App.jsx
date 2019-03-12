@@ -12,11 +12,12 @@ import Landing from './component_landing';
 
 
 
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: {name: "Alice", id: 2},
+      current_user: false,
       trips: [],
       showModalShare: false
     }
@@ -73,8 +74,9 @@ class App extends Component {
               <h2>Smooth Planner</h2>
             </div>
             <div className="print_share">
-            <i onClick={this.handleOpenModalShare} className="fas fa-share-alt fa-2x"></i>
-            <a href="javascript:window.print()"><i className="fas fa-print fa-2x"></i></a>
+            <i onClick={this.handleOpenModalShare} className="fas fa-share-alt fa-2x" title="Share Trip With Another User"></i>
+            <a href="javascript:window.print()"><i className="fas fa-print fa-2x" title="Print Preview"></i></a>
+            <i class="fas fa-sign-out-alt fa-2x" title="Sign Out"></i>
             </div>
           </nav> 
           <div className="side-bar">
@@ -106,7 +108,7 @@ class App extends Component {
       return (
         <BrowserRouter>
         <div className="landing">
-          <Route path="/" exact render={()=> <Landing />}/>
+          <Landing />
         </div>
         </BrowserRouter>
       );
