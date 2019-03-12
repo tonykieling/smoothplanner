@@ -59,11 +59,11 @@ export default class RecomendationCard extends Component {
   render() {
     const currentSuggestion = this.state.suggestions[this.state.index];
     let url = "https://www.google.com/maps/search/?api=1&query=";
-    let ItemToBeAdded ={};
+    let itemToBeAdded ={};
     if(currentSuggestion && currentSuggestion.geometry) {
       const geo_location =  `${currentSuggestion.geometry.location.lat},${currentSuggestion.geometry.location.lng}`;
       url = `${url}${geo_location}&query_place_id=${currentSuggestion.place_id}`;
-      ItemToBeAdded = {
+      itemToBeAdded = {
         address: currentSuggestion.formatted_address,
         venue: currentSuggestion.name,
         geo_location,
@@ -79,7 +79,7 @@ export default class RecomendationCard extends Component {
           <div className="card-header">
             <h4 className="item-card-head">Suggestions for you</h4>
             <div className="item-card-head">
-              <i className="fas fa-plus" onClick={() =>{this.props.openModalE(ItemToBeAdded)}}></i>
+              <i className="fas fa-plus" onClick={() =>{this.props.openModalE(itemToBeAdded)}}></i>
             </div>
           </div>
           <div className="card-reco-center">

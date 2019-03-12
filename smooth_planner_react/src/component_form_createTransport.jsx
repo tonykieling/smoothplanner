@@ -11,11 +11,11 @@ class CreateTransport extends Component {
     this.state = {
       item_type:'T',
       trip_id: this.props.tripID,
-      venue: '',
-      details: '',
-      confirmation: '',
-      city_depart: '',
-      city_arrival: '',
+      venue: ' ',
+      details: ' ',
+      confirmation: ' ',
+      city_depart: ' ',
+      city_arrival: ' ',
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -54,13 +54,13 @@ class CreateTransport extends Component {
   componentDidMount() {
     if(this.props.item) {
       this.setState({
-        // time_start: (this.props.item.time_start),
-        // time_end: (this.props.item.time_end),
-        venue: this.props.item.venue,
-        details: this.props.item.details,
-        confirmation: this.props.item.confirmation,
-        city_depart: this.props.item.city_depart,
-        city_arrival: this.props.item.city_arrival,
+        time_start: new Date(this.props.item.time_start),
+        time_end: new Date(this.props.item.time_end),
+        venue: this.props.item.venue || ' ',
+        details: this.props.item.details || ' ',
+        confirmation: this.props.item.confirmation || ' ',
+        city_depart: this.props.item.city_depart || ' ',
+        city_arrival: this.props.item.city_arrival || ' ',
         id: this.props.item.id,
        });
     }
@@ -115,7 +115,7 @@ class CreateTransport extends Component {
               timeCaption="time"
               className = "form-control wd-100"
               selectsStart
-              minDate={new Date()}
+              minDate={this.state.time_start || new Date()}
               startDate={this.state.time_start}
               endDate={this.state.time_end}
               required

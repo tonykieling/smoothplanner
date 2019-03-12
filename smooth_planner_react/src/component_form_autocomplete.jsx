@@ -34,10 +34,11 @@ export default class LocationSearchInput extends React.Component {
 
   componentDidMount() {
     let address = '';
-    if(this.props.address) {
-      address = this.props.address;
+    if(this.props) {
+      address = this.props.venue;
     }
     this.setState({address})
+    console.log(address, this.props);
   }
  
   render() {
@@ -51,6 +52,7 @@ export default class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
+                placeholder: this.state.address,
                 className: 'form-control location-search-input col-sm-9',
               })}
             />

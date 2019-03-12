@@ -14,7 +14,6 @@ class CreateAccomodation extends Component {
       details:' ',
       confirmation:' ',
       address: ' ',
-      // time_start: ,
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -55,10 +54,10 @@ class CreateAccomodation extends Component {
       this.setState({
         time_start: new Date(this.props.item.time_start),
         time_end: new Date(this.props.item.time_end),
-        venue: this.props.item.venue,
-        details: this.props.item.details,
-        confirmation: this.props.item.confirmation,
-        address: this.props.item.address,
+        venue: this.props.item.venue || ' ',
+        details: this.props.item.details || ' ',
+        confirmation: this.props.item.confirmation || ' ',
+        address: this.props.item.address || ' ',
         id: this.props.item.id,
        });
     }

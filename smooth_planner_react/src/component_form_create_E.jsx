@@ -10,12 +10,14 @@ class CreateEvent extends Component {
     this.state = {
       item_type:'E',
       trip_id: this.props.tripID,
-      title: '',
-      venue: '',
-      details: '',
-      confirmation: '',
-      address: '',
-      url: '',
+      title: this.props.item.title || ' ',
+      time_start: this.props.item.time_start ? new Date(this.props.item.time_start) : new Date(),
+      venue: this.props.item.venue || ' ',
+      details: this.props.item.details || ' ',
+      confirmation: this.props.item.confirmation || ' ',
+      address: this.props.item.address || ' ',
+      id: this.props.item.id,
+      url: this.props.item.url || ' ',
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -43,23 +45,9 @@ class CreateEvent extends Component {
     this.setState({[stateName]:value})
   }
 
-  componentDidMount() {
-    if(this.props.item) {
-      this.setState({
-        title: this.props.item.title || '',
-        // time_start: new Date(this.props.item.time_start),
-        venue: this.props.item.venue || '',
-        details: this.props.item.details || '',
-        confirmation: this.props.item.confirmation || '',
-        address: this.props.item.address || '',
-        id: this.props.item.id || '',
-        url: this.props.item.url || '',
-       });
-    } 
-  }
-
-
   render() {
+    console.log(this.props)
+    console.log(this.state)
     return (
       <div className="create-form-container">
         <div className="form-title">
@@ -89,9 +77,9 @@ class CreateEvent extends Component {
               timeFormat="HH:mm"
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
-              minDate={new Date()}
-              timeCaption="Time"
-              className = "form-control"
+              timeCaption="time"
+              className = "form-control wd-100"
+              // minDate={this.state.time_start || new Date()}
               required
             />
           </div>
@@ -111,10 +99,9 @@ class CreateEvent extends Component {
                 type="text" 
                 className="form-control" 
                 name="venue" 
-                value = {this.state.venue}
                 handleAddress = {this.onChangeVenue}
                 handleLatLng = {this.onChangeLatLng}
-                address = {this.state.venue}
+                venue = {this.state.venue}
               />
           </div>
           <div className="form-group">
@@ -123,7 +110,7 @@ class CreateEvent extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="url" className="form-label">Website: </label>
-            <input className="form-control" type="text" value={this.state.url} onChange = {this.onChangeHandler} />
+            <input className="form-control" type="text" onChange = {this.onChangeHandler} value={this.state.url}/>
           </div>
 
           <div className="form-group">

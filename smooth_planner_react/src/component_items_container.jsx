@@ -29,7 +29,7 @@ export default class ItemsContainer extends Component {
       showModalTEdit: false,
       showModalEEdit: false,
       itemToEdit: {},
-      itemToAdd: {},
+      itemToAdd: null,
       recommendationsVisible: false,
       itemIDForReccomendationR: null,
       itemIDForReccomendationP: null,
@@ -43,8 +43,15 @@ export default class ItemsContainer extends Component {
   handleOpenModalA = () => {this.setState({ showModalA: true });}
   handleCloseModalA = () => {this.setState({ showModalA: false });}
   // Event
-  handleOpenModalE = (item) => {this.setState({ showModalE: true, itemToAdd: item});}
-  handleCloseModalE = () => {this.setState({ showModalE: false, itemToAdd: {}});}
+  handleOpenModalE = (item) => {
+    // console.log(boolean item,"item")
+    this.setState({ 
+      showModalE: true, 
+      itemToAdd: item || null,
+    });
+    console.log(this.state)
+  }
+  handleCloseModalE = () => {this.setState({ showModalE: false, itemToAdd: null});}
 
   //  Modal state handling functions for editing an item
   handleOpenModalEdit = (type, item) => {
@@ -57,9 +64,9 @@ export default class ItemsContainer extends Component {
     }
   }
 
-  handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false});}
-  handleCloseModalEEdit = () => {this.setState({ showModalEEdit: false});}
-  handleCloseModalTEdit = () => {this.setState({ showModalTEdit: false});}
+  handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false, itemToEdit: {}});}
+  handleCloseModalEEdit = () => {this.setState({ showModalEEdit: false, itemToEdit: {}});}
+  handleCloseModalTEdit = () => {this.setState({ showModalTEdit: false, itemToEdit: {}});}
 
 
   areThereAnyRecommendations = () => {
