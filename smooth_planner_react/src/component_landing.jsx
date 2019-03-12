@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import $ from "jquery";
 
 export default class Landing extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
+
+  change_user = (e) => {
+    this.props.changeUser(e.target.value);
   }
 
   componentDidMount() {
@@ -17,13 +16,13 @@ export default class Landing extends Component {
       <div >
       <div className="splash">
         <div className="splash-login">
-          <button type="button" class="btn btn-success">Bob</button>
-          <button type="button" class="btn btn-success">Alice</button>
+          <button type="button" className="btn btn-success" onClick={this.change_user} value={1}>Bob</button>
+          <button type="button" className="btn btn-success" onClick={this.change_user} value={2}>Alice</button>
         </div>
         <div className="call-to-action">
           <h1>Take Stress Out of Your Trip</h1>
           <h1>Start Planning Today!</h1>
-          <button type="button" class="btn btn-warning">Create Account</button>
+          <button type="button" className="btn btn-warning">Create Account</button>
         </div>
         
         </div>

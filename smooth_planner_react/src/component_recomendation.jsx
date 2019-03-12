@@ -88,7 +88,7 @@ export default class RecomendationCard extends Component {
           </div>
           <div className="card-body row card-reco-body">
             
-            <div className="col-9 card-text">
+            <div className="col-12 card-text">
               <div>
                 <img src={currentSuggestion.icon} alt="suggestion-icon" />
                 <h4><a href={url} target="_blank" rel='noreferrer noopener'>{currentSuggestion.name}</a></h4>
