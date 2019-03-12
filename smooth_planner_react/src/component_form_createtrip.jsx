@@ -24,7 +24,7 @@ class CreateTrip extends Component {
   render() {
    
     return (
-      <div className="create-form-container">
+      <div className="create-form-container-small">
         <div className="form-title">
           <h4 className="card-title">Create New Trip</h4>
         </div>

@@ -28,15 +28,16 @@ export default class Share extends Component {
   render() {
     
     return (
-      <form>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Add another users mail address to add them to colaborate on this trip</label>
-          <input type="email" className="form-control" id="email" name="email" ref="email" aria-describedby="emailHelp" placeholder="Enter email"/>
-          <small id="emailHelp" className="form-text text-muted">We'll never share this email with anyone else.</small>
-        </div>
-        <h1>{this.state.message}</h1>
-        <button type="button" className="btn btn-primary" onClick={this.handlesSubmit}>Submit</button>
-      </form>
+      <div className="create-form-container-small">
+        <form onSubmit={this.handlesSubmit}>
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Add another users mail address to add them to colaborate on this trip</label>
+            <input type="email" className="form-control" id="email" name="email" ref="email" aria-describedby="emailHelp" placeholder="Enter email"/>
+            <small id="emailHelp" className="form-text text-muted">We'll never share this email with anyone else.</small>
+          </div>
+          <button type="button" className="btn btn-primary">Submit</button>
+        </form>
+      </div>
     );
   }
   

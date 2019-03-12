@@ -34,7 +34,24 @@ nav {
   background-color: #dfe3e6;
   padding: .25rem;
 }
-
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+.ReactModal__Overlay, .ReactModal__Overlay--after-open {
+  background-color: transparent;
+  position: fixed;
+  /* left: 20%;
+  bottom: 40%;
+  top: 20%;
+  right:20%; */
+}
+.ReactModal__Content--after-open {
+  margin: 10%;
+  height: fit-content;
+}
+.create-form-container {
+  background-color: pink;
+}
 .trip-list > button {
   margin: 8px 35px 20px;
   background-color: #faebd773;
@@ -187,10 +204,6 @@ footer{
   height: 100px;
   background-color: aliceblue;
 }
-.create-form-container {
-  padding: 5%;
-  background-color: #FCC8B2 ;
-} 
 
 body {
   background-image: url("./images/amazing-austria-dawn-1323550.jpg");
@@ -281,10 +294,6 @@ body {
   right: 10%;
 }
 
-.ReactModal__Content--after-open {
-  margin-top: 80px;
-  bottom: 0;
-}
 .carousel-pointer:hover{
   cursor: pointer
 }
@@ -318,4 +327,6 @@ body {
   cursor: pointer;
   color: white;
 }
-               
+
+
+

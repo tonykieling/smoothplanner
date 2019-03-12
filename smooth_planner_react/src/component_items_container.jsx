@@ -186,7 +186,7 @@ export default class ItemsContainer extends Component {
           return (
             <div>
               <ItemsContainerA key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
-              <RecomendationCard item_id={this.state.itemIDForReccomendationR} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/>
+              <RecomendationCard key={item.id+'RR'} item_id={this.state.itemIDForReccomendationR} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/>
             </div>
           )
         }
@@ -196,7 +196,7 @@ export default class ItemsContainer extends Component {
           return (
             <div>
               <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
-              <RecomendationCard item_id={this.state.itemIDForReccomendationP} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/>
+              <RecomendationCard key={item.id+'RP'} item_id={this.state.itemIDForReccomendationP} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/>
             </div>
           )
         }
@@ -261,8 +261,6 @@ export default class ItemsContainer extends Component {
           <div className="cards_list">
             {allCards}
           </div>
-            {/* { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="restaurant" query="restaurants" key="restaurant"/> : null } 
-            { (this.state.recommendationsVisible)? <RecomendationCard item_id={this.state.itemIDForReccomendation} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do" key="things to do"/> : null } */}
       </div>
     )
   }
