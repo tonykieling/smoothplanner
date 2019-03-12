@@ -61,13 +61,12 @@ module Api::V1
     
     private
 
+    # method to update trip.time_start according to the card(item) deletion
     def reorganizeTripDate
-# puts "timestart_BEFORE: #{@trip.time_start}"
-# puts "@items: #{@items.inspect}"
       @trip.update(time_start: @trip.items.order(:time_start).first.time_start) unless @items.empty?
-# puts "timestart_AFTER: #{@trip.time_start}"
     end
  
+    
     def item_params
       params.require(:item).permit(
         :title, 
