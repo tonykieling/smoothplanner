@@ -30,10 +30,6 @@ nav {
   width: 200px;
 }
 
-.card-header {
-  background-color: #dfe3e6;
-  padding: .25rem;
-}
 .ReactModal__Body--open {
   overflow: hidden;
 }
@@ -126,11 +122,15 @@ section {
 
 .card {
   min-width: 70%;
-  margin: 1% 0;
+  margin: 2% 0;
   font-size: 1.15rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 6px 12px 0px #424040;
   transition: 0.3s;
+}
+.card-header {
+  background-color: #dfe3e6;
+  padding: .25rem;
 }
 .card:hover {
   box-shadow: 0 12px 24px 0px #424040;
@@ -141,39 +141,31 @@ section {
 .card-header > h4 {
   font-weight: bolder;
 }
-
 .card-body {
   text-align: start;
 }
-
 .card-body-lower {
   padding-top: 2px;
 }
-
 .card-body-upper {
   padding-bottom: 6px;
 }
-
 .item-card-head{
   display: inline;
 }
-
 .card-footer {
   padding: .25rem;
 }
-
 .card-reco-center {
   display: flex;
   background-color: #80724a99;
   align-items: center;
 }
-
 .card-reco-body {
   justify-content: space-between;
   margin-right: 0;
   margin-left: 0;
 }
-
 .card-reco-body > .card-text {
   min-width: 35vw;
 }
@@ -186,7 +178,6 @@ section {
   height: 2.25rem;
   margin-right: 10px;
 }
-
 
 .logo {
   display: flex;
@@ -256,18 +247,17 @@ body {
   margin: 10px
 }
 
-
 .fa-plus, .fa-trash-alt, .fa-edit {
   float: right;
-  font-size: 16px;
+  font-size: 1em;
   cursor: pointer;
   opacity: 0.5;
-  margin-top: .5rem;
+  margin: .5rem;
 }
 
-.fa-trash-alt:hover, .fa-edit:hover {
+.fa-trash-alt:hover, .fa-edit:hover, .fa-plus:hover {
   opacity: 1;
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 .fa-trash-alt {
@@ -276,18 +266,10 @@ body {
 
 .fa-edit {
   color: orange;
-  margin-right: 5px;
 }
 
 .fa-plus {
   color: green;
-  font-size: 30px;
-  margin-top: 0;
-}
-
-.fa-plus:hover {
-  opacity: 1;
-  font-size: 35px;
 }
 
 .edit-bt {
