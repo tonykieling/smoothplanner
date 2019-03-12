@@ -46,14 +46,14 @@ class CreateEvent extends Component {
   componentDidMount() {
     if(this.props.item) {
       this.setState({
-        title: this.props.item.title,
-        time_start: new Date(this.props.item.time_start),
-        venue: this.props.item.venue,
-        details: this.props.item.details,
-        confirmation: this.props.item.confirmation,
-        address: this.props.item.address,
-        id: this.props.item.id,
-        url: this.props.item.url,
+        title: this.props.item.title || '',
+        time_start: this.props.item.time_start,
+        venue: this.props.item.venue || '',
+        details: this.props.item.details || '',
+        confirmation: this.props.item.confirmation || '',
+        address: this.props.item.address || '',
+        id: this.props.item.id || '',
+        url: this.props.item.url || '',
        });
     } 
   }
@@ -111,7 +111,7 @@ class CreateEvent extends Component {
                 type="text" 
                 className="form-control" 
                 name="venue" 
-                placeholder= {this.state.venue}
+                value = {this.state.venue}
                 handleAddress = {this.onChangeVenue}
                 handleLatLng = {this.onChangeLatLng}
                 address = {this.state.venue}
@@ -119,7 +119,7 @@ class CreateEvent extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="address" className="form-label">Address: </label>
-            <input readOnly className="form-control" type="text" value={this.state.address} onChange = {this.onChangeHandler} />
+            <input readOnly className="form-control" type="text" value={this.state.address}/>
           </div>
           <div className="form-group">
             <label htmlFor="url" className="form-label">Website: </label>
