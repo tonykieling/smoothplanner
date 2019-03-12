@@ -282,6 +282,10 @@ body {
   font-size: 35px;
 }
 
+.fa-share-alt:hover {
+  cursor: pointer;
+}
+
 .edit-bt {
   position: relative;
 }
