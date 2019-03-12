@@ -356,5 +356,10 @@ body {
   color: white;
 }
 
-
-
+.empty-card {
+  margin-top: 60px;
+  background-color: #aef0d98a;
+  font-weight: bolder;
+  border-radius: 20px;
+  padding: 10px;
+}
