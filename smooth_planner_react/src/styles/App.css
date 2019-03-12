@@ -412,7 +412,6 @@ form {
   padding: 0% 2%;
 }
 .form-control {
-  width: 75%;
   margin-right: 0.5%
 }
 .location-search-input {
@@ -443,6 +442,7 @@ form {
   font-weight: bolder;
   border-radius: .25rem;
   padding: 20px;
-.react-datepicker__input-container {
-  min-width: 75%
+}
+.react-datepicker-wrapper, .react-datepicker__input-container {
+  width: 100%;
 }

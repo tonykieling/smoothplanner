@@ -21,11 +21,11 @@ class CreateEvent extends Component {
       url: this.props.item.url || ' ',
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
+    this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
   }
   handleChangeStartDate(date) {
     this.setState({
       time_start: date,
-      time_end: date,
     });
   }
   handleChangeEndDate(date) {
