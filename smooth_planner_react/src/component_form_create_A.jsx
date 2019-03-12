@@ -58,6 +58,7 @@ class CreateAccomodation extends Component {
         confirmation: this.props.item.confirmation || ' ',
         address: this.props.item.address || ' ',
         id: this.props.item.id,
+        url:this.props.item.url || ' ',
        });
     }
   }
@@ -137,6 +138,10 @@ class CreateAccomodation extends Component {
           <div className="form-group">
             <label htmlFor="address" className="form-label">Address: </label>
             <input readOnly className="form-control" type="text" value={this.state.address} onChange = {this.onChangeHandler}  />
+          </div>
+          <div className="form-group">
+            <label htmlFor="url" className="form-label">Website: </label>
+            <input name="url" className="form-control" type="text" onChange = {this.onChangeHandler} value={this.state.url}/>
           </div>
           <div className="form-group">
             <label htmlFor="details" className="form-label">Details:</label>
