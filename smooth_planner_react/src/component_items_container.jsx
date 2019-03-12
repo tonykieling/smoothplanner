@@ -196,7 +196,7 @@ export default class ItemsContainer extends Component {
       } else if (item.item_type === "E") {
         if(item.id === this.state.itemIDForReccomendationP) {
           return (
-            <div>
+            <div key={item.id+'R'}>
               <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
               <RecomendationCard key={item.id+'RP'} item_id={this.state.itemIDForReccomendationP} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do"/>
             </div>

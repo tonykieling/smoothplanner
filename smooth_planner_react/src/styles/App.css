@@ -37,13 +37,14 @@ nav {
 .ReactModal__Body--open {
   overflow: hidden;
 }
+
 .ReactModal__Overlay, .ReactModal__Overlay--after-open {
   background-color: transparent;
   position: fixed;
   padding: 0%;
 }
 .ReactModal__Content--after-open {
-  margin: 5% 5% 5% 5%;
+  margin: 2% 10% 5% 10%;
   height: fit-content;
 }
 .create-form-container, .create-form-container-small {
@@ -344,6 +345,13 @@ body {
 .form-group > .btn {
   margin-right: 0.5%;
   border: 1px;
+}
+form {
+  padding: 0% 2%;
+}
+.form-control {
+  width: 75%;
+  margin-right: 0.5%
 }
 .location-search-input {
   min-width: 75%;
