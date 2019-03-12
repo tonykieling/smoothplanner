@@ -16,7 +16,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: false, //{name: "Suzy", id: 2},
+      current_user: {name: "Alice", id: 2},
       trips: [],
       showModalShare: false
     }
@@ -86,7 +86,7 @@ class App extends Component {
           <Route path="/trips/:id" render={
                           (props)=><ItemsContainer {...props} trips={this.state.trips} delete_trip={this.delete_trip}/>
                           }/>
-          <Route path="/" exact render={()=> <Landing />}/>
+          <Route path="/" exact render={()=> <Home />}/>
         </main>
         
         <Route path="/trips/:id" render={(props)=>
@@ -106,8 +106,6 @@ class App extends Component {
       return (
         <BrowserRouter>
         <div className="landing">
-        <header>
-        </header>
           <Route path="/" exact render={()=> <Landing />}/>
         </div>
         </BrowserRouter>

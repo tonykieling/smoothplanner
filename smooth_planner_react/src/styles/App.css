@@ -1,5 +1,12 @@
 body {
+  background-image: url("./images/amazing-austria-dawn-1323550.jpg");
+  background-attachment:fixed;
+  background-size: auto;
+  width: 100%;
+  background-size: cover;
+  background-position: 0 100%;
   background-color: #e9ecef;
+  font-family: 'Lato',sans-serif;
 }
 
 .App {
@@ -221,18 +228,6 @@ section {
 
 .cards_list {
   padding-top: 107px;
-}
-
-.App {
-  background-image: url("./images/amazing-austria-dawn-1323550.jpg");
-  background-attachment:fixed;
-  background-size: auto;
-  width: 100%;
-  background-size: cover;
-  background-position: 0 100%;
-  /* min view width should be 550px */
-  /* font-family: Helvetica Neue,Arial,Helvetica,sans-serif; */
-  font-family: 'Lato',sans-serif;
 }
 
 .landing {
