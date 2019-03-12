@@ -118,6 +118,7 @@ export default class ItemsContainer extends Component {
     .catch(error => console.log(error));
   }
 
+
   //  Adds a new item to the data base on form submitting
   addItem = (data) => {
     axios.post('http://localhost:3001/api/v1/items', data)

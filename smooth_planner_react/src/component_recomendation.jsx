@@ -22,7 +22,6 @@ export default class RecomendationCard extends Component {
   }
 
   fetchRecommendations(item_id, suggestionType, query) {
-    console.log("Fetching recommendations from the server", item_id)
     axios.get(`http://localhost:3001/api/v1/items/${item_id}.json?suggestionType=${suggestionType}&query=${query}`)
       .then(response => {
         if(response.data.status === "OK") { 
