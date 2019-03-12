@@ -36,11 +36,14 @@ export default class Share extends Component {
         </h4>
         </div>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Enter e-mail address below: </label>
+            <label htmlFor="exampleInputEmail1" className="form-label">Enter e-mail address below: </label>
             <input type="email" className="form-control" id="email" name="email" ref="email" aria-describedby="emailHelp" placeholder="Enter email"/>
             <small id="emailHelp" className="form-text text-muted">We'll never share this email with anyone else.</small>
           </div>
-          <button type="button" className="btn btn-primary">Submit</button>
+          <div className="form-group">
+            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="button" className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
+          </div>
         </form>
       </div>
     );

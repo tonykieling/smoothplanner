@@ -27,9 +27,9 @@ export default class Landing extends Component {
         
         </div>
         <div className="benefits">
-          <div><h4>Your Itinerary In One Place</h4><i class="fas fa-clipboard-list fa-6x"></i></div>
-          <div><h4>Collaborate Together</h4><i class="fas fa-handshake fa-6x"></i></div>
-          <div><h4>Recommendations</h4><i class="fas fa-theater-masks fa-6x"></i></div>
+          <div><h4>Your Itinerary In One Place</h4><i className="fas fa-clipboard-list fa-6x"></i></div>
+          <div><h4>Collaborate Together</h4><i className="fas fa-handshake fa-6x"></i></div>
+          <div><h4>Recommendations</h4><i className="fas fa-theater-masks fa-6x"></i></div>
         </div>
         
       </div>

@@ -49,6 +49,7 @@ module Api::V1
     end
 
     def update
+      puts params
       item_to_update = Item.find(params[:id])
       item_to_update.update(item_params)
       if item_to_update.save

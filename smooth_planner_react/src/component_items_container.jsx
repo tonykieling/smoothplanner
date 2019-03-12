@@ -30,6 +30,7 @@ export default class ItemsContainer extends Component {
       showModalTEdit: false,
       showModalEEdit: false,
       itemToEdit: {},
+      itemToAdd: null,
       recommendationsVisible: false,
       itemIDForReccomendationR: null,
       itemIDForReccomendationP: null,
@@ -43,8 +44,14 @@ export default class ItemsContainer extends Component {
   handleOpenModalA = () => {this.setState({ showModalA: true });}
   handleCloseModalA = () => {this.setState({ showModalA: false });}
   // Event
-  handleOpenModalE = (item) => {this.setState({ showModalE: true, itemToAdd: item});}
-  handleCloseModalE = () => {this.setState({ showModalE: false });}
+  handleOpenModalE = (item) => {
+    // console.log(boolean item,"item")
+    this.setState({ 
+      showModalE: true, 
+      itemToAdd: item || null,
+    });
+  }
+  handleCloseModalE = () => {this.setState({ showModalE: false, itemToAdd: null});}
 
   //  Modal state handling functions for editing an item
   handleOpenModalEdit = (type, item) => {
@@ -57,9 +64,9 @@ export default class ItemsContainer extends Component {
     }
   }
 
-  handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false});}
-  handleCloseModalEEdit = () => {this.setState({ showModalEEdit: false});}
-  handleCloseModalTEdit = () => {this.setState({ showModalTEdit: false});}
+  handleCloseModalAEdit = () => {this.setState({ showModalAEdit: false, itemToEdit: {}});}
+  handleCloseModalEEdit = () => {this.setState({ showModalEEdit: false, itemToEdit: {}});}
+  handleCloseModalTEdit = () => {this.setState({ showModalTEdit: false, itemToEdit: {}});}
 
 
   areThereAnyRecommendations = () => {
@@ -136,7 +143,7 @@ export default class ItemsContainer extends Component {
   }
 
   putItem =(data) => {
-    axios.put(`http://localhost:3001/api/v1/items/${data.id}`)
+    axios.put(`http://localhost:3001/api/v1/items/${data.id}`, data)
       .then(response => {
         this.setState({cards: response.data});
         this.areThereAnyRecommendations();
@@ -197,7 +204,7 @@ export default class ItemsContainer extends Component {
       } else if (item.item_type === "E") {
         if(item.id === this.state.itemIDForReccomendationP) {
           return (
-            <div>
+            <div key={item.id+'R'}>
               <ItemsContainerE key={item.id} item={item} delete_item={this.delete_item} editItem={this.editItem}/>
               <RecomendationCard key={item.id+'RP'} item_id={this.state.itemIDForReccomendationP} openModalE={this.handleOpenModalE} type="point_of_interest" query="things to do"/>
             </div>
@@ -245,24 +252,24 @@ export default class ItemsContainer extends Component {
 
           <div>
             {/* Event Button */}
-            <button onClick={this.handleOpenModalE} className="btn btn-outline-info">+ Event</button>
+            <button onClick={this.handleOpenModalE} className="btn btn-outline-info" >+ Event</button>
             <ReactModal isOpen={this.state.showModalE} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalE}>
-              <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id}/>
+              <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id} item={this.state.itemToAdd}/>
             </ReactModal>
           </div>
         </div>
 
         {/* Edit Modals */}
         <ReactModal isOpen={this.state.showModalAEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalAEdit}>
-          <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+          <CreateAccomodation closeModal={this.handleCloseModalAEdit} item={this.state.itemToEdit} tripID={this.props.match.params.id} addItem ={this.putItem}  />
         </ReactModal>
 
         <ReactModal isOpen={this.state.showModalTEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalTEdit}>
-          <CreateTransport closeModal={this.handleCloseModalTEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+          <CreateTransport closeModal={this.handleCloseModalTEdit} item={this.state.itemToEdit} tripID={this.props.match.params.id} addItem ={this.putItem}  />
         </ReactModal>
 
         <ReactModal isOpen={this.state.showModalEEdit} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalEEdit}>
-          <CreateEvent closeModal={this.handleCloseModalEEdit} item={this.state.itemToEdit} addItem ={this.putItem}  />
+          <CreateEvent closeModal={this.handleCloseModalEEdit} item={this.state.itemToEdit} tripID={this.props.match.params.id} addItem ={this.putItem}  />
         </ReactModal>
             
           <div className="cards_list">

@@ -25,20 +25,26 @@ class CreateTrip extends Component {
    
     return (
       <div className="create-form-container-small">
+      <form onSubmit={this.handleSubmit}>
         <div className="form-title">
           <h4 className="card-title">Create New Trip</h4>
         </div>
-      <form className="form-inline m-sm-1" onSubmit={this.handleSubmit}>
+        <div className= "form-group row">
+          <label htmlFor="name" className="form-label col-12">Enter a name for your trip:</label>
           <input 
             type="text" 
-            name="Trip-name" 
-            className="form-control w-75 mr-sm-3" 
+            name="name" 
+            className="form-control" 
             placeholder="Example: Trip to India, Weekend getaway in Victoria etc."
             onChange={this.onChangeTitle}
-            value={this.state.title}
+            value={this.state.name}
             required
           />
-          <button type="submit" className="btn btn-primary">Start Planning!</button>
+        </div>
+          <div className="form-group row">
+            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="button" className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
+          </div>
       </form>
     </div>
     )

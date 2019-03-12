@@ -11,11 +11,6 @@ import Landing from './component_landing';
 import image from "./styles/images/amazing-austria-dawn-1323550.jpg"
 import $ from "jquery";
 
-
-
-
-
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -96,7 +91,7 @@ class App extends Component {
             <div className="print_share">
             <i onClick={this.handleOpenModalShare} className="fas fa-share-alt fa-2x" title="Share Trip With Another User"></i>
             <a href="javascript:window.print()"><i className="fas fa-print fa-2x" title="Print Preview"></i></a>
-            <i class="fas fa-sign-out-alt fa-2x" title="Sign Out"></i>
+            <i className="fas fa-sign-out-alt fa-2x" title="Sign Out"></i>
             </div>
           </nav> 
           <div className="side-bar">

@@ -10,17 +10,21 @@ class CreateEvent extends Component {
     this.state = {
       item_type:'E',
       trip_id: this.props.tripID,
-      title: '',
-      venue: '',
-      details: '',
-      confirmation: '',
-      address: '',
+      title: this.props.item.title || ' ',
+      time_start: this.props.item.time_start ? new Date(this.props.item.time_start) : new Date(),
+      venue: this.props.item.venue || ' ',
+      details: this.props.item.details || ' ',
+      confirmation: this.props.item.confirmation || ' ',
+      address: this.props.item.address || ' ',
+      id: this.props.item.id,
+      url: this.props.item.url || ' ',
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
   handleChangeStartDate(date) {
     this.setState({
       time_start: date,
+      time_end: date,
     });
   }
   handlesSubmit = (event)=>{
@@ -41,41 +45,27 @@ class CreateEvent extends Component {
     this.setState({[stateName]:value})
   }
 
-  componentDidMount() {
-    if(this.props.item) {
-      this.setState({
-        title: this.props.item.title,
-        time_start: this.props.item.time_start,
-        venue: this.props.item.venue,
-        details: this.props.item.details,
-        confirmation: this.props.item.confirmation,
-        address: this.props.item.address,
-       });
-    } 
-  }
-
-
   render() {
     return (
       <div className="create-form-container">
         <div className="form-title">
         <h4 className="card-title">
-          <i className="fas fa-utensils"></i> Add/Edit Event
+          <i className="fas fa-theater-masks"></i>Add/Edit Event
         </h4>
         </div>
         <form onSubmit={this.handlesSubmit}>
-          <div className="row form-group">
-            <label htmlFor="title" className="col-sm-3 col-form-label">Title</label>
+          <div className="form-group">
+            <label htmlFor="title" className="form-label">Title</label>
             <input 
               type="text" 
-              className="form-control col-sm-9" 
+              className="form-control"
               name="title" 
               placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" 
               value={this.state.title}
               onChange = {this.onChangeHandler}  />
           </div>
-          <div className="row form-group">
-            <label htmlFor="dt_start" className="col-sm-3 col-form-label">Event time:</label>
+          <div className="form-group">
+            <label htmlFor="dt_start" className="form-label col-12">Event time:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -86,41 +76,45 @@ class CreateEvent extends Component {
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
               timeCaption="time"
-              className = "form-control col-sm-10"
+              className = "form-control wd-100"
+              // minDate={this.state.time_start || new Date()}
               required
             />
           </div>
-          <div className="row form-group">
-          <label htmlFor="confirmation" className="col-sm-3 col-form-label">Reservation #:</label>
+          <div className="form-group">
+          <label htmlFor="confirmation" className="form-label">Reservation #:</label>
             <input 
               type="text" 
-              className="form-control col-sm-9" 
+              className="form-control "
               name="confirmation"
               onChange = {this.onChangeHandler}
               value = {this.state.confirmation}
             />
             </div>
-          <div className="row form-group" id="locationField">
-            <label htmlFor="venue" className="col-sm-3 col-form-label">Venue: </label>
+          <div className="form-group" id="locationField">
+            <label htmlFor="venue" className="form-label">Venue: </label>
               <LocationSearchInput
                 type="text" 
-                className="form-control col-sm-10" 
+                className="form-control" 
                 name="venue" 
-                placeholder="Hotel" 
                 handleAddress = {this.onChangeVenue}
                 handleLatLng = {this.onChangeLatLng}
-                address = {this.state.venue}
+                venue = {this.state.venue}
               />
           </div>
-          <div className="row form-group">
-            <label htmlFor="address" className="col-sm-3 col-form-label">Address: </label>
-            <input readOnly className="form-control col-sm-9" type="text" value={this.state.address} />
+          <div className="form-group">
+            <label htmlFor="address" className="form-label">Address: </label>
+            <input readOnly className="form-control" type="text" value={this.state.address}/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="url" className="form-label">Website: </label>
+            <input name="url" className="form-control" type="text" onChange = {this.onChangeHandler} value={this.state.url}/>
           </div>
 
-          <div className="row form-group">
-            <label htmlFor="details" className="col-sm-3 col-form-label">Details:</label>
+          <div className="form-group">
+            <label htmlFor="details" className="form-label">Details:</label>
             <textarea 
-              className="form-control col-sm-9"
+              className="form-control"
               name="details"
               onChange = {this.onChangeHandler}
               value = {this.state.details}>
@@ -130,7 +124,8 @@ class CreateEvent extends Component {
             {/* <a role="button" className="btn btn-outline-primary" href="#">Upload files</a> */}
           </div>
           <div className="form-group">
-            <button type="submit" className="col-sm-12 btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="button" className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
           </div>
         </form>
     </div>

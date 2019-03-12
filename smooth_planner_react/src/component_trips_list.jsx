@@ -42,7 +42,7 @@ export default class TripsList extends Component {
       <div className="list-group trip-list">
         <button type="button" className="btn btn-outline-warning" onClick={this.handleOpenModalNewTrip} >+ New Trip</button>
           <ReactModal isOpen={this.state.showModalNewTrip} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalNewTrip}>
-            <CreateTrip  addTrip={this.addTrip}/>
+            <CreateTrip  addTrip={this.addTrip} closeModal={this.handleCloseModalNewTrip}/>
           </ReactModal>
         <h4>Your Trips</h4>
         <ul>
