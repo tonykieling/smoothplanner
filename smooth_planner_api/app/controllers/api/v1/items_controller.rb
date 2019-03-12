@@ -8,12 +8,12 @@ module Api::V1
 
     def destroy
       @item = Item.find(params[:id])
+      @temp_trip = @item.trip_id
 
-      if @item.destroy
-        # head :no_content, status: :ok
-        temp_trip = @item.trip_id
-        @trip = Trip.find(temp_trip)
+      if @item.destroy    
+        @trip = Trip.find(@temp_trip)
         @items = @trip.items.order(:time_start)
+        reorganizeTripDate  # updates the trip time_start
         render json: @items
       else
         render json: @item.errors, status: :unprocessable_entity
@@ -42,6 +42,7 @@ module Api::V1
       if newitem.save
         @trip = Trip.find(newitem.trip_id)
         @items = @trip.items.order(:time_start)
+        reorganizeTripDate  # updates the trip time_start
         render json: @items
       end
       
@@ -53,12 +54,19 @@ module Api::V1
       if item_to_update.save
         @trip = Trip.find(item_to_update.trip_id)
         @items = @trip.items.order(:time_start)
+        reorganizeTripDate  # updates the trip time_start
         render json: @items
       end
     end
     
-    private 
+    private
+
+    # method to update trip.time_start according to the card(item) deletion
+    def reorganizeTripDate
+      @trip.update(time_start: @trip.items.order(:time_start).first.time_start) unless @items.empty?
+    end
  
+    
     def item_params
       params.require(:item).permit(
         :title, 

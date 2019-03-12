@@ -46,6 +46,8 @@ nav {
   margin: 10% 5% 10% 5%;
   height: fit-content;
 }
+
+
 .create-form-container, .create-form-container-small {
   margin: 0;
 }
@@ -116,6 +118,7 @@ section {
 
 .trip_duration {
   font-size: 1.4rem;
+  margin-bottom: 5px;
 }
 
 .card {
@@ -153,7 +156,7 @@ section {
 
 .card-reco-center {
   display: flex;
-  background-color: #ffc10794;
+  background-color: #80724a99;
   align-items: center;
 }
 
