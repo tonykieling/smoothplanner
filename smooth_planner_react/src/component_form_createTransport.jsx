@@ -51,7 +51,7 @@ class CreateTransport extends Component {
     const geo_location = `${latlng.lat} ${latlng.lng}`
     this.setState({geo_location})   
   }
-  componentDidMount() {
+  componentWillMount() {
     if(this.props.item) {
       this.setState({
         time_start: new Date(this.props.item.time_start),
@@ -84,7 +84,7 @@ class CreateTransport extends Component {
               name="city_depart" 
               placeholder="Departing City"
               handleAddress = {this.onChangeDepartCity}
-              address = {this.state.city_depart}
+              venue = {this.state.city_depart}
               handleLatLng = { () => {}}
               required
             />
@@ -96,7 +96,7 @@ class CreateTransport extends Component {
               name="city_arrival" 
               placeholder="Arrival City" 
               handleAddress = {this.onChangeArriveCity}
-              address = {this.state.city_arrival}
+              venue = {this.state.city_arrival}
               handleLatLng = {this.onChangeLatLng}
               required
             />

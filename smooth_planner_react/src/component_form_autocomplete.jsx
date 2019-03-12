@@ -37,8 +37,7 @@ export default class LocationSearchInput extends React.Component {
     if(this.props) {
       address = this.props.venue;
     }
-    this.setState({address})
-    console.log(address, this.props);
+    this.setState({address});
   }
  
   render() {

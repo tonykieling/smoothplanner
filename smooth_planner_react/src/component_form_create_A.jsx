@@ -48,8 +48,7 @@ class CreateAccomodation extends Component {
     const geo_location = `${latlng.lat} ${latlng.lng}`
     this.setState({geo_location})   
   }
-
-  componentDidMount() {
+  componentWillMount(){
     if(this.props.item) {
       this.setState({
         time_start: new Date(this.props.item.time_start),
@@ -132,7 +131,7 @@ class CreateAccomodation extends Component {
               placeholder="Hotel" 
               handleAddress = {this.onChangeVenue}
               handleLatLng = {this.onChangeLatLng}
-              address = {this.state.venue}
+              venue = {this.state.venue}
             />
           </div>
           <div className="form-group">
