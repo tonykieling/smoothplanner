@@ -128,7 +128,12 @@ section {
   min-width: 70%;
   margin: 10px 0;
   font-size: 1.15rem;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px 0px #424040;
+  transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 12px 24px 0px #424040;
 }
 .card-header > img {
   max-height: 60%;
