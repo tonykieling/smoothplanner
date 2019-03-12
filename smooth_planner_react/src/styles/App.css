@@ -43,7 +43,7 @@ nav {
   padding: 0%;
 }
 .ReactModal__Content--after-open {
-  margin: 10% 5% 10% 5%;
+  margin: 5% 5% 5% 5%;
   height: fit-content;
 }
 .create-form-container, .create-form-container-small {
@@ -346,7 +346,7 @@ body {
   border: 1px;
 }
 .location-search-input {
-  width: 100%
+  min-width: 75%;
 }
 
 .suggestion-item {
@@ -358,6 +358,4 @@ body {
   cursor: pointer;
   color: white;
 }
-
-
 

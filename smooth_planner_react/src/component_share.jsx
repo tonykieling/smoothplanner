@@ -36,7 +36,7 @@ export default class Share extends Component {
         </h4>
         </div>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Enter e-mail address below: </label>
+            <label htmlFor="exampleInputEmail1" className="form-label">Enter e-mail address below: </label>
             <input type="email" className="form-control" id="email" name="email" ref="email" aria-describedby="emailHelp" placeholder="Enter email"/>
             <small id="emailHelp" className="form-text text-muted">We'll never share this email with anyone else.</small>
           </div>

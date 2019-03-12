@@ -65,18 +65,18 @@ class CreateEvent extends Component {
         </h4>
         </div>
         <form onSubmit={this.handlesSubmit}>
-          <div className="row form-group">
-            <label htmlFor="title" className="col-sm-3 col-form-label">Title</label>
+          <div className="form-group">
+            <label htmlFor="title" className="form-label">Title</label>
             <input 
               type="text" 
-              className="form-control col-sm-9" 
+              className="form-control"
               name="title" 
               placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" 
               value={this.state.title}
               onChange = {this.onChangeHandler}  />
           </div>
-          <div className="row form-group">
-            <label htmlFor="dt_start" className="col-sm-3 col-form-label">Event time:</label>
+          <div className="form-group">
+            <label htmlFor="dt_start" className="form-label col-12">Event time:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -87,25 +87,25 @@ class CreateEvent extends Component {
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
               timeCaption="time"
-              className = "form-control col-sm-10"
+              className = "form-control"
               required
             />
           </div>
-          <div className="row form-group">
-          <label htmlFor="confirmation" className="col-sm-3 col-form-label">Reservation #:</label>
+          <div className="form-group">
+          <label htmlFor="confirmation" className="form-label">Reservation #:</label>
             <input 
               type="text" 
-              className="form-control col-sm-9" 
+              className="form-control "
               name="confirmation"
               onChange = {this.onChangeHandler}
               value = {this.state.confirmation}
             />
             </div>
-          <div className="row form-group" id="locationField">
-            <label htmlFor="venue" className="col-sm-3 col-form-label">Venue: </label>
+          <div className="form-group" id="locationField">
+            <label htmlFor="venue" className="form-label">Venue: </label>
               <LocationSearchInput
                 type="text" 
-                className="form-control col-sm-10" 
+                className="form-control" 
                 name="venue" 
                 placeholder="Hotel" 
                 handleAddress = {this.onChangeVenue}
@@ -113,15 +113,15 @@ class CreateEvent extends Component {
                 address = {this.state.venue}
               />
           </div>
-          <div className="row form-group">
-            <label htmlFor="address" className="col-sm-3 col-form-label">Address: </label>
-            <input readOnly className="form-control col-sm-9" type="text" value={this.state.address} />
+          <div className="form-group">
+            <label htmlFor="address" className="form-label">Address: </label>
+            <input readOnly className="form-control" type="text" value={this.state.address} />
           </div>
 
-          <div className="row form-group">
-            <label htmlFor="details" className="col-sm-3 col-form-label">Details:</label>
+          <div className="form-group">
+            <label htmlFor="details" className="form-label">Details:</label>
             <textarea 
-              className="form-control col-sm-9"
+              className="form-control"
               name="details"
               onChange = {this.onChangeHandler}
               value = {this.state.details}>

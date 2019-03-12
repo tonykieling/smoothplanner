@@ -76,8 +76,8 @@ class CreateTransport extends Component {
         </h4>
         </div>
         <form onSubmit={this.handlesSubmit}>
-          <div className="row form-group">
-            <label htmlFor="city_depart" className="col-sm-3 col-form-label">Leaving from:</label>
+          <div className="form-group">
+            <label htmlFor="city_depart" className="form-label">From:</label>
             <LocationSearchInput
               type="text" 
               className="form-control" 
@@ -89,8 +89,8 @@ class CreateTransport extends Component {
               required
             />
           </div>
-          <div className="row form-group">
-            <label htmlFor="city_arrival" className="col-sm-3 col-form-label">Arrving in:</label>
+          <div className="form-group">
+            <label htmlFor="city_arrival" className="form-label">To:</label>
             <LocationSearchInput
               type="text" 
               name="city_arrival" 
@@ -101,8 +101,8 @@ class CreateTransport extends Component {
               required
             />
           </div>
-          <div className="row form-group">
-            <label htmlFor="time_start" className="col-sm-3 col-form-label">Departing Time:</label>
+          <div className="form-group">
+            <label htmlFor="time_start" className="form-label col-12">Departure Date:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -113,10 +113,12 @@ class CreateTransport extends Component {
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
               timeCaption="time"
-              className = "form-control col-sm-10"
+              className = "form-control wd-100"
               required
             />
-            <label htmlFor="time_end"className="col-sm-3 col-form-label">Arriving Time:</label>
+          </div>
+          <div className="form-group">
+            <label htmlFor="time_end"className="form-label col-12">Arrival Date:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
@@ -127,24 +129,24 @@ class CreateTransport extends Component {
               timeIntervals={30}
               dateFormat="dd/MM/YYYY :mm aa"
               timeCaption="time"
-              className = "form-control col-sm-10"
+              className = "form-control"
               required
             />
           </div>
-          <div className="row form-group">
-            <label htmlFor="confirmation" className="col-sm-3 col-form-label">Reservation #:</label>
+          <div className="form-group">
+            <label htmlFor="confirmation" className="form-label">Reservation #:</label>
             <input 
               type="text" 
-              className="form-control col-sm-9" 
+              className="form-control" 
               name="confirmation"
               onChange = {this.onChangeHandler}
               value = {this.state.confirmation}
             />
           </div>
-          <div className="row form-group">
-            <label htmlFor="details" className="col-sm-3 col-form-label">Details:</label>
+          <div className="form-group">
+            <label htmlFor="details" className="form-label">Details:</label>
             <textarea 
-              className="form-control col-sm-9"
+              className="form-control"
               name="details"
               onChange = {this.onChangeHandler}
               value = {this.state.details}>
