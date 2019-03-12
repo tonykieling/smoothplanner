@@ -212,10 +212,7 @@ export default class ItemsContainer extends Component {
     });
 
     if (this.state.cards.length < 1) {
-console.log("NNNNNNNNNNNNNNNNN")
-
       allCards = <ItemsContainerEmpty />
-
     }
 
     const tripInfo = this.state.current_trip;

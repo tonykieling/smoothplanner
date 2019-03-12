@@ -8,10 +8,8 @@ export default class ItemsContainer extends Component {
     
     return (
           <div className="empty-card">
-            {/* <div className="card-body card-body-upper"> */}
               <h1>It seems your trip is empty.</h1>
               <h1>Let's start inserting items from the buttons above.</h1>
-            {/* </div> */}
           </div>
     )
   }

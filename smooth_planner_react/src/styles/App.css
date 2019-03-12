@@ -360,6 +360,14 @@ body {
   margin-top: 60px;
   background-color: #aef0d98a;
   font-weight: bolder;
-  border-radius: 20px;
+  border-radius: .025rem;
   padding: 10px;
+}
+
+.home-card {
+  margin-top: 90px;
+  background-color: #95c6e68a;
+  font-weight: bolder;
+  border-radius: .25rem;
+  padding: 20px;
 }

@@ -6,7 +6,7 @@ import TripsList from './component_trips_list'
 import { BrowserRouter, Route, Link } from '../node_modules/react-router-dom'
 import Share from './component_share';
 import ReactModal from 'react-modal';
-
+import Home from './component_home'
 
 
 
@@ -81,7 +81,7 @@ class App extends Component {
         <Route path="/trips/:id" render={
                         (props)=><ItemsContainer {...props} trips={this.state.trips} delete_trip={this.delete_trip}/>
                         }/>
-        <Route path="/" exact render={()=> <h3>Welcome. Plan Your Next Trip!</h3>}/>
+        <Route path="/" exact render={()=> <Home user={this.state.current_user.name}/>}/>
       </main>
       
       <Route path="/trips/:id" render={(props)=>
