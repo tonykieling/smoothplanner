@@ -70,7 +70,9 @@ class CreateTransport extends Component {
     return (
       <div className="create-form-container">
         <div className="form-title">
-        <h4 className="card-title">Add/Edit Transportation</h4>
+        <h4 className="card-title">
+          <i class="fas fa-plane"></i>Add/Edit Transportation
+        </h4>
         </div>
         <form onSubmit={this.handlesSubmit}>
           <div className="row form-group">

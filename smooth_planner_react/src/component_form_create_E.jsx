@@ -59,7 +59,9 @@ class CreateEvent extends Component {
     return (
       <div className="create-form-container">
         <div className="form-title">
-        <h4 className="card-title">Add/Edit Event</h4>
+        <h4 className="card-title">
+          <i className="fas fa-utensils"></i> Add/Edit Event
+        </h4>
         </div>
         <form onSubmit={this.handlesSubmit}>
           <div className="row form-group">

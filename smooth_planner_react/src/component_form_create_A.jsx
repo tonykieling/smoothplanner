@@ -67,8 +67,11 @@ class CreateAccomodation extends Component {
     return(
       <div className="create-form-container">
         <div className="form-title">
-        <h4 className="card-title">Add/Edit Accomodation</h4>
+        <h4 className="card-title">
+          <i className="fas fa-concierge-bell"></i> Add/Edit Accomodation
+        </h4>
         </div>
+
         <form onSubmit={this.handlesSubmit}>
           <div className="row form-group">
             <label htmlFor="dt_start" className="col-sm-3 col-form-label">Check in:</label>
