@@ -15,6 +15,7 @@ class CreateEvent extends Component {
       details: '',
       confirmation: '',
       address: '',
+      url: '',
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -51,6 +52,7 @@ class CreateEvent extends Component {
         confirmation: this.props.item.confirmation,
         address: this.props.item.address,
         id: this.props.item.id,
+        url: this.props.item.url,
        });
     } 
   }
@@ -116,6 +118,10 @@ class CreateEvent extends Component {
           <div className="form-group">
             <label htmlFor="address" className="form-label">Address: </label>
             <input readOnly className="form-control" type="text" value={this.state.address} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="url" className="form-label">Website: </label>
+            <input className="form-control" type="text" value={this.state.url} />
           </div>
 
           <div className="form-group">

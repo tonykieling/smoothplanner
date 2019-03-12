@@ -29,6 +29,7 @@ export default class ItemsContainer extends Component {
       showModalTEdit: false,
       showModalEEdit: false,
       itemToEdit: {},
+      itemToAdd: {},
       recommendationsVisible: false,
       itemIDForReccomendationR: null,
       itemIDForReccomendationP: null,
@@ -43,7 +44,7 @@ export default class ItemsContainer extends Component {
   handleCloseModalA = () => {this.setState({ showModalA: false });}
   // Event
   handleOpenModalE = (item) => {this.setState({ showModalE: true, itemToAdd: item});}
-  handleCloseModalE = () => {this.setState({ showModalE: false });}
+  handleCloseModalE = () => {this.setState({ showModalE: false, itemToAdd: {}});}
 
   //  Modal state handling functions for editing an item
   handleOpenModalEdit = (type, item) => {
@@ -241,7 +242,7 @@ export default class ItemsContainer extends Component {
             {/* Event Button */}
             <button onClick={this.handleOpenModalE} className="btn btn-outline-info">+ Event</button>
             <ReactModal isOpen={this.state.showModalE} contentLabel="onRequestClose Example" onRequestClose={this.handleCloseModalE}>
-              <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id}/>
+              <CreateEvent addItem={this.addItem} closeModal={this.handleCloseModalE} tripID={this.props.match.params.id} item={this.state.itemToAdd}/>
             </ReactModal>
           </div>
         </div>
