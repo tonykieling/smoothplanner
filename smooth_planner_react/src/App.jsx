@@ -16,7 +16,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: {name: "Alice", id: 2},
+      current_user: null, //{name: "Alice", id: 2},
       trips: [],
       showModalShare: false
     }
@@ -32,19 +32,22 @@ class App extends Component {
   handleCloseModalShare () {
     this.setState({ showModalShare: false });
   }
+  
 
- 
-
-
-  componentDidMount() {
-    if (this.state.current_user) {
-      axios.get(`http://localhost:3001/api/v1/users/${this.state.current_user.id}.json`)
+  populateTrips(userId) {  
+      axios.get(`http://localhost:3001/api/v1/users/${userId}.json`)
       .then(response => {
         this.setState({trips: response.data})
       })
       .catch(error => {
         console.log(error)
       })
+  }
+
+
+  componentDidMount() {
+    if (this.state.current_user) {
+      this.populateTrips(this.state.current_user.id);
     }
   }
 
@@ -59,6 +62,19 @@ class App extends Component {
   }
 
 
+  // HardCoding function to change user btw Bob (1) and Alice(2)
+  changeUser = (id) => {
+    if (id === '1') {
+      this.setState({
+        current_user: {name: "Bob", id: 1}
+      })
+     } else {
+      this.setState({
+        current_user: {name: "Alice", id: 2}
+      })
+    }
+    this.populateTrips(id);
+  }
   
 
   render() {
@@ -106,7 +122,9 @@ class App extends Component {
       return (
         <BrowserRouter>
         <div className="landing">
-          <Route path="/" exact render={()=> <Landing />}/>
+          <Route path="/" exact render={()=> <Landing
+                                                 changeUser={this.changeUser}/>}
+                                              />}/>
         </div>
         </BrowserRouter>
       );
