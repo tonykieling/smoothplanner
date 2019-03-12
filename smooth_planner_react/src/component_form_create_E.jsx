@@ -51,7 +51,7 @@ class CreateEvent extends Component {
         confirmation: this.props.item.confirmation,
         address: this.props.item.address,
        });
-    }
+    } 
   }
 
 
@@ -64,7 +64,13 @@ class CreateEvent extends Component {
         <form onSubmit={this.handlesSubmit}>
           <div className="row form-group">
             <label htmlFor="title" className="col-sm-3 col-form-label">Title</label>
-            <input type="text" className="form-control col-sm-9" name="title" placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" onChange = {this.onChangeHandler} value={this.state.title} />
+            <input 
+              type="text" 
+              className="form-control col-sm-9" 
+              name="title" 
+              placeholder="Example: Dinner @ local eatery, Guided tour of the Pyramids" 
+              value={this.state.title}
+              onChange = {this.onChangeHandler}  />
           </div>
           <div className="row form-group">
             <label htmlFor="dt_start" className="col-sm-3 col-form-label">Event time:</label>

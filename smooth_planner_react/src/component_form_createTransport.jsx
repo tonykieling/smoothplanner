@@ -41,10 +41,10 @@ class CreateTransport extends Component {
     this.props.addItem(this.state);
     this.props.closeModal();
   }
-  onChangeDepartCity = (city_depart) => {
+  onChangeDepartCity = (formatted_address, city_depart) => {
     this.setState({city_depart})
   }
-  onChangeArriveCity = (city_arrival) => {
+  onChangeArriveCity = (formatted_address, city_arrival) => {
     this.setState({city_arrival})
   }
   onChangeLatLng = (latlng) => {
