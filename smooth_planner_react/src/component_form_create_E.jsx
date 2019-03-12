@@ -119,11 +119,11 @@ class CreateEvent extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="address" className="form-label">Address: </label>
-            <input readOnly className="form-control" type="text" value={this.state.address} />
+            <input readOnly className="form-control" type="text" value={this.state.address} onChange = {this.onChangeHandler} />
           </div>
           <div className="form-group">
             <label htmlFor="url" className="form-label">Website: </label>
-            <input className="form-control" type="text" value={this.state.url} />
+            <input className="form-control" type="text" value={this.state.url} onChange = {this.onChangeHandler} />
           </div>
 
           <div className="form-group">

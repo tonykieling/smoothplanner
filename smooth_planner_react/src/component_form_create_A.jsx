@@ -137,7 +137,7 @@ class CreateAccomodation extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="address" className="form-label">Address: </label>
-            <input readOnly className="form-control" type="text" value={this.state.address} />
+            <input readOnly className="form-control" type="text" value={this.state.address} onChange = {this.onChangeHandler}  />
           </div>
           <div className="form-group">
             <label htmlFor="details" className="form-label">Details:</label>
