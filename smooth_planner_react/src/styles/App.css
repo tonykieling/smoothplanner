@@ -46,8 +46,6 @@ nav {
   margin: 10% 5% 10% 5%;
   height: fit-content;
 }
-
-
 .create-form-container, .create-form-container-small {
   margin: 0;
 }
@@ -123,9 +121,9 @@ section {
 
 .card {
   min-width: 70%;
-  margin: 5px 0;
+  margin: 10px 0;
   font-size: 1.15rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
 .card-header > img {
   max-height: 60%;
@@ -338,6 +336,11 @@ body {
   }
 }
 
+
+.form-group > .btn {
+  margin-right: 0.5%;
+  border: 1px;
+}
 .location-search-input {
   width: 100%
 }

@@ -131,7 +131,8 @@ class CreateEvent extends Component {
             {/* <a role="button" className="btn btn-outline-primary" href="#">Upload files</a> */}
           </div>
           <div className="form-group">
-            <button type="submit" className="col-sm-12 btn btn-primary">Submit</button>
+            <button type="button" className="btn btn-primary">Submit</button>
+            <button className="btn btn-danger" onClick={this.props.closeModal}>Cancel</button>
           </div>
         </form>
     </div>
