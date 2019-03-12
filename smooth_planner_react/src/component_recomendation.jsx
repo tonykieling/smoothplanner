@@ -52,7 +52,7 @@ export default class RecomendationCard extends Component {
       this.fetchRecommendations(this.props.item_id, this.props.type, this.props.query)
     }
   }
-  componentDidMount() {
+  componentWillMount() {
     this.fetchRecommendations(this.props.item_id, this.props.type, this.props.query);
   }
 
