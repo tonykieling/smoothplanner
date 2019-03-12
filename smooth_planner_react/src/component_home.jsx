@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 
 export default class Home extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     // tripID: props.match.params.id
-  //   }
-  // }
+
   render() {
-console.log("props: ", this.props)    
     return (
       <div>
           <div className="home-card">
