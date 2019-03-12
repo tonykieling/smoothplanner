@@ -102,7 +102,7 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="time_start" className="form-label col-12">Departure Date:</label>
+            <label htmlFor="time_start" className="form-label col-12">Departure:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -114,11 +114,15 @@ class CreateTransport extends Component {
               dateFormat="dd/MM/YYYY h:mm aa"
               timeCaption="time"
               className = "form-control wd-100"
+              selectsStart
+              minDate={new Date()}
+              startDate={this.state.time_start}
+              endDate={this.state.time_end}
               required
             />
           </div>
           <div className="form-group">
-            <label htmlFor="time_end"className="form-label col-12">Arrival Date:</label>
+            <label htmlFor="time_end"className="form-label col-12">Arrival:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
@@ -130,6 +134,10 @@ class CreateTransport extends Component {
               dateFormat="dd/MM/YYYY :mm aa"
               timeCaption="time"
               className = "form-control"
+              selectsEnd
+              minDate={this.state.time_start}
+              startDate={this.state.time_start}
+              endDate={this.state.time_end}
               required
             />
           </div>

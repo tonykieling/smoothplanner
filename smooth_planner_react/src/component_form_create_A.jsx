@@ -82,10 +82,14 @@ class CreateAccomodation extends Component {
               selected = {this.state.time_start}
               onChange = {this.handleChangeStartDate}
               showTimeSelect
+              selectsStart
+              minDate={new Date()}
               timeFormat="HH:mm"
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
-              timeCaption="time"
+              timeCaption="Time"
+              startDate={this.state.time_start}
+              endDate={this.state.time_end}
               className = "form-control"
               required
             />
@@ -98,10 +102,14 @@ class CreateAccomodation extends Component {
               selected = {this.state.time_end}
               onChange = {this.handleChangeEndDate}
               showTimeSelect
+              selectsEnd
+              minDate={this.state.time_start}
+              startDate={this.state.time_start}
+              endDate={this.state.time_end}
               timeFormat="HH:mm"
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
-              timeCaption="time"
+              timeCaption="Time"
               className = "form-control"
               required
             />

@@ -22,6 +22,7 @@ class CreateEvent extends Component {
   handleChangeStartDate(date) {
     this.setState({
       time_start: date,
+      time_end: date,
     });
   }
   handlesSubmit = (event)=>{
@@ -88,7 +89,8 @@ class CreateEvent extends Component {
               timeFormat="HH:mm"
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
-              timeCaption="time"
+              minDate={new Date()}
+              timeCaption="Time"
               className = "form-control"
               required
             />
