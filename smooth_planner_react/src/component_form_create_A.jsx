@@ -75,7 +75,7 @@ class CreateAccomodation extends Component {
 
         <form onSubmit={this.handlesSubmit}>
           <div className="form-group">
-            <label htmlFor="dt_start" className="form-label col-12">Check in:</label>
+            <label htmlFor="dt_start" className="form-label">Check in:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -95,7 +95,7 @@ class CreateAccomodation extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="dt_end" className="form-label col-12">Check out:</label>
+            <label htmlFor="dt_end" className="form-label">Check out:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"

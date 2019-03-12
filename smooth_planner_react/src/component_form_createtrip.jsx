@@ -30,7 +30,7 @@ class CreateTrip extends Component {
           <h4 className="card-title">Create New Trip</h4>
         </div>
         <div className= "form-group row">
-          <label htmlFor="name" className="form-label col-12">Enter a name for your trip:</label>
+          <label htmlFor="name" className="form-label">Enter a name for your trip:</label>
           <input 
             type="text" 
             name="name" 

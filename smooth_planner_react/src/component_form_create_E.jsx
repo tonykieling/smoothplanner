@@ -11,8 +11,8 @@ class CreateEvent extends Component {
       item_type:'E',
       trip_id: this.props.tripID,
       title: this.props.item.title || ' ',
-      time_start: this.props.item.time_start ? new Date(this.props.item.time_start) : new Date(),
-      time_end: this.props.item.time_end ? new Date(this.props.item.time_end) : new Date(),
+      time_start: this.props.item.time_start ? new Date(this.props.item.time_start) : null,
+      time_end: this.props.item.time_end ? new Date(this.props.item.time_end) : null,
       venue: this.props.item.venue || ' ',
       details: this.props.item.details || ' ',
       confirmation: this.props.item.confirmation || ' ',
@@ -26,6 +26,7 @@ class CreateEvent extends Component {
   handleChangeStartDate(date) {
     this.setState({
       time_start: date,
+      time_end: date,
     });
   }
   handleChangeEndDate(date) {
@@ -61,7 +62,7 @@ class CreateEvent extends Component {
         </div>
         <form onSubmit={this.handlesSubmit}>
           <div className="form-group">
-            <label htmlFor="title" className="form-label">Title</label>
+            <label htmlFor="title" className="form-label">Title:</label>
             <input 
               type="text" 
               className="form-control"
@@ -71,7 +72,7 @@ class CreateEvent extends Component {
               onChange = {this.onChangeHandler}  />
           </div>
           <div className="form-group">
-            <label htmlFor="dt_start" className="form-label col-12">Event Start:</label>
+            <label htmlFor="dt_start" className="form-label">Event Start:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -87,7 +88,7 @@ class CreateEvent extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="time_end"className="form-label col-12">Event End:</label>
+            <label htmlFor="time_end"className="form-label">Event End:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"
