@@ -10,10 +10,11 @@ class CreateAccomodation extends Component {
     this.state = {
       item_type:'A',
       trip_id: this.props.tripID,
-      venue:'',
-      details:'',
-      confirmation:'',
-      address: '',
+      venue:' ',
+      details:' ',
+      confirmation:' ',
+      address: ' ',
+      // time_start: ,
     }
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
@@ -52,8 +53,8 @@ class CreateAccomodation extends Component {
   componentDidMount() {
     if(this.props.item) {
       this.setState({
-        // time_start: this.props.item.time_start,
-        // time_end: this.props.item.time_end,
+        time_start: new Date(this.props.item.time_start),
+        time_end: new Date(this.props.item.time_end),
         venue: this.props.item.venue,
         details: this.props.item.details,
         confirmation: this.props.item.confirmation,
@@ -83,7 +84,7 @@ class CreateAccomodation extends Component {
               onChange = {this.handleChangeStartDate}
               showTimeSelect
               selectsStart
-              minDate={new Date()}
+              minDate={this.state.time_start || new Date()}
               timeFormat="HH:mm"
               timeIntervals={30}
               dateFormat="dd/MM/YYYY h:mm aa"
@@ -103,7 +104,7 @@ class CreateAccomodation extends Component {
               onChange = {this.handleChangeEndDate}
               showTimeSelect
               selectsEnd
-              minDate={this.state.time_start}
+              minDate={this.state.time_start || new Date()}
               startDate={this.state.time_start}
               endDate={this.state.time_end}
               timeFormat="HH:mm"
