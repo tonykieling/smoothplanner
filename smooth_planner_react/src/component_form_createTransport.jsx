@@ -72,7 +72,7 @@ class CreateTransport extends Component {
       <div className="create-form-container">
         <div className="form-title">
         <h4 className="card-title">
-          <i class="fas fa-plane"></i>Add/Edit Transportation
+          <i className="fas fa-plane"></i>Add/Edit Transportation
         </h4>
         </div>
         <form onSubmit={this.handlesSubmit}>

@@ -47,7 +47,11 @@ nav {
   height: fit-content;
 }
 .create-form-container, .create-form-container-small {
-  margin: 0;
+  margin: 2%;
+  padding: 5%;
+  background: aliceblue;
+  justify-content: space-around;
+  align-items: center;
 }
 .trip-list > button {
   margin: 8px 35px 20px;
