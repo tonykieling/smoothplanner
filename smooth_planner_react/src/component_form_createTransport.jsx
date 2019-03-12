@@ -61,6 +61,7 @@ class CreateTransport extends Component {
         confirmation: this.props.item.confirmation,
         city_depart: this.props.item.city_depart,
         city_arrival: this.props.item.city_arrival,
+        id: this.props.item.id,
        });
     }
   }

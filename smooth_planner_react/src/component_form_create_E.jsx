@@ -50,6 +50,7 @@ class CreateEvent extends Component {
         details: this.props.item.details,
         confirmation: this.props.item.confirmation,
         address: this.props.item.address,
+        id: this.props.item.id,
        });
     } 
   }

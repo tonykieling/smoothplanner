@@ -57,7 +57,8 @@ class CreateAccomodation extends Component {
         venue: this.props.item.venue,
         details: this.props.item.details,
         confirmation: this.props.item.confirmation,
-        address: this.props.item.address
+        address: this.props.item.address,
+        id: this.props.item.id,
        });
     }
   }
