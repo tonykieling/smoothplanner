@@ -38,7 +38,7 @@ nav {
   position: fixed;
   top: 55px;
   bottom: 0;
-  width: 200px;
+  width: 220px;
 }
 
 .ReactModal__Body--open {
@@ -73,12 +73,14 @@ nav {
   border: none;
 }
 .list-group-item-success {
-  background-color: #386C0B;
+  background-color: #0c9254;
   color: white;
+  font-size: 1.25em;
 }
 .list-group-item-warning{
-  background-color: #E0CA3C;
-  color: #2F2F2F;
+  background-color: #ffc107;
+  color: #003671;
+  font-size: 1.25em;
 }
 
 .trip-list > ul {
@@ -340,12 +342,12 @@ footer{
   font-size: 1em;
   cursor: pointer;
   opacity: 0.5;
-  margin: .5rem;
+  padding: .3rem;
 }
 
 .fa-trash-alt:hover, .fa-edit:hover, .fa-plus:hover {
   opacity: 1;
-  font-size: 1.5em;
+  font-size: 1.06em;
 }
 
 .fa-trash-alt {
@@ -413,10 +415,14 @@ footer{
     width: 100%;
   }
   .card-body {
-    padding: 5px;
+    padding-top: 10px;
+    margin-top: 20px;
   }
   .cards_list {
-    padding-top: 0;
+    padding-top: 10;
+  }
+  body {
+    background-image: none;
   }
 }
 
@@ -475,10 +481,11 @@ form {
 
 .empty-card {
   margin-top: 60px;
-  background-color: #aef0d98a;
+  background-color: #054e7d8c;
   font-weight: bolder;
-  border-radius: .025rem;
-  padding: 10px;
+  border-radius: .25rem;
+  padding: 20px 80px;
+  color: #ffff;
 }
 
 .home-card {
