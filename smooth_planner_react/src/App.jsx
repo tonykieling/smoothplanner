@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: null, //{name: "Alice", id: 2},
+      current_user: {name: "Alice", id: 2},
       trips: [],
       showModalShare: false
     }
@@ -23,7 +23,7 @@ class App extends Component {
     this.handleOpenModalShare = this.handleOpenModalShare.bind(this);
     this.handleCloseModalShare = this.handleCloseModalShare.bind(this);
   }
-  
+
   // Share
   handleOpenModalShare() {
     this.setState({ showModalShare: true });
@@ -32,7 +32,6 @@ class App extends Component {
     this.setState({ showModalShare: false });
   }
   
-
   populateTrips(userId) {  
       axios.get(`http://localhost:3001/api/v1/users/${userId}.json`)
       .then(response => {
@@ -43,14 +42,12 @@ class App extends Component {
       })
   }
 
-
   componentDidMount() {
     if (this.state.current_user) {
       this.populateTrips(this.state.current_user.id);
     }
-    $("body").css("background-image", 'url(' + image + ')')
+    
   }
-
 
   delete_trip = (trip) => {
     axios.delete(`http://localhost:3001/api/v1/trips/${trip.id}`, {data: {user: this.state.current_user.id}} )
@@ -61,8 +58,7 @@ class App extends Component {
       .catch(error => console.log(error));
   }
 
-
-  // HardCoding function to change user btw Bob (1) and Alice(2)
+  // Fake Auth function to change user btw Bob (1) and Alice(2)
   changeUser = (id) => {
     if (id === '1') {
       this.setState({
@@ -74,11 +70,21 @@ class App extends Component {
       })
     }
     this.populateTrips(id);
+    
   }
   
-
   render() {
-    if(this.state.current_user) {
+    if(window.location.pathname === "/landing") {
+      return (
+            <BrowserRouter>
+            <div className="landing">
+              <Landing changeUser={this.changeUser}/>
+            </div>
+            </BrowserRouter>
+          );
+    } else {
+      $("body").css("background-image", 'url(' + image + ')')
+
       return (
         <BrowserRouter>
         <div className="App">
@@ -91,7 +97,7 @@ class App extends Component {
             <div className="print_share">
             <i onClick={this.handleOpenModalShare} className="fas fa-share-alt fa-2x" title="Share Trip With Another User"></i>
             <a href="javascript:window.print()"><i className="fas fa-print fa-2x" title="Print Preview"></i></a>
-            <i className="fas fa-sign-out-alt fa-2x" title="Sign Out"></i>
+            <a href='/landing'><i className="fas fa-sign-out-alt fa-2x" title="Sign Out"></i></a>
             </div>
           </nav> 
           <div className="side-bar">
@@ -100,11 +106,12 @@ class App extends Component {
         </header>
         <main>
           <Route path="/trips/:id" exact render={
-                          (props)=><ItemsContainer {...props} trips={this.state.trips} delete_trip={this.delete_trip}/>
+                          (props)=>
+                            <ItemsContainer {...props} trips={this.state.trips} delete_trip={this.delete_trip}/>
                           }/>
           <Route path="/" exact render={()=> <Home user={this.state.current_user.name}/>}/>
         </main>
-        
+
         <Route path="/trips/:id" render={(props)=>
         <div>
           <ReactModal 
@@ -115,14 +122,6 @@ class App extends Component {
             <Share closeModal={this.handleCloseModalShare} {...props}/>
           </ReactModal>
         </div> }/>
-        </div>
-        </BrowserRouter>
-      );
-    } else {
-      return (
-        <BrowserRouter>
-        <div className="landing">
-          <Landing changeUser={this.changeUser}/>
         </div>
         </BrowserRouter>
       );
