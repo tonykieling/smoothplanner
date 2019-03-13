@@ -65,6 +65,10 @@ module Api::V1
     # method to update trip.time_start according to the card(item) deletion
     def reorganizeTripDate
       @trip.update(time_start: @trip.items.order(:time_start).first.time_start) unless @items.empty?
+puts "startDATE: #{@trip.time_start}"
+      @trip.update(time_end: (@trip.items.order(:time_end).last.time_end ||
+                                                  @trip.items.order(:time_start).last.time_start)) unless @items.empty?
+puts "end_DATE: #{@trip.time_end}"      
     end
  
     
