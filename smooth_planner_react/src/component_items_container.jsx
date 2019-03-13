@@ -189,6 +189,8 @@ export default class ItemsContainer extends Component {
   };
 
   render() {
+    
+    // let dateCurrent = moment.utc(this.card[0].time_start).format('MMM Do YYYY');
     let allCards = this.state.cards.map((item) => {
       if (item.item_type === "A") {
         if(item.id === this.state.itemIDForReccomendationR) {

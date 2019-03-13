@@ -12,9 +12,11 @@ class CreateAccomodation extends Component {
       trip_id: this.props.tripID,
       venue:' ',
       details:' ',
-      confirmation:' ',
-      address: ' ',
+      confirmation: '',
+      address: '',
+      url: '',
     }
+    this.venuePlaceId = '';
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
   }
@@ -38,27 +40,31 @@ class CreateAccomodation extends Component {
     this.props.addItem(this.state);
     this.props.closeModal();
   }
-  onChangeVenue = (address, venue) => {
+  onChangeVenue = (address, venue, place_id) => {
     this.setState({
       address,
       venue
     })
+    this.venuePlaceId = place_id;
   }
   onChangeLatLng = (latlng) => {
     const geo_location = `${latlng.lat} ${latlng.lng}`
-    this.setState({geo_location})   
+    this.setState({
+      geo_location,
+      url: `https://www.google.com/maps/search/?api=1&query=${geo_location}&query_place_id=${this.venuePlaceId}`
+    })   
   }
   componentWillMount(){
     if(this.props.item) {
       this.setState({
         time_start: new Date(this.props.item.time_start),
         time_end: new Date(this.props.item.time_end),
-        venue: this.props.item.venue || ' ',
+        venue: this.props.item.venue || '',
         details: this.props.item.details || ' ',
-        confirmation: this.props.item.confirmation || ' ',
-        address: this.props.item.address || ' ',
+        confirmation: this.props.item.confirmation || '',
+        address: this.props.item.address || '',
         id: this.props.item.id,
-        url:this.props.item.url || ' ',
+        url:this.props.item.url || '',
        });
     }
   }
@@ -134,10 +140,7 @@ class CreateAccomodation extends Component {
               handleLatLng = {this.onChangeLatLng}
               venue = {this.state.venue}
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="address" className="form-label">Address: </label>
-            <input readOnly className="form-control" type="text" value={this.state.address} onChange = {this.onChangeHandler}  />
+            {(this.state.address) ? <span><i className="fas fa-map-marker-alt"></i> {this.state.address}</span> : null}
           </div>
           <div className="form-group">
             <label htmlFor="url" className="form-label">Website: </label>

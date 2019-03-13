@@ -10,16 +10,17 @@ class CreateEvent extends Component {
     this.state = {
       item_type:'E',
       trip_id: this.props.tripID,
-      title: this.props.item.title || ' ',
+      title: this.props.item.title || '',
       time_start: this.props.item.time_start ? new Date(this.props.item.time_start) : null,
       time_end: this.props.item.time_end ? new Date(this.props.item.time_end) : null,
-      venue: this.props.item.venue || ' ',
-      details: this.props.item.details || ' ',
-      confirmation: this.props.item.confirmation || ' ',
-      address: this.props.item.address || ' ',
+      venue: this.props.item.venue || '',
+      details: this.props.item.details || '',
+      confirmation: this.props.item.confirmation || '',
+      address: this.props.item.address || '',
       id: this.props.item.id,
-      url: this.props.item.url || ' ',
+      url: this.props.item.url || '',
     }
+    this.venuePlaceId = '';
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
     this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
   }
@@ -39,12 +40,17 @@ class CreateEvent extends Component {
     this.props.addItem(this.state);
     this.props.closeModal();
   }
-  onChangeVenue = (address, venue) => {
+  onChangeVenue = (address, venue, place_id) => {
     this.setState({address, venue})
+    this.venuePlaceId = place_id;
   }
   onChangeLatLng = (latlng) => {
-    const geo_location = `${latlng.lat} ${latlng.lng}`
-    this.setState({geo_location})   
+    const geo_location = `${latlng.lat},${latlng.lng}`
+    this.setState({
+      geo_location,
+      url: `https://www.google.com/maps/search/?api=1&query=${geo_location}&query_place_id=${this.venuePlaceId}`
+    })   
+
   }
   onChangeHandler = (event) => {
     const stateName = event.target.name
@@ -81,7 +87,7 @@ class CreateEvent extends Component {
               showTimeSelect
               timeFormat="HH:mm"
               timeIntervals={30}
-              dateFormat="dd/MM/YYYY h:mm aa"
+              dateFormat="dd/MM/YYYY hh:mm aa"
               timeCaption="time"
               className = "form-control wd-100"
               required
@@ -97,7 +103,7 @@ class CreateEvent extends Component {
               showTimeSelect
               timeFormat="HH:mm"
               timeIntervals={30}
-              dateFormat="dd/MM/YYYY :mm aa"
+              dateFormat="dd/MM/YYYY hh:mm aa"
               timeCaption="time"
               className = "form-control"
               selectsEnd
@@ -127,10 +133,7 @@ class CreateEvent extends Component {
                 handleLatLng = {this.onChangeLatLng}
                 venue = {this.state.venue}
               />
-          </div>
-          <div className="form-group">
-            <label htmlFor="address" className="form-label">Address: </label>
-            <input readOnly className="form-control" type="text" value={this.state.address}/>
+              {(this.state.address) ? <span><i className="fas fa-map-marker-alt"></i> {this.state.address}</span> : null}
           </div>
           <div className="form-group">
             <label htmlFor="url" className="form-label">Website: </label>
