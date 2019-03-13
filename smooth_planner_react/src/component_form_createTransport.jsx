@@ -75,7 +75,7 @@ class CreateTransport extends Component {
           <i className="fas fa-plane"></i>Add/Edit Transportation
         </h4>
         </div>
-        <form onSubmit={this.handlesSubmit}>
+        <form onSubmit={this.handlesSubmit} autocomplete="off">
           <div className="form-group">
             <label htmlFor="city_depart" className="form-label">From:</label>
             <LocationSearchInput
@@ -102,7 +102,7 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="time_start" className="form-label col-12">Departure:</label>
+            <label htmlFor="time_start" className="form-label">Departure:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -122,7 +122,7 @@ class CreateTransport extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="time_end"className="form-label col-12">Arrival:</label>
+            <label htmlFor="time_end"className="form-label">Arrival:</label>
             <DatePicker
               name="time_end"
               placeholderText = "Click to select"

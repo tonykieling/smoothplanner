@@ -70,15 +70,26 @@ nav {
   font-weight: 800;
   border: none;
 }
+.list-group-item-success {
+  background-color: #386C0B;
+  color: white;
+}
+.list-group-item-warning{
+  background-color: #E0CA3C;
+  color: #2F2F2F;
+}
 
 .trip-list > ul {
-  margin-right: 10px;
-  padding-left: 10px;
+  margin-right: 10px; 
+  padding-left: 10px; 
 }
 .trip-list > ul > a {
   padding: 3px;
+  box-shadow: 8px;
 }
-
+.list-group {
+  box-shadow: 8px white;
+}
 .trip-list > h4 {
   color: #fff;
 }
@@ -412,7 +423,6 @@ form {
   padding: 0% 2%;
 }
 .form-control {
-  width: 75%;
   margin-right: 0.5%
 }
 .location-search-input {
@@ -443,4 +453,7 @@ form {
   font-weight: bolder;
   border-radius: .25rem;
   padding: 20px;
+}
+.react-datepicker-wrapper, .react-datepicker__input-container {
+  width: 100%;
 }

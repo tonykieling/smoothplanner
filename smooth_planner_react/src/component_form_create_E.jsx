@@ -11,7 +11,8 @@ class CreateEvent extends Component {
       item_type:'E',
       trip_id: this.props.tripID,
       title: this.props.item.title || ' ',
-      time_start: this.props.item.time_start ? new Date(this.props.item.time_start) : new Date(),
+      time_start: this.props.item.time_start ? new Date(this.props.item.time_start) : null,
+      time_end: this.props.item.time_end ? new Date(this.props.item.time_end) : null,
       venue: this.props.item.venue || ' ',
       details: this.props.item.details || ' ',
       confirmation: this.props.item.confirmation || ' ',
@@ -20,10 +21,16 @@ class CreateEvent extends Component {
       url: this.props.item.url || ' ',
     }
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
+    this.handleChangeEndDate = this.handleChangeEndDate.bind(this);
   }
   handleChangeStartDate(date) {
     this.setState({
       time_start: date,
+      time_end: date,
+    });
+  }
+  handleChangeEndDate(date) {
+    this.setState({
       time_end: date,
     });
   }
@@ -53,9 +60,9 @@ class CreateEvent extends Component {
           <i className="fas fa-theater-masks"></i>Add/Edit Event
         </h4>
         </div>
-        <form onSubmit={this.handlesSubmit}>
+        <form onSubmit={this.handlesSubmit} autocomplete="off">
           <div className="form-group">
-            <label htmlFor="title" className="form-label">Title</label>
+            <label htmlFor="title" className="form-label">Title:</label>
             <input 
               type="text" 
               className="form-control"
@@ -65,7 +72,7 @@ class CreateEvent extends Component {
               onChange = {this.onChangeHandler}  />
           </div>
           <div className="form-group">
-            <label htmlFor="dt_start" className="form-label col-12">Event time:</label>
+            <label htmlFor="dt_start" className="form-label">Event Start:</label>
             <DatePicker
               name="time_start"
               placeholderText = "Click to select"
@@ -77,7 +84,26 @@ class CreateEvent extends Component {
               dateFormat="dd/MM/YYYY h:mm aa"
               timeCaption="time"
               className = "form-control wd-100"
-              // minDate={this.state.time_start || new Date()}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="time_end"className="form-label">Event End:</label>
+            <DatePicker
+              name="time_end"
+              placeholderText = "Click to select"
+              selected = {this.state.time_end}
+              onChange = {this.handleChangeEndDate}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={30}
+              dateFormat="dd/MM/YYYY :mm aa"
+              timeCaption="time"
+              className = "form-control"
+              selectsEnd
+              minDate={this.state.time_start}
+              startDate={this.state.time_start}
+              endDate={this.state.time_end}
               required
             />
           </div>
@@ -108,7 +134,7 @@ class CreateEvent extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="url" className="form-label">Website: </label>
-            <input name="url" className="form-control" type="text" onChange = {this.onChangeHandler} value={this.state.url}/>
+            <input name="url" className="form-control" type="url" onChange = {this.onChangeHandler} value={this.state.url}/>
           </div>
 
           <div className="form-group">
