@@ -1,4 +1,3 @@
-require 'faker'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -86,8 +85,8 @@ trip6.users << user2
 trip7 = Trip.create(
   {
     name: "Hawaii Time",
-    time_start:'March 2, 2017 10:00:00',
-    time_end:'March 20, 2017 23:00:00'
+    time_start:'March 2, 2017 07:30:00',
+    time_end:'March 20, 2017 3:30:00'
   }
 )
 trip7.users << user2

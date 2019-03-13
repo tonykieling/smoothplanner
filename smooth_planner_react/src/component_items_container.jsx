@@ -162,8 +162,8 @@ export default class ItemsContainer extends Component {
       const lastDay = this.state.cards[this.state.cards.length - 1].time_end || false;
       return(
         <div className="trip_duration">
-          <span>{(moment(firstDay).format('YYYY') !== moment(lastDay).format('YYYY')) ? moment(firstDay).format('MMM Do YYYY') : moment(firstDay).format('MMM Do')} - </span>
-          <span>{lastDay? moment(lastDay).format('MMM Do YYYY') : null}</span>
+          <span>{(moment.utc(firstDay).format('YYYY') !== moment.utc(lastDay).format('YYYY')) ? moment.utc(firstDay).format('MMM Do YYYY') : moment.utc(firstDay).format('MMM Do')} - </span>
+          <span>{lastDay? moment.utc(lastDay).format('MMM Do YYYY') : null}</span>
         </div>
       )
     }
