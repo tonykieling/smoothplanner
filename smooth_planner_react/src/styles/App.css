@@ -257,7 +257,7 @@ section {
   padding: 20px;
 }
 
-.splash-login > button {
+.splash-login > a > button {
   margin: 5px;
   font-size: 1.25em;
   font-weight: 600;
@@ -452,8 +452,19 @@ form {
   background-color: #95c6e68a;
   font-weight: bolder;
   border-radius: .25rem;
-  padding: 20px;
+  padding: 20px 120px;
 }
+
+.home-card > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-card > div > h3 {
+  margin: 0 0 0 20px;
+}
+
 .react-datepicker-wrapper, .react-datepicker__input-container {
   width: 100%;
 }

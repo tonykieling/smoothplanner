@@ -5,9 +5,11 @@ export default class Home extends Component {
     return (
       <div>
           <div className="home-card">
-            <h1> Hi <b>{this.props.user}</b>!!</h1> <br />
-            <h1>Welcome to Smooth Planner</h1> <br /><br />
-            <h3><i className="far fa-arrow-alt-circle-left fa-2x"></i> To begin select or create new trip</h3>
+            <h1> Welcome {this.props.user}!</h1> <br />
+            <div>
+              <i className="far fa-arrow-alt-circle-left fa-3x"></i>
+              <h3> To begin create or select a trip</h3>
+            </div><br/>
           </div>        
       </div>
     )

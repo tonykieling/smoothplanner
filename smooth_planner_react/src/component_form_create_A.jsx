@@ -73,7 +73,7 @@ class CreateAccomodation extends Component {
         </h4>
         </div>
 
-        <form onSubmit={this.handlesSubmit}>
+        <form onSubmit={this.handlesSubmit} autoComplete="off">
           <div className="form-group">
             <label htmlFor="dt_start" className="form-label">Check in:</label>
             <DatePicker
