@@ -75,7 +75,7 @@ class CreateAccomodation extends Component {
       <div className="create-form-container">
         <div className="form-title">
         <h4 className="card-title">
-          <i className="fas fa-concierge-bell"></i> Add/Edit Accomodation
+          <i className="fas fa-hotel"></i> Add/Edit Accomodation
         </h4>
         </div>
 
@@ -92,7 +92,7 @@ class CreateAccomodation extends Component {
               minDate={this.state.time_start || new Date()}
               timeFormat="HH:mm"
               timeIntervals={30}
-              dateFormat="dd/MM/YYYY h:mm aa"
+              dateFormat="dd/MM/YYYY hh:mm aa"
               timeCaption="Time"
               startDate={this.state.time_start}
               endDate={this.state.time_end}
@@ -114,7 +114,7 @@ class CreateAccomodation extends Component {
               endDate={this.state.time_end}
               timeFormat="HH:mm"
               timeIntervals={30}
-              dateFormat="dd/MM/YYYY h:mm aa"
+              dateFormat="dd/MM/YYYY hh:mm aa"
               timeCaption="Time"
               className = "form-control"
               required

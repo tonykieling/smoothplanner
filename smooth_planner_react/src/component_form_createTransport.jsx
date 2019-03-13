@@ -111,7 +111,7 @@ class CreateTransport extends Component {
               showTimeSelect
               timeFormat="HH:mm"
               timeIntervals={30}
-              dateFormat="dd/MM/YYYY h:mm aa"
+              dateFormat="dd/MM/YYYY hh:mm aa"
               timeCaption="time"
               className = "form-control wd-100"
               selectsStart
@@ -131,7 +131,7 @@ class CreateTransport extends Component {
               showTimeSelect
               timeFormat="HH:mm"
               timeIntervals={30}
-              dateFormat="dd/MM/YYYY :mm aa"
+              dateFormat="dd/MM/YYYY hh:mm aa"
               timeCaption="time"
               className = "form-control"
               selectsEnd
