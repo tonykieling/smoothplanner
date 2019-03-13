@@ -39,7 +39,7 @@ export default class ItemsContainer extends Component {
     
     return (
           //there are 3 divs: parent, main and hiden (which expands and collapses according user's click)
-          <div className="card">
+          <div className="card card-a">
             <div className="card-header" >
               <h4 className="item-card-head">{item.title || item.venue}</h4>
               <div className="item-card-head">

@@ -423,6 +423,24 @@ footer{
   background-position: right bottom;
   background-color: white;
 }
+.card-e{
+  background-image: url('./images/event.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: white;
+}
+.card-a{
+  background-image: url('./images/hotel.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: white;
+}
+.card-reco{
+  background-image: url('./images/suggestion.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: white;
+}
 
 .form-group > .btn {
   margin-right: 0.5%;
