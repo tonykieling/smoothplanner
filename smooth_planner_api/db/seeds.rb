@@ -164,6 +164,7 @@ Item.create({
 
 Item.create({
   time_start: 'December 26, 2019 10:00:00',
+  time_end: 'December 26, 2019 20:00:00',
   item_type: 'E',
   venue: 'on the road',
   title: 'Day trip to Chechen Itza',
@@ -183,6 +184,7 @@ Item.create({
 
 Item.create({
   time_start: 'January 2, 2020 13:30:00',
+  time_end: 'January 2, 2020 16:00:00',
   item_type: 'E',
   title: 'Special Brunch',
   venue: 'BestFood Restaurant',
@@ -217,6 +219,7 @@ Item.create({
 
 Item.create({
   time_start: 'July 10, 2019 09:00:00',
+  time_end: 'July 10, 2019 10:00:00',
   item_type: 'E',
   title: 'Go to Jungfrau',
   details: 'whole day event',
@@ -245,7 +248,8 @@ Item.create({
 })
 
 Item.create({
-  time_start: 'July 10, 2019 14:00:00',
+  time_start: 'July 10, 2019 13:00:00',
+  time_end: 'July 10, 2019 17:00:00',
   item_type: 'E',
   title: 'Museum Time!!',
   venue: 'Geneva Museum',
@@ -338,6 +342,7 @@ Item.create({
 
 Item.create({
   time_start: 'February 12, 2018 18:00:00',
+  time_end: 'February 12, 2018 21:00:00',
   title: 'Romantic Dinner',
   item_type: 'E',
   venue: 'Monamour Restaurant',
@@ -348,6 +353,7 @@ Item.create({
 
 Item.create({
   time_start: 'February 14, 2018 08:00:00',
+  time_end: 'February 14, 2018 12:00:00',
   title: 'A little History',
   item_type: 'E',
   venue: 'Louvre Museum',
@@ -393,6 +399,7 @@ Item.create({
 
 Item.create({
   time_start: 'March 22, 2019 10:30:00',
+  time_end: 'March 22, 2019 15:30:00',
   title: 'Go Walmart',
   venue: 'East Walmart',
   item_type: 'E',
@@ -403,6 +410,7 @@ Item.create({
 
 Item.create({
   time_start: 'March 23, 2019 11:30:00',
+  time_end: 'March 23, 2019 13:30:00',
   item_type: 'E',
   venue: 'Yammy Food Restaurant',
   details: 'I wanna to know this new restaurant',
@@ -410,7 +418,8 @@ Item.create({
 })
 
 Item.create({
-  time_start: 'March 23, 2019 06:30:00',
+  time_start: 'March 23, 2019 18:30:00',
+  time_end: 'March 23, 2019 21:30:00',
   item_type: 'E',
   venue: 'Tropical Best Food',
   details: "let's meet uncle Paul and family in this dinner",
@@ -453,6 +462,7 @@ Item.create({
 
 Item.create({
   time_start: 'March 2, 2017 18:30:00',
+  time_end: 'March 2, 2017 20:30:00',
   title: "dinner somewhere",
   item_type: 'E',
   details: "Meet Alice's friend, Zuel",
@@ -461,13 +471,15 @@ Item.create({
 
 Item.create({
   time_start: 'March 3, 2017 11:30:00',
+  time_end: 'March 3, 2017 13:30:00',
   item_type: 'E',
   venue: 'Food Restaurant',
   trip_id: trip7.id
 })
 
 Item.create({
-  time_start: 'March 5, 2017 06:30:00',
+  time_start: 'March 5, 2017 18:30:00',
+  time_end: 'March 5, 2017 20:30:00',
   item_type: 'E',
   venue: 'Tropical Restaurant',
   details: 'coconot, please',
@@ -571,6 +583,7 @@ Item.create({
 
 Item.create({
   time_start: 'April 3, 2019 09:00:00',
+  time_end: 'April 3, 2019 10:00:00',
   title: "business meeting at DevHub Place",
   item_type: 'E',
   venue: 'DevHub Toronto',
@@ -580,6 +593,7 @@ Item.create({
 
 Item.create({
   time_start: 'April 4, 2019 18:00:00',
+  time_end: 'April 4, 2019 22:00:00',
   title: "Friend's dinner",
   item_type: 'E',
   venue: "Great moement's restaurant",
@@ -591,6 +605,7 @@ Item.create({
 # Tenth Trip item
 Item.create({
   time_start: 'January 25, 2021 18:00:00',
+  time_end: 'January 25, 2021 20:00:00',
   title: "go somewhere",
   item_type: 'E',
   venue: "open",

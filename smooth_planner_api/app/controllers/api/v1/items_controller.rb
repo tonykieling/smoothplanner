@@ -43,7 +43,7 @@ module Api::V1
         @trip = Trip.find(newitem.trip_id)
         @items = @trip.items.order(:time_start)
         reorganizeTripDate  # updates the trip time_start
-        render json: @items
+        render json: {items: @items, trip: @trip}
       end
       
     end

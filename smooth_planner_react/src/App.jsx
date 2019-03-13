@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: {name: "Bob", id: 1},
+      current_user: {name: "Alice", id: 2},
       trips: [],
       showModalShare: false
     }
@@ -42,7 +42,6 @@ class App extends Component {
       .catch(error => {
         console.log(error)
       })
-console.log("populate trips, trips: ", this.state.trips)
   }
 
   // componentDidMount() {
@@ -78,7 +77,6 @@ componentWillMount() {
   }
   
   render() {
-console.log("populate trips, trips: ", this.state.trips)    
     if(window.location.pathname === "/landing") {
       return (
             <BrowserRouter>
@@ -114,8 +112,8 @@ console.log("populate trips, trips: ", this.state.trips)
                           (props)=>
                             <ItemsContainer {...props} trips={this.state.trips}
                                                        delete_trip={this.delete_trip}
-                                                       populate_trips={this.populateTrips}
-                                                       current_user={this.state.current_user.id}
+                                                      //  populate_trips={this.populateTrips}
+                                                      //  current_user={this.state.current_user.id}
                                                        />
                           }/>
           <Route path="/" exact render={()=> <Home user={this.state.current_user.name}/>}/>
