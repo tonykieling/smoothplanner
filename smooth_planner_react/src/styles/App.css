@@ -422,25 +422,29 @@ footer{
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: white;
+  background-size: 35px;
 }
 .card-e{
   background-image: url('./images/event.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: white;
+  background-size: 35px;
 }
 .card-a{
   background-image: url('./images/hotel.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: white;
+  background-size: 35px;
 }
-.card-reco{
+/* .card-reco{
   background-image: url('./images/suggestion.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: white;
-}
+
+} */
 
 .form-group > .btn {
   margin-right: 0.5%;
