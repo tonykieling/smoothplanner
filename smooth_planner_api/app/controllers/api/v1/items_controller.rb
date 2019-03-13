@@ -55,7 +55,7 @@ module Api::V1
       if item_to_update.save
         @trip = Trip.find(item_to_update.trip_id)
         @items = @trip.items.order(:time_start)
-        reorganizeTripDate  # updates the trip time_start
+        reorganizeTripDate  # updates the trip time_start and time_end
         render json: @items
       end
     end

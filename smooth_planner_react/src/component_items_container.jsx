@@ -156,24 +156,29 @@ export default class ItemsContainer extends Component {
   // function to get the real trip's date
   // if the user commit some mistake, it will get the date based on the first and last events (cards)
   realDates = (tripInfo) => {
-    if (this.state.cards.length > 0) {
-      const firstDay = this.state.cards[0].time_start;
-      const lastDay = this.state.cards[this.state.cards.length - 1].time_end || false;
-      return(
-        <div className="trip_duration">
-          <span>{moment.utc(firstDay).format('MMM Do')} - </span>
-          <span>{lastDay? moment.utc(lastDay).format('MMM Do YYYY') : null}</span>
-        </div>
-      )
-    } else {
+console.log("tripInfooo: ", tripInfo)    ;
+// console.log("allcards:: ", this.state.cards)    ;
+//     if (this.state.cards.length > 0) {
+//       const firstDay = this.state.cards[0].time_start;
+//       const lastDay = this.state.cards[this.state.cards.length - 1].time_end;
+//       // const lastDay = this.state.cards[this.state.cards.length - 1].time_end || 
+//       //                                                       this.state.cards[this.state.cards.length - 1].time_start;
+
+//       return(
+//         <div className="trip_duration">
+//           <span>{moment.utc(firstDay).format('MMM Do')} - </span>
+//           <span>{lastDay? moment.utc(lastDay).format('MMM Do YYYY') : null}</span>
+//         </div>
+//       )
+//     } else {
       return(
         <div>
-          {/* <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
-          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span> */}
+          <span>{moment(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment(tripInfo.time_end).format('MMM Do YYYY')} </span>
         </div>
       )
     }
-  }
+  // }
   
   componentDidMount() {
     this.fetchTripDetails();
@@ -223,13 +228,13 @@ export default class ItemsContainer extends Component {
     }
 
     const tripInfo = this.state.current_trip;
-
+console.log("tripInfo: ", tripInfo);
 
       return (
         <div className="items_container">
           <div className="trip_title">
             <h3>{ tripInfo ? tripInfo.name : null}</h3>
-              {this.realDates(tripInfo)}
+            {this.realDates(tripInfo)}
             <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
 

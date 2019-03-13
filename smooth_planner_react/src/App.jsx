@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_user: null, //{name: "Alice", id: 2},
+      current_user: {name: "Bob", id: 1},
       trips: [],
       showModalShare: false
     }
@@ -33,6 +33,7 @@ class App extends Component {
   }
   
 
+  // function to ask the database for the user's trips
   populateTrips(userId) {  
       axios.get(`http://localhost:3001/api/v1/users/${userId}.json`)
       .then(response => {
