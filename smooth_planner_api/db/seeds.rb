@@ -30,7 +30,8 @@ trip1 = Trip.create(
   time_start:'December 24, 2019 10:00:00',
   time_end:'January 3, 2020 23:00:00'
 })
-trip1.users << user1
+trip1.users << user2
+# trip1.users << user1
 
 
 trip2 = Trip.create(
@@ -40,7 +41,7 @@ trip2 = Trip.create(
   time_end:'July 15, 2019 23:00:00 23:00:00'
 })
 trip2.users << user2
-trip2.users << user1
+# trip2.users << user1
 
 
 trip3 = Trip.create(
@@ -50,7 +51,7 @@ trip3 = Trip.create(
   time_end:'February 15, 2018 23:00:00'
 })
 trip3.users << user2
-trip3.users << user1
+# trip3.users << user1
 
 
 trip4 = Trip.create(
@@ -90,7 +91,7 @@ trip7 = Trip.create(
   }
 )
 trip7.users << user2
-trip7.users << user1
+# trip7.users << user1
 
 
 trip8 = Trip.create(
@@ -100,7 +101,7 @@ trip8 = Trip.create(
     time_end:'March 24, 2019 23:00:00'
   }
 )
-trip8.users << user1
+# trip8.users << user1
 trip8.users << user2
 
 
@@ -111,17 +112,17 @@ trip9 = Trip.create(
     time_end:'August 9, 2019 23:00:00'
   }
 )
-trip9.users << user1
+trip9.users << user2
 
 
 trip10 = Trip.create(
   {
     name: "Surprise Trip",
-    time_start:'Jan 25, 2019 10:00:00',
-    time_end:'August 9, 2019 23:00:00'
+    time_start:'Jan 25, 2020 10:00:00',
+    time_end:'August 9, 2020 23:00:00'
   }
 )
-trip10.users << user1
+# trip10.users << user1
 trip10.users << user2
 
 
@@ -210,8 +211,8 @@ Item.create({
   time_start: 'July 1, 2019 14:00:00',
   time_end:'July 5, 2019 10:00:00',
   item_type: 'A',
-  venue: 'Basel Sheraton',
-  address: 'Boulevard Kukulcan Retorno Chac, Basel',
+  venue: 'Basel Radisson',
+  address: 'Steinentorstrasse 25, 4051 Basel, Switzerland',
   trip_id: trip2.id,
   geo_location: "47.5478711,7.5884424"
 })
@@ -603,8 +604,8 @@ Item.create({
 
 # Tenth Trip item
 Item.create({
-  time_start: 'January 25, 2021 18:00:00',
-  time_end: 'January 25, 2021 20:00:00',
+  time_start: 'January 25, 2020 18:00:00',
+  time_end: 'January 25, 2020 20:00:00',
   title: "go somewhere",
   item_type: 'E',
   venue: "open",
