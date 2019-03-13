@@ -407,7 +407,7 @@ footer{
 }
 
 @media print {
-  .print_share, .side-bar, .trip-list, .add_new_buttons, .far, .fas, .to_time {
+  .print_share, .side-bar, .trip-list, .add_new_buttons, .far, .fas, .to_time, .card-reco {
     display: none;
   }
   main, .items_container, .cards_list {
