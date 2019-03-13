@@ -18,7 +18,7 @@ user1 = User.create({
 
 user2 = User.create({
   name: "Alice Halpert",
-  email: "suzy@user.com"
+  email: "alice@user.com"
 })
 
 
@@ -58,7 +58,7 @@ trip4 = Trip.create(
   {
     name: "Going to Zurich",
     time_start:'September 1, 2019 10:00:00',
-    # time_end:'September 8, 2019 23:00:00'
+    time_end:'September 8, 2019 23:00:00'
   }
 )
 trip4.users << user2
@@ -68,7 +68,7 @@ trip5 = Trip.create(
 {
   name: "Japan Trip 2020",
   time_start:'July 1, 2020 10:00:00',
-  # time_end:'July 15, 2020 23:00:00'
+  time_end:'July 15, 2020 23:00:00'
 })
 trip5.users << user1
 
@@ -77,7 +77,7 @@ trip6 = Trip.create(
   {
     name: "Business meeting in Toronto",
     time_start:'April 1, 2019 10:00:00',
-    # time_end:'July 4, 2019 23:00:00'
+    time_end:'July 4, 2019 23:00:00'
   }
 )
 trip6.users << user2
@@ -87,7 +87,7 @@ trip7 = Trip.create(
   {
     name: "Hawaii Time",
     time_start:'March 2, 2017 10:00:00',
-    # time_end:'March 20, 2017 23:00:00'
+    time_end:'March 20, 2017 23:00:00'
   }
 )
 trip7.users << user2
@@ -98,7 +98,7 @@ trip8 = Trip.create(
   {
     name: "Go Shopping",
     time_start:'March 22, 2019 10:00:00',
-    # time_end:'March 24, 2019 23:00:00'
+    time_end:'March 24, 2019 23:00:00'
   }
 )
 trip8.users << user1
@@ -109,11 +109,21 @@ trip9 = Trip.create(
   {
     name: "Business meeting in Calgary",
     time_start:'August 5, 2019 10:00:00',
-    # time_end:'August 9, 2019 23:00:00'
+    time_end:'August 9, 2019 23:00:00'
   }
 )
 trip9.users << user1
 
+
+trip10 = Trip.create(
+  {
+    name: "Surprise Trip",
+    time_start:'Jan 25, 2019 10:00:00',
+    time_end:'August 9, 2019 23:00:00'
+  }
+)
+trip10.users << user1
+trip10.users << user2
 
 
 # CREATE TRIPS ITEMS
@@ -575,4 +585,15 @@ Item.create({
   venue: "Great moement's restaurant",
   details: 'meet old friends',
   trip_id: trip6.id
+})
+
+
+# Tenth Trip item
+Item.create({
+  time_start: 'January 25, 2021 18:00:00',
+  title: "go somewhere",
+  item_type: 'E',
+  venue: "open",
+  details: 'thinking about a new trip',
+  trip_id: trip10.id
 })

@@ -70,6 +70,7 @@ export default class ItemsContainer extends Component {
 
 
   areThereAnyRecommendations = () => {
+console.log("trips: ", this.state.trips)    ;
     //  Reset to no recommendations
     this.setState({
       recommendationsVisible: false,
@@ -92,13 +93,29 @@ export default class ItemsContainer extends Component {
     })
   }
 
+
+  setCurrentTrip = () => {
+
+    this.props.populate_trips(this.props.current_user);
+console.log("trips: ", this.props.trips)    
+    const current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
+          this.setState({
+            current_trip,
+          });
+console.log("current_Trip: ", current_trip)
+    return;
+  }
+
+
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
-          const current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
+          // const current_trip = this.props.trips.filter((trip) => (Number(trip.id) === Number(this.props.match.params.id)))[0]
+          // const current_trip = this.getCurrentTrip(this.props.match.params.id);
+          this.setCurrentTrip()
           this.setState({
             cards: response.data,
-            current_trip,
+            // current_trip,
           });
           this.areThereAnyRecommendations();
       })
@@ -132,6 +149,7 @@ export default class ItemsContainer extends Component {
     axios.post('http://localhost:3001/api/v1/items', data)
     .then(response => {
       this.setState({cards: response.data})
+      this.setCurrentTrip();
     })
     .catch(function (error) {
       console.log(error);
@@ -156,25 +174,35 @@ export default class ItemsContainer extends Component {
   // function to get the real trip's date
   // if the user commit some mistake, it will get the date based on the first and last events (cards)
   realDates = (tripInfo) => {
-    if (this.state.cards.length > 0) {
-      const firstDay = this.state.cards[0].time_start;
-      const lastDay = this.state.cards[this.state.cards.length - 1].time_end || false;
-      return(
-        <div className="trip_duration">
-          <span>{moment.utc(firstDay).format('MMM Do')} - </span>
-          <span>{lastDay? moment.utc(lastDay).format('MMM Do YYYY') : null}</span>
-        </div>
-      )
-    } else {
+console.log("tripInfooo: ", tripInfo)    ;
+// console.log("allcards:: ", this.state.cards)    ;
+//     if (this.state.cards.length > 0) {
+//       const firstDay = this.state.cards[0].time_start;
+//       const lastDay = this.state.cards[this.state.cards.length - 1].time_end;
+//       // const lastDay = this.state.cards[this.state.cards.length - 1].time_end || 
+//       //                                                       this.state.cards[this.state.cards.length - 1].time_start;
+
+//       return(
+//         <div className="trip_duration">
+//           <span>{moment.utc(firstDay).format('MMM Do')} - </span>
+//           <span>{lastDay? moment.utc(lastDay).format('MMM Do YYYY') : null}</span>
+//         </div>
+//       )
+//     } else {
       return(
         <div>
-          {/* <span>{moment.utc(tripInfo.time_start).format('MMM Do')}  - </span>
-          <span>{moment.utc(tripInfo.time_end).format('MMM Do YYYY')} </span> */}
+          <span>{moment(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment(tripInfo.time_end).format('MMM Do YYYY')} </span>
         </div>
       )
     }
-  }
+  // }
   
+
+  componentWillMount() {
+    this.setCurrentTrip();
+  }
+
   componentDidMount() {
     this.fetchTripDetails();
   }
@@ -185,6 +213,7 @@ export default class ItemsContainer extends Component {
     }
     if(prevState.cards.length !== this.state.cards.length) {
       this.areThereAnyRecommendations();
+      this.setCurrentTrip();
     }
   };
 
@@ -223,13 +252,13 @@ export default class ItemsContainer extends Component {
     }
 
     const tripInfo = this.state.current_trip;
-
+console.log("tripInfo: ", tripInfo);
 
       return (
         <div className="items_container">
           <div className="trip_title">
-            <h3>{ tripInfo ? tripInfo.name : null}</h3>
-              {this.realDates(tripInfo)}
+            <h3>{ tripInfo ? tripInfo.name : null }</h3>
+            { tripInfo ? this.realDates(tripInfo) : null }
             <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
 
