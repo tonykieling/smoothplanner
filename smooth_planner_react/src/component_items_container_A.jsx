@@ -16,14 +16,14 @@ export default class ItemsContainer extends Component {
     if (this.props.item.time_end != null)
       return(
         <div className="timestamp">
-          <span> <b>Dates: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')} </span>
-          <span> <b> - </b> {moment(this.props.item.time_end).format('dddd, MMM Do YYYY')}</span>
+          <span> <b>Dates: </b> {moment.utc(this.props.item.time_start).format('dddd, MMMM Do YYYY')} </span>
+          <span> <b> - </b> {moment.utc(this.props.item.time_end).format('dddd, MMM Do YYYY')}</span>
         </div>
       )
     else {
       return(
         <div className="timestamp">
-          <span> <b>First Day: </b> {moment(this.props.item.time_start).format('dddd, MMMM Do YYYY')} - no last day yet.</span>
+          <span> <b>First Day: </b> {moment.utc(this.props.item.time_start).format('dddd, MMMM Do YYYY')} - no last day yet.</span>
         </div>
       )
     }

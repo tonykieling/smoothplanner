@@ -18,7 +18,7 @@ user1 = User.create({
 
 user2 = User.create({
   name: "Alice Halpert",
-  email: "suzy@user.com"
+  email: "alice@user.com"
 })
 
 
@@ -58,7 +58,7 @@ trip4 = Trip.create(
   {
     name: "Going to Zurich",
     time_start:'September 1, 2019 10:00:00',
-    # time_end:'September 8, 2019 23:00:00'
+    time_end:'September 8, 2019 23:00:00'
   }
 )
 trip4.users << user2
@@ -68,7 +68,7 @@ trip5 = Trip.create(
 {
   name: "Japan Trip 2020",
   time_start:'July 1, 2020 10:00:00',
-  # time_end:'July 15, 2020 23:00:00'
+  time_end:'July 15, 2020 23:00:00'
 })
 trip5.users << user1
 
@@ -77,7 +77,7 @@ trip6 = Trip.create(
   {
     name: "Business meeting in Toronto",
     time_start:'April 1, 2019 10:00:00',
-    # time_end:'July 4, 2019 23:00:00'
+    time_end:'July 4, 2019 23:00:00'
   }
 )
 trip6.users << user2
@@ -87,7 +87,7 @@ trip7 = Trip.create(
   {
     name: "Hawaii Time",
     time_start:'March 2, 2017 10:00:00',
-    # time_end:'March 20, 2017 23:00:00'
+    time_end:'March 20, 2017 23:00:00'
   }
 )
 trip7.users << user2
@@ -98,7 +98,7 @@ trip8 = Trip.create(
   {
     name: "Go Shopping",
     time_start:'March 22, 2019 10:00:00',
-    # time_end:'March 24, 2019 23:00:00'
+    time_end:'March 24, 2019 23:00:00'
   }
 )
 trip8.users << user1
@@ -109,11 +109,21 @@ trip9 = Trip.create(
   {
     name: "Business meeting in Calgary",
     time_start:'August 5, 2019 10:00:00',
-    # time_end:'August 9, 2019 23:00:00'
+    time_end:'August 9, 2019 23:00:00'
   }
 )
 trip9.users << user1
 
+
+trip10 = Trip.create(
+  {
+    name: "Surprise Trip",
+    time_start:'Jan 25, 2019 10:00:00',
+    time_end:'August 9, 2019 23:00:00'
+  }
+)
+trip10.users << user1
+trip10.users << user2
 
 
 # CREATE TRIPS ITEMS
@@ -154,6 +164,7 @@ Item.create({
 
 Item.create({
   time_start: 'December 26, 2019 10:00:00',
+  time_end: 'December 26, 2019 20:00:00',
   item_type: 'E',
   venue: 'on the road',
   title: 'Day trip to Chechen Itza',
@@ -173,6 +184,7 @@ Item.create({
 
 Item.create({
   time_start: 'January 2, 2020 13:30:00',
+  time_end: 'January 2, 2020 16:00:00',
   item_type: 'E',
   title: 'Special Brunch',
   venue: 'BestFood Restaurant',
@@ -207,6 +219,7 @@ Item.create({
 
 Item.create({
   time_start: 'July 10, 2019 09:00:00',
+  time_end: 'July 10, 2019 10:00:00',
   item_type: 'E',
   title: 'Go to Jungfrau',
   details: 'whole day event',
@@ -235,7 +248,8 @@ Item.create({
 })
 
 Item.create({
-  time_start: 'July 10, 2019 14:00:00',
+  time_start: 'July 10, 2019 13:00:00',
+  time_end: 'July 10, 2019 17:00:00',
   item_type: 'E',
   title: 'Museum Time!!',
   venue: 'Geneva Museum',
@@ -328,6 +342,7 @@ Item.create({
 
 Item.create({
   time_start: 'February 12, 2018 18:00:00',
+  time_end: 'February 12, 2018 21:00:00',
   title: 'Romantic Dinner',
   item_type: 'E',
   venue: 'Monamour Restaurant',
@@ -338,6 +353,7 @@ Item.create({
 
 Item.create({
   time_start: 'February 14, 2018 08:00:00',
+  time_end: 'February 14, 2018 12:00:00',
   title: 'A little History',
   item_type: 'E',
   venue: 'Louvre Museum',
@@ -383,6 +399,7 @@ Item.create({
 
 Item.create({
   time_start: 'March 22, 2019 10:30:00',
+  time_end: 'March 22, 2019 15:30:00',
   title: 'Go Walmart',
   venue: 'East Walmart',
   item_type: 'E',
@@ -393,6 +410,7 @@ Item.create({
 
 Item.create({
   time_start: 'March 23, 2019 11:30:00',
+  time_end: 'March 23, 2019 13:30:00',
   item_type: 'E',
   venue: 'Yammy Food Restaurant',
   details: 'I wanna to know this new restaurant',
@@ -400,7 +418,8 @@ Item.create({
 })
 
 Item.create({
-  time_start: 'March 23, 2019 06:30:00',
+  time_start: 'March 23, 2019 18:30:00',
+  time_end: 'March 23, 2019 21:30:00',
   item_type: 'E',
   venue: 'Tropical Best Food',
   details: "let's meet uncle Paul and family in this dinner",
@@ -443,6 +462,7 @@ Item.create({
 
 Item.create({
   time_start: 'March 2, 2017 18:30:00',
+  time_end: 'March 2, 2017 20:30:00',
   title: "dinner somewhere",
   item_type: 'E',
   details: "Meet Alice's friend, Zuel",
@@ -451,13 +471,15 @@ Item.create({
 
 Item.create({
   time_start: 'March 3, 2017 11:30:00',
+  time_end: 'March 3, 2017 13:30:00',
   item_type: 'E',
   venue: 'Food Restaurant',
   trip_id: trip7.id
 })
 
 Item.create({
-  time_start: 'March 5, 2017 06:30:00',
+  time_start: 'March 5, 2017 18:30:00',
+  time_end: 'March 5, 2017 20:30:00',
   item_type: 'E',
   venue: 'Tropical Restaurant',
   details: 'coconot, please',
@@ -561,6 +583,7 @@ Item.create({
 
 Item.create({
   time_start: 'April 3, 2019 09:00:00',
+  time_end: 'April 3, 2019 10:00:00',
   title: "business meeting at DevHub Place",
   item_type: 'E',
   venue: 'DevHub Toronto',
@@ -570,9 +593,22 @@ Item.create({
 
 Item.create({
   time_start: 'April 4, 2019 18:00:00',
+  time_end: 'April 4, 2019 22:00:00',
   title: "Friend's dinner",
   item_type: 'E',
   venue: "Great moement's restaurant",
   details: 'meet old friends',
   trip_id: trip6.id
+})
+
+
+# Tenth Trip item
+Item.create({
+  time_start: 'January 25, 2021 18:00:00',
+  time_end: 'January 25, 2021 20:00:00',
+  title: "go somewhere",
+  item_type: 'E',
+  venue: "open",
+  details: 'thinking about a new trip',
+  trip_id: trip10.id
 })

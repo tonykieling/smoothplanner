@@ -7,7 +7,7 @@ module Api::V1
       @trip = Trip.find(params[:id])
       @items = @trip.items.order(:time_start)
       # puts @items.inspect
-      render json: @items
+      render json: {items: @items, trip: @trip}
     end
 
     def create

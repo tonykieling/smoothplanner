@@ -43,7 +43,7 @@ module Api::V1
         @trip = Trip.find(newitem.trip_id)
         @items = @trip.items.order(:time_start)
         reorganizeTripDate  # updates the trip time_start
-        render json: @items
+        render json: {items: @items, trip: @trip}
       end
       
     end
@@ -55,7 +55,7 @@ module Api::V1
       if item_to_update.save
         @trip = Trip.find(item_to_update.trip_id)
         @items = @trip.items.order(:time_start)
-        reorganizeTripDate  # updates the trip time_start
+        reorganizeTripDate  # updates the trip time_start and time_end
         render json: @items
       end
     end
@@ -65,6 +65,10 @@ module Api::V1
     # method to update trip.time_start according to the card(item) deletion
     def reorganizeTripDate
       @trip.update(time_start: @trip.items.order(:time_start).first.time_start) unless @items.empty?
+puts "startDATE: #{@trip.time_start}"
+      @trip.update(time_end: (@trip.items.order(:time_end).last.time_end ||
+                                                  @trip.items.order(:time_start).last.time_start)) unless @items.empty?
+puts "end_DATE: #{@trip.time_end}"      
     end
  
     

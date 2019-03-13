@@ -92,12 +92,12 @@ export default class ItemsContainer extends Component {
     })
   }
 
+
   fetchTripDetails() {
     axios.get(`http://localhost:3001/api/v1/trips/${this.props.match.params.id}.json`)
         .then(response => {
           this.setState({
-            cards: response.data.items,
-            current_trip: response.data.trip,
+            cards: response.data,
           });
           this.areThereAnyRecommendations();
       })
@@ -154,21 +154,17 @@ export default class ItemsContainer extends Component {
       });
   }
 
-  // function to get the real trip's date
-  // it will get the date based on the first and last events (cards)
-  realDates = () => {
-    if (this.state.cards.length > 0) {
-      const firstDay = this.state.cards[0].time_start || null;
-      const lastDay = this.state.cards[this.state.cards.length - 1].time_end || false;
+  // function to print the trip's date
+  realDates = (tripInfo) => {
       return(
-        <div className="trip_duration">
-          <span>{(moment(firstDay).format('YYYY') !== moment(lastDay).format('YYYY')) ? moment(firstDay).format('MMM Do YYYY') : moment(firstDay).format('MMM Do')} - </span>
-          <span>{lastDay? moment(lastDay).format('MMM Do YYYY') : null}</span>
+        <div>
+          <span>{moment(tripInfo.time_start).format('MMM Do')}  - </span>
+          <span>{moment(tripInfo.time_end).format('MMM Do YYYY')} </span>
         </div>
       )
     }
-  }
-  
+
+
   componentDidMount() {
     this.fetchTripDetails();
   }
@@ -218,12 +214,11 @@ export default class ItemsContainer extends Component {
 
     const tripInfo = this.state.current_trip;
 
-
       return (
         <div className="items_container">
           <div className="trip_title">
-            <h3>{ tripInfo ? tripInfo.name : null}</h3>
-              { tripInfo ? this.realDates(tripInfo) : null}
+            <h3>{ tripInfo ? tripInfo.name : null }</h3>
+            { tripInfo ? this.realDates(tripInfo) : null }
             <i className="fas fa-trash-alt" onClick={this.handle_deleteTrip}></i>
         </div>
 
@@ -273,3 +268,6 @@ export default class ItemsContainer extends Component {
     )
   }
 }
+
+
+
