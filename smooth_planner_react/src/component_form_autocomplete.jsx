@@ -23,7 +23,7 @@ export default class LocationSearchInput extends React.Component {
     geocodeByAddress(address)
       .then(results => {
         const short_add = address.split(',')[0];
-        this.props.handleAddress(results[0].formatted_address, short_add)
+        this.props.handleAddress(results[0].formatted_address, short_add, results[0].place_id)
         return getLatLng(results[0])
       })
       .then(latlng => {
