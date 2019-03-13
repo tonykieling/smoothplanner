@@ -75,8 +75,8 @@ export default class RecomendationCard extends Component {
     const users = <span> | {currentSuggestion.user_ratings_total} users </span>
 
     return (
-        <div className="card">
-          <div className="card-header">
+        <div className="card card-reco">
+          <div className="card-header card-reco-header">
             <h4 className="item-card-head">Suggestions for you</h4>
             <div className="item-card-head">
               <i className="fas fa-plus" onClick={() =>{this.props.openModalE(itemToBeAdded)}}></i>
@@ -99,9 +99,7 @@ export default class RecomendationCard extends Component {
               {currentSuggestion.user_ratings_total? users : null}   
               {currentSuggestion.price_level? priceLevel : null}
               </p>
-                
             </div>
-            
           </div>
           <div className="">
             <i className="fas fa-chevron-right fa-5x carousel-pointer" onClick={this.handleRightClick}></i>

@@ -178,9 +178,11 @@ section {
 .card-footer {
   padding: .25rem;
 }
+.card-reco {
+  border: 2px solid rgb(248, 245, 245);
+}
 .card-reco-center {
   display: flex;
-  background-color: #80724a99;
   align-items: center;
 }
 .card-reco-body {
@@ -191,6 +193,7 @@ section {
 .card-reco-body > .card-text {
   min-width: 35vw;
 }
+
 
 .card-reco-body > .card-text > div {
   display: flex;
@@ -414,6 +417,12 @@ footer{
   }
 }
 
+.card-t {
+  background-image: url('./images/plane.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: white;
+}
 
 .form-group > .btn {
   margin-right: 0.5%;

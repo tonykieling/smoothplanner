@@ -41,7 +41,7 @@ export default class ItemsContainer extends Component {
     const confirmation =<span> <b>Confirmation #: </b>{item.confirmation}<br /></span>
 
     return (
-          <div className="card">
+          <div className="card card-t">
             <div className="card-header item-card-head" >
               <i className="fas fa-trash-alt" onClick={this.handle_deleteItem}></i>
               <i className="far fa-edit" onClick={()=>{this.props.editItem(item)}}></i>
