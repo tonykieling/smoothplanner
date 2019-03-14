@@ -11,24 +11,35 @@ Our app aims to simplify travelling and alleviate some of the stress associated 
 The app will be useful for business or leisure travellers looking for a simple way to organise their itineraries.
 
 # Tech Stack
-* PostgresSQL
-* Rails
-* React
+- PostgresSQL
+- Rails
+- React
 
 # Screenshots
 
 # Features
-- Easy Trip Creation
-- Add three types of cards to an itinerary -
+- Itinerary in one place: Add all details related to your trip at one place in three types of cards -
         * Transport
         * Accomodation
         * Miscellaneous events / activities
-- One click edit if plans change
-- Collaboration - 
-- Suggestions - the app automatically suggests things to do in the destination that can be easily integrated into the itinerary
+- Easy Edits: Travel planning is a fluid exercise and if plans change, easily edit the details on the cards
+- Collaboration: Add users to the trip to allow them access to view and edit their trip
+- Suggestions: Integrated with the Google places API the app automatically suggests things to do and restaurants in the destination. The suggestions can be easily integrated into the itinerary
 
 # Dependencies
+- Client Side:
+   * Axios
+   * JQuery
+   * MomentJS
+   * React-datepicker
+   * React-modal
+   * React-places-autocomplete
+   * React-router-dom
 
+- Server Side
+  * http
+  * puma
+  * rack-cors
 
 # Project Directory
 
@@ -40,7 +51,7 @@ The app will be useful for business or leisure travellers looking for a simple w
 1. Client Side Setup
   - Run npm install in the smooth_planner_react folder
   - set up the .env file as shown in the example
-  - Open [http://localhost:3000](http://localhost:3000) to view it in the browse
+  - Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
 2. Server Side Setup
   - Run bundle install in the smooth_planner_api folder
