@@ -16,6 +16,12 @@ The app will be useful for business or leisure travellers looking for a simple w
 - React
 
 # Screenshots
+## A planned trip in Smooth Planner
+![trip-view](./project_planning/tripview.png)
+
+## Event form linked with the Google API
+![event-form](./project_planning/event-form.png)
+
 
 # Features
 - Itinerary in one place: Add all details related to your trip at one place in three types of cards -
