@@ -46,7 +46,7 @@ trip2.users << user2
 
 trip3 = Trip.create(
 {
-  name: "Valentine day in Paris",
+  name: "Valentines day in Paris",
   time_start:'February 10, 2018 10:00:00',
   time_end:'February 15, 2018 23:00:00'
 })
@@ -286,7 +286,7 @@ Item.create({
 Item.create({
   time_start: 'July 5, 2019 10:00:00',
   time_end: 'July 9, 2019 23:00:00',
-  title: 'new business in Calgary is coming',
+  title: 'New business in Calgary',
   item_type: 'E',
   details: 'need to confirm with John',
   trip_id: trip9.id
@@ -347,7 +347,7 @@ Item.create({
   item_type: 'E',
   venue: 'Monamour Restaurant',
   address: 'Flowers Street, 321, Paris',
-  details: 'remember to ask the hotel a taxi',
+  details: 'Ask the hotel for a taxi',
   trip_id: trip3.id
 })
 
@@ -358,7 +358,7 @@ Item.create({
   item_type: 'E',
   venue: 'Louvre Museum',
   address: 'Rue de Rivoli, 75001 Paris, France',
-  details: 'need to order the tickets one day before',
+  details: 'Order the tickets one day before',
   trip_id: trip3.id
 })
 
@@ -373,7 +373,7 @@ Item.create({
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Seattle',
-  details: 'we need to purchase clothes and visit uncle Paul. Going by car.',
+  details: 'Purchase clothes and visit uncle Paul by car.',
   trip_id: trip8.id
 })
 
@@ -383,7 +383,7 @@ Item.create({
   item_type: 'T',
   city_depart: 'Seattle',
   city_arrival: 'Vancouver',
-  details: 'we need to go back sharp at 01:00!',
+  details: 'Be there at 11:00pm sharp!',
   trip_id: trip8.id
 })
 
@@ -413,7 +413,7 @@ Item.create({
   time_end: 'March 23, 2019 13:30:00',
   item_type: 'E',
   venue: 'Yammy Food Restaurant',
-  details: 'I wanna to know this new restaurant',
+  details: 'A good option',
   trip_id: trip8.id
 })
 
@@ -422,7 +422,7 @@ Item.create({
   time_end: 'March 23, 2019 21:30:00',
   item_type: 'E',
   venue: 'Tropical Best Food',
-  details: "let's meet uncle Paul and family in this dinner",
+  details: "Meeting uncle Paul and family here",
   trip_id: trip8.id
 })
 
@@ -431,7 +431,7 @@ Item.create({
   time_end: 'March 23, 2019 20:30:00',
   item_type: 'E',
   venue: "Cloth's Super Store'",
-  details: "let's check this new store with uncle Paul. Whole day activity and dinner at the end.",
+  details: "Check out this new store with Uncle Paul.",
   trip_id: trip8.id
 })
 
@@ -446,7 +446,7 @@ Item.create({
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Hawaii',
-  details: 'it will be a great time',
+  details: 'It will be a great time',
   trip_id: trip7.id
 })
 
@@ -482,7 +482,7 @@ Item.create({
   time_end: 'March 5, 2017 20:30:00',
   item_type: 'E',
   venue: 'Tropical Restaurant',
-  details: 'coconot, please',
+  details: 'Coconot, please',
   trip_id: trip7.id
 })
 
@@ -507,7 +507,7 @@ Item.create({
   item_type: 'T',
   city_depart: 'Vancouver',
   city_arrival: 'Zurich',
-  details: 'the tickets were a good deal',
+  details: 'The tickets were a good deal',
   trip_id: trip4.id
 })
 
@@ -525,7 +525,7 @@ Item.create({
   time_end:'September 8, 2019 04:15:00',
   item_type: 'A',
   venue: "Emma's house",
-  details: "gonna stay in my friend's house and celebrate her birthday",
+  details: "Celebrate her birthday",
   trip_id: trip4.id,
   geo_location: "47.3773697,8.3966319"
 })
@@ -534,7 +534,7 @@ Item.create({
   time_start:'September 2, 2019 10:00:00',
   time_end:'September 7, 2019 18:00:00',
   item_type: 'E',
-  venue: 'visit Zurich as whole during the week',
+  venue: 'Visit Zurich sometime during the week',
   trip_id: trip4.id
 })
 
@@ -576,7 +576,7 @@ Item.create({
   time_end: 'April 5, 2019 11:10:00',
   title: "Toronto's business meeting",
   item_type: 'A',
-  details: 'need to confirm with Marley the accommodation in her house',
+  details: 'Stay with Marley--TBD',
   trip_id: trip6.id,
   geo_location: '43.664934,-79.4250289',
 })
@@ -587,7 +587,7 @@ Item.create({
   title: "business meeting at DevHub Place",
   item_type: 'E',
   venue: 'DevHub Toronto',
-  details: 'need to prepare the presentation',
+  details: 'Prepare the presentation',
   trip_id: trip6.id
 })
 
@@ -596,7 +596,7 @@ Item.create({
   time_end: 'April 4, 2019 22:00:00',
   title: "Friend's dinner",
   item_type: 'E',
-  venue: "Great moement's restaurant",
+  venue: "Great Moement's Restaurant",
   details: 'meet old friends',
   trip_id: trip6.id
 })
@@ -609,6 +609,6 @@ Item.create({
   title: "go somewhere",
   item_type: 'E',
   venue: "open",
-  details: 'thinking about a new trip',
+  details: 'Thinking about a new trip',
   trip_id: trip10.id
 })
