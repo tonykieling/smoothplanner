@@ -28,9 +28,10 @@ The app will be useful for business or leisure travellers looking for a simple w
         * Transport
         * Accomodation
         * Miscellaneous events / activities
-- Easy Edits: Travel planning is a fluid exercise and if plans change, easily edit the details on the cards
+- Easy Edits: Travel planning is a fluid exercise and if plans change, the user can easily edit the details on the cards
 - Collaboration: Add users to the trip to allow them access to view and edit their trip
 - Suggestions: Integrated with the Google places API the app automatically suggests things to do and restaurants in the destination. The suggestions can be easily integrated into the itinerary
+- Print View: Print out your itinerary and keep it handy with you while travelling
 
 # Dependencies
 - Client Side:
