@@ -19,8 +19,8 @@ The app will be useful for business or leisure travellers looking for a simple w
 ## A planned trip in Smooth Planner
 ![trip-view](./project_planning/tripview.png)
 
-## Event form linked with the Google API
-![event-form](./project_planning/event-form.png)
+## Form linked with the Google API
+![form](./project_planning/form.png)
 
 
 # Features
